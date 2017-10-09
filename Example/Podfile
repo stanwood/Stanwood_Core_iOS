@@ -1,7 +1,8 @@
+source 'https://github.com/stanwood/Cocoa_Pods_Specs.git'
 use_frameworks!
 
 target 'StanwoodCore_Example' do
-  pod 'StanwoodCore', :path => '../'
+    pod 'StanwoodCore', :path => '../'
 
   target 'StanwoodCore_Tests' do
     inherit! :search_paths
