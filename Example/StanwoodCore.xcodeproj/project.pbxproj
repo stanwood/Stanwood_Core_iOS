@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		0C82866CADB323E6D0A854C0 /* Pods-StanwoodCore_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StanwoodCore_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StanwoodCore_Example/Pods-StanwoodCore_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0CC045B34A72A866300360AF /* Pods-StanwoodCore_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StanwoodCore_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StanwoodCore_Tests/Pods-StanwoodCore_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		396D5F655D1D82D0E2FEB8FD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		396D5F655D1D82D0E2FEB8FD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* StanwoodCore_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StanwoodCore_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,11 +42,11 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6B1EC9F4749349F8BD1E643D /* Pods_StanwoodCore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodCore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73F6820841AFE0ED170C6D0D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		73F6820841AFE0ED170C6D0D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		83428A95911DFEE39512B36C /* Pods-StanwoodCore_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StanwoodCore_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-StanwoodCore_Example/Pods-StanwoodCore_Example.release.xcconfig"; sourceTree = "<group>"; };
 		95C07CB04ED957B6024E6B8D /* Pods_StanwoodCore_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodCore_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CCA3216D91EC9C07D5C8CC /* Pods-StanwoodCore_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StanwoodCore_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StanwoodCore_Tests/Pods-StanwoodCore_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E215B4393DCD0F19816CA3D7 /* StanwoodCore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = StanwoodCore.podspec; path = ../StanwoodCore.podspec; sourceTree = "<group>"; };
+		E215B4393DCD0F19816CA3D7 /* StanwoodCore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = StanwoodCore.podspec; path = ../StanwoodCore.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +215,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = E695UC6Q3Q;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -517,10 +518,11 @@
 			baseConfigurationReference = 0C82866CADB323E6D0A854C0 /* Pods-StanwoodCore_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E695UC6Q3Q;
 				INFOPLIST_FILE = StanwoodCore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.stanwood.stanwood-core";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -532,10 +534,11 @@
 			baseConfigurationReference = 83428A95911DFEE39512B36C /* Pods-StanwoodCore_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E695UC6Q3Q;
 				INFOPLIST_FILE = StanwoodCore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.stanwood.stanwood-core";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
