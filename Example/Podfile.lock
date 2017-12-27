@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  StanwoodCore: 9d7ccffd54b37ebe7d85978cfdae514fa2a1f7aa
+  StanwoodCore: da8ea626ea566f24c1d3d24c86b2eb286fe56f19
 
-PODFILE CHECKSUM: 0de25f5ee9c1b1e16527bab2cd1063328afe4ca0
+PODFILE CHECKSUM: f5aeee8bf6acf6fb7e2f55f64caa3d3a273bc1bd
 
 COCOAPODS: 1.3.1

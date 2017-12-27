@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import StanwoodCore
 
 class UIButtonTest: XCTestCase {
     

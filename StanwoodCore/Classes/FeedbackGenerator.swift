@@ -10,14 +10,14 @@ import Foundation
 
 extension Stanwood {
     
-    open class FeedbackGenerateor {
+    open class FeedbackGenerator {
         
         private init () {}
         
         /**
          Generates a feebdack impact vibration style
          */
-        public static func generate(styleType style: UIImpactFeedbackStyle) {
+        public static func generate(style: UIImpactFeedbackStyle) {
             let generator = UIImpactFeedbackGenerator(style: style)
             generator.prepare()
             generator.impactOccurred()
@@ -26,7 +26,7 @@ extension Stanwood {
         /**
          Generates a feebdack notification vibration style
          */
-        public static func generate(feedbackType feedback: UINotificationFeedbackType) {
+        public static func generate(feedback: UINotificationFeedbackType) {
             let generator = UINotificationFeedbackGenerator()
             generator.prepare()
             generator.notificationOccurred(feedback)

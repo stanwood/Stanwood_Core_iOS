@@ -65,7 +65,10 @@ extension Stanwood {
                 }
                 FileManager.default.createFile(atPath: url.path, contents: data, attributes: nil)
             } catch {
-                print(error)
+                
+                #if DEBUG || BETA
+                    print(error)
+                #endif
             }
         }
         
@@ -89,10 +92,14 @@ extension Stanwood {
                     let model = try decoder.decode(type, from: data)
                     return model
                 } catch {
-                    print(error)
+                    #if DEBUG || BETA
+                        print(error)
+                    #endif
                 }
             } else {
-                print("No data at \(url.path)!")
+                #if DEBUG || BETA
+                    print("No data at \(url.path)!")
+                #endif
             }
             
             return nil

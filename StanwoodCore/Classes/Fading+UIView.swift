@@ -9,16 +9,16 @@
 import Foundation
 
 public protocol Fading where Self: UIView {
-    func fadeIn(animated: Bool)
-    func fadeOut(animated: Bool)
+    func fadeIn(animated: Bool, duration: Double)
+    func fadeOut(animated: Bool, duration: Double)
 }
 
 extension Fading {
     
     
-    public func fadeIn(animated: Bool = true) {
+    public func fadeIn(animated: Bool = true, duration: Double = 0.5) {
         if animated {
-            UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
                 self.alpha = 1.0
             }, completion: nil)
         } else {
@@ -26,9 +26,9 @@ extension Fading {
         }
     }
     
-    public func fadeOut(animated: Bool = true) {
+    public func fadeOut(animated: Bool = true, duration: Double = 0.5) {
         if animated {
-            UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseOut, animations: {
                 self.alpha = 0.0
             }, completion: nil)
         } else {

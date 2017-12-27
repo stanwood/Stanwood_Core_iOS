@@ -10,7 +10,7 @@ import XCTest
 import StanwoodCore
 
 enum Hobbies: String, Codable {
-    case snowboarding, learingSwift, playingWithAlexa
+    case snowboarding, learningSwift, playingWithAlexa
 }
 
 struct Member: Codable, Equatable {
