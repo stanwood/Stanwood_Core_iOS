@@ -3,13 +3,14 @@
 //  StanwoodCore
 //
 //  Created by Tal Zion on 09/10/2017.
+//  Copyright © 2017 stanwood GmbH. All rights reserved.
 //
 
 import Foundation
 
 extension UILabel {
     
-    // Localising label
+    /// Localising label
     open var localisedText: String? {
         get {
             return text
@@ -21,7 +22,7 @@ extension UILabel {
         }
     }
     
-    // When working with xib elements, set the localised key in IB
+    /// When working with xib elements, set the localised key in IB
     open override func awakeFromNib() {
         super.awakeFromNib()
         localisedText = text
