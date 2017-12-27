@@ -6,7 +6,8 @@ target 'StanwoodCore_Example' do
 
   target 'StanwoodCore_Tests' do
     inherit! :search_paths
-
+    
+    pod 'StanwoodCore', :path => '../'
     
   end
 end

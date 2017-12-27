@@ -24,7 +24,4 @@ Stanwood Core library will be a standard libarary used across all iOS projects
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'StanwoodCore/Classes/**/*'
-
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
