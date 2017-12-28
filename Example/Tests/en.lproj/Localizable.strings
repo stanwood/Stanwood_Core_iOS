@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  StanwoodCore
+
+  Created by Tal Zion on 27/12/2017.
+  Copyright © 2017 CocoaPods. All rights reserved.
+*/
+
+"TEST_TITLE" = "My test title";
+"TEST_TITLE_NOT" = "My test titlee";
