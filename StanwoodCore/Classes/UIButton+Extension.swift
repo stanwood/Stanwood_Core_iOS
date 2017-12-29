@@ -27,4 +27,10 @@ extension UIButton {
         super.awakeFromNib()
         localisedTitle = titleLabel?.text
     }
+    
+    @discardableResult
+    open func localiseTitle(_ text: String, fromTableName tableName: String) -> String? {
+        setTitle(text.localise(fromTableName: tableName), for: .normal)
+        return titleLabel?.text
+    }
 }

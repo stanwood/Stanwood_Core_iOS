@@ -14,6 +14,11 @@ public extension String {
     public var localized: String {
         return NSLocalizedString(self, comment: self)
     }
+    
+    /// Localising current string from a table name file
+    public func localise(fromTableName tableName: String) -> String {
+       return NSLocalizedString(self, tableName: tableName, bundle: Bundle.main, value: "", comment: self)
+    }
 
     /// Return the first charachter
     public var first: String {

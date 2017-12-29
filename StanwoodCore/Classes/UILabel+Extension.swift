@@ -27,4 +27,10 @@ extension UILabel {
         super.awakeFromNib()
         localisedText = text
     }
+    
+    @discardableResult
+    open func localiseText(_ text: String, fromTableName tableName: String) -> String? {
+        self.text = text.localise(fromTableName: tableName)
+        return self.text
+    }
 }
