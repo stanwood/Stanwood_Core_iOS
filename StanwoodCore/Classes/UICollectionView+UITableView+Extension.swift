@@ -18,6 +18,7 @@ extension UICollectionView {
         return indexPathForItem(at: centerPoint)
     }
     
+    @available(iOS 10.0, *)
     @discardableResult
     func setRefreshControl(_ target: Any?, with action: Selector) -> UIRefreshControl {
         let refreshControl = UIRefreshControl()

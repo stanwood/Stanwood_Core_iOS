@@ -10,6 +10,7 @@ import Foundation
 
 extension Stanwood {
     
+    @available(iOS 10.0, *)
     open class FeedbackGenerator {
         
         private init () {}
