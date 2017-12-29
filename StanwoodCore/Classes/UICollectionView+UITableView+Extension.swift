@@ -68,6 +68,7 @@ extension UICollectionView {
     }
     
     // MARK: - UICollectionViewFlowLayoutAutomaticSize
+    @available(iOS 10.0, *)
     func setAutomaticSize() {
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
