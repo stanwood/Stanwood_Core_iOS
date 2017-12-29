@@ -16,8 +16,8 @@ public extension String {
     }
     
     /// Localising current string from a table name file
-    public func localise(fromTableName tableName: String) -> String {
-       return NSLocalizedString(self, tableName: tableName, bundle: Bundle.main, value: "", comment: self)
+    public func localise(fromTableName tableName: String?) -> String {
+       return NSLocalizedString(self, tableName: tableName, comment: self)
     }
 
     /// Return the first charachter

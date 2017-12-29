@@ -29,7 +29,7 @@ extension UIButton {
     }
     
     @discardableResult
-    open func localiseTitle(_ text: String, fromTableName tableName: String) -> String? {
+    open func localiseTitle(_ text: String, fromTableName tableName: String?) -> String? {
         setTitle(text.localise(fromTableName: tableName), for: .normal)
         return titleLabel?.text
     }
