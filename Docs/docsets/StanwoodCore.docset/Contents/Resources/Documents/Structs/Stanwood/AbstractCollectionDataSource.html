@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Storage Class Reference</title>
+    <title>AbstractCollectionDataSource Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/Storage" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/AbstractCollectionDataSource" class="dashAnchor"></a>
 
-    <a title="Storage Class Reference"></a>
+    <a title="AbstractCollectionDataSource Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../../index.html">StanwoodCore Reference</a>
       <img class="carat" src="../../img/carat.png" />
-      Storage Class Reference
+      AbstractCollectionDataSource Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -177,19 +177,28 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Storage</h1>
+            <h1>AbstractCollectionDataSource</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Storage</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span></code></pre>
 
                 </div>
               </div>
-            <p>Storage can be used to save or cache objects that conform to Codable protocl.</p>
+            <p>The <code>AbstractCollectionDataSource</code> conforms to the <code>CollectionDataSource</code> protocol and implements <code><a href="../../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC16numberOfSectionsSiSo16UICollectionViewC2in_tF">AbstractCollectionDataSource.numberOfSections(in:)</a></code> and <code><a href="../../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSiSo012UICollectionH0C_Si22numberOfItemsInSectiontF">AbstractCollectionDataSource.collectionView(_:numberOfItemsInSection:)</a></code>. It midiates the application data model <code><a href="../../Protocols/DataType.html">DataType</a></code> and <code><a href="../../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uicollectionview"><code>UICollectionView</code></a>.</p>
+
+<blockquote>
+<p>It is requried to subclass <code>AbstractCollectionDataSource</code> and override <code><a href="../../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSo012UICollectionH4CellCSo0iH0C_10Foundation9IndexPathV13cellForItemAttF">AbstractCollectionDataSource.collectionView(_:cellForItemAt:)</a></code></p>
+</blockquote>
 <div class="aside aside-see-also">
     <p class="aside-title">See also</p>
-    <a href="https://developer.apple.com/documentation/swift/codable">Codable</a>
-
+    
 </div>
+
+<p><code><a href="../../Structs/Stanwood/AbstractCollectionDelegate.html">AbstractCollectionDelegate</a></code></p>
+
+<p><code><a href="../../Protocols/DataType.html">DataType</a></code></p>
+
+<p><code><a href="../../Protocols/Type.html">Type</a></code></p>
 
           </div>
         </section>
@@ -197,13 +206,20 @@
         <section class="section">
           <div class="section-content">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V7StorageC8FileTypeO"></a>
-                    <a name="//apple_ref/swift/Enum/FileType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC8FileTypeO">FileType</a>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC10dataObjectAA0E4Type_pSgv"></a>
+                    <a name="//apple_ref/swift/Property/dataObject" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC10dataObjectAA0E4Type_pSgv">dataObject</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -211,15 +227,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>File type, currently supporting .json</p>
+                        <p>dataObject, a collection of types</p>
 
-                        <a href="../../Structs/Stanwood/Storage/FileType.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">FileType</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">dataObject</span><span class="p">:</span><span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -229,9 +244,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V7StorageC9DirectoryO"></a>
-                    <a name="//apple_ref/swift/Enum/Directory" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC9DirectoryO">Directory</a>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC8dataTypeAA0H0_pSgv"></a>
+                    <a name="//apple_ref/swift/Property/dataType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC8dataTypeAA0H0_pSgv">dataType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -239,27 +254,37 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Directory to save data</p>
+                        <p>A single type object t present</p>
 
-                        <a href="../../Structs/Stanwood/Storage/Directory.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Directory</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">dataType</span><span class="p">:</span> <span class="k">Type</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializers"></a>
+                <a name="//apple_ref/swift/Section/Initializers" class="dashAnchor"></a>
+                <a href="#/Initializers">
+                  <h3 class="section-name">Initializers</h3>
+                </a>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V7StorageC5storeyx_AE9DirectoryO2toAE8FileTypeO2asSS8withNametKs9EncodableRzlFZ"></a>
-                    <a name="//apple_ref/swift/Method/store(_:to:as:withName:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC5storeyx_AE9DirectoryO2toAE8FileTypeO2asSS8withNametKs9EncodableRzlFZ">store(_:to:as:withName:)</a>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceCAeA0E4Type_pSg10dataObject_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(dataObject:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceCAeA0E4Type_pSg10dataObject_tcfc">init(dataObject:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -267,14 +292,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Store an encodable struct to the specified directory on disk</p>
+                        <p>Initialise with a collection of types</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p><code><a href="../../Protocols/DataType.html">DataType</a></code></p>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="n">open</span> <span class="kd">func</span> <span class="n">store</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Encodable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">to</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">,</span> <span class="k">as</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">withName</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -285,36 +315,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>object</em>
+                                <em>dataObject</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the encodable struct to store</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>directory</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>where to store the struct</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>fileName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>what to name the file where the struct data will be stored</p>
+                                  <p>dataObject</p>
                                 </div>
                               </td>
                             </tr>
@@ -327,9 +333,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V7StorageC8retrievexSgSS_AE8FileTypeO2ofAE9DirectoryO4fromxm2asts9DecodableRzlFZ"></a>
-                    <a name="//apple_ref/swift/Method/retrieve(_:of:from:as:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC8retrievexSgSS_AE8FileTypeO2ofAE9DirectoryO4fromxm2asts9DecodableRzlFZ">retrieve(_:of:from:as:)</a>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceCAeA4Type_p04dataG0_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(dataType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceCAeA4Type_p04dataG0_tcfc">init(dataType:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -337,17 +343,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Retrieve and convert a struct from a file on disk</p>
-<h5 id='example-a-simple-code-resort-code-object' class='heading'>Example: A simple <code>Resort</code> object</h5>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">resorts</span> <span class="o">=</span> <span class="nf">retrieve</span><span class="p">(</span><span class="s">"resorts"</span><span class="p">,</span> <span class="nv">of</span><span class="p">:</span> <span class="o">.</span><span class="n">json</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="o">.</span><span class="n">documents</span><span class="p">,</span> <span class="nv">as</span><span class="p">:</span> <span class="p">[</span><span class="kt">Resort</span><span class="p">]</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
-</code></pre>
+                        <p>Initialise with a a single type object.</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p><code>DataType.Type</code></p>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="n">open</span> <span class="kd">func</span> <span class="n">retrieve</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Decodable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">from</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">,</span> <span class="k">as</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataType</span><span class="p">:</span> <span class="k">Type</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -358,45 +366,83 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>fileName</em>
+                                <em>dataType</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>name of the file where struct data is stored</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>directory</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>directory where struct data is stored</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>type</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>struct type (i.e. Message.self)</p>
+                                  <p>DataType</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20functions"></a>
+                <a name="//apple_ref/swift/Section/Public functions" class="dashAnchor"></a>
+                <a href="#/Public%20functions">
+                  <h3 class="section-name">Public functions</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC6updateyAA0E4Type_pSg4with_tF"></a>
+                    <a name="//apple_ref/swift/Method/update(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC6updateyAA0E4Type_pSg4with_tF">update(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>update current dataSource with dataObject.</p>
+
+<blockquote>
+<p>Note: If data type is a <code>class</code>, it is not reqruied to update the dataType.</p>
+</blockquote>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p><code><a href="../../Protocols/Type.html">Type</a></code></p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">with</span> <span class="nv">dataObject</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
                       <div>
-                        <h4>Return Value</h4>
-                        <p>decoded struct model(s) of data</p>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dataObject</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>DataType</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -404,9 +450,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V7StorageC5clearyAE9DirectoryOKFZ"></a>
-                    <a name="//apple_ref/swift/Method/clear(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC5clearyAE9DirectoryOKFZ">clear(_:)</a>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC6updateyAA4Type_pSg4with_tF"></a>
+                    <a name="//apple_ref/swift/Method/update(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC6updateyAA4Type_pSg4with_tF">update(with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -414,14 +460,79 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Remove all files at specified directory</p>
+                        <p>update current dataSource with dataType.</p>
+
+<blockquote>
+<p>Note: If data type is a <code>class</code>, it is not reqruied to update the dataType.</p>
+</blockquote>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p><code><a href="../../Protocols/DataType.html">DataType</a></code></p>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">(</span><span class="n">_</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">with</span> <span class="nv">dataType</span><span class="p">:</span> <span class="k">Type</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dataType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Type</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UICollectionViewDataSource%20functions"></a>
+                <a name="//apple_ref/swift/Section/UICollectionViewDataSource functions" class="dashAnchor"></a>
+                <a href="#/UICollectionViewDataSource%20functions">
+                  <h3 class="section-name">UICollectionViewDataSource functions</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC16numberOfSectionsSiSo16UICollectionViewC2in_tF"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSections(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC16numberOfSectionsSiSo16UICollectionViewC2in_tF">numberOfSections(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -431,9 +542,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V7StorageC6removeySS_AE8FileTypeO2ofAE9DirectoryO4fromtKFZ"></a>
-                    <a name="//apple_ref/swift/Method/remove(_:of:from:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC6removeySS_AE8FileTypeO2ofAE9DirectoryO4fromtKFZ">remove(_:of:from:)</a>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSiSo012UICollectionH0C_Si22numberOfItemsInSectiontF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:numberOfItemsInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSiSo012UICollectionH0C_Si22numberOfItemsInSectiontF">collectionView(_:numberOfItemsInSection:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -441,14 +552,13 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Remove specified file from specified directory</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">from</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -458,9 +568,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V7StorageC10fileExistsSbSS_AE8FileTypeO2ofAE9DirectoryO2intFZ"></a>
-                    <a name="//apple_ref/swift/Method/fileExists(_:of:in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC10fileExistsSbSS_AE8FileTypeO2ofAE9DirectoryO2intFZ">fileExists(_:of:in:)</a>
+                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSo012UICollectionH4CellCSo0iH0C_10Foundation9IndexPathV13cellForItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:cellForItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSo012UICollectionH4CellCSo0iH0C_10Foundation9IndexPathV13cellForItemAttF">collectionView(_:cellForItemAt:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -468,14 +578,13 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns BOOL indicating whether file exists at specified directory with specified file name</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">fileExists</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="k">in</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span></code></pre>
 
                         </div>
                       </div>

@@ -24,15 +24,29 @@ protocol TableDataSource {
 extension Stanwood {
     
     /**
-     The `AbstractTableDataSource`
+     The `AbstractTableDataSource` conforms to the `TableDataSource` protocol and implements `AbstractTableDataSource.numberOfSections(in:)` and `AbstractTableDataSource.tableView(_:numberOfRowsInSection:)`. It midiates the application data model `DataType` and `Type` for the [`UITableView`](https://developer.apple.com/documentation/uikit/uitableview).
+     
+     >It is requried to subclass `AbstractTableDataSource` and override `AbstractTableDataSource.tableView(_:cellForRowAt:)`
+     
+     - SeeAlso:
+     
+     `AbstractCollectionDelegate`
+     
+     `DataType`
+     
+     `Type`
      */
     public class AbstractTableDataSource: NSObject, UITableViewDataSource, TableDataSource {
+        
+        // MARK: Properties
         
         /// dataObject, a collection of types
         public internal(set) var dataObject:DataType?
         
         /// A single type object t present
         public internal(set) var dataType: Type?
+        
+        // MARK: Initializers
         
         /**
          Initialise with a collection of types
@@ -58,14 +72,16 @@ extension Stanwood {
             self.dataType = dataType
         }
         
+        // MARK: Public functions
+        
         /**
          update current dataSource with dataObject.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
          
-         - Parametes:
+         - Parameters:
             - dataObject: DataType
          
-         - SeeAlso: `DataType`
+         - SeeAlso: `Type`
          */
         open func update(with dataObject: DataType?) {
             self.dataObject = dataObject
@@ -75,15 +91,18 @@ extension Stanwood {
          update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
          
-         - Parametes:
+         - Parameters:
             - dataType: Type
          
-         - SeeAlso: `DataType.Type`
+         - SeeAlso: `DataType`
          */
         open func update(with dataType: Type?) {
             self.dataType = dataType
         }
 
+        // MARK: UITableViewDataSource functions
+        
+        /***/
         public func numberOfSections(in tableView: UITableView) -> Int {
             switch (dataObject, dataType) {
             case (.some, .none):
@@ -97,6 +116,7 @@ extension Stanwood {
             }
         }
         
+        /***/
         public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             switch (dataObject, dataType) {
             case (.some, .none):
@@ -109,7 +129,8 @@ extension Stanwood {
                 return 0
             }
         }
-
+        
+        /***/
         public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             fatalError("Must override DataSource cellForItemAtIndexPath")
         }

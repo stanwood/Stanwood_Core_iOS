@@ -20,13 +20,18 @@ protocol CollectionDelegate {
 
 extension Stanwood {
     
+    /***/
     public class AbstractCollectionDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, CollectionDelegate {
+        
+        // MARK: Properties
         
         /// dataObject, a collection of types
         public internal(set) var dataObject:DataType?
         
         /// A single type object t present
         public internal(set) var dataType: Type?
+        
+        // MARK: Initializers
         
         /**
          Initialise with a collection of types
@@ -52,27 +57,29 @@ extension Stanwood {
             self.dataType = dataType
         }
         
+        // MARK: Public functions
+        
         /**
-         update current delegate with dataObject.
+         update current dataSource with dataObject.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
          
-         - Parametes:
+         - Parameters:
             - dataObject: DataType
          
-         - SeeAlso: `DataType`
+         - SeeAlso: `Type`
          */
         open func update(with dataObject: DataType?) {
             self.dataObject = dataObject
         }
         
         /**
-         update current delegate with dataType.
+         update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
          
-         - Parametes:
+         - Parameters:
             - dataType: Type
          
-         - SeeAlso: `DataType.Type`
+         - SeeAlso: `DataType`
          */
         open func update(with dataType: Type?) {
             self.dataType = dataType

@@ -67,6 +67,8 @@ extension Stanwood {
     @available(iOS 10.0, *)
     public class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
         
+        // MARK: Properties
+        
         /// Support for device rotation
         public var widthConstraint: NSLayoutConstraint?
         
@@ -82,6 +84,7 @@ extension Stanwood {
             prepare()
         }
         
+        // MARK: Public functions
         /**
          Override prepare to reuse the cell.
          Called in `awakeFromNib()` and `prepareForReuse()`

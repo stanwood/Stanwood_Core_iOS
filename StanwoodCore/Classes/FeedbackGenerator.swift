@@ -39,9 +39,6 @@ extension Stanwood {
         }
         
         /**
-         
-         */
-        /**
          Generates a feebdack notification vibration feedback
          
          - Parameter:

@@ -23,13 +23,30 @@ protocol CollectionDataSource: class {
 
 extension Stanwood {
     
+    /**
+     The `AbstractCollectionDataSource` conforms to the `CollectionDataSource` protocol and implements `AbstractCollectionDataSource.numberOfSections(in:)` and `AbstractCollectionDataSource.collectionView(_:numberOfItemsInSection:)`. It midiates the application data model `DataType` and `Type` for the [`UICollectionView`](https://developer.apple.com/documentation/uikit/uicollectionview).
+     
+     >It is requried to subclass `AbstractCollectionDataSource` and override `AbstractCollectionDataSource.collectionView(_:cellForItemAt:)`
+     
+     - SeeAlso:
+     
+     `AbstractCollectionDelegate`
+     
+     `DataType`
+     
+     `Type`
+     */
     public class AbstractCollectionDataSource: NSObject, UICollectionViewDataSource, CollectionDataSource {
 
+        // MARK: Properties
+        
         /// dataObject, a collection of types
         public internal(set) var dataObject:DataType?
         
         /// A single type object t present
         public internal(set) var dataType: Type?
+        
+        // MARK: Initializers
         
         /**
          Initialise with a collection of types
@@ -55,14 +72,16 @@ extension Stanwood {
             self.dataType = dataType
         }
         
+        // MARK: Public functions
+        
         /**
          update current dataSource with dataObject.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
          
-         - Parametes:
+         - Parameters:
             - dataObject: DataType
          
-         - SeeAlso: `DataType`
+         - SeeAlso: `Type`
          */
         open func update(with dataObject: DataType?) {
             self.dataObject = dataObject
@@ -72,15 +91,18 @@ extension Stanwood {
          update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
          
-         - Parametes:
+         - Parameters:
             - dataType: Type
          
-         - SeeAlso: `DataType.Type`
+         - SeeAlso: `DataType`
          */
         open func update(with dataType: Type?) {
             self.dataType = dataType
         }
         
+        // MARK: UICollectionViewDataSource functions
+        
+        /***/
         public func numberOfSections(in collectionView: UICollectionView) -> Int {
             switch (dataObject, dataType) {
             case (.some, .none):
@@ -94,14 +116,12 @@ extension Stanwood {
             }
         }
         
+        /***/
         public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return dataObject?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
         }
         
-        public func collectionView(_ collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: IndexPath) {
-            fatalError("Must override DataSource didEndDisplayingCell")
-        }
-        
+        /***/
         public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             fatalError("Must overide DataSource cellForItemAtIndexPath")
         }

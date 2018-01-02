@@ -16,14 +16,14 @@
     },
     {
       "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Autosizable.swift",
-      "line": 73,
+      "line": 75,
       "symbol": "Stanwood.AutoSizeableCell.awakeFromNib()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Autosizable.swift",
-      "line": 80,
+      "line": 82,
       "symbol": "Stanwood.AutoSizeableCell.prepareForReuse()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
