@@ -10,8 +10,6 @@ import Foundation
 
 extension TimeInterval {
     
-    // MARK:- TimeInterval
-    
     /// TimeInterval of 0.0
     public static var instant: TimeInterval { return 0 }
     

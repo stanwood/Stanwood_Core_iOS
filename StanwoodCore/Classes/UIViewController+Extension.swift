@@ -10,11 +10,20 @@ import Foundation
 
 extension UIViewController {
     
-    public static var identifier: String {
+    /// ViewController identifier
+    open static var identifier: String {
         return String(describing: self)
     }
     
-    public func present<T: UIViewController>(element: T.Type, storyboard: UIStoryboard? = nil, animated: Bool = true) {
+    /**
+     Presents viewController using default paramters.
+     
+     - Parameters:
+        - element: Generic type `UIViewController`
+        - storyboard: optional storyboard. Default `element.storyboard`
+        - animated: `default = true`
+     */
+    open func present<T: UIViewController>(element: T.Type, storyboard: UIStoryboard? = nil, animated: Bool = true) {
         if let storyboard = storyboard {
             let viewController = storyboard.instantiate(viewController: element.self)
             present(viewController, animated: animated, completion: nil)

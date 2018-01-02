@@ -8,11 +8,30 @@
 
 import Foundation
 
+/// A convinient observer class to add observers to `NotificationCenter`
 public struct Observer {
+    
+    /// The observer selector
     public let selector: Selector
+    
+    /// The notification name
     public let name: Notification.Name
+    
+    /// The optional object to pass
     public let object: Any?
     
+    /**
+     A convinient observer class to add observers to `NotificationCenter`
+     
+     - Parameters:
+        - selector: the selector to pass to the notification
+        - name: the notification name
+        - object: object of type `Any`, default = nil
+     
+     - SeeAlso:
+     `NotificationCenter.addObserver(_:observer:)`
+     `NotificationCenter.addObservers(_:observers:)`
+     */
     public init(selector: Selector, name: Notification.Name, object: Any? = nil) {
         self.selector = selector
         self.name = name
@@ -22,11 +41,29 @@ public struct Observer {
 
 extension NotificationCenter {
     
-    public func addObserver(_ target: Any, observer: Observer) {
+    /**
+     Add an observer
+     
+     - Parameters:
+        - target: the current target
+        - observer: the observer to handle
+     
+     - SeeAlso: `Observer`
+     */
+    open func addObserver(_ target: Any, observer: Observer) {
         addObserver(target, selector: observer.selector, name: observer.name, object: observer.object)
     }
     
-    public func addObservers(_ target: Any, observers: Observer...) {
+    /**
+     Add observers
+     
+     - Parameters:
+        - target: the current target
+        - observers: the observers to handle
+     
+     - SeeAlso: `Observer`
+     */
+    open func addObservers(_ target: Any, observers: Observer...) {
         observers.forEach() {
             addObserver(target, selector: $0.selector, name: $0.name, object: $0.object)
         }

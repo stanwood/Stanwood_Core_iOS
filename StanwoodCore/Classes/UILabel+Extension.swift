@@ -10,7 +10,7 @@ import Foundation
 
 extension UILabel {
     
-    /// Localising label
+    /// Localising label and sets the accessibilityIdentifier
     open var localisedText: String? {
         get {
             return text
@@ -22,12 +22,19 @@ extension UILabel {
         }
     }
     
-    /// When working with xib elements, set the localised key in IB
     open override func awakeFromNib() {
         super.awakeFromNib()
         localisedText = text
     }
     
+    /**
+     Sets the localised title from a table.string file
+     
+     - Parameters:
+        - text: The text to localise
+        - tableName: the .string table name if any
+     - Returns: the localised title `String?`
+     */
     @discardableResult
     open func localiseText(_ text: String, fromTableName tableName: String?) -> String? {
         self.text = text.localise(fromTableName: tableName)

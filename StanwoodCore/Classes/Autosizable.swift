@@ -23,7 +23,7 @@ import UIKit
 /// Note> Only supports portraite atm. Landscape is still in R&D
 ///
 @available(iOS 10.0, *)
-protocol AutoSizeable {
+public protocol AutoSizeable {
     var widthConstraint: NSLayoutConstraint? { get set }
     func autoSize() -> NSLayoutConstraint?
 }
@@ -33,7 +33,7 @@ extension AutoSizeable where Self: UICollectionViewCell {
     
     /// Call when device rotates
     @discardableResult
-    func autoSize() -> NSLayoutConstraint? {
+    public func autoSize() -> NSLayoutConstraint? {
         
         guard self.widthConstraint == nil else {
             self.widthConstraint?.constant = UIScreen.main.bounds.width
@@ -68,7 +68,7 @@ extension Stanwood {
     public class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
         
         /// Support for device rotation
-        var widthConstraint: NSLayoutConstraint? /// Internal for RnD purpuses
+        public var widthConstraint: NSLayoutConstraint?
         
         override public func awakeFromNib() {
             super.awakeFromNib()
@@ -82,7 +82,12 @@ extension Stanwood {
             prepare()
         }
         
-        /// Override prepare to reuse the cell
+        /**
+         Override prepare to reuse the cell.
+         Called in `awakeFromNib()` and `prepareForReuse()`
+        
+         >Note: Override is not required
+         */
         public func prepare() {
             // Override to prepare cell for reuse
         }

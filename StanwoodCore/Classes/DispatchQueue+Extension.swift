@@ -8,7 +8,19 @@
 
 import Foundation
 
-// Global main block
+/**
+ Convinience main block
+ 
+ #####Example: A simple `main` block#####
+ ````swift
+ main {
+    // UI updates
+ }
+ ````
+ 
+ - Paramaters:
+    - deadline: `DispatchTimeInterval` default = nil
+ */
 public func main(deadline: DispatchTimeInterval? = nil, block: @escaping () -> Void) {
     
     if let deadline = deadline {
@@ -26,6 +38,15 @@ extension DispatchQueue {
     
     private static var _onceTracker = [String]()
     
+    /**
+     Executes a block of code, associated with a unique token, only once.  The code is thread safe and will
+     only execute the code once even in the presence of multithreaded calls.
+     
+     - Parameters:
+        - block: Block to execute once
+     
+     - SeeAlso: `once(token:block:)`
+     */
     public class func once(file: String = #file, function: String = #function, line: Int = #line, block:()->Void) {
         let token = file + ":" + function + ":" + String(line)
         once(token: token, block: block)
@@ -35,8 +56,9 @@ extension DispatchQueue {
      Executes a block of code, associated with a unique token, only once.  The code is thread safe and will
      only execute the code once even in the presence of multithreaded calls.
      
-     - parameter token: A unique reverse DNS style name such as com.vectorform.<name> or a GUID
-     - parameter block: Block to execute once
+     - Parameters:
+        - token: A unique reverse DNS style name such as io.stanwood.<name> or a GUID
+        - block: Block to execute once
      */
     public class func once(token: String, block:()->Void) {
         objc_sync_enter(self)

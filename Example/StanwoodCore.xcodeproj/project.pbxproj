@@ -47,6 +47,7 @@
 		607FACE51AFB9204008FA782 /* StanwoodCore_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StanwoodCore_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B1EC9F4749349F8BD1E643D /* Pods_StanwoodCore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodCore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C64BB371FFB89A8008BEE98 /* .jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .jazzy.yaml; path = ../.jazzy.yaml; sourceTree = "<group>"; };
 		6CA768AE1FF3949C00611DA8 /* StanwoodCore_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StanwoodCore_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		6CA768AF1FF3949D00611DA8 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		6CA768B31FF3985B00611DA8 /* UILabelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelTest.swift; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				6C64BB371FFB89A8008BEE98 /* .jazzy.yaml */,
 				E215B4393DCD0F19816CA3D7 /* StanwoodCore.podspec */,
 				73F6820841AFE0ED170C6D0D /* README.md */,
 				396D5F655D1D82D0E2FEB8FD /* LICENSE */,

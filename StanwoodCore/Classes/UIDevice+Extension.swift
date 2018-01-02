@@ -128,7 +128,7 @@ public extension UIDevice {
     }
     
     /// Compare major system version i'e, iOS 10 == iOS 10
-    func systemVersionEquals(to version: String) -> Bool {
+    public func systemVersionEquals(to version: String) -> Bool {
         let currentMajorOS = UIDevice.current.systemVersion.split(separator: ".").first ?? ""
         return currentMajorOS == version
     }

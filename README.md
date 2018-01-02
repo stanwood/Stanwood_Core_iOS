@@ -1,31 +1,32 @@
-# StanwoodCore
 
-## Example
+# StanwoodCore framework
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+[![Swift Version](https://img.shields.io/badge/Swift-3.2.x-orange.svg)]()
+[![iOS 8+](https://img.shields.io/badge/iOS-9+-EB7943.svg)]()
 
->WIP
+## Table of contents
 
-## Requirements
+- [Author](#author)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Licence](#licence)
 
->WIP
+
+## Author
+
+Tal Zion tal.zion@stanwood.io
 
 ## Installation
 
->WIP Note: Will be added to Stanwood Xcode Template by default
-
 ```ruby
+source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/stanwood/Cocoa_Pods_Specs.git'
-use_frameworks!
 
 pod 'StanwoodCore'
 ```
 
 ## Usage
 
->WIP
+## Licence
 
-
-## License
-
-StanwoodCore is a private lobrary. See the LICENSE file for more info.
+StanwoodCore is a private library. See the [LICENSE](https://github.com/stanwood/Stanwood_Core/blob/master/LICENSE) file for more info.
