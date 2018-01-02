@@ -23,27 +23,67 @@ protocol TableDataSource {
 
 extension Stanwood {
     
+    /**
+     The `AbstractTableDataSource`
+     */
     public class AbstractTableDataSource: NSObject, UITableViewDataSource, TableDataSource {
         
+        /// dataObject, a collection of types
         public internal(set) var dataObject:DataType?
+        
+        /// A single type object t present
         public internal(set) var dataType: Type?
         
-        public init(dataObject: DataType) {
+        /**
+         Initialise with a collection of types
+         
+         - Parameters:
+            - dataObject: dataObject
+         
+         - SeeAlso: `DataType`
+         */
+        public init(dataObject: DataType?) {
             self.dataObject = dataObject
         }
         
+        /**
+         Initialise with a a single type object.
+         
+         - Parameters:
+            - dataType: DataType
+         
+         - SeeAlso: `DataType.Type`
+         */
         public init(dataType: Type) {
             self.dataType = dataType
         }
         
+        /**
+         update current dataSource with dataObject.
+         >Note: If data type is a `class`, it is not reqruied to update the dataType.
+         
+         - Parametes:
+            - dataObject: DataType
+         
+         - SeeAlso: `DataType`
+         */
         open func update(with dataObject: DataType?) {
             self.dataObject = dataObject
         }
         
+        /**
+         update current dataSource with dataType.
+         >Note: If data type is a `class`, it is not reqruied to update the dataType.
+         
+         - Parametes:
+            - dataType: Type
+         
+         - SeeAlso: `DataType.Type`
+         */
         open func update(with dataType: Type?) {
             self.dataType = dataType
         }
-        
+
         public func numberOfSections(in tableView: UITableView) -> Int {
             switch (dataObject, dataType) {
             case (.some, .none):
@@ -69,7 +109,7 @@ extension Stanwood {
                 return 0
             }
         }
-        
+
         public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             fatalError("Must override DataSource cellForItemAtIndexPath")
         }

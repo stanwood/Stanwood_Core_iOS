@@ -11,15 +11,14 @@ import Foundation
 /**
  Convinience main block
  
- #####Example: A simple `main` block#####
+ **Example:** *A simple `main` block*
  ````swift
  main {
     // UI updates
  }
  ````
  
- - Paramaters:
-    - deadline: `DispatchTimeInterval` default = nil
+- parameter deadline: `DispatchTimeInterval` default = nil
  */
 public func main(deadline: DispatchTimeInterval? = nil, block: @escaping () -> Void) {
     
@@ -47,7 +46,7 @@ extension DispatchQueue {
      
      - SeeAlso: `once(token:block:)`
      */
-    public class func once(file: String = #file, function: String = #function, line: Int = #line, block:()->Void) {
+    open class func once(file: String = #file, function: String = #function, line: Int = #line, block:()->Void) {
         let token = file + ":" + function + ":" + String(line)
         once(token: token, block: block)
     }
@@ -60,7 +59,7 @@ extension DispatchQueue {
         - token: A unique reverse DNS style name such as io.stanwood.<name> or a GUID
         - block: Block to execute once
      */
-    public class func once(token: String, block:()->Void) {
+    open class func once(token: String, block:()->Void) {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
         
