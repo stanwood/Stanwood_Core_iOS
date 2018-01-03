@@ -8,7 +8,27 @@
 
 import Foundation
 
+/**
+ Fillable protocol of type `UICollectionViewCell` used to fill cells with type object
+ 
+ #####Example: Fillable example#####
+ ````swift
+ cell.fill(with: type)
+ ````
+ 
+ - SeeAlso:
+ 
+ `Type`
+ `DataType`
+ */
 public protocol Fillable where Self: UICollectionViewCell {
+    
+    /**
+     Fill current cell with element
+     
+     - Parameters:
+        - type: the element type
+     */
     func fill(with type: Type?)
 }
 

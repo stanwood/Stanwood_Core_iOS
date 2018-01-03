@@ -8,6 +8,9 @@
 
 import Foundation
 
+/// Nameable protocol to provide a name property
 public protocol Nameable {
+    
+    /// Object name
     var name: String? { get set }
 }

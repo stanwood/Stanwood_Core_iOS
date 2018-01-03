@@ -10,44 +10,90 @@ import Foundation
 
 extension UICollectionView {
     
-    var centerPoint : CGPoint {
+    /// The center point of `UICollectionView`
+    public var centerPoint : CGPoint {
         return CGPoint(x: self.center.x + self.contentOffset.x, y: self.center.y + self.contentOffset.y);
     }
     
-    var centerCellIndexPath: IndexPath? {
-        return indexPathForItem(at: centerPoint)
-    }
-    
+    /**
+     Set a `UIRefreshControl`
+     
+     - Parameters:
+        - target: Any?
+        - action: The selector action with swipe
+        - tintColor: the activity indicator tintColor. default = .white
+     
+     - Returns:
+        `@discardableResult` `UIRefreshControl` which was assigne to `UICollectionView`
+     */
     @available(iOS 10.0, *)
     @discardableResult
-    func setRefreshControl(_ target: Any?, with action: Selector) -> UIRefreshControl {
+    public func setRefreshControl(_ target: Any?, with action: Selector, tintColor: UIColor = .white) -> UIRefreshControl {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .white
+        refreshControl.tintColor = tintColor
         refreshControl.addTarget(target, action: action, for: .valueChanged)
         self.refreshControl = refreshControl
-        
         return refreshControl
     }
     
-    func register(cellType: UICollectionViewCell.Type) {
-        let nib = UINib(nibName: cellType.identifier, bundle: nil)
-        register(nib, forCellWithReuseIdentifier: cellType.identifier)
-    }
-    
-    func register(headerTypes: UICollectionReusableView.Type...) {
+    /**
+     Register `UICollectionReusableView.Type`'s
+     
+     - Parameters:
+        - headerTypes: `UICollectionViewCell.Type`'s
+     
+     - SeeAlso: `register(headerType:)`
+     */
+    public func register(headerTypes: UICollectionReusableView.Type...) {
         headerTypes.forEach(register)
     }
     
-    func register(headerType: UICollectionReusableView.Type) {
+    /**
+     Register `UICollectionReusableView.Type`
+     
+     - Parameters:
+        - headerType: UICollectionReusableView.Type
+     
+     - SeeAlso: `register(headerTypes:)`
+     */
+    public func register(headerType: UICollectionReusableView.Type) {
         let nib = UINib(nibName: headerType.identifier, bundle: nil)
         register(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerType.identifier)
     }
     
-    func register(cellTypes: UICollectionViewCell.Type...) {
+    /**
+     Register `UICollectionViewCell.Type`'s
+     
+     - Parameters:
+        - cellTypes: `UICollectionViewCell.Type`'s
+     
+     - SeeAlso: `register(cellType:)`
+     */
+    public func register(cellTypes: UICollectionViewCell.Type...) {
         cellTypes.forEach(register)
     }
     
-    func dequeue<Element: UICollectionViewCell>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
+    /**
+     Register `UICollectionViewCell.Type`
+     
+     - Parameters:
+        - cellType: UICollectionViewCell.Type
+     
+    - SeeAlso: `register(cellTypes:)`
+     */
+    public func register(cellType: UICollectionViewCell.Type) {
+        let nib = UINib(nibName: cellType.identifier, bundle: nil)
+        register(nib, forCellWithReuseIdentifier: cellType.identifier)
+    }
+    
+    /**
+     Dequeue generic type `element` of `UICollectionViewCell` for `indexPath`
+     
+     - Parameters:
+        - cellType: Element.Type
+        - indexPath: cell for `IndexPath`
+     */
+    public func dequeue<Element: UICollectionViewCell>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
         let cell = dequeueReusableCell(withReuseIdentifier: cellType.identifier, for: indexPath)
         
         guard let element = cell as? Element else {
@@ -57,8 +103,14 @@ extension UICollectionView {
         return element
     }
     
-    
-    func dequeueHeader<Element: UICollectionReusableView>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
+    /**
+     Dequeue header generic type `element` of `UICollectionReusableView` for `indexPath`
+     
+     - Parameters:
+        - cellType: Element.Type
+        - indexPath: header for `IndexPath`
+     */
+    public func dequeueHeader<Element: UICollectionReusableView>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
         let cell = dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: cellType.identifier, for: indexPath)
         
         guard let element = cell as? Element else {
@@ -68,15 +120,25 @@ extension UICollectionView {
         return element
     }
     
-    // MARK: - UICollectionViewFlowLayoutAutomaticSize
+    /**
+     setAutomaticSize will set the estimated item size as `UICollectionViewFlowLayoutAutomaticSize`
+     
+     - Since: First available in iOS 10.0
+     */
     @available(iOS 10.0, *)
-    func setAutomaticSize() {
+    public func setAutomaticSize() {
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         }
     }
     
-    func set(spacing: CGFloat) {
+    /**
+     Set minimum line and interitem spacing
+     
+     - Parameters:
+        - spacing: The minimum spacing
+     */
+    public func set(spacing: CGFloat) {
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.minimumLineSpacing = spacing
             flowLayout.minimumInteritemSpacing = spacing
@@ -85,13 +147,16 @@ extension UICollectionView {
 }
 
 extension UICollectionReusableView {
+    
+    /// UICollectionViewCell & UICollectionReusableView identifier
     public static var identifier: String {
         return String(describing: self)
     }
 }
 
-
 extension UITableViewCell {
+    
+    /// UITableViewCell identifier
     public static var identifier: String {
         return String(describing: self)
     }
@@ -100,15 +165,24 @@ extension UITableViewCell {
 
 extension UITableView {
     
-    func register(cellType: UITableViewCell.Type) {
+    /// Register UITableViewCell type
+    public func register(cellType: UITableViewCell.Type) {
         self.register(UINib(nibName: cellType.identifier, bundle: nil), forCellReuseIdentifier: cellType.identifier)
     }
     
-    func register(cellTypes: UITableViewCell.Type...) {
+    /// Register UITableViewCell types
+    public func register(cellTypes: UITableViewCell.Type...) {
         cellTypes.forEach(register)
     }
-
-    func dequeue<Element: UITableViewCell>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
+    
+    /**
+     Dequeue generic type `element` of `UITableViewCell` for `indexPath`
+     
+     - Parameters:
+        - cellType: Element.Type
+        - indexPath: header for `IndexPath`
+     */
+    public func dequeue<Element: UITableViewCell>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
         let cell = dequeueReusableCell(withIdentifier: cellType.identifier, for: indexPath)
         
         guard let element = cell as? Element else {
@@ -118,7 +192,8 @@ extension UITableView {
         return element
     }
     
-    func isIndexPathValid(_ indexPath: IndexPath) -> Bool {
+    /// Check if the curent indexPath is valid
+    public func isIndexPathValid(_ indexPath: IndexPath) -> Bool {
         if indexPath.section >= numberOfSections {
             return false
         }

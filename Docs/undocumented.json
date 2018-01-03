@@ -1,0 +1,54 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Autosizable.swift",
+      "line": 27,
+      "symbol": "AutoSizeable.widthConstraint",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Autosizable.swift",
+      "line": 28,
+      "symbol": "AutoSizeable.autoSize()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Autosizable.swift",
+      "line": 75,
+      "symbol": "Stanwood.AutoSizeableCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Autosizable.swift",
+      "line": 82,
+      "symbol": "Stanwood.AutoSizeableCell.prepareForReuse()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Lodable.swift",
+      "line": 32,
+      "symbol": "Loadable.identifier",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UIButton+Extension.swift",
+      "line": 25,
+      "symbol": "UIButton.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UILabel+Extension.swift",
+      "line": 25,
+      "symbol": "UILabel.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes"
+}

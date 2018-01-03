@@ -19,7 +19,7 @@ class UILabelTest: XCTestCase {
         super.setUp()
         
         testLabel = UILabel()
-        testLabel.localisedText = localisedKey
+        testLabel.localizedText = localisedKey
     }
     
     override func tearDown() {
