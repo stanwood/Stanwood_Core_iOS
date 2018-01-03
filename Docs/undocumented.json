@@ -37,7 +37,7 @@
     },
     {
       "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Lodable.swift",
-      "line": 31,
+      "line": 32,
       "symbol": "Loadable.identifier",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"

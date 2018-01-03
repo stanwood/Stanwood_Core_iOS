@@ -19,9 +19,10 @@ public extension Loadable where Self: UIView {
      
      - Parameters:
         - frame: CGRect default = nil
+        - bundle: default = Bundle.main
      */
-    public static func loadFromNib<T: UIView>(withFrame frame: CGRect? = nil) -> T? {
-        guard let view = Bundle.main.loadNibNamed(identifier, owner: nil, options: nil)!.last as? T else {
+    public static func loadFromNib<T: UIView>(withFrame frame: CGRect? = nil, bundle: Bundle = Bundle.main) -> T? {
+        guard let view = bundle.loadNibNamed(identifier, owner: nil, options: nil)!.last as? T else {
             return nil
         }
         view.frame = frame ?? view.frame

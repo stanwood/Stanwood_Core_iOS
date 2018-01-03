@@ -28,9 +28,23 @@ extension Stanwood {
      
      >It is requried to subclass `AbstractTableDataSource` and override `AbstractTableDataSource.tableView(_:cellForRowAt:)`
      
+     #####Example: DataSource and Delegate design#####
+     ````swift
+     let items = [Element(id: "1"), Element(id: "2")]
+     self.objects = Stanwood.Objects<Element>(items: items)
+     
+     self.dataSource = ElementDataSource(dataObject: objects)
+     self.delegate = ElementDelegate(dataObject: objects)
+     
+     self.tableView.dataSource = self.dataSource
+     self.tableView.delegate = self.delegate
+     ````
+     
      - SeeAlso:
      
      `AbstractCollectionDelegate`
+     
+     `Objects`
      
      `DataType`
      

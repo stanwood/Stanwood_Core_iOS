@@ -19,7 +19,31 @@ protocol TableDelegate {
 
 extension Stanwood {
     
-    /***/
+    /**
+     The `AbstractTableDelegate` conforms to the `TableDelegate` protocol. It allows you to manage the selection and highlighting of items in a collection view and to perform actions on those items. [`UITableView`](https://developer.apple.com/documentation/uikit/uitableview).
+     
+     #####Example: DataSource and Delegate design#####
+     ````swift
+     let items = [Element(id: "1"), Element(id: "2")]
+     self.objects = Stanwood.Objects<Element>(items: items)
+     
+     self.dataSource = ElementDataSource(dataObject: objects)
+     self.delegate = ElementDelegate(dataObject: objects)
+     
+     self.tableView.dataSource = self.dataSource
+     self.tableView.delegate = self.delegate
+     ````
+     
+     - SeeAlso:
+     
+     `AbstractTableDataSource`
+     
+     `Objects`
+     
+     `DataType`
+     
+     `Type`
+     */
     public class AbstractTableDelegate: NSObject, UITableViewDelegate, TableDelegate {
         
         // MARK: Properties
