@@ -10,9 +10,14 @@ import Foundation
 
 public extension String {
     
-    /// Localising current string
+    /// Localizing current string
     public var localized: String {
         return NSLocalizedString(self, comment: self)
+    }
+    
+    /// Localizing current string from a table name file
+    public func localize(fromTableName tableName: String?) -> String {
+       return NSLocalizedString(self, tableName: tableName, comment: self)
     }
 
     /// Return the first charachter

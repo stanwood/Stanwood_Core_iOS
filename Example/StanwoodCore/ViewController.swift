@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let button = UILabel()
-        button.localisedText = ""
+        button.localizedText = ""
         
     }
 }

@@ -10,13 +10,7 @@ import Foundation
 
 extension CGFloat {
     
-    
-    
-    
-    // MARK:- Alpha
-    
-    
-    
+    // MARK: Alpha
     
     /// Alpha of 0.0
     public static var clear: CGFloat { return 0 }
@@ -37,11 +31,7 @@ extension CGFloat {
     public static var full: CGFloat { return 1 }
     
     
-    
-    
-    // MARK:- Animation Damping
-    
-    
+    // MARK: Animation Damping
     
     
     /// Damping of 0.3
@@ -54,12 +44,7 @@ extension CGFloat {
     public static var highDamping: CGFloat { return 1 }
     
     
-    
-    
-    
-    // MARK:- Animation Spring
-    
-    
+    // MARK: Animation Spring
     
     
     /// Spring of 0.3
@@ -72,12 +57,7 @@ extension CGFloat {
     public static var highSpring: CGFloat { return 1 }
     
     
-    
-    
-    
-    // MARK:- Radius
-    
-    
+    // MARK: Radius
     
     
     /// Radius of 20

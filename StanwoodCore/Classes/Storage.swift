@@ -8,24 +8,35 @@
 
 import Foundation
 
-open class Stanwood {}
-
 extension Stanwood {
     
+    /**
+     Storage can be used to save or cache objects that conform to Codable protocl.
+     
+     - SeeAlso:
+     [Codable](https://developer.apple.com/documentation/swift/codable)
+     */
     public class Storage {
         
         private init() { }
         
-        
+        /**
+         File type, currently supporting .json
+         */
         public enum FileType: String {
+            
+            /// json file type
             case json
         }
         
+        /**
+         Directory to save data
+         */
         public enum Directory {
-            // Only documents and other data that is user-generated, or that cannot otherwise be recreated by your application, should be stored in the <Application_Home>/Documents directory and will be automatically backed up by iCloud.
+            /// Only documents and other data that is user-generated, or that cannot otherwise be recreated by your application, should be stored in the <Application_Home>/Documents directory and will be automatically backed up by iCloud.
             case documents
             
-            // Data that can be downloaded again or regenerated should be stored in the <Application_Home>/Library/Caches directory. Examples of files you should put in the Caches directory include database cache files and downloadable content, such as that used by magazine, newspaper, and map applications.
+            /// Data that can be downloaded again or regenerated should be stored in the <Application_Home>/Library/Caches directory. Examples of files you should put in the Caches directory include database cache files and downloadable content, such as that used by magazine, newspaper, and map applications.
             case caches
         }
         
@@ -48,12 +59,14 @@ extension Stanwood {
         }
         
         
-        /// Store an encodable struct to the specified directory on disk
-        ///
-        /// - Parameters:
-        ///   - object: the encodable struct to store
-        ///   - directory: where to store the struct
-        ///   - fileName: what to name the file where the struct data will be stored
+        /**
+         Store an encodable struct to the specified directory on disk
+        
+         - Parameters:
+           - object: the encodable struct to store
+           - directory: where to store the struct
+           - fileName: what to name the file where the struct data will be stored
+         */
         static open func store<T: Encodable>(_ object: T, to directory: Directory, as fileType: FileType, withName fileName: String) throws {
             let url = getURL(for: directory).appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             
@@ -72,13 +85,20 @@ extension Stanwood {
             }
         }
         
-        /// Retrieve and convert a struct from a file on disk
-        ///
-        /// - Parameters:
-        ///   - fileName: name of the file where struct data is stored
-        ///   - directory: directory where struct data is stored
-        ///   - type: struct type (i.e. Message.self)
-        /// - Returns: decoded struct model(s) of data
+        /**
+         Retrieve and convert a struct from a file on disk
+         
+         #####Example: A simple `Resort` object#####
+         ````swift
+         let resorts = retrieve("resorts", of: .json, from: .documents, as: [Resort].self)
+         ````
+        
+         - Parameters:
+           - fileName: name of the file where struct data is stored
+           - directory: directory where struct data is stored
+           - type: struct type (i.e. Message.self)
+         - Returns: decoded struct model(s) of data
+         */
         static open func retrieve<T: Decodable>(_ fileName: String, of fileType: FileType, from directory: Directory, as type: T.Type) -> T? {
             let url = getURL(for: directory).appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             
