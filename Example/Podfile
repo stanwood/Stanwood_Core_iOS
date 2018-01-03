@@ -1,5 +1,6 @@
 source 'https://github.com/stanwood/Cocoa_Pods_Specs.git'
 use_frameworks!
+platform :ios, '9.0'
 
 target 'StanwoodCore_Example' do
     pod 'StanwoodCore', :path => '../'
