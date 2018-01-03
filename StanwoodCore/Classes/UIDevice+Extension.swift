@@ -10,42 +10,114 @@ import Foundation
 
 /// Apple device model names
 public enum Model : String {
-    case simulator   = "simulator/sandbox",
-    iPod1            = "iPod 1",
-    iPod2            = "iPod 2",
-    iPod3            = "iPod 3",
-    iPod4            = "iPod 4",
-    iPod5            = "iPod 5",
-    iPad2            = "iPad 2",
-    iPad3            = "iPad 3",
-    iPad4            = "iPad 4",
-    iPhone4          = "iPhone 4",
-    iPhone4S         = "iPhone 4S",
-    iPhone5          = "iPhone 5",
-    iPhone5S         = "iPhone 5S",
-    iPhone5C         = "iPhone 5C",
-    iPadMini1        = "iPad Mini 1",
-    iPadMini2        = "iPad Mini 2",
-    iPadMini3        = "iPad Mini 3",
-    iPadAir1         = "iPad Air 1",
-    iPadAir2         = "iPad Air 2",
-    iPadPro9_7       = "iPad Pro 9.7\"",
-    iPadPro9_7_cell  = "iPad Pro 9.7\" cellular",
-    iPadPro10_5      = "iPad Pro 10.5\"",
-    iPadPro10_5_cell = "iPad Pro 10.5\" cellular",
-    iPadPro12_9      = "iPad Pro 12.9\"",
-    iPadPro12_9_cell = "iPad Pro 12.9\" cellular",
-    iPhone6          = "iPhone 6",
-    iPhone6plus      = "iPhone 6 Plus",
-    iPhone6S         = "iPhone 6S",
-    iPhone6Splus     = "iPhone 6S Plus",
-    iPhoneSE         = "iPhone SE",
-    iPhone7          = "iPhone 7",
-    iPhone7plus      = "iPhone 7 Plus",
-    iPhone8          = "iPhone 8",
-    iPhone8plus      = "iPhone 8 Plus",
-    iPhoneX          = "iPhone X",
-    unrecognized     = "?unrecognized?"
+    
+    /// simulator/sandbox
+    case simulator   = "simulator/sandbox"
+    
+    /// iPod 1
+    case iPod1            = "iPod 1"
+    
+    /// iPod 2
+    case iPod2            = "iPod 2"
+    
+    /// iPod 3
+    case iPod3            = "iPod 3"
+    
+    /// iPod 4
+    case iPod4            = "iPod 4"
+    
+    /// iPod 5
+    case iPod5            = "iPod 5"
+    
+    /// iPad 2
+    case iPad2            = "iPad 2"
+    
+    /// iPad 3
+    case iPad3            = "iPad 3"
+    
+    /// iPad 4
+    case iPad4            = "iPad 4"
+    
+    /// iPhone 4
+    case iPhone4          = "iPhone 4"
+    
+    /// iPhone 4S
+    case iPhone4S         = "iPhone 4S"
+    
+    /// iPhone 5
+    case iPhone5          = "iPhone 5"
+    
+    /// iPhone 5S
+    case iPhone5S         = "iPhone 5S"
+    
+    /// iPhone 5C
+    case iPhone5C         = "iPhone 5C"
+    
+    /// iPad Mini 1
+    case iPadMini1        = "iPad Mini 1"
+    
+    /// iPad Mini 2
+    case iPadMini2        = "iPad Mini 2"
+    
+    /// iPad Mini 3
+    case iPadMini3        = "iPad Mini 3"
+    
+    /// iPad Air 1
+    case iPadAir1         = "iPad Air 1"
+    
+    /// iPad Air 2
+    case iPadAir2         = "iPad Air 2"
+    
+    /// iPad Pro 9.7
+    case iPadPro9_7       = "iPad Pro 9.7\""
+    
+    /// iPad Pro 9.7 cellular
+    case iPadPro9_7_cell  = "iPad Pro 9.7\" cellular"
+    
+    /// iPad Pro 10.5
+    case iPadPro10_5      = "iPad Pro 10.5\""
+    
+    /// iPad Pro 10.5 cellular
+    case iPadPro10_5_cell = "iPad Pro 10.5\" cellular"
+    
+    /// iPad Pro 12.9
+    case iPadPro12_9      = "iPad Pro 12.9\""
+    
+    /// iPad Pro 12.9 cellular
+    case iPadPro12_9_cell = "iPad Pro 12.9\" cellular"
+    
+    /// iPhone 6
+    case iPhone6          = "iPhone 6"
+    
+    /// iPhone 6 Plus
+    case iPhone6plus      = "iPhone 6 Plus"
+    
+    /// iPhone 6S
+    case iPhone6S         = "iPhone 6S"
+    
+    /// iPhone 6S Plus
+    case iPhone6Splus     = "iPhone 6S Plus"
+    
+    /// iPhone SE
+    case iPhoneSE         = "iPhone SE"
+    
+    /// iPhone 7
+    case iPhone7          = "iPhone 7"
+    
+    /// iPhone 7 Plus
+    case iPhone7plus      = "iPhone 7 Plus"
+    
+    /// iPhone 8
+    case iPhone8          = "iPhone 8"
+    
+    /// iPhone 8 Plus
+    case iPhone8plus      = "iPhone 8 Plus"
+    
+    /// iPhone X
+    case iPhoneX          = "iPhone X"
+    
+    /// unrecognized
+    case unrecognized     = "?unrecognized?"
 }
 
 public extension UIDevice {
