@@ -22,6 +22,13 @@ import Foundation
  `DataType.DataType`
  */
 public protocol Fillable where Self: UICollectionViewCell {
+    
+    /**
+     Fill current cell with element
+     
+     - Parameters:
+        - type: the element type
+     */
     func fill(with type: Type?)
 }
 
