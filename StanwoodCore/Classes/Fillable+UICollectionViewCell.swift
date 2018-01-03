@@ -18,8 +18,8 @@ import Foundation
  
  - SeeAlso:
  
- `DataType.Type`
- `DataType.DataType`
+ `Type`
+ `DataType`
  */
 public protocol Fillable where Self: UICollectionViewCell {
     

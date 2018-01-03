@@ -74,7 +74,7 @@ extension Stanwood {
          - Parameters:
             - dataType: DataType
          
-         - SeeAlso: `DataType.Type`
+         - SeeAlso: `Type`
          */
         public init(dataType: Type) {
             self.dataType = dataType
