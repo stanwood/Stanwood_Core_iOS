@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           StanwoodCore Docs
         </a>
-         (78% documented)
+         (77% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -135,6 +135,9 @@
                 <a class="nav-group-task-link" href="../Protocols.html#/s:12StanwoodCore8FillableP">Fillable</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Loadable.html">Loadable</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/Type.html">Type</a>
               </li>
             </ul>
@@ -189,9 +192,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So8UIButtonC12StanwoodCoreE14localisedTitleSSSgv"></a>
-                    <a name="//apple_ref/swift/Property/localisedTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8UIButtonC12StanwoodCoreE14localisedTitleSSSgv">localisedTitle</a>
+                    <a name="/s:So8UIButtonC12StanwoodCoreE14localizedTitleSSSgv"></a>
+                    <a name="//apple_ref/swift/Property/localizedTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So8UIButtonC12StanwoodCoreE14localizedTitleSSSgv">localizedTitle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -199,14 +202,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Localising button title</p>
+                        <p>Localizing button title</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">localisedTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">localizedTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -216,36 +219,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@StanwoodCore@@objc(cs)UIButton(im)awakeFromNib"></a>
-                    <a name="//apple_ref/swift/Method/awakeFromNib()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@StanwoodCore@@objc(cs)UIButton(im)awakeFromNib">awakeFromNib()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>When working with xib elements, set the localised key in IB</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">override</span> <span class="kd">func</span> <span class="nf">awakeFromNib</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So8UIButtonC12StanwoodCoreE17setLocalisedTitleSSSgAE_SC14UIControlStateV3forAE13fromTableNametF"></a>
-                    <a name="//apple_ref/swift/Method/setLocalisedTitle(_:for:fromTableName:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8UIButtonC12StanwoodCoreE17setLocalisedTitleSSSgAE_SC14UIControlStateV3forAE13fromTableNametF">setLocalisedTitle(_:for:fromTableName:)</a>
+                    <a name="/s:So8UIButtonC12StanwoodCoreE17setLocalizedTitleSSSgAE_SC14UIControlStateV3forAE13fromTableNametF"></a>
+                    <a name="//apple_ref/swift/Method/setLocalizedTitle(_:for:fromTableName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So8UIButtonC12StanwoodCoreE17setLocalizedTitleSSSgAE_SC14UIControlStateV3forAE13fromTableNametF">setLocalizedTitle(_:for:fromTableName:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -262,7 +238,7 @@ At a minimum, you should set the value for the normal state. If a title is not s
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setLocalisedTitle</span><span class="p">(</span><span class="n">_</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="k">for</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">UIControlState</span><span class="p">,</span> <span class="n">fromTableName</span> <span class="nv">tableName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">setLocalizedTitle</span><span class="p">(</span><span class="n">_</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="k">for</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">UIControlState</span><span class="p">,</span> <span class="n">fromTableName</span> <span class="nv">tableName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -278,7 +254,7 @@ At a minimum, you should set the value for the normal state. If a title is not s
                               </td>
                               <td>
                                 <div>
-                                  <p>The title to localise and use for the specified state.</p>
+                                  <p>The title to localize and use for the specified state.</p>
                                 </div>
                               </td>
                             </tr>

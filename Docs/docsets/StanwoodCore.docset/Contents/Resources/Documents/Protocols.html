@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           StanwoodCore Docs
         </a>
-         (78% documented)
+         (77% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -132,6 +132,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols.html#/s:12StanwoodCore8FillableP">Fillable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/Loadable.html">Loadable</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/Type.html">Type</a>
@@ -371,7 +374,7 @@ Note&gt; Only supports portraite atm. Landscape is still in R&amp;D</p>
                       <div class="abstract">
                         <p>Fillable protocol of type <code>UICollectionViewCell</code> used to fill cells with type object</p>
 <h5 id='example-fillable-example' class='heading'>Example: Fillable example</h5>
-<pre class="highlight swift"><code><span class="n">cell</span><span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">resort</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="n">cell</span><span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">type</span><span class="p">)</span>
 </code></pre>
 <div class="aside aside-see-also">
     <p class="aside-title">See also</p>
@@ -387,6 +390,38 @@ Note&gt; Only supports portraite atm. Landscape is still in R&amp;D</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Fillable</span> <span class="k">where</span> <span class="k">Self</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12StanwoodCore8LoadableP"></a>
+                    <a name="//apple_ref/swift/Protocol/Loadable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore8LoadableP">Loadable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Lodable protocol to load from nib</p>
+
+                        <a href="Protocols/Loadable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Loadable</span></code></pre>
 
                         </div>
                       </div>

@@ -13,7 +13,7 @@ import Foundation
  
  #####Example: Fillable example#####
  ````swift
- cell.fill(with: resort)
+ cell.fill(with: type)
  ````
  
  - SeeAlso:

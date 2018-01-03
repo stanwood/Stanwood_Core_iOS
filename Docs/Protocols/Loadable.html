@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>UIDevice Extension Reference</title>
+    <title>Loadable Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Extension/UIDevice" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/Loadable" class="dashAnchor"></a>
 
-    <a title="UIDevice Extension Reference"></a>
+    <a title="Loadable Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">StanwoodCore Reference</a>
       <img class="carat" src="../img/carat.png" />
-      UIDevice Extension Reference
+      Loadable Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -180,8 +180,15 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>UIDevice</h1>
-            
+            <h1>Loadable</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Loadable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Lodable protocol to load from nib</p>
+
           </div>
         </section>
 
@@ -192,53 +199,48 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So8UIDeviceC12StanwoodCoreE4typeAC5ModelOv"></a>
-                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8UIDeviceC12StanwoodCoreE4typeAC5ModelOv">type</a>
+                    <a name="/s:12StanwoodCore8LoadablePAASo6UIViewCRbzlE11loadFromNibqd__SgSC6CGRectVSg9withFrame_tAERbd__lFZ"></a>
+                    <a name="//apple_ref/swift/Method/loadFromNib(withFrame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore8LoadablePAASo6UIViewCRbzlE11loadFromNibqd__SgSC6CGRectVSg9withFrame_tAERbd__lFZ">loadFromNib(withFrame:)</a>
                     </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Current model name</p>
+                        <p>load <code>UIView</code> from nib</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums.html#/s:12StanwoodCore5ModelO">Model</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">loadFromNib</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">&gt;</span><span class="p">(</span><span class="n">withFrame</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So8UIDeviceC12StanwoodCoreE19systemVersionEqualsSbSS2to_tF"></a>
-                    <a name="//apple_ref/swift/Method/systemVersionEquals(to:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So8UIDeviceC12StanwoodCoreE19systemVersionEqualsSbSS2to_tF">systemVersionEquals(to:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compare major system version i&#39;e, iOS 10 == iOS 10</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">systemVersionEquals</span><span class="p">(</span><span class="n">to</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CGRect default = nil</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

@@ -21,7 +21,7 @@ class UIButtonTest: XCTestCase {
         
         
         testButton = UIButton()
-        testButton.localisedTitle = localisedKey
+        testButton.localizedTitle = localisedKey
     }
 
     override func tearDown() {

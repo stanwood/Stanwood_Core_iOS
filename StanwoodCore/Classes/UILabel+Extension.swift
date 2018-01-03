@@ -10,8 +10,8 @@ import Foundation
 
 extension UILabel {
     
-    /// Localising label and sets the accessibilityIdentifier
-    open var localisedText: String? {
+    /// Localizing label and sets the accessibilityIdentifier
+    open var localizedText: String? {
         get {
             return text
         }
@@ -24,20 +24,20 @@ extension UILabel {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-        localisedText = text
+        localizedText = text
     }
     
     /**
-     Sets the localised title from a table.string file
+     Sets the localized title from a table.string file
      
      - Parameters:
-        - text: The text to localise
+        - text: The text to localize
         - tableName: the .string table name if any
-     - Returns: the localised title `String?`
+     - Returns: the localized title `String?`
      */
     @discardableResult
-    open func localiseText(_ text: String, fromTableName tableName: String?) -> String? {
-        self.text = text.localise(fromTableName: tableName)
+    open func localizeText(_ text: String, fromTableName tableName: String?) -> String? {
+        self.text = text.localize(fromTableName: tableName)
         return self.text
     }
 }
