@@ -1,4 +1,4 @@
-output: Docs
+output: docs
 clean: true
 skip_undocumented: true
 sdk: iphone
