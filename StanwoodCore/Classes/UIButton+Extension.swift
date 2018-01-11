@@ -11,7 +11,7 @@ import Foundation
 extension UIButton {
     
     /// Localizing button title
-    open var localizedTitle: String? {
+    @objc open var localizedTitle: String? {
         get {
             return titleLabel?.text
         }
@@ -39,9 +39,23 @@ extension UIButton {
      - Returns: the localised title for state
      */
     @discardableResult
-    open func setLocalizedTitle(_ title: String?, for state: UIControlState, fromTableName tableName: String? = nil) -> String? {
+    @objc open func setLocalizedTitle(_ title: String?, for state: UIControlState = .normal, fromTableName tableName: String? = nil) -> String? {
         accessibilityIdentifier = title
         setTitle(title?.localize(fromTableName: tableName), for: state)
         return self.title(for: state)
+    }
+    
+    /**
+     Sets the image to use for the specified state.
+     In general, if a property is not specified for a state, the default is to use the normal value. If the normal value is not set, then the property defaults to a system value. Therefore, at a minimum, you should set the value for the normal state.
+     
+     - Parameters:
+        - image: The image to use for the specified state.
+        - identifier: The accessibilityIdentifier used for UITesting
+        - state: The state that uses the specified title. The values are described in UIControlState.
+     */
+    @objc open func setImage(_ image: UIImage?, withIdentifier identifier: String, for state: UIControlState = .normal) {
+        accessibilityIdentifier = identifier
+        setImage(image, for: state)
     }
 }

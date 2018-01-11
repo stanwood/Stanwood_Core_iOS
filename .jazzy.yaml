@@ -2,8 +2,8 @@ output: docs
 clean: true
 skip_undocumented: true
 sdk: iphone
-swift_version: 4.0.2
-module_version: 0.1
+swift_version: 4.0.3
+module_version: 0.1.1
 xcodebuild_arguments: [clean,build,-project,_Pods.xcodeproj,-scheme,StanwoodCore]
 source_directory: StanwoodCore/Classes
 author: Tal Zion
