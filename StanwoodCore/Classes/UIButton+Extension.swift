@@ -8,6 +8,50 @@
 
 import Foundation
 
+@IBDesignable
+class STUIImageView: UIImageView {
+    
+    @IBInspectable override var image: UIImage? {
+        didSet {
+            
+        }
+    }
+}
+
+extension UIImageView {
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    public convenience init(with frame: CGRect) {
+        self.init(frame: frame)
+    }
+    
+    public convenience init(image: UIImage?) {
+        self.init(image: image)
+    }
+}
+
+extension UIImage {
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    public convenience init?(named: String) {
+        self.init(named: named)
+        accessibilityIdentifier = named
+    }
+    
+    public convenience init(imageLiteralResourceName name: String) {
+        self.init(imageLiteralResourceName: name)
+        accessibilityIdentifier = name
+    }
+}
+
 extension UIButton {
     
     /// Localizing button title
@@ -43,5 +87,19 @@ extension UIButton {
         accessibilityIdentifier = title
         setTitle(title?.localize(fromTableName: tableName), for: state)
         return self.title(for: state)
+    }
+    
+    /**
+     Sets the image to use for the specified state.
+     In general, if a property is not specified for a state, the default is to use the normal value. If the normal value is not set, then the property defaults to a system value. Therefore, at a minimum, you should set the value for the normal state.
+     
+     - Parameters:
+        - image: The image to use for the specified state.
+        - identifier: The accessibilityIdentifier used for UITesting
+        - state: The state that uses the specified title. The values are described in UIControlState.
+     */
+    open func setImage(_ image: UIImage?, withIdentifier identifier: String, for state: UIControlState = .normal) {
+        accessibilityIdentifier = identifier
+        setImage(image, for: state)
     }
 }
