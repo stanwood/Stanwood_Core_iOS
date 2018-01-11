@@ -55,7 +55,7 @@ extension UIImage {
 extension UIButton {
     
     /// Localizing button title
-    open var localizedTitle: String? {
+    @objc open var localizedTitle: String? {
         get {
             return titleLabel?.text
         }
@@ -83,7 +83,7 @@ extension UIButton {
      - Returns: the localised title for state
      */
     @discardableResult
-    open func setLocalizedTitle(_ title: String?, for state: UIControlState, fromTableName tableName: String? = nil) -> String? {
+    @objc open func setLocalizedTitle(_ title: String?, for state: UIControlState = .normal, fromTableName tableName: String? = nil) -> String? {
         accessibilityIdentifier = title
         setTitle(title?.localize(fromTableName: tableName), for: state)
         return self.title(for: state)
