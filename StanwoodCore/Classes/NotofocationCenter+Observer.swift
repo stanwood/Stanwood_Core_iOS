@@ -50,7 +50,7 @@ extension NotificationCenter {
      
      - SeeAlso: `Observer`
      */
-    open func addObserver(_ target: Any, observer: Observer) {
+    public func addObserver(_ target: Any, observer: Observer) {
         addObserver(target, selector: observer.selector, name: observer.name, object: observer.object)
     }
     
@@ -63,7 +63,7 @@ extension NotificationCenter {
      
      - SeeAlso: `Observer`
      */
-    open func addObservers(_ target: Any, observers: Observer...) {
+    public func addObservers(_ target: Any, observers: Observer...) {
         observers.forEach() {
             addObserver(target, selector: $0.selector, name: $0.name, object: $0.object)
         }

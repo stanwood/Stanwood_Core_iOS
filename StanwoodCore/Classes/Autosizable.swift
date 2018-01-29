@@ -65,21 +65,21 @@ extension Stanwood {
     
     /// Inherit AutoSizeableCell to conform to Autosizable protocol
     @available(iOS 10.0, *)
-    public class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
+    open class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
         
         // MARK: Properties
         
         /// Support for device rotation
         public var widthConstraint: NSLayoutConstraint?
         
-        override public func awakeFromNib() {
+        override open func awakeFromNib() {
             super.awakeFromNib()
             
             widthConstraint = autoSize()
             prepare()
         }
         
-        override public func prepareForReuse() {
+        override open func prepareForReuse() {
             super.prepareForReuse()
             prepare()
         }
@@ -91,7 +91,7 @@ extension Stanwood {
         
          >Note: Override is not required
          */
-        public func prepare() {
+        open func prepare() {
             // Override to prepare cell for reuse
         }
     }
