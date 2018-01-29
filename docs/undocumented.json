@@ -48,6 +48,20 @@
       "symbol": "UILabel.awakeFromNib()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UISearchBar+Extension.swift",
+      "line": 24,
+      "symbol": "UISearchBar.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UITextField+Extension.swift",
+      "line": 24,
+      "symbol": "UITextField.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes"
