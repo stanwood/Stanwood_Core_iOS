@@ -117,7 +117,7 @@ extension Stanwood {
         // MARK: UICollectionViewDataSource functions
         
         /***/
-        public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        open func numberOfSections(in collectionView: UICollectionView) -> Int {
             switch (dataObject, dataType) {
             case (.some, .none):
                 return dataObject?.numberOfSections ?? 0
@@ -131,12 +131,12 @@ extension Stanwood {
         }
         
         /***/
-        public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return dataObject?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
         }
         
         /***/
-        public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             fatalError("Must overide DataSource cellForItemAtIndexPath")
         }
     }
