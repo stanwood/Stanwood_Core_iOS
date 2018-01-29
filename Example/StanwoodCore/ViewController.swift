@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button = UILabel()
-        button.localizedText = ""
-        
     }
 }
+
 

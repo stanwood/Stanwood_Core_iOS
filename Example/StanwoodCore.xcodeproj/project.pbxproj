@@ -25,6 +25,8 @@
 		6CA768BA1FF39C6500611DA8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CA768B91FF3995900611DA8 /* Localizable.strings */; };
 		6CA768BC1FF39FA700611DA8 /* UIColorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA768BB1FF39FA700611DA8 /* UIColorTest.swift */; };
 		6CA768BE1FF3A23F00611DA8 /* StorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA768BD1FF3A23F00611DA8 /* StorageTest.swift */; };
+		6CB66A39201F4AFB00C56C90 /* UISearchBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB66A38201F4AFB00C56C90 /* UISearchBarTest.swift */; };
+		6CB66A3B201F4B0700C56C90 /* UITextFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB66A3A201F4B0700C56C90 /* UITextFieldTest.swift */; };
 		CA69A2132ABC40B430BA68BF /* Pods_StanwoodCore_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1EC9F4749349F8BD1E643D /* Pods_StanwoodCore_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		6CA768B81FF3995900611DA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6CA768BB1FF39FA700611DA8 /* UIColorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTest.swift; sourceTree = "<group>"; };
 		6CA768BD1FF3A23F00611DA8 /* StorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTest.swift; sourceTree = "<group>"; };
+		6CB66A38201F4AFB00C56C90 /* UISearchBarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarTest.swift; sourceTree = "<group>"; };
+		6CB66A3A201F4B0700C56C90 /* UITextFieldTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldTest.swift; sourceTree = "<group>"; };
 		73F6820841AFE0ED170C6D0D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		83428A95911DFEE39512B36C /* Pods-StanwoodCore_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StanwoodCore_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-StanwoodCore_Example/Pods-StanwoodCore_Example.release.xcconfig"; sourceTree = "<group>"; };
 		95C07CB04ED957B6024E6B8D /* Pods_StanwoodCore_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodCore_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +149,8 @@
 				6CA768BB1FF39FA700611DA8 /* UIColorTest.swift */,
 				6C64BB781FFCC8DF008BEE98 /* LodableTest.swift */,
 				6C64BB801FFCD04F008BEE98 /* DataTypeTest.swift */,
+				6CB66A38201F4AFB00C56C90 /* UISearchBarTest.swift */,
+				6CB66A3A201F4B0700C56C90 /* UITextFieldTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -424,12 +430,14 @@
 				6CA768B61FF3989200611DA8 /* UIButtonTest.swift in Sources */,
 				6C64BB791FFCC8DF008BEE98 /* LodableTest.swift in Sources */,
 				6CA768BC1FF39FA700611DA8 /* UIColorTest.swift in Sources */,
+				6CB66A3B201F4B0700C56C90 /* UITextFieldTest.swift in Sources */,
 				6C64BB811FFCD04F008BEE98 /* DataTypeTest.swift in Sources */,
 				6C64BB851FFCD3A1008BEE98 /* Object.swift in Sources */,
 				6C64BB7D1FFCC925008BEE98 /* LodableNib.swift in Sources */,
 				6CA768B41FF3985B00611DA8 /* UILabelTest.swift in Sources */,
 				6CA768B01FF3949D00611DA8 /* StringTests.swift in Sources */,
 				6CA768BE1FF3A23F00611DA8 /* StorageTest.swift in Sources */,
+				6CB66A39201F4AFB00C56C90 /* UISearchBarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

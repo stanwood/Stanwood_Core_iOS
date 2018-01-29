@@ -11,7 +11,7 @@ import Foundation
 extension UILabel {
     
     /// Localizing label and sets the accessibilityIdentifier
-    open var localizedText: String? {
+    @objc open var localizedText: String? {
         get {
             return text
         }
@@ -36,7 +36,7 @@ extension UILabel {
      - Returns: the localized title `String?`
      */
     @discardableResult
-    open func localizeText(_ text: String, fromTableName tableName: String?) -> String? {
+    @objc open func localizeText(_ text: String, fromTableName tableName: String?) -> String? {
         self.text = text.localize(fromTableName: tableName)
         return self.text
     }
