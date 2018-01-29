@@ -117,7 +117,7 @@ extension Stanwood {
         // MARK: UITableViewDataSource functions
         
         /***/
-        public func numberOfSections(in tableView: UITableView) -> Int {
+        open func numberOfSections(in tableView: UITableView) -> Int {
             switch (dataObject, dataType) {
             case (.some, .none):
                 return dataObject?.numberOfSections ?? 0
@@ -131,7 +131,7 @@ extension Stanwood {
         }
         
         /***/
-        public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             switch (dataObject, dataType) {
             case (.some, .none):
                 return dataObject?.numberOfSections ?? 0
@@ -145,7 +145,7 @@ extension Stanwood {
         }
         
         /***/
-        public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             fatalError("Must override DataSource cellForItemAtIndexPath")
         }
     }
