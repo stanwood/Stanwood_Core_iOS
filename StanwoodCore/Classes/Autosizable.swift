@@ -76,24 +76,6 @@ extension Stanwood {
             super.awakeFromNib()
             
             widthConstraint = autoSize()
-            prepare()
-        }
-        
-        override open func prepareForReuse() {
-            super.prepareForReuse()
-            prepare()
-        }
-        
-        // MARK: Public functions
-        /**
-         Override prepare to reuse the cell.
-         Called in `awakeFromNib()` and `prepareForReuse()`
-        
-         >Note: Override is not required
-         */
-        open func prepare() {
-            // Override to prepare cell for reuse
         }
     }
-    
 }

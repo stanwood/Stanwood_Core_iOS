@@ -1,5 +1,5 @@
 //
-//  NotofocationCenter+Observer.swift
+//  NotificationCenter+Observer.swift
 //  StanwoodCore
 //
 //  Created by Tal Zion on 27/12/2017.

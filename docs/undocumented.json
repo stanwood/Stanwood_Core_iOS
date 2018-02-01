@@ -22,13 +22,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Autosizable.swift",
-      "line": 82,
-      "symbol": "Stanwood.AutoSizeableCell.prepareForReuse()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Lodable.swift",
       "line": 32,
       "symbol": "Loadable.identifier",
@@ -39,6 +32,20 @@
       "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UIButton+Extension.swift",
       "line": 25,
       "symbol": "UIButton.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UICollectionViewCell+Extension.swift",
+      "line": 12,
+      "symbol": "UICollectionViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UICollectionViewCell+Extension.swift",
+      "line": 17,
+      "symbol": "UICollectionViewCell.prepareForReuse()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
