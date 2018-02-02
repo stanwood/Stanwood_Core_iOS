@@ -9,6 +9,20 @@
 import UIKit
 import StanwoodCore
 
+class FillCell: UICollectionViewCell, Fillable {
+    
+    func fill(with type: Type?) {
+        
+    }
+}
+
+class FillTableCell: UITableViewCell, Fillable {
+    
+    func fill(with type: Type?) {
+        
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
