@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol ShouldFillable {}
-extension UICollectionViewCell: ShouldFillable {}
-extension UITableViewCell: ShouldFillable {}
+protocol ForceFillabel {}
+extension UICollectionViewCell: ForceFillabel {}
+extension UITableViewCell: ForceFillabel {}
 
 /**
  Fillable protocol of type `UICollectionViewCell` used to fill cells with type object
@@ -25,7 +25,7 @@ extension UITableViewCell: ShouldFillable {}
  `Type`
  `DataType`
  */
-public protocol Fillable where Self: ShouldFillable {
+public protocol Fillable where Self: ForceFillabel {
     
     /**
      Fill current cell with element
