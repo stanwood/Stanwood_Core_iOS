@@ -38,10 +38,10 @@ extension UIView {
     public func addConstraints(from view: UIView, top: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-                view.topAnchor.constraint(equalTo: topAnchor, constant: top),
-                view.bottomAnchor.constraint(equalTo: bottomAnchor),
-                view.leadingAnchor.constraint(equalTo: trailingAnchor),
-                view.trailingAnchor.constraint(equalTo: trailingAnchor)
+                topAnchor.constraint(equalTo: view.topAnchor, constant: top),
+                bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
     }
     

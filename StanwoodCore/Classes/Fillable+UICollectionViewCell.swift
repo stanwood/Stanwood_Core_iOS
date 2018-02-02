@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol ForceFillabel {}
+extension UICollectionViewCell: ForceFillabel {}
+extension UITableViewCell: ForceFillabel {}
+
 /**
  Fillable protocol of type `UICollectionViewCell` used to fill cells with type object
  
@@ -21,7 +25,7 @@ import Foundation
  `Type`
  `DataType`
  */
-public protocol Fillable where Self: UICollectionViewCell {
+public protocol Fillable where Self: ForceFillabel {
     
     /**
      Fill current cell with element
