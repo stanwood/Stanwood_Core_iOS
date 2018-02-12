@@ -31,17 +31,11 @@ extension Stanwood {
      
      - SeeAlso:
      
-     `AbstractCollectionDataSource`
-     
-     `AbstractCollectionDelegate`
-     
-     `AbstractTableDataSource`
-     
-     `AbstractTableDelegate`
-     
      `DataType`
      
      `Type`
+     
+     `Typeable`
      */
     open class Objects<T: Typeable>: DataType, Codable {
         

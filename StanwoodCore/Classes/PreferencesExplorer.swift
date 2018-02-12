@@ -56,6 +56,9 @@ open class PreferencesExplorer {
     }
 }
 
+/**
+ Preference settings types
+ */
 public enum PreferenceType: String {
     
     /// Opens settings About view

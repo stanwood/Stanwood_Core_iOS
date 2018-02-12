@@ -30,16 +30,9 @@
     },
     {
       "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Objects.swift",
-      "line": 53,
+      "line": 47,
       "symbol": "Stanwood.Objects.identifier",
       "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/PreferencesExplorer.swift",
-      "line": 59,
-      "symbol": "PreferenceType",
-      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
