@@ -42,4 +42,18 @@ extension UIBarButtonItem {
         self.init(title: localizedTitle.localized, style: style, target: target, action: action)
         accessibilityIdentifier = localizedTitle
     }
+    
+    /**
+     Sets the localized bar button item title with format.
+     
+     - Parameters:
+        - text: The text to localize
+        - arguments: The arguments to replace
+     */
+    @discardableResult
+    convenience public init(formatKey: String, style: UIBarButtonItemStyle, target: Any?, action: Selector?, _ arguments: CVarArg...) {
+        let title = String(format: formatKey.localized, arguments: arguments)
+        self.init(title: title, style: style, target: target, action: action)
+        accessibilityIdentifier = formatKey
+    }
 }

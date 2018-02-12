@@ -81,7 +81,7 @@
 		83428A95911DFEE39512B36C /* Pods-StanwoodCore_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StanwoodCore_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-StanwoodCore_Example/Pods-StanwoodCore_Example.release.xcconfig"; sourceTree = "<group>"; };
 		95C07CB04ED957B6024E6B8D /* Pods_StanwoodCore_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodCore_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CCA3216D91EC9C07D5C8CC /* Pods-StanwoodCore_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StanwoodCore_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StanwoodCore_Tests/Pods-StanwoodCore_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E215B4393DCD0F19816CA3D7 /* StanwoodCore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = StanwoodCore.podspec; path = ../StanwoodCore.podspec; sourceTree = "<group>"; };
+		E215B4393DCD0F19816CA3D7 /* StanwoodCore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = StanwoodCore.podspec; path = ../StanwoodCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

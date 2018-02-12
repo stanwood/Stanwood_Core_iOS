@@ -29,6 +29,27 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Objects.swift",
+      "line": 53,
+      "symbol": "Stanwood.Objects.identifier",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/PreferencesExplorer.swift",
+      "line": 59,
+      "symbol": "PreferenceType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UIBarButtonItem+Extension.swift",
+      "line": 24,
+      "symbol": "UIBarButtonItem.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/UIButton+Extension.swift",
       "line": 25,
       "symbol": "UIButton.awakeFromNib()",

@@ -58,4 +58,20 @@ extension UIButton {
         accessibilityIdentifier = identifier
         setImage(image, for: state)
     }
+    
+    /**
+     Sets the localized button title with format.
+     
+     - Parameters:
+        - text: The text to localize
+        - arguments: The arguments to replace
+     - Returns: the localized placeholder `String?` with format
+     */
+    @discardableResult
+    open func localizeTitle(formatKey: String, for state: UIControlState = .normal, _ arguments: CVarArg...) -> String? {
+        accessibilityIdentifier = formatKey
+        let title = String(format: formatKey.localized, arguments: arguments)
+        setTitle(title, for: state)
+        return self.titleLabel?.text
+    }
 }
