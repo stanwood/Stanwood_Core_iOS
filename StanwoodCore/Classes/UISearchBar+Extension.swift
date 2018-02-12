@@ -26,5 +26,20 @@ extension UISearchBar {
         
         localizedPlaceholder = placeholder
     }
+    
+    /**
+     Sets the localized placeholder with format.
+     
+     - Parameters:
+        - text: The text to localize
+        - arguments: The arguments to replace
+     - Returns: the localized placeholder `String?` with format
+     */
+    @discardableResult
+    open func localizePlaceholder(formatKey: String, _ arguments: CVarArg...) -> String? {
+        accessibilityIdentifier = formatKey
+        self.placeholder = String(format: formatKey.localized, arguments: arguments)
+        return self.placeholder
+    }
 }
 

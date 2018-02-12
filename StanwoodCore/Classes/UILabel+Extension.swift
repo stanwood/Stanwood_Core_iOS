@@ -28,7 +28,7 @@ extension UILabel {
     }
     
     /**
-     Sets the localized title from a table.string file
+     Sets the localized title from a table.string file.
      
      - Parameters:
         - text: The text to localize
@@ -38,6 +38,21 @@ extension UILabel {
     @discardableResult
     @objc open func localizeText(_ text: String, fromTableName tableName: String?) -> String? {
         self.text = text.localize(fromTableName: tableName)
+        return self.text
+    }
+    
+    /**
+     Sets the localized text with format.
+     
+     - Parameters:
+        - text: The text to localize
+        - arguments: The arguments to replace
+     - Returns: the localized text `String?` with format
+     */
+    @discardableResult
+    open func localizeText(formatKey: String, _ arguments: CVarArg...) -> String? {
+        accessibilityIdentifier = formatKey
+        self.text = String(format: formatKey.localized, arguments: arguments)
         return self.text
     }
 }

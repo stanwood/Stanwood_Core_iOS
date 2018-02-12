@@ -50,10 +50,24 @@
       <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/PreferencesExplorer.html">PreferencesExplorer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/Model.html">Model</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/PreferenceExplorerError.html">PreferenceExplorerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/PreferenceType.html">PreferenceType</a>
               </li>
             </ul>
           </li>
@@ -74,6 +88,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/TimeInterval.html">TimeInterval</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/UIButton.html">UIButton</a>
@@ -191,6 +208,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:12StanwoodCore8Typeablea">Typeable</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -214,12 +239,16 @@
 
 <p>Tal Zion <a href="mailto:tal.zion@stanwood.io">tal.zion@stanwood.io</a></p>
 <h2 id='installation' class='heading'>Installation</h2>
-<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
-<span class="n">source</span> <span class="s1">'https://github.com/stanwood/Cocoa_Pods_Specs.git'</span>
+<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'git@github.com:CocoaPods/Specs.git'</span>
+<span class="n">source</span> <span class="s1">'git@github.com:stanwood/Cocoa_Pods_Specs.git'</span>
 
 <span class="n">pod</span> <span class="s1">'StanwoodCore'</span>
 </code></pre>
+<pre class="highlight plaintext"><code>$ pod update StanwoodCore
+</code></pre>
 <h2 id='usage' class='heading'>Usage</h2>
+
+<p>Check out the full documentations.</p>
 <h2 id='licence' class='heading'>Licence</h2>
 
 <p>StanwoodCore is a private library. See the <a href="https://github.com/stanwood/Stanwood_Core/blob/master/LICENSE">LICENSE</a> file for more info.</p>

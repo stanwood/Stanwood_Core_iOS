@@ -51,10 +51,24 @@
       <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/PreferencesExplorer.html">PreferencesExplorer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/Model.html">Model</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/PreferenceExplorerError.html">PreferenceExplorerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/PreferenceType.html">PreferenceType</a>
               </li>
             </ul>
           </li>
@@ -75,6 +89,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/TimeInterval.html">TimeInterval</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UIButton.html">UIButton</a>
@@ -192,6 +209,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:12StanwoodCore8Typeablea">Typeable</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -247,7 +272,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the localized title from a table.string file</p>
+                        <p>Sets the localized title from a table.string file.</p>
 
                       </div>
                       <div class="declaration">
@@ -292,6 +317,68 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>the localized title <code>String?</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So7UILabelC12StanwoodCoreE12localizeTextSSSgSS9formatKey_Says7CVarArg_pGdtF"></a>
+                    <a name="//apple_ref/swift/Method/localizeText(formatKey:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So7UILabelC12StanwoodCoreE12localizeTextSSSgSS9formatKey_Says7CVarArg_pGdtF">localizeText(formatKey:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the localized text with format.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">localizeText</span><span class="p">(</span><span class="nv">formatKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">arguments</span><span class="p">:</span> <span class="kt">CVarArg</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>text</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The text to localize</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>arguments</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The arguments to replace</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the localized text <code>String?</code> with format</p>
                       </div>
                     </section>
                   </div>

@@ -25,7 +25,7 @@ extension UICollectionViewCell {
      
         >Note: Override is required
      */
-    open func prepare() {
+    @objc open func prepare() {
         // Override to prepare cell for reuse
     }
 }
