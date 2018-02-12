@@ -19,13 +19,19 @@ Tal Zion tal.zion@stanwood.io
 ## Installation
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/stanwood/Cocoa_Pods_Specs.git'
+source 'git@github.com:CocoaPods/Specs.git'
+source 'git@github.com:stanwood/Cocoa_Pods_Specs.git'
 
 pod 'StanwoodCore'
 ```
 
+```
+$ pod update StanwoodCore
+```
+
 ## Usage
+
+Check out the full documentations.
 
 ## Licence
 
