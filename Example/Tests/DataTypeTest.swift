@@ -119,6 +119,24 @@ class DataTypeTest: XCTestCase {
             
             let loadedObjects = Stanwood.Objects<Object>.loadFromFile()
             XCTAssertNotNil(loadedObjects)
+            
+            if let loadedObjects = loadedObjects {
+                XCTAssertEqual(objects.numberOfItems, loadedObjects.numberOfItems)
+                
+                let object = Object(id: "55")
+                loadedObjects.insert(item: object)
+                
+                XCTAssertNotEqual(objects.numberOfItems, loadedObjects.numberOfItems)
+                
+                try loadedObjects.save(withFileName: "objects_file")
+                
+                let objectsFile = Stanwood.Objects<Object>.loadFromFile(withFileName: "objects_file")
+                XCTAssertNotNil(objectsFile)
+                
+                if let objectsFile = objectsFile {
+                    XCTAssertEqual(objectsFile.numberOfItems, loadedObjects.numberOfItems)
+                }
+            }
         } catch {
             XCTFail(error.localizedDescription)
         }
