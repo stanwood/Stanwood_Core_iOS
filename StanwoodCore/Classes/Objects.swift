@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Type & Equatable
+/// Type, Equatable & Codeable
 public typealias Typeable = Type & Equatable & Codable
 
 extension Stanwood {

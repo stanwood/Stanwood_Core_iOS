@@ -49,19 +49,12 @@ extension UILabel {
      - Parameters:
         - text: The text to localize
         - tableName: the .string table name if any
-     - Returns: the localized title `String?`
+     - Returns: the localized title `String?` with format
      */
     @discardableResult
     open func localizeText(formatKey: String, _ arguments: CVarArg...) -> String? {
-        return nil // WIP
-       accessibilityIdentifier = formatKey
-        let format = String(format: formatKey.localized, arguments)
-        
-        let g = String(localisedFormat: formatKey.localized, "Hi", "Hi again").replacingOccurrences(of: "(null)", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: "\n", with: "")
-        
-        print(format)
-        print(g.trimmingCharacters(in: .whitespacesAndNewlines))
-        
+        accessibilityIdentifier = formatKey
+        self.text = String(format: formatKey.localized, arguments: arguments)
         return self.text
     }
 }

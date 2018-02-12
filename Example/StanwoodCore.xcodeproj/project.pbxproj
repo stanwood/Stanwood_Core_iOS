@@ -13,6 +13,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		6C54B7A72031B8E800D2CFBD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C54B7A52031B8E800D2CFBD /* CollectionViewCell.swift */; };
+		6C54B7A82031B8E800D2CFBD /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C54B7A62031B8E800D2CFBD /* CollectionViewCell.xib */; };
 		6C64BB791FFCC8DF008BEE98 /* LodableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB781FFCC8DF008BEE98 /* LodableTest.swift */; };
 		6C64BB7B1FFCC912008BEE98 /* LodableNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C64BB7A1FFCC912008BEE98 /* LodableNib.xib */; };
 		6C64BB7D1FFCC925008BEE98 /* LodableNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB7C1FFCC925008BEE98 /* LodableNib.swift */; };
@@ -56,6 +58,8 @@
 		607FACE51AFB9204008FA782 /* StanwoodCore_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StanwoodCore_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B1EC9F4749349F8BD1E643D /* Pods_StanwoodCore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodCore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C54B7A52031B8E800D2CFBD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		6C54B7A62031B8E800D2CFBD /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		6C64BB371FFB89A8008BEE98 /* .jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .jazzy.yaml; path = ../.jazzy.yaml; sourceTree = "<group>"; };
 		6C64BB781FFCC8DF008BEE98 /* LodableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodableTest.swift; sourceTree = "<group>"; };
 		6C64BB7A1FFCC912008BEE98 /* LodableNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LodableNib.xib; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				6C54B7A52031B8E800D2CFBD /* CollectionViewCell.swift */,
+				6C54B7A62031B8E800D2CFBD /* CollectionViewCell.xib */,
 			);
 			name = "Example for StanwoodCore";
 			path = StanwoodCore;
@@ -300,6 +306,7 @@
 				6CA768BA1FF39C6500611DA8 /* Localizable.strings in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				6C54B7A82031B8E800D2CFBD /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +433,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				6C54B7A72031B8E800D2CFBD /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
