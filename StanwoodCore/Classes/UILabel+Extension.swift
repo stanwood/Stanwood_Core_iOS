@@ -39,8 +39,6 @@ extension UILabel {
     @objc open func localizeText(_ text: String, fromTableName tableName: String?) -> String? {
         self.text = text.localize(fromTableName: tableName)
         return self.text
-        
-        //(format: String, _ arguments: CVarArg...)
     }
     
     /**
