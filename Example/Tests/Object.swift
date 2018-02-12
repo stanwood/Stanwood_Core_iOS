@@ -9,7 +9,7 @@
 import Foundation
 import StanwoodCore
 
-struct Object: Type, Equatable {
+struct Object: Typeable {
     
     var id: String?
     

@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// Type & Equatable
+public typealias Typeable = Type & Equatable & Codable
+
 extension Stanwood {
     
     /**
@@ -40,12 +43,16 @@ extension Stanwood {
      
      `Type`
      */
-    public struct Objects<T: Type>: DataType where T: Equatable {
+    open class Objects<T: Typeable>: DataType, Codable {
         
         // MARK: Properties
         
         /// Items of elements<Type & Equatable>
         public var items: [T]
+        
+        public static var identifier: String {
+            return String(describing: Objects<T>.self)
+        }
         
         // MARK Computet Properties
         
@@ -115,14 +122,12 @@ extension Stanwood {
          
          - Returns: `Objects`
          */
-        public func insert(item: T, at index: Int? = nil) -> Objects {
-            var items = self.items
+        public func insert(item: T, at index: Int? = nil) {
             if let index = index {
                 items.insert(item, at: index)
             } else {
                 items.append(item)
             }
-            return Objects(items: items)
         }
         
         /**
@@ -134,8 +139,7 @@ extension Stanwood {
          
          - Returns: `Objects`
          */
-        public func move(_ item: T, to index: Int) -> Objects {
-            var items = self.items
+        public func move(_ item: T, to index: Int) {
             items.forEach({ print($0.id!) })
             if let indexToRemove = self.index(of: item) {
                 items.remove(at: indexToRemove)
@@ -143,7 +147,6 @@ extension Stanwood {
                 items.insert(item, at: index)
             }
             items.forEach({ print($0.id!) })
-            return Objects(items: items)
         }
         
         /**
@@ -154,12 +157,10 @@ extension Stanwood {
          
          - Returns: `Objects`
          */
-        public func delete(_ item: T) -> Objects {
-            var items = self.items
+        public func delete(_ item: T) {
             if let index = index(of: item) {
                 items.remove(at: index)
             }
-            return Objects(items: items)
         }
         
         /**
@@ -184,6 +185,28 @@ extension Stanwood {
          */
         public func contains(_ item: T) -> Bool {
             return items.contains(item)
+        }
+        
+        // MARK: Persist Data
+        
+        /**
+         Save objects to file
+         
+         - Parameters:
+            - fileName: The file name. If nil, default value String(describing: Objects<T>.self)`
+         */
+        public func save(withFileName fileName: String? = nil) throws {
+            try Storage.store(self, to: .documents, as: .json, withName: fileName ?? Objects<T>.identifier)
+        }
+        
+        /**
+         Returns objects from file if exists
+         
+         - Parameters:
+            - fileName: The file name. If nil, default value String(describing: Objects<T>.self)`
+         */
+        public static func loadFromFile(withFileName fileName: String? = nil) -> Objects? {
+            return Stanwood.Storage.retrieve(fileName ?? Objects<T>.identifier, of: .json, from: .documents, as: Objects<T>.self)
         }
     }
 }

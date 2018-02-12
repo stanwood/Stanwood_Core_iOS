@@ -8,3 +8,5 @@
 
 "TEST_TITLE" = "My test title";
 "TEST_TITLE_NOT" = "My test titlee";
+
+"TEST_FORMAT_TITLE" = "Test format title %@ %@";

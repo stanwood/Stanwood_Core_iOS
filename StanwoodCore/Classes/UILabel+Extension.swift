@@ -39,5 +39,36 @@ extension UILabel {
     @objc open func localizeText(_ text: String, fromTableName tableName: String?) -> String? {
         self.text = text.localize(fromTableName: tableName)
         return self.text
+        
+        //(format: String, _ arguments: CVarArg...)
+    }
+    
+    /**
+     Sets the localized title from a table.string file
+     
+     - Parameters:
+        - text: The text to localize
+        - tableName: the .string table name if any
+     - Returns: the localized title `String?`
+     */
+    @discardableResult
+    open func localizeText(formatKey: String, _ arguments: CVarArg...) -> String? {
+        return nil // WIP
+       accessibilityIdentifier = formatKey
+        let format = String(format: formatKey.localized, arguments)
+        
+        let g = String(localisedFormat: formatKey.localized, "Hi", "Hi again").replacingOccurrences(of: "(null)", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: "\n", with: "")
+        
+        print(format)
+        print(g.trimmingCharacters(in: .whitespacesAndNewlines))
+        
+        return self.text
+    }
+}
+
+extension String {
+    
+    init(localisedFormat: String, _ arguments: CVarArg...) {
+        self.init(format: localisedFormat, arguments)
     }
 }
