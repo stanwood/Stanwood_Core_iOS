@@ -58,10 +58,3 @@ extension UILabel {
         return self.text
     }
 }
-
-extension String {
-    
-    init(localisedFormat: String, _ arguments: CVarArg...) {
-        self.init(format: localisedFormat, arguments)
-    }
-}
