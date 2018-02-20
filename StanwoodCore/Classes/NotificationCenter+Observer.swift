@@ -8,34 +8,36 @@
 
 import Foundation
 
-/// A convinient observer class to add observers to `NotificationCenter`
-public struct Observer {
-    
-    /// The observer selector
-    public let selector: Selector
-    
-    /// The notification name
-    public let name: Notification.Name
-    
-    /// The optional object to pass
-    public let object: Any?
-    
-    /**
-     A convinient observer class to add observers to `NotificationCenter`
-     
-     - Parameters:
-        - selector: the selector to pass to the notification
-        - name: the notification name
-        - object: object of type `Any`, default = nil
-     
-     - SeeAlso:
-     `NotificationCenter.addObserver(_:observer:)`
-     `NotificationCenter.addObservers(_:observers:)`
-     */
-    public init(selector: Selector, name: Notification.Name, object: Any? = nil) {
-        self.selector = selector
-        self.name = name
-        self.object = object
+extension Stanwood {
+    /// A convinient observer class to add observers to `NotificationCenter`
+    public struct Observer {
+        
+        /// The observer selector
+        public let selector: Selector
+        
+        /// The notification name
+        public let name: Notification.Name
+        
+        /// The optional object to pass
+        public let object: Any?
+        
+        /**
+         A convinient observer class to add observers to `NotificationCenter`
+         
+         - Parameters:
+            - selector: the selector to pass to the notification
+            - name: the notification name
+            - object: object of type `Any`, default = nil
+         
+         - SeeAlso:
+         `NotificationCenter.addObserver(_:observer:)`
+         `NotificationCenter.addObservers(_:observers:)`
+         */
+        public init(selector: Selector, name: Notification.Name, object: Any? = nil) {
+            self.selector = selector
+            self.name = name
+            self.object = object
+        }
     }
 }
 
@@ -50,7 +52,7 @@ extension NotificationCenter {
      
      - SeeAlso: `Observer`
      */
-    public func addObserver(_ target: Any, observer: Observer) {
+    public func addObserver(_ target: Any, observer: Stanwood.Observer) {
         addObserver(target, selector: observer.selector, name: observer.name, object: observer.object)
     }
     
@@ -63,7 +65,7 @@ extension NotificationCenter {
      
      - SeeAlso: `Observer`
      */
-    public func addObservers(_ target: Any, observers: Observer...) {
+    public func addObservers(_ target: Any, observers: Stanwood.Observer...) {
         observers.forEach() {
             addObserver(target, selector: $0.selector, name: $0.name, object: $0.object)
         }
