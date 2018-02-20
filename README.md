@@ -29,9 +29,20 @@ pod 'StanwoodCore'
 $ pod update StanwoodCore
 ```
 
+## Release Notes
+
+### 1.7
+
+- Fixindg `Lodable`
+- Fixing UIView extention `addShadow` default values
+- Removed duplciate extensions
+- Adding `SourceType` protocol
+- Adding `Presentable` protocol
+- Chaning naming in `Stanwood.Objects`
+
 ## Usage
 
-Check out the full documentations.
+Check out the [full documentations](https://stanwood.github.io/Stanwood_Core).
 
 ## Licence
 

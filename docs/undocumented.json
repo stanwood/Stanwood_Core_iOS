@@ -22,8 +22,22 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/DataSourceType.swift",
+      "line": 10,
+      "symbol": "DataSourceType",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/DelegateSourceType.swift",
+      "line": 10,
+      "symbol": "DelegateSourceType",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Lodable.swift",
-      "line": 32,
+      "line": 33,
       "symbol": "Loadable.identifier",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"

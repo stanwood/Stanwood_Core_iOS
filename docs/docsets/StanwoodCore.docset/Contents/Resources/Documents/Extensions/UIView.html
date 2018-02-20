@@ -170,6 +170,9 @@
                 <a class="nav-group-task-link" href="../Protocols/Nameable.html">Nameable</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Presentable.html">Presentable</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/Type.html">Type</a>
               </li>
             </ul>
@@ -232,37 +235,6 @@
           <div class="section-content">
             <div class="task-group">
               <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So6UIViewC12StanwoodCoreE17loadNibFromOutletxSgyABRbzlF"></a>
-                    <a name="//apple_ref/swift/Method/loadNibFromOutlet()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6UIViewC12StanwoodCoreE17loadNibFromOutletxSgyABRbzlF">loadNibFromOutlet()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Load nib from bundle.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">loadNibFromOutlet</span><span class="o">&lt;</span><span class="kt">T</span> <span class="p">:</span> <span class="kt">UIView</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>UIView nib</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -355,9 +327,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So6UIViewC12StanwoodCoreE9addShadowy0C8Graphics7CGFloatV11withOpacity_So7UIColorC0H6ColourAG0H6RadiusSC6CGSizeV0H6OffsettF"></a>
+                    <a name="/s:So6UIViewC12StanwoodCoreE9addShadowySf11withOpacity_So7UIColorC0F6Colour0C8Graphics7CGFloatV0F6RadiusSC6CGSizeV0F6OffsettF"></a>
                     <a name="//apple_ref/swift/Method/addShadow(withOpacity:withColour:withRadius:withOffset:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6UIViewC12StanwoodCoreE9addShadowy0C8Graphics7CGFloatV11withOpacity_So7UIColorC0H6ColourAG0H6RadiusSC6CGSizeV0H6OffsettF">addShadow(withOpacity:withColour:withRadius:withOffset:)</a>
+                    <a class="token" href="#/s:So6UIViewC12StanwoodCoreE9addShadowySf11withOpacity_So7UIColorC0F6Colour0C8Graphics7CGFloatV0F6RadiusSC6CGSizeV0F6OffsettF">addShadow(withOpacity:withColour:withRadius:withOffset:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -372,7 +344,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addShadow</span><span class="p">(</span><span class="n">withOpacity</span> <span class="nv">opacity</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">withColour</span> <span class="nv">colour</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">darkGray</span><span class="p">,</span> <span class="n">withRadius</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">withOffset</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="o">=</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">))</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addShadow</span><span class="p">(</span><span class="n">withOpacity</span> <span class="nv">opacity</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">0.35</span><span class="p">,</span> <span class="n">withColour</span> <span class="nv">colour</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">black</span><span class="p">,</span> <span class="n">withRadius</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">withOffset</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="o">=</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">))</span></code></pre>
 
                         </div>
                       </div>
@@ -388,7 +360,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>The opacity. default value <code>0.1</code></p>
+                                  <p>The opacity. default value <code>0.35</code></p>
                                 </div>
                               </td>
                             </tr>
@@ -400,7 +372,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>The color. default value <code>.darkGray</code></p>
+                                  <p>The color. default value <code>.black</code></p>
                                 </div>
                               </td>
                             </tr>
@@ -412,7 +384,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>The radius. default value <code>8</code></p>
+                                  <p>The radius. default value <code>5</code></p>
                                 </div>
                               </td>
                             </tr>
@@ -424,7 +396,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>The offset: default value CGSize(width: 0.0, height: 6.0)</p>
+                                  <p>The offset: default value CGSize(width: 0.0, height: 2.0)</p>
                                 </div>
                               </td>
                             </tr>
