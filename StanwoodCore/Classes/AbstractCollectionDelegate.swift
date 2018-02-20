@@ -45,7 +45,7 @@ extension Stanwood {
      
      `Type`
      */
-    open class AbstractCollectionDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, CollectionDelegate {
+    open class AbstractCollectionDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, CollectionDelegate, DelegateSourceType {
         
         // MARK: Properties
         

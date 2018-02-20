@@ -15,20 +15,6 @@ extension UIView {
     }
     
     /**
-     Load nib from bundle.
-     
-     - Returns: UIView nib
-     */
-    @discardableResult
-    public func loadNibFromOutlet<T : UIView>() -> T? {
-        guard let view = Bundle.main.loadNibNamed(identifier, owner: self, options: nil)?[0] as? T else { return nil }
-        self.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.addConstraints(from: self)
-        return view
-    }
-    
-    /**
      Adding constraints to view
      
      - Parameters:
@@ -65,15 +51,15 @@ extension UIView {
      Adding a shadow effect. 
      
      - Parameters:
-        - opacity: The opacity. default value `0.1`
-        - colour: The color. default value `.darkGray`
-        - radius: The radius. default value `8`
-        - offset: The offset: default value CGSize(width: 0.0, height: 6.0)
+        - opacity: The opacity. default value `0.35`
+        - colour: The color. default value `.black`
+        - radius: The radius. default value `5`
+        - offset: The offset: default value CGSize(width: 0.0, height: 2.0)
      */
-    public func addShadow(withOpacity opacity: CGFloat = 0.1, withColour colour: UIColor = .darkGray, withRadius radius: CGFloat = 8, withOffset offset: CGSize = CGSize(width: 0.0, height: 6.0)) {
-        layer.masksToBounds = true
+    public func addShadow(withOpacity opacity: Float = 0.35, withColour colour: UIColor = .black, withRadius radius: CGFloat = 5, withOffset offset: CGSize = CGSize(width: 0.0, height: 2.0)) {
+        layer.masksToBounds = false
         layer.shadowColor = colour.cgColor
-        layer.shadowOpacity = Float(opacity)
+        layer.shadowOpacity = opacity
         layer.shadowRadius = radius
         layer.shadowOffset = offset
         layer.shouldRasterize = false

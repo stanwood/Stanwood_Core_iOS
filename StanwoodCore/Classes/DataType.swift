@@ -41,3 +41,20 @@ public protocol DataType {
     subscript(section: Int) -> DataType { get }
 }
 
+//WIP
+/*
+/**
+ Append an item or insert at index
+ 
+ - Parameters:
+ - indexPath: IndexPath
+ 
+ - Returns: Fillable.Type
+ 
+ - SeeAlso: `Fillable`
+ */
+public func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
+    return UICollectionViewCell.self as? Fillable.Type
+}
+ */
+

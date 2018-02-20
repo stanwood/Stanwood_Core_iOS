@@ -12,6 +12,7 @@ public protocol Loadable { }
 
 extension UIView: Loadable { }
 
+/// Loadbale to laod nib from file
 public extension Loadable where Self: UIView {
     
     /**
@@ -21,14 +22,14 @@ public extension Loadable where Self: UIView {
         - frame: CGRect default = nil
         - bundle: default = Bundle.main
      */
-    public static func loadFromNib<T: UIView>(withFrame frame: CGRect? = nil, bundle: Bundle = Bundle.main) -> T? {
-        guard let view = bundle.loadNibNamed(identifier, owner: nil, options: nil)!.last as? T else {
+    public static func loadFromNib(withFrame frame: CGRect? = nil, bundle: Bundle = Bundle.main) -> Self? {
+        guard let view = bundle.loadNibNamed(identifier, owner: nil, options: nil)?.last as? Self else {
             return nil
         }
         view.frame = frame ?? view.frame
         return view
     }
-    
+
     static var identifier: String {
         return String(describing: self)
     }
