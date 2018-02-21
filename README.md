@@ -33,10 +33,10 @@ $ pod update StanwoodCore
 
 ### 1.7
 
-- Fixindg `Lodable`
+- Fixing `Loadable`
 - Fixing UIView extention `addShadow` default values
 - Removed duplciate extensions
-- Adding `SourceType` protocol
+- Adding `DataSourceType` & `DelegateSourceType` protocol to support DataSource and Delegate
 - Adding `Presentable` protocol
 - Chaning naming in `Stanwood.Objects`
 
