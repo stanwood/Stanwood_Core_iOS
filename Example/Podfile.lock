@@ -1,5 +1,5 @@
 PODS:
-  - StanwoodCore (0.1.5)
+  - StanwoodCore (0.1.7)
 
 DEPENDENCIES:
   - StanwoodCore (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  StanwoodCore: fb3196c7104879becd7f337e689f952ab324b46d
+  StanwoodCore: c99c181507439b1b52e9da7c6f482de75e7d60fa
 
 PODFILE CHECKSUM: 3023ae71ddcaea4930ac0c603e913455c97d2a37
 
