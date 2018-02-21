@@ -44,7 +44,7 @@ extension Stanwood {
      
      `Type`
      */
-    open class AbstractTableDelegate: NSObject, UITableViewDelegate, TableDelegate {
+    open class AbstractTableDelegate: NSObject, UITableViewDelegate, TableDelegate, DelegateSourceType {
         
         // MARK: Properties
         

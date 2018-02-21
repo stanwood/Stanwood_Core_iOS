@@ -9,6 +9,13 @@
 import XCTest
 import StanwoodCore
 
+extension Stanwood.Objects {
+    
+    func cellType(forItemAt indexPath: IndexPath) -> UICollectionViewCell.Type {
+        return UICollectionViewCell.self
+    }
+}
+
 class DataTypeTest: XCTestCase {
     
     var objects: Stanwood.Objects<Object>!
@@ -60,7 +67,7 @@ class DataTypeTest: XCTestCase {
         
         XCTAssertFalse(objects.contains(object))
         
-        objects.insert(item: object)
+        objects.append(object)
         
         XCTAssert(objects.contains(object))
     }
@@ -124,7 +131,7 @@ class DataTypeTest: XCTestCase {
                 XCTAssertEqual(objects.numberOfItems, loadedObjects.numberOfItems)
                 
                 let object = Object(id: "55")
-                loadedObjects.insert(item: object)
+                loadedObjects.append(object)
                 
                 XCTAssertNotEqual(objects.numberOfItems, loadedObjects.numberOfItems)
                 

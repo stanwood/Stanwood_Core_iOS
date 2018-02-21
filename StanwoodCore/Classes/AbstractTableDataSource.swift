@@ -50,7 +50,7 @@ extension Stanwood {
      
      `Type`
      */
-    open class AbstractTableDataSource: NSObject, UITableViewDataSource, TableDataSource {
+    open class AbstractTableDataSource: NSObject, UITableViewDataSource, TableDataSource, DataSourceType {
         
         // MARK: Properties
         

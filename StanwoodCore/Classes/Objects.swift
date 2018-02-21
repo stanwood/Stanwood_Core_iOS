@@ -111,17 +111,21 @@ extension Stanwood {
          Append an item or insert at index
          
          - Parameters:
-            - item: <T>[Type & Equatable]
-            - index: Optional<Index>
-         
-         - Returns: `Objects`
+            - item: <T>[Typeable]
+            - index: Index
          */
-        public func insert(item: T, at index: Int? = nil) {
-            if let index = index {
-                items.insert(item, at: index)
-            } else {
-                items.append(item)
-            }
+        public func insert(item: T, at index: Int) {
+            items.insert(item, at: index)
+        }
+        
+        /**
+         Append an item or insert at index
+         
+         - Parameters:
+            - item: <T>[Typeable]
+         */
+        public func append(_ item: T) {
+            items.append(item)
         }
         
         /**

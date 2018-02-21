@@ -50,7 +50,7 @@ extension Stanwood {
      
      `Type`
      */
-    open class AbstractCollectionDataSource: NSObject, UICollectionViewDataSource, CollectionDataSource {
+    open class AbstractCollectionDataSource: NSObject, UICollectionViewDataSource, CollectionDataSource, DataSourceType {
 
         // MARK: Properties
         
