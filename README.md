@@ -31,9 +31,13 @@ $ pod update StanwoodCore
 
 ## Release Notes
 
+### 0.1.9
+
+- Fixing `Loadable` non-static function
+
 ### 0.1.8
 
-- Fixing number of rows in section in `AbstractTableDataSource`
+- Fixing number of rows in section in `Stanwood.AbstractTableDataSource`
 
 ### 0.1.7
 
