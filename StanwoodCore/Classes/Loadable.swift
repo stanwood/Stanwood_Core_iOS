@@ -22,7 +22,7 @@ public extension Loadable where Self: UIView {
         - frame: CGRect default = nil
         - bundle: default = Bundle.main
      */
-    public static func loadFromXib(withFrame frame: CGRect? = nil, bundle: Bundle = Bundle.main) -> Self? {
+    public static func loadFromNib(withFrame frame: CGRect? = nil, bundle: Bundle = Bundle.main) -> Self? {
         guard let view = bundle.loadNibNamed(staticIdentifier, owner: nil, options: nil)?.last as? Self else { return nil }
         view.frame = frame ?? view.frame
         return view
@@ -35,8 +35,8 @@ public extension Loadable where Self: UIView {
         - bundle: default = Bundle.main
      */
     @discardableResult
-    public func loadFromOutlet(bundle: Bundle = Bundle.main) -> Self? {
-        guard let view = bundle.loadNibNamed(identifier, owner: nil, options: nil)?.last as? Self else { return nil }
+    public func loadFromOutlet<T: UIView>(bundle: Bundle = Bundle.main) -> T? {
+        guard let view = bundle.loadNibNamed(identifier, owner: nil, options: nil)?.last as? T else { return nil }
         self.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraints(from: self)
