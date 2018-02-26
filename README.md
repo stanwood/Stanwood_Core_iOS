@@ -31,7 +31,11 @@ $ pod update StanwoodCore
 
 ## Release Notes
 
-### 1.7
+### 0.1.8
+
+- Fixing number of rows in section in `AbstractTableDataSource`
+
+### 0.1.7
 
 - Fixindg `Lodable`
 - Fixing UIView extention `addShadow` default values
