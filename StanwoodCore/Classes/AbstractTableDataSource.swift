@@ -132,16 +132,7 @@ extension Stanwood {
         
         /***/
         open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            switch (dataObject, dataType) {
-            case (.some, .none):
-                return dataObject?.numberOfSections ?? 0
-            case (.none, .some):
-                return 1
-            case (.some, .some):
-                fatalError("\(String(describing: type(of: self))) should not have dataType and dataObject at the same time.")
-            default:
-                return 0
-            }
+            return dataObject?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
         }
         
         /***/
