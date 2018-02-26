@@ -36,7 +36,7 @@ public extension Loadable where Self: UIView {
      */
     @discardableResult
     public func loadFromOutlet<T: UIView>(bundle: Bundle = Bundle.main) -> T? {
-        guard let view = bundle.loadNibNamed(identifier, owner: nil, options: nil)?.last as? T else { return nil }
+        guard let view = bundle.loadNibNamed(identifier, owner: self, options: nil)?.first as? T else { return nil }
         self.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addConstraints(from: self)
