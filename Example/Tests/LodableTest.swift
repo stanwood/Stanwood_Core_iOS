@@ -22,11 +22,11 @@ class LodableTest: XCTestCase {
     
     func testLoadFromNib() {
         let bundle = Bundle(for: type(of: self))
-        XCTAssertNotNil(LodableNib.loadFromXib(bundle: bundle), "nib should losd from bundle")
+        XCTAssertNotNil(LodableNib.loadFromNib(bundle: bundle), "nib should load from Xib")
     }
     
     func testLoadFromOutlet() {
         let bundle = Bundle(for: type(of: self))
-        XCTAssertNotNil(LodableNib().loadFromOutlet(bundle: bundle), "nib should losd from bundle")
+        XCTAssertNotNil(LoadableOutlet().loadFromOutlet(bundle: bundle), "nib should load from outlet")
     }
 }
