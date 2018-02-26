@@ -22,6 +22,6 @@ class LodableTest: XCTestCase {
     
     func testLoadFromNib() {
         let bundle = Bundle(for: type(of: self))
-        XCTAssertNotNil(LodableNib.loadFromNib(withFrame: nil, bundle: bundle), "nib should losd from bundle")
+        XCTAssertNotNil(LodableNib().loadFromNib(withFrame: nil, bundle: bundle), "nib should losd from bundle")
     }
 }
