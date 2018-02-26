@@ -31,7 +31,7 @@ $ pod update StanwoodCore
 
 ## Release Notes
 
-### 0.2
+### 0.2.1
 
 - Fixing `Loadable` non-static function
 
