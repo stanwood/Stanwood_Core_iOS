@@ -22,15 +22,15 @@ public extension Loadable where Self: UIView {
         - frame: CGRect default = nil
         - bundle: default = Bundle.main
      */
-    public static func loadFromNib(withFrame frame: CGRect? = nil, bundle: Bundle = Bundle.main) -> Self? {
-        guard let view = bundle.loadNibNamed(identifier, owner: nil, options: nil)?.last as? Self else {
-            return nil
-        }
-        view.frame = frame ?? view.frame
+    public func loadFromNib(withFrame frame: CGRect? = nil, bundle: Bundle = Bundle.main) -> Self? {
+        guard let view = bundle.loadNibNamed(identifier, owner: nil, options: nil)?.last as? Self else { return nil }
+        self.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraints(from: self)
         return view
     }
 
-    static var identifier: String {
+    var identifier: String {
         return String(describing: self)
     }
 }
