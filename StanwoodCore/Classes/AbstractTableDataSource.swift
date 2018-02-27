@@ -137,7 +137,10 @@ extension Stanwood {
         
         /***/
         open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            fatalError("Must override DataSource cellForItemAtIndexPath")
+            guard let cellType = dataObject?.cellType(forItemAt: indexPath) as? UITableViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
+            guard let cell = tableView.dequeue(cellType: cellType, for: indexPath) as? (UITableViewCell & Fillable) else { fatalError("UITableViewCell must conform to Fillable protocol") }
+            cell.fill(with: dataObject?[indexPath])
+            return cell
         }
     }
 }

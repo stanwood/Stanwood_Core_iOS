@@ -1,24 +1,21 @@
 //
-//  CollectionViewCell.swift
+//  TableViewCell.swift
 //  StanwoodCore_Example
 //
-//  Created by Tal Zion on 12/02/2018.
+//  Created by Tal Zion on 27/02/2018.
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
 import UIKit
 import StanwoodCore
 
-class CollectionViewCell: Stanwood.AutoSizeableCell, Fillable {
-
+class TableViewCell: UITableViewCell, Fillable {
+    
     @IBOutlet weak var label: UILabel!
-    
-    override func prepare() {
-        label.text = nil
-    }
-    
+
     func fill(with type: Type?) {
         guard let item = type as? Object else { return }
         label.text = item.id
     }
 }
+

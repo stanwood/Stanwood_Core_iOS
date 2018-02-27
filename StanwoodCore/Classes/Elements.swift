@@ -112,6 +112,11 @@ extension Stanwood {
         
         // MARK: Public Functions
         
+        ///
+        open func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
+            return nil
+        }
+        
         /**
          Append an item or insert at index
          

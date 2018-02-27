@@ -9,9 +9,7 @@
 import XCTest
 import StanwoodCore
 
-
 class StringTests: XCTestCase {
-    
     
     let testString: String = "This is my test string"
     let localisedKey: String = "TEST_TITLE"
@@ -31,7 +29,7 @@ class StringTests: XCTestCase {
     }
     
     func testFirstChar() {
-        XCTAssertEqual(testString.first, "Element")
+        XCTAssertEqual(testString.first, "T")
     }
     
     func testLastChar() {

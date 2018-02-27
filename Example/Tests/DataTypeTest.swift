@@ -9,13 +9,6 @@
 import XCTest
 import StanwoodCore
 
-extension Stanwood.Elements {
-    
-    func cellType(forItemAt indexPath: IndexPath) -> UICollectionViewCell.Type {
-        return UICollectionViewCell.self
-    }
-}
-
 class DataTypeTest: XCTestCase {
     
     var objects: Stanwood.Elements<Object>!
