@@ -9,7 +9,7 @@
 import XCTest
 import StanwoodCore
 
-extension Stanwood.Objects {
+extension Stanwood.Elements {
     
     func cellType(forItemAt indexPath: IndexPath) -> UICollectionViewCell.Type {
         return UICollectionViewCell.self
@@ -18,7 +18,7 @@ extension Stanwood.Objects {
 
 class DataTypeTest: XCTestCase {
     
-    var objects: Stanwood.Objects<Object>!
+    var objects: Stanwood.Elements<Object>!
     
     override func setUp() {
         super.setUp()
@@ -40,7 +40,7 @@ class DataTypeTest: XCTestCase {
             Object(id: "14")
         ]
         
-        objects = Stanwood.Objects(items: items)
+        objects = Stanwood.Elements(items: items)
     }
     
     override func tearDown() {
@@ -63,7 +63,7 @@ class DataTypeTest: XCTestCase {
     
     func testContains() {
         let object = Object(id: "15")
-        let objects: Stanwood.Objects<Object> = self.objects
+        let objects: Stanwood.Elements<Object> = self.objects
         
         XCTAssertFalse(objects.contains(object))
         
@@ -73,7 +73,7 @@ class DataTypeTest: XCTestCase {
     }
     
     func testMoveLow() {
-        let objects: Stanwood.Objects<Object> = self.objects
+        let objects: Stanwood.Elements<Object> = self.objects
         let indexPath = IndexPath(item: 2, section: 0)
         let objectThree = objects[indexPath] as! Object
         let movedToIndexPath = IndexPath(item: 7, section: 0)
@@ -86,7 +86,7 @@ class DataTypeTest: XCTestCase {
     }
     
     func testMoveHigh() {
-        let objects: Stanwood.Objects<Object> = self.objects
+        let objects: Stanwood.Elements<Object> = self.objects
         let indexPath = IndexPath(item: 12, section: 0)
         let objectThree = objects[indexPath] as! Object
         let movedToIndexPath = IndexPath(item: 7, section: 0)
@@ -100,7 +100,7 @@ class DataTypeTest: XCTestCase {
     
     func testDelete() {
         
-        let objects: Stanwood.Objects<Object> = self.objects
+        let objects: Stanwood.Elements<Object> = self.objects
         let indexPath = IndexPath(item: 2, section: 0)
         let objectThree = objects[indexPath] as! Object
         
@@ -124,7 +124,7 @@ class DataTypeTest: XCTestCase {
         do {
             try objects.save()
             
-            let loadedObjects = Stanwood.Objects<Object>.loadFromFile()
+            let loadedObjects = Stanwood.Elements<Object>.loadFromFile()
             XCTAssertNotNil(loadedObjects)
             
             if let loadedObjects = loadedObjects {
@@ -137,7 +137,7 @@ class DataTypeTest: XCTestCase {
                 
                 try loadedObjects.save(withFileName: "objects_file")
                 
-                let objectsFile = Stanwood.Objects<Object>.loadFromFile(withFileName: "objects_file")
+                let objectsFile = Stanwood.Elements<Object>.loadFromFile(withFileName: "objects_file")
                 XCTAssertNotNil(objectsFile)
                 
                 if let objectsFile = objectsFile {

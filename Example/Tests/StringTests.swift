@@ -31,7 +31,7 @@ class StringTests: XCTestCase {
     }
     
     func testFirstChar() {
-        XCTAssertEqual(testString.first, "T")
+        XCTAssertEqual(testString.first, "Element")
     }
     
     func testLastChar() {

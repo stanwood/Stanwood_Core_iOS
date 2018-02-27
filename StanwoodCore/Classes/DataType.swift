@@ -17,7 +17,7 @@ import Foundation
 public protocol Type {
     
     /// Returns the object id
-    var id: String? { get set }
+    var id: String? { get }
 }
 
 /**
