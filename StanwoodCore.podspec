@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary          = 'Stanwood core libarary'
 
   s.description      = <<-DESC
-Stanwood Core library will be a standard libarary used across all iOS projects
+Stanwood Core library will be a standard libarary used across all Stanwood iOS projects
                        DESC
 
   s.homepage         = 'https://github.com/stanwood/Stanwood_Core'

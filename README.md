@@ -31,13 +31,19 @@ $ pod update StanwoodCore
 
 ## Release Notes
 
+### 1.0
+
+- `Stanwood.Objects` has been renamed to `Stanwood.Elements` to follow Swift naming conventions.
+- Adding `cellType(forItemAt:)` to `DataType` protocol to hanndle `cellForItem` in the abstract level.
+- Adding `SourceTypePresentable` to suport Stanwood Architecture 1.0
+
 ### 0.2.2
 
 - Fixing `Loadable` non-static function
 
 ### 0.1.8
 
-- Fixing number of rows in section in `Stanwood.AbstractTableDataSource`
+- Fixing number of rows in section, in `Stanwood.AbstractTableDataSource`
 
 ### 0.1.7
 
