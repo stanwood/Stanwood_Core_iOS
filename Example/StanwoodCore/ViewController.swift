@@ -60,8 +60,10 @@ class ViewController: UIViewController {
             Object(id: "14")
         ]
         
+        let button = UIBarButtonItem()
+        button.localizedTitle = "TEST_TITLE"
 //        configureCollectionView(items: items)
-        configureTableView(items: items)
+//        configureTableView(items: items)
     }
     
     func configureTableView(items: [Object]) {

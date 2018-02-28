@@ -18,6 +18,10 @@ extension UISearchBar {
             // accessibilityIdentifier is set for UITesting tool
             accessibilityIdentifier = newValue
             placeholder = newValue?.localized
+            
+            #if DEBUG
+                UITestingCore.record(key: newValue, string: placeholder, atElement: String(describing: UISearchBar.self))
+            #endif
         }
     }
     
@@ -38,7 +42,13 @@ extension UISearchBar {
     @discardableResult
     open func localizePlaceholder(formatKey: String, _ arguments: CVarArg...) -> String? {
         accessibilityIdentifier = formatKey
-        self.placeholder = String(format: formatKey.localized, arguments: arguments)
+        let placeholder = String(format: formatKey.localized, arguments: arguments)
+        self.placeholder = placeholder
+        
+        #if DEBUG
+            UITestingCore.record(key: formatKey, string: placeholder, atElement: String(describing: UISearchBar.self))
+        #endif
+        
         return self.placeholder
     }
 }

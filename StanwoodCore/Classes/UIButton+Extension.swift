@@ -19,6 +19,10 @@ extension UIButton {
             // accessibilityIdentifier is set for UITesting tool
             accessibilityIdentifier = newValue
             setTitle(newValue?.localized, for: .normal)
+            
+            #if DEBUG
+                UITestingCore.record(key: newValue, string: newValue?.localized, atElement: String(describing: UIButton.self))
+            #endif
         }
     }
     
@@ -42,6 +46,11 @@ extension UIButton {
     @objc open func setLocalizedTitle(_ title: String?, for state: UIControlState = .normal, fromTableName tableName: String? = nil) -> String? {
         accessibilityIdentifier = title
         setTitle(title?.localize(fromTableName: tableName), for: state)
+        
+        #if DEBUG
+            UITestingCore.record(key: title, string: title?.localize(fromTableName: tableName), atElement: String(describing: UIButton.self))
+        #endif
+        
         return self.title(for: state)
     }
     
@@ -72,6 +81,11 @@ extension UIButton {
         accessibilityIdentifier = formatKey
         let title = String(format: formatKey.localized, arguments: arguments)
         setTitle(title, for: state)
+        
+        #if DEBUG
+            UITestingCore.record(key: formatKey, string: title, atElement: String(describing: UIButton.self))
+        #endif
+        
         return self.titleLabel?.text
     }
 }

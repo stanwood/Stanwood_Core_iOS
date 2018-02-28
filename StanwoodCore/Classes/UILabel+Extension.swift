@@ -16,9 +16,14 @@ extension UILabel {
             return text
         }
         set {
+            
             // accessibilityIdentifier is set for UITesting tool
             accessibilityIdentifier = newValue
             text = newValue?.localized
+            
+            #if DEBUG
+                UITestingCore.record(key: newValue, string: text, atElement: String(describing: UILabel.self))
+            #endif
         }
     }
     
@@ -38,6 +43,11 @@ extension UILabel {
     @discardableResult
     @objc open func localizeText(_ text: String, fromTableName tableName: String?) -> String? {
         self.text = text.localize(fromTableName: tableName)
+        
+        #if DEBUG
+            UITestingCore.record(key: text, string: text.localize(fromTableName: tableName), atElement: String(describing: UILabel.self))
+        #endif
+        
         return self.text
     }
     
@@ -52,7 +62,13 @@ extension UILabel {
     @discardableResult
     open func localizeText(formatKey: String, _ arguments: CVarArg...) -> String? {
         accessibilityIdentifier = formatKey
-        self.text = String(format: formatKey.localized, arguments: arguments)
+        let title = String(format: formatKey.localized, arguments: arguments)
+        self.text = title
+        
+        #if DEBUG
+            UITestingCore.record(key: formatKey, string: title, atElement: String(describing: UILabel.self))
+        #endif
+        
         return self.text
     }
 }

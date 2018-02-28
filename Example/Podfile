@@ -3,12 +3,13 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'StanwoodCore_Example' do
+    inherit! :search_paths
     pod 'StanwoodCore', :path => '../'
+end
 
-  target 'StanwoodCore_Tests' do
+target 'StanwoodCore_Tests' do
     inherit! :search_paths
     
     pod 'StanwoodCore', :path => '../'
     
-  end
 end

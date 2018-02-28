@@ -21,6 +21,14 @@ Stanwood Core library will be a standard libarary used across all Stanwood iOS p
   s.source           = { :git => 'git@github.com:stanwood/Stanwood_Core.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
+  s.default_subspec = 'Base'
+  
+  s.xcconfig = {
+      'OTHER_SWIFT_FLAGS' => '-DFFFF', :configurations => ['Release']
+  }
 
-  s.source_files = 'StanwoodCore/Classes/**/*'
+  s.subspec 'Base' do |ss|
+      ss.source_files = 'StanwoodCore/Classes/**/*'
+  end
+  
 end
