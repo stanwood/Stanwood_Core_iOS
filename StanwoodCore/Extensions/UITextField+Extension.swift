@@ -20,6 +20,7 @@ extension UITextField {
             placeholder = newValue?.localized
             
             #if DEBUG
+                guard newValue != nil else { return }
                 UITestingCore.record(key: newValue, string: placeholder, atElement: String(describing: UITextField.self))
             #endif
         }

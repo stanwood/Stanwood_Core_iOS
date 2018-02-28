@@ -22,6 +22,7 @@ extension UILabel {
             text = newValue?.localized
             
             #if DEBUG
+                guard newValue != nil else { return }
                 UITestingCore.record(key: newValue, string: text, atElement: String(describing: UILabel.self))
             #endif
         }

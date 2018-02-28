@@ -20,6 +20,7 @@ extension UISearchBar {
             placeholder = newValue?.localized
             
             #if DEBUG
+                guard newValue != nil else { return }
                 UITestingCore.record(key: newValue, string: placeholder, atElement: String(describing: UISearchBar.self))
             #endif
         }

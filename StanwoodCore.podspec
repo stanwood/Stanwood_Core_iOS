@@ -22,13 +22,25 @@ Stanwood Core library will be a standard libarary used across all Stanwood iOS p
 
   s.ios.deployment_target = '9.0'
   s.default_subspec = 'Base'
-  
-  s.xcconfig = {
-      'OTHER_SWIFT_FLAGS' => '-DFFFF', :configurations => ['Release']
-  }
 
   s.subspec 'Base' do |ss|
-      ss.source_files = 'StanwoodCore/Classes/**/*'
+      ss.source_files = [
+      'StanwoodCore/Core/**/*',
+      'StanwoodCore/Extensions/**/*',
+      'StanwoodCore/Protocols/**/*'
+      ]
+  end
+  
+  s.subspec 'UITesting' do |ss|
+      ss.source_files = 'StanwoodCore/UITesting/**/*'
+      
+      ss.xcconfig = {
+          'OTHER_SWIFT_FLAGS' => '-DDEBUG'
+      }
+      
+      ss.pod_target_xcconfig = {
+          'OTHER_SWIFT_FLAGS' => '-DDEBUG'
+      }
   end
   
 end

@@ -21,6 +21,7 @@ extension UIButton {
             setTitle(newValue?.localized, for: .normal)
             
             #if DEBUG
+                guard newValue != nil else { return }
                 UITestingCore.record(key: newValue, string: newValue?.localized, atElement: String(describing: UIButton.self))
             #endif
         }
@@ -66,6 +67,10 @@ extension UIButton {
     @objc open func setImage(_ image: UIImage?, withIdentifier identifier: String, for state: UIControlState = .normal) {
         accessibilityIdentifier = identifier
         setImage(image, for: state)
+        
+        #if DEBUG
+            UITestingCore.record(key: identifier, string: identifier, atElement: String(describing: UIButton.self))
+        #endif
     }
     
     /**

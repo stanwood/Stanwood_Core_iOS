@@ -21,6 +21,7 @@ extension UIBarButtonItem {
             title = newValue?.localized
             
             #if DEBUG
+                guard newValue != nil else { return }
                 UITestingCore.record(key: newValue, string: newValue?.localized, atElement: String(describing: UIBarButtonItem.self))
             #endif
         }

@@ -28,8 +28,8 @@ class Collections: Stanwood.Elements<Object> {
 }
 
 
-class ViewController: UIViewController {
-
+class CoreExampleViewController: UIViewController {
+    
     var collectionView: UICollectionView!
     var tableView: UITableView!
     
@@ -44,26 +44,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let items: [Object] = [
-            Object(id: "1"),
-            Object(id: "2"),
-            Object(id: "3"),
-            Object(id: "4"),
-            Object(id: "5"),
-            Object(id: "6"),
-            Object(id: "7"),
-            Object(id: "8"),
-            Object(id: "9"),
-            Object(id: "10"),
-            Object(id: "11"),
-            Object(id: "12"),
-            Object(id: "13"),
-            Object(id: "14")
+            Object(id: "TEST_TITLE1"),
+            Object(id: "TEST_TITLE2"),
+            Object(id: "TEST_TITLE3"),
+            Object(id: "TEST_TITLE4"),
+            Object(id: "TEST_TITLE5"),
+            Object(id: "TEST_TITLE6"),
+            Object(id: "TEST_TITLE7"),
+            Object(id: "TEST_TITLE8"),
+            Object(id: "TEST_TITLE9"),
+            Object(id: "TEST_TITLE10"),
+            Object(id: "TEST_TITLE11"),
+            Object(id: "TEST_TITLE12"),
+            Object(id: "TEST_TITLE13"),
+            Object(id: "TEST_TITLE14")
         ]
         
         let button = UIBarButtonItem()
         button.localizedTitle = "TEST_TITLE"
-//        configureCollectionView(items: items)
-//        configureTableView(items: items)
+        self.configureCollectionView(items: items)
+        //        configureTableView(items: items)
     }
     
     func configureTableView(items: [Object]) {

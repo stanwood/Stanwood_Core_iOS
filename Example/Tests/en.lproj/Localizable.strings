@@ -7,6 +7,24 @@
 */
 
 "TEST_TITLE" = "My test title";
+"TEST_TITLE1" = "My test title1";
+"TEST_TITLE2" = "My test title2";
+"TEST_TITLE3" = "My test title3";
+"TEST_TITLE4" = "My test title4";
+"TEST_TITLE5" = "My test title5";
+"TEST_TITLE6" = "My test title6";
+"TEST_TITLE7" = "My test title7";
+"TEST_TITLE8" = "My test title8";
+"TEST_TITLE9" = "My test title9";
+"TEST_TITLE10" = "My test title10";
+"TEST_TITLE11" = "My test title11";
+"TEST_TITLE12" = "My test title12";
+"TEST_TITLE13" = "My test title13";
+"TEST_TITLE14" = "My test title14";
+"TEST_TITLE15" = "My test title15";
+"TEST_TITLE16" = "My test title16";
+"TEST_TITLE17" = "My test title17";
+
 "TEST_TITLE_NOT" = "My test titlee";
 
 "TEST_FORMAT_TITLE" = "Test format title %@";
