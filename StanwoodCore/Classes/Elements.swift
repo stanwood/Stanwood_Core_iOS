@@ -112,7 +112,7 @@ extension Stanwood {
         
         // MARK: Public Functions
         
-        ///
+        /// Returns the cell type at indexPath
         open func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
             return nil
         }

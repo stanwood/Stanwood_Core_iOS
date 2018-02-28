@@ -9,6 +9,10 @@
 import UIKit
 import StanwoodCore
 
+extension UILabel {
+    
+}
+
 class Tables: Stanwood.Elements<Object> {
     
     override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {

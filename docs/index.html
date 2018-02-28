@@ -166,10 +166,10 @@
                 <a class="nav-group-task-link" href="Protocols/Loadable.html">Loadable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/Nameable.html">Nameable</a>
+                <a class="nav-group-task-link" href="Protocols/Presentable.html">Presentable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/Presentable.html">Presentable</a>
+                <a class="nav-group-task-link" href="Protocols/SourceTypePresentable.html">SourceTypePresentable</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/Type.html">Type</a>
@@ -201,13 +201,13 @@
                 <a class="nav-group-task-link" href="Structs/Stanwood/CodingBridge.html">– CodingBridge</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Stanwood/Elements.html">– Elements</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Stanwood/FeedbackGenerator.html">– FeedbackGenerator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Stanwood/Observer.html">– Observer</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/Stanwood/Objects.html">– Objects</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Stanwood/Storage.html">– Storage</a>
@@ -253,6 +253,13 @@
 <pre class="highlight plaintext"><code>$ pod update StanwoodCore
 </code></pre>
 <h2 id='release-notes' class='heading'>Release Notes</h2>
+<h3 id='1-0' class='heading'>1.0</h3>
+
+<ul>
+<li><code>Stanwood.Objects</code> has been renamed to <code><a href="Structs/Stanwood/Elements.html">Stanwood.Elements</a></code> to follow Swift naming conventions.</li>
+<li>Adding <code>cellType(forItemAt:)</code> to <code><a href="Protocols/DataType.html">DataType</a></code> protocol to hanndle <code>cellForItem</code> in the abstract level.</li>
+<li>Adding <code><a href="Protocols/SourceTypePresentable.html">SourceTypePresentable</a></code> to suport Stanwood Architecture 1.0</li>
+</ul>
 <h3 id='0-2-2' class='heading'>0.2.2</h3>
 
 <ul>
@@ -261,7 +268,7 @@
 <h3 id='0-1-8' class='heading'>0.1.8</h3>
 
 <ul>
-<li>Fixing number of rows in section in <code><a href="Structs/Stanwood/AbstractTableDataSource.html">Stanwood.AbstractTableDataSource</a></code></li>
+<li>Fixing number of rows in section, in <code><a href="Structs/Stanwood/AbstractTableDataSource.html">Stanwood.AbstractTableDataSource</a></code></li>
 </ul>
 <h3 id='0-1-7' class='heading'>0.1.7</h3>
 
@@ -271,7 +278,7 @@
 <li>Removed duplciate extensions</li>
 <li>Adding <code>DataSourceType</code> &amp; <code>DelegateSourceType</code> protocol to support DataSource and Delegate</li>
 <li>Adding <code><a href="Protocols/Presentable.html">Presentable</a></code> protocol</li>
-<li>Chaning naming in <code><a href="Structs/Stanwood/Objects.html">Stanwood.Objects</a></code></li>
+<li>Chaning naming in <code>Stanwood.Objects</code></li>
 </ul>
 <h2 id='usage' class='heading'>Usage</h2>
 

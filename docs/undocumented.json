@@ -43,9 +43,9 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Objects.swift",
-      "line": 47,
-      "symbol": "Stanwood.Objects.identifier",
+      "file": "/Users/talzion/Stanwood/StanwoodCore/StanwoodCore/Classes/Elements.swift",
+      "line": 52,
+      "symbol": "Stanwood.Elements.identifier",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
