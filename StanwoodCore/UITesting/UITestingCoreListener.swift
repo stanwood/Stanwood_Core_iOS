@@ -8,7 +8,7 @@
 import Foundation
 
 #if DEBUG
-    public typealias UITestingListener = (_ item: UITestingCoreItems) -> Void
+    public typealias UITestingListener = (_ item: UITestingCoreVersion) -> Void
     
     public class UITestingCoreListener: NSObject {
         
@@ -28,7 +28,7 @@ import Foundation
         
         @objc public func registerEvents(_ notification: Notification) {
             guard let itemData = notification.object as? Data,
-            let item = try? JSONDecoder().decode(UITestingCoreItems.self, from: itemData) else { return }
+            let item = try? JSONDecoder().decode(UITestingCoreVersion.self, from: itemData) else { return }
             listiner?(item)
         }
     }

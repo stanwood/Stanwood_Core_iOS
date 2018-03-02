@@ -8,72 +8,10 @@
 import Foundation
 
 #if DEBUG
-    
-    public struct UITestingCoreItems: Codable {
-        var version: String
-        var windows: [UITestingCoreWindow] = []
-        
-        mutating func append(_ window: UITestingCoreWindow) {
-            if windows.contains(window), let index = index(forWindow: window.window) {
-                windows[index] = window
-            } else {
-                windows.append(window)
-            }
-        }
-        
-        func index(forWindow windowString: String) -> Int? {
-            let window = UITestingCoreWindow(window: windowString, elements: [])
-            return windows.index(of: window)
-        }
-        
-        public func payload() -> [String: Any]? {
-            guard let data = try? JSONEncoder().encode(self),
-             let dictionary = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-                return nil
-            }
-            return ["version_\(version.replacingOccurrences(of: ".", with: "-"))" : dictionary as Any]
-        }
-    }
-    
-    public struct UITestingCoreWindow: Codable, Equatable {
-        
-        let window: String
-        var elements: [UITestingCoreElement] = []
-        
-        public static func ==(lhs: UITestingCoreWindow, rhs: UITestingCoreWindow) -> Bool {
-            return lhs.window == rhs.window
-        }
-    }
-    
-    public struct UITestingCoreElement: Codable {
 
-        var key: String
-        var string: String
-        var element: String
-        
-        public func payload() -> [String: Any] {
-            return [:]
-//                 : [
-//                    "windows" : [
-//                        window : [
-//                            "elements" : [
-//                                [
-//                                    "element" : element,
-//                                    "key" : key,
-//                                    "string" : string
-//                                ]
-//                            ]
-//
-//                        ]
-//                    ]
-//                ]
-//            ]
-        }
-    }
-    
     struct UITestingCore {
         
-        private static var items = UITestingCoreItems(version: UIApplication.shortVersion, windows: [])
+        private static var items = UITestingCoreVersion(version: UIApplication.shortVersion, windows: [])
         
         private init () { }
         

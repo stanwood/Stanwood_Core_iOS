@@ -15,7 +15,7 @@ class TableViewCell: UITableViewCell, Fillable {
 
     func fill(with type: Type?) {
         guard let item = type as? Object else { return }
-        label.text = item.id
+        label.localizedText = item.id
     }
 }
 
