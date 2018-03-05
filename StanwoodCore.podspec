@@ -31,6 +31,8 @@ Pod::Spec.new do |s|
         ]
     end
     
+    # For now, UITesting subspec is part of StanwoodCore.
+    # After Beta testing, we will move this to a dedicated pod framework.
     s.subspec 'UITesting' do |ss|
         ss.source_files = 'StanwoodCore/UITesting/**/*'
     end

@@ -8,10 +8,9 @@
 import Foundation
 
 #if DEBUG
-
     struct UITestingCore {
         
-        private init () { }
+        private init () {}
         
         static func record(key: String?, text: String?, atElement element: String) {
             guard let rootView = UIApplication.presentedViewController else { return }
