@@ -21,20 +21,9 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'git@github.com:stanwood/Stanwood_Core.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '9.0'
-    s.default_subspec = 'Base'
-    
-    s.subspec 'Base' do |ss|
-        ss.source_files = [
-        'StanwoodCore/Core/**/*',
-        'StanwoodCore/Extensions/**/*',
-        'StanwoodCore/Protocols/**/*'
-        ]
-    end
-    
-    # For now, UITesting subspec is part of StanwoodCore.
-    # After Beta testing, we will move this to a dedicated pod framework.
-    s.subspec 'UITesting' do |ss|
-        ss.source_files = 'StanwoodCore/UITesting/**/*'
-    end
-    
+    s.source_files = [
+    'StanwoodCore/Core/**/*',
+    'StanwoodCore/Extensions/**/*',
+    'StanwoodCore/Protocols/**/*'
+    ]
 end
