@@ -23,7 +23,7 @@
         <a class="header-link" href="../../index.html">
           StanwoodCore Docs
         </a>
-         (95% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -91,6 +91,9 @@
                 <a class="nav-group-task-link" href="../../Extensions/TimeInterval.html">TimeInterval</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
@@ -152,7 +155,13 @@
                 <a class="nav-group-task-link" href="../../Protocols/AutoSizeable.html">AutoSizeable</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/DataType.html">DataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/Disposable.html">Disposable</a>
@@ -232,14 +241,14 @@
             <h1>AbstractTableDataSource</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt"><a href="../../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a></span></code></pre>
 
                 </div>
               </div>
-            <p>The <code>AbstractTableDataSource</code> conforms to the <code>TableDataSource</code> protocol and implements <code><a href="../../Structs/Stanwood/AbstractTableDataSource.html#/s:12StanwoodCore0A0V23AbstractTableDataSourceC16numberOfSectionsSiSo11UITableViewC2in_tF">AbstractTableDataSource.numberOfSections(in:)</a></code> and <code><a href="../../Structs/Stanwood/AbstractTableDataSource.html#/s:12StanwoodCore0A0V23AbstractTableDataSourceC9tableViewSiSo07UITableH0C_Si21numberOfRowsInSectiontF">AbstractTableDataSource.tableView(_:numberOfRowsInSection:)</a></code>. It midiates the application data model <code><a href="../../Protocols/DataType.html">DataType</a></code> and <code><a href="../../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uitableview"><code>UITableView</code></a>.</p>
+            <p>The <code>AbstractTableDataSource</code> conforms to the <code>TableDataSource</code> protocol and implements <code>AbstractTableDataSource.numberOfSections(in:)</code> and <code>AbstractTableDataSource.tableView(_:numberOfRowsInSection:)</code>. It midiates the application data model <code><a href="../../Protocols/DataType.html">DataType</a></code> and <code><a href="../../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uitableview"><code>UITableView</code></a>.</p>
 
 <blockquote>
-<p>It is requried to subclass <code>AbstractTableDataSource</code> and override <code><a href="../../Structs/Stanwood/AbstractTableDataSource.html#/s:12StanwoodCore0A0V23AbstractTableDataSourceC9tableViewSo07UITableH4CellCSo0iH0C_10Foundation9IndexPathV12cellForRowAttF">AbstractTableDataSource.tableView(_:cellForRowAt:)</a></code></p>
+<p>It is requried to subclass <code>AbstractTableDataSource</code> and override <code>AbstractTableDataSource.tableView(_:cellForRowAt:)</code></p>
 </blockquote>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
@@ -562,95 +571,6 @@
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/UITableViewDataSource%20functions"></a>
-                <a name="//apple_ref/swift/Section/UITableViewDataSource functions" class="dashAnchor"></a>
-                <a href="#/UITableViewDataSource%20functions">
-                  <h3 class="section-name">UITableViewDataSource functions</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC16numberOfSectionsSiSo11UITableViewC2in_tF"></a>
-                    <a name="//apple_ref/swift/Method/numberOfSections(in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC16numberOfSectionsSiSo11UITableViewC2in_tF">numberOfSections(in:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC9tableViewSiSo07UITableH0C_Si21numberOfRowsInSectiontF"></a>
-                    <a name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC9tableViewSiSo07UITableH0C_Si21numberOfRowsInSectiontF">tableView(_:numberOfRowsInSection:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC9tableViewSo07UITableH4CellCSo0iH0C_10Foundation9IndexPathV12cellForRowAttF"></a>
-                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC9tableViewSo07UITableH4CellCSo0iH0C_10Foundation9IndexPathV12cellForRowAttF">tableView(_:cellForRowAt:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>
