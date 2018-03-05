@@ -22,7 +22,7 @@ extension UIButton {
             
             #if DEBUG
                 guard newValue != nil else { return }
-                UITestingCore.record(key: newValue, string: newValue?.localized, atElement: String(describing: UIButton.self))
+                UITestingCore.record(key: newValue, text: newValue?.localized, atElement: String(describing: UIButton.self))
             #endif
         }
     }
@@ -49,7 +49,7 @@ extension UIButton {
         setTitle(title?.localize(fromTableName: tableName), for: state)
         
         #if DEBUG
-            UITestingCore.record(key: title, string: title?.localize(fromTableName: tableName), atElement: String(describing: UIButton.self))
+            UITestingCore.record(key: title, text: title?.localize(fromTableName: tableName), atElement: String(describing: UIButton.self))
         #endif
         
         return self.title(for: state)
@@ -69,7 +69,7 @@ extension UIButton {
         setImage(image, for: state)
         
         #if DEBUG
-            UITestingCore.record(key: identifier, string: identifier, atElement: String(describing: UIButton.self))
+            UITestingCore.record(key: identifier, text: identifier, atElement: String(describing: UIButton.self))
         #endif
     }
     
@@ -88,7 +88,7 @@ extension UIButton {
         setTitle(title, for: state)
         
         #if DEBUG
-            UITestingCore.record(key: formatKey, string: title, atElement: String(describing: UIButton.self))
+            UITestingCore.record(key: formatKey, text: title, atElement: String(describing: UIButton.self))
         #endif
         
         return self.titleLabel?.text

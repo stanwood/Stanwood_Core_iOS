@@ -22,7 +22,7 @@ extension UIBarButtonItem {
             
             #if DEBUG
                 guard newValue != nil else { return }
-                UITestingCore.record(key: newValue, string: newValue?.localized, atElement: String(describing: UIBarButtonItem.self))
+                UITestingCore.record(key: newValue, text: newValue?.localized, atElement: String(describing: UIBarButtonItem.self))
             #endif
         }
     }
@@ -49,7 +49,7 @@ extension UIBarButtonItem {
         accessibilityIdentifier = localizedTitle
         
         #if DEBUG
-            UITestingCore.record(key: localizedTitle, string: localizedTitle.localized, atElement: String(describing: UIBarButtonItem.self))
+            UITestingCore.record(key: localizedTitle, text: localizedTitle.localized, atElement: String(describing: UIBarButtonItem.self))
         #endif
     }
     
@@ -67,7 +67,7 @@ extension UIBarButtonItem {
         accessibilityIdentifier = formatKey
         
         #if DEBUG
-            UITestingCore.record(key: formatKey, string: title, atElement: String(describing: UIBarButtonItem.self))
+            UITestingCore.record(key: formatKey, text: title, atElement: String(describing: UIBarButtonItem.self))
         #endif
     }
 }

@@ -21,7 +21,7 @@ extension UISearchBar {
             
             #if DEBUG
                 guard newValue != nil else { return }
-                UITestingCore.record(key: newValue, string: placeholder, atElement: String(describing: UISearchBar.self))
+                UITestingCore.record(key: newValue, text: placeholder, atElement: String(describing: UISearchBar.self))
             #endif
         }
     }
@@ -47,7 +47,7 @@ extension UISearchBar {
         self.placeholder = placeholder
         
         #if DEBUG
-            UITestingCore.record(key: formatKey, string: placeholder, atElement: String(describing: UISearchBar.self))
+            UITestingCore.record(key: formatKey, text: placeholder, atElement: String(describing: UISearchBar.self))
         #endif
         
         return self.placeholder

@@ -21,7 +21,7 @@ extension UITextField {
             
             #if DEBUG
                 guard newValue != nil else { return }
-                UITestingCore.record(key: newValue, string: placeholder, atElement: String(describing: UITextField.self))
+                UITestingCore.record(key: newValue, text: placeholder, atElement: String(describing: UITextField.self))
             #endif
         }
     }
@@ -46,7 +46,7 @@ extension UITextField {
         self.placeholder = String(format: formatKey.localized, arguments: arguments)
         
         #if DEBUG
-            UITestingCore.record(key: formatKey, string: placeholder, atElement: String(describing: UISearchBar.self))
+            UITestingCore.record(key: formatKey, text: placeholder, atElement: String(describing: UISearchBar.self))
         #endif
         
         return self.placeholder

@@ -23,7 +23,7 @@ extension UILabel {
             
             #if DEBUG
                 guard newValue != nil else { return }
-                UITestingCore.record(key: newValue, string: text, atElement: String(describing: UILabel.self))
+                UITestingCore.record(key: newValue, text: text, atElement: String(describing: UILabel.self))
             #endif
         }
     }
@@ -46,7 +46,7 @@ extension UILabel {
         self.text = text.localize(fromTableName: tableName)
         
         #if DEBUG
-            UITestingCore.record(key: text, string: text.localize(fromTableName: tableName), atElement: String(describing: UILabel.self))
+            UITestingCore.record(key: text, text: text.localize(fromTableName: tableName), atElement: String(describing: UILabel.self))
         #endif
         
         return self.text
@@ -67,7 +67,7 @@ extension UILabel {
         self.text = title
         
         #if DEBUG
-            UITestingCore.record(key: formatKey, string: title, atElement: String(describing: UILabel.self))
+            UITestingCore.record(key: formatKey, text: title, atElement: String(describing: UILabel.self))
         #endif
         
         return self.text
