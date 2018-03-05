@@ -43,12 +43,12 @@ public extension Loadable where Self: UIView {
         return view
     }
 
-    /***/
+    /// :nodoc:
     private static var staticIdentifier: String {
         return String(describing: self)
     }
     
-    /***/
+    /// :nodoc:
     private var identifier: String {
         return String(describing: type(of: self))
     }

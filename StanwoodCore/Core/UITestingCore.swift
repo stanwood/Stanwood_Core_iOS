@@ -8,10 +8,13 @@
 import Foundation
 
 #if DEBUG
+    
+    /// :nodoc:
     struct UITestingCore {
         
         private init () {}
         
+        /// :nodoc:
         static func record(key: String?, text: String?, atElement element: String) {
             guard let rootView = UIApplication.presentedViewController else { return }
             let windowString = String(describing: type(of: rootView))
