@@ -35,7 +35,7 @@ $ pod update StanwoodCore
 
 - `Stanwood.Objects` has been renamed to `Stanwood.Elements` to follow Swift naming conventions.
 - Adding `cellType(forItemAt:)` to `DataType` protocol to hanndle `cellForItem` in the abstract level.
-- Adding `SourceTypePresentable` to suport Stanwood Architecture 1.0
+- Adding `SourceTypePresentable` to support Stanwood Architecture 1.0
 - Adding `UITestingCore` bridge for `StanwoodUITestingCore` framework
 
 ### 0.2.2
