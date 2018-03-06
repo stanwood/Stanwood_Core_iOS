@@ -42,12 +42,14 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - StanwoodCore (1.0)
+  - StanwoodCore (0.2.3)
+  - StanwoodUITestingCore (0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - StanwoodCore (from `../`)
+  - StanwoodUITestingCore
 
 EXTERNAL SOURCES:
   StanwoodCore:
@@ -64,8 +66,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  StanwoodCore: 2f9dc56eb5bf4be5576bc1e56e34dfd4c4638b2b
+  StanwoodCore: 08becd18453dfad85f09b00bde1e17f6c7659b73
+  StanwoodUITestingCore: 7509f7f82b3f7a626730d204604ea52aa93875e7
 
-PODFILE CHECKSUM: 773b6cdbc3e074cdf0f2a600c5ac2af5e90fe5a2
+PODFILE CHECKSUM: 6b6ed40a417c8222f8d1e4b692e29a86850c0e66
 
 COCOAPODS: 1.4.0
