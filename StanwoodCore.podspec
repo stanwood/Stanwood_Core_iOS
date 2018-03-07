@@ -7,20 +7,24 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'StanwoodCore'
-  s.version          = '0.2.2'
-  s.summary          = 'Stanwood core libarary'
-
-  s.description      = <<-DESC
-Stanwood Core library will be a standard libarary used across all iOS projects
-                       DESC
-
-  s.homepage         = 'https://github.com/stanwood/Stanwood_Core'
-  s.license          = { :type => 'Private', :file => 'LICENSE' }
-  s.author           = { 'Tal Zion' => 'talezion@gmail.com' }
-  s.source           = { :git => 'git@github.com:stanwood/Stanwood_Core.git', :tag => s.version.to_s }
-
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'StanwoodCore/Classes/**/*'
+    s.name             = 'StanwoodCore'
+    s.version          = '0.2.3'
+    s.summary          = 'Stanwood core libarary'
+    
+    s.description      = <<-DESC
+    Stanwood Core library will be a standard libarary used across all Stanwood iOS projects
+    DESC
+    
+    s.homepage         = 'https://github.com/stanwood/Stanwood_Core'
+    s.license          = { :type => 'Private', :file => 'LICENSE' }
+    s.author           = { 'Tal Zion' => 'talezion@gmail.com' }
+    s.source           = { :git => 'git@github.com:stanwood/Stanwood_Core.git', :tag => s.version.to_s }
+    
+    s.ios.deployment_target = '10.0'
+    
+    s.source_files = [
+    'StanwoodCore/Core/**/*',
+    'StanwoodCore/Extensions/**/*',
+    'StanwoodCore/Protocols/**/*'
+    ]
 end

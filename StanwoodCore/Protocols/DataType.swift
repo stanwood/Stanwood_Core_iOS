@@ -17,7 +17,7 @@ import Foundation
 public protocol Type {
     
     /// Returns the object id
-    var id: String? { get set }
+    var id: String? { get }
 }
 
 /**
@@ -39,22 +39,7 @@ public protocol DataType {
     
     /// A subscript to return a collection dataType within a section
     subscript(section: Int) -> DataType { get }
+    
+    /// Returns the cell type at indexPath
+    func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type?
 }
-
-//WIP
-/*
-/**
- Append an item or insert at index
- 
- - Parameters:
- - indexPath: IndexPath
- 
- - Returns: Fillable.Type
- 
- - SeeAlso: `Fillable`
- */
-public func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
-    return UICollectionViewCell.self as? Fillable.Type
-}
- */
-

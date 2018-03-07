@@ -23,7 +23,7 @@
         <a class="header-link" href="../../index.html">
           StanwoodCore Docs
         </a>
-         (95% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -91,6 +91,9 @@
                 <a class="nav-group-task-link" href="../../Extensions/TimeInterval.html">TimeInterval</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
@@ -152,7 +155,13 @@
                 <a class="nav-group-task-link" href="../../Protocols/AutoSizeable.html">AutoSizeable</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/DataType.html">DataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/Disposable.html">Disposable</a>
@@ -167,10 +176,10 @@
                 <a class="nav-group-task-link" href="../../Protocols/Loadable.html">Loadable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Protocols/Nameable.html">Nameable</a>
+                <a class="nav-group-task-link" href="../../Protocols/Presentable.html">Presentable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Protocols/Presentable.html">Presentable</a>
+                <a class="nav-group-task-link" href="../../Protocols/SourceTypePresentable.html">SourceTypePresentable</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/Type.html">Type</a>
@@ -202,13 +211,13 @@
                 <a class="nav-group-task-link" href="../../Structs/Stanwood/CodingBridge.html">– CodingBridge</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Structs/Stanwood/Elements.html">– Elements</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Structs/Stanwood/FeedbackGenerator.html">– FeedbackGenerator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Structs/Stanwood/Observer.html">– Observer</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Structs/Stanwood/Objects.html">– Objects</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Structs/Stanwood/Storage.html">– Storage</a>
@@ -232,14 +241,14 @@
             <h1>AbstractCollectionDataSource</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span><span class="p">,</span> <span class="kt"><a href="../../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a></span></code></pre>
 
                 </div>
               </div>
-            <p>The <code>AbstractCollectionDataSource</code> conforms to the <code>CollectionDataSource</code> protocol and implements <code><a href="../../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC16numberOfSectionsSiSo16UICollectionViewC2in_tF">AbstractCollectionDataSource.numberOfSections(in:)</a></code> and <code><a href="../../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSiSo012UICollectionH0C_Si22numberOfItemsInSectiontF">AbstractCollectionDataSource.collectionView(_:numberOfItemsInSection:)</a></code>. It midiates the application data model <code><a href="../../Protocols/DataType.html">DataType</a></code> and <code><a href="../../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uicollectionview"><code>UICollectionView</code></a>.</p>
+            <p>The <code>AbstractCollectionDataSource</code> conforms to the <code>CollectionDataSource</code> protocol and implements <code>AbstractCollectionDataSource.numberOfSections(in:)</code> and <code>AbstractCollectionDataSource.collectionView(_:numberOfItemsInSection:)</code>. It midiates the application data model <code><a href="../../Protocols/DataType.html">DataType</a></code> and <code><a href="../../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uicollectionview"><code>UICollectionView</code></a>.</p>
 
 <blockquote>
-<p>It is requried to subclass <code>AbstractCollectionDataSource</code> and override <code><a href="../../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSo012UICollectionH4CellCSo0iH0C_10Foundation9IndexPathV13cellForItemAttF">AbstractCollectionDataSource.collectionView(_:cellForItemAt:)</a></code></p>
+<p>It is requried to subclass <code>AbstractCollectionDataSource</code> and override <code>AbstractCollectionDataSource.collectionView(_:cellForItemAt:)</code></p>
 </blockquote>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
@@ -258,7 +267,7 @@
 
 <p><code><a href="../../Structs/Stanwood/AbstractCollectionDelegate.html">AbstractCollectionDelegate</a></code></p>
 
-<p><code><a href="../../Structs/Stanwood/Objects.html">Objects</a></code></p>
+<p><code>Objects</code></p>
 
 <p><code><a href="../../Protocols/DataType.html">DataType</a></code></p>
 
@@ -562,95 +571,6 @@
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/UICollectionViewDataSource%20functions"></a>
-                <a name="//apple_ref/swift/Section/UICollectionViewDataSource functions" class="dashAnchor"></a>
-                <a href="#/UICollectionViewDataSource%20functions">
-                  <h3 class="section-name">UICollectionViewDataSource functions</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC16numberOfSectionsSiSo16UICollectionViewC2in_tF"></a>
-                    <a name="//apple_ref/swift/Method/numberOfSections(in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC16numberOfSectionsSiSo16UICollectionViewC2in_tF">numberOfSections(in:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSiSo012UICollectionH0C_Si22numberOfItemsInSectiontF"></a>
-                    <a name="//apple_ref/swift/Method/collectionView(_:numberOfItemsInSection:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSiSo012UICollectionH0C_Si22numberOfItemsInSectiontF">collectionView(_:numberOfItemsInSection:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSo012UICollectionH4CellCSo0iH0C_10Foundation9IndexPathV13cellForItemAttF"></a>
-                    <a name="//apple_ref/swift/Method/collectionView(_:cellForItemAt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSo012UICollectionH4CellCSo0iH0C_10Foundation9IndexPathV13cellForItemAttF">collectionView(_:cellForItemAt:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>

@@ -9,18 +9,16 @@
 import UIKit
 import StanwoodCore
 
-class CollectionViewCell: UICollectionViewCell, Fillable {
+class CollectionViewCell: Stanwood.AutoSizeableCell, Fillable {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var label: UILabel!
     
     override func prepare() {
-        
+        label.text = nil
     }
     
     func fill(with type: Type?) {
-        
+        guard let item = type as? Object else { return }
+        label.localizedText = item.id
     }
 }

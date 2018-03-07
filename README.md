@@ -1,8 +1,8 @@
 
 # StanwoodCore framework
 
-[![Swift Version](https://img.shields.io/badge/Swift-3.2.x-orange.svg)]()
-[![iOS 8+](https://img.shields.io/badge/iOS-9+-EB7943.svg)]()
+[![Swift Version](https://img.shields.io/badge/Swift-4.0.x-orange.svg)]()
+[![iOS 9+](https://img.shields.io/badge/iOS-9+-EB7943.svg)]()
 
 ## Table of contents
 
@@ -31,13 +31,20 @@ $ pod update StanwoodCore
 
 ## Release Notes
 
+### 0.2.3
+
+- `Stanwood.Objects` has been renamed to `Stanwood.Elements` to follow Swift naming conventions.
+- Adding `cellType(forItemAt:)` to `DataType` protocol to hanndle `cellForItem` in the abstract level.
+- Adding `SourceTypePresentable` to support Stanwood Architecture 1.0
+- Adding `UITestingCore` bridge for `StanwoodUITestingCore` framework
+
 ### 0.2.2
 
 - Fixing `Loadable` non-static function
 
 ### 0.1.8
 
-- Fixing number of rows in section in `Stanwood.AbstractTableDataSource`
+- Fixing number of rows in section, in `Stanwood.AbstractTableDataSource`
 
 ### 0.1.7
 

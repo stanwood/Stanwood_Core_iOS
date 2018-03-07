@@ -1,14 +1,21 @@
 source 'https://github.com/stanwood/Cocoa_Pods_Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 use_frameworks!
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'StanwoodCore_Example' do
+    inherit! :search_paths
     pod 'StanwoodCore', :path => '../'
+    pod 'StanwoodUITestingCore', :configurations => ['Debug']
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+end
 
-  target 'StanwoodCore_Tests' do
+target 'StanwoodCore_Tests' do
     inherit! :search_paths
     
+    pod 'StanwoodUITestingCore', :configurations => ['Debug']
     pod 'StanwoodCore', :path => '../'
     
-  end
 end

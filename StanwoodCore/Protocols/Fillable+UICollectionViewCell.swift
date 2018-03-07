@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ForceFillabel {}
+public protocol ForceFillabel {}
 extension UICollectionViewCell: ForceFillabel {}
 extension UITableViewCell: ForceFillabel {}
 

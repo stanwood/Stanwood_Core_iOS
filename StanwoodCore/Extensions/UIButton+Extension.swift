@@ -19,6 +19,11 @@ extension UIButton {
             // accessibilityIdentifier is set for UITesting tool
             accessibilityIdentifier = newValue
             setTitle(newValue?.localized, for: .normal)
+            
+            #if DEBUG
+                guard newValue != nil else { return }
+                UITestingCore.record(key: newValue, text: newValue?.localized, atElement: String(describing: UIButton.self))
+            #endif
         }
     }
     
@@ -42,6 +47,11 @@ extension UIButton {
     @objc open func setLocalizedTitle(_ title: String?, for state: UIControlState = .normal, fromTableName tableName: String? = nil) -> String? {
         accessibilityIdentifier = title
         setTitle(title?.localize(fromTableName: tableName), for: state)
+        
+        #if DEBUG
+            UITestingCore.record(key: title, text: title?.localize(fromTableName: tableName), atElement: String(describing: UIButton.self))
+        #endif
+        
         return self.title(for: state)
     }
     
@@ -57,6 +67,10 @@ extension UIButton {
     @objc open func setImage(_ image: UIImage?, withIdentifier identifier: String, for state: UIControlState = .normal) {
         accessibilityIdentifier = identifier
         setImage(image, for: state)
+        
+        #if DEBUG
+            UITestingCore.record(key: identifier, text: identifier, atElement: String(describing: UIButton.self))
+        #endif
     }
     
     /**
@@ -72,6 +86,11 @@ extension UIButton {
         accessibilityIdentifier = formatKey
         let title = String(format: formatKey.localized, arguments: arguments)
         setTitle(title, for: state)
+        
+        #if DEBUG
+            UITestingCore.record(key: formatKey, text: title, atElement: String(describing: UIButton.self))
+        #endif
+        
         return self.titleLabel?.text
     }
 }

@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           StanwoodCore Docs
         </a>
-         (95% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -90,6 +90,9 @@
                 <a class="nav-group-task-link" href="Extensions/TimeInterval.html">TimeInterval</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
@@ -151,7 +154,13 @@
                 <a class="nav-group-task-link" href="Protocols/AutoSizeable.html">AutoSizeable</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/DataType.html">DataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/Disposable.html">Disposable</a>
@@ -166,10 +175,10 @@
                 <a class="nav-group-task-link" href="Protocols/Loadable.html">Loadable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/Nameable.html">Nameable</a>
+                <a class="nav-group-task-link" href="Protocols/Presentable.html">Presentable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/Presentable.html">Presentable</a>
+                <a class="nav-group-task-link" href="Protocols/SourceTypePresentable.html">SourceTypePresentable</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/Type.html">Type</a>
@@ -201,13 +210,13 @@
                 <a class="nav-group-task-link" href="Structs/Stanwood/CodingBridge.html">– CodingBridge</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Stanwood/Elements.html">– Elements</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Stanwood/FeedbackGenerator.html">– FeedbackGenerator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Stanwood/Observer.html">– Observer</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/Stanwood/Objects.html">– Objects</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Stanwood/Storage.html">– Storage</a>
@@ -231,8 +240,8 @@
             
             <h1 id='stanwoodcore-framework' class='heading'>StanwoodCore framework</h1>
 
-<p><a href=""><img src="https://img.shields.io/badge/Swift-3.2.x-orange.svg" alt="Swift Version"></a>
-<a href=""><img src="https://img.shields.io/badge/iOS-9+-EB7943.svg" alt="iOS 8+"></a></p>
+<p><a href=""><img src="https://img.shields.io/badge/Swift-4.0.x-orange.svg" alt="Swift Version"></a>
+<a href=""><img src="https://img.shields.io/badge/iOS-9+-EB7943.svg" alt="iOS 9+"></a></p>
 <h2 id='table-of-contents' class='heading'>Table of contents</h2>
 
 <ul>
@@ -253,6 +262,14 @@
 <pre class="highlight plaintext"><code>$ pod update StanwoodCore
 </code></pre>
 <h2 id='release-notes' class='heading'>Release Notes</h2>
+<h3 id='0-2-3' class='heading'>0.2.3</h3>
+
+<ul>
+<li><code>Stanwood.Objects</code> has been renamed to <code><a href="Structs/Stanwood/Elements.html">Stanwood.Elements</a></code> to follow Swift naming conventions.</li>
+<li>Adding <code>cellType(forItemAt:)</code> to <code><a href="Protocols/DataType.html">DataType</a></code> protocol to hanndle <code>cellForItem</code> in the abstract level.</li>
+<li>Adding <code><a href="Protocols/SourceTypePresentable.html">SourceTypePresentable</a></code> to suport Stanwood Architecture 1.0</li>
+<li>Adding <code>UITestingCore</code> bridge for <code>StanwoodUITestingCore</code> framework</li>
+</ul>
 <h3 id='0-2-2' class='heading'>0.2.2</h3>
 
 <ul>
@@ -261,7 +278,7 @@
 <h3 id='0-1-8' class='heading'>0.1.8</h3>
 
 <ul>
-<li>Fixing number of rows in section in <code><a href="Structs/Stanwood/AbstractTableDataSource.html">Stanwood.AbstractTableDataSource</a></code></li>
+<li>Fixing number of rows in section, in <code><a href="Structs/Stanwood/AbstractTableDataSource.html">Stanwood.AbstractTableDataSource</a></code></li>
 </ul>
 <h3 id='0-1-7' class='heading'>0.1.7</h3>
 
@@ -269,9 +286,9 @@
 <li>Fixing <code><a href="Protocols/Loadable.html">Loadable</a></code></li>
 <li>Fixing UIView extention <code>addShadow</code> default values</li>
 <li>Removed duplciate extensions</li>
-<li>Adding <code>DataSourceType</code> &amp; <code>DelegateSourceType</code> protocol to support DataSource and Delegate</li>
+<li>Adding <code><a href="Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a></code> &amp; <code><a href="Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a></code> protocol to support DataSource and Delegate</li>
 <li>Adding <code><a href="Protocols/Presentable.html">Presentable</a></code> protocol</li>
-<li>Chaning naming in <code><a href="Structs/Stanwood/Objects.html">Stanwood.Objects</a></code></li>
+<li>Chaning naming in <code>Stanwood.Objects</code></li>
 </ul>
 <h2 id='usage' class='heading'>Usage</h2>
 

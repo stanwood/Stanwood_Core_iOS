@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           StanwoodCore Docs
         </a>
-         (95% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -91,6 +91,9 @@
                 <a class="nav-group-task-link" href="../Extensions/TimeInterval.html">TimeInterval</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
@@ -152,7 +155,13 @@
                 <a class="nav-group-task-link" href="../Protocols/AutoSizeable.html">AutoSizeable</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/DataType.html">DataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/Disposable.html">Disposable</a>
@@ -167,10 +176,10 @@
                 <a class="nav-group-task-link" href="../Protocols/Loadable.html">Loadable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/Nameable.html">Nameable</a>
+                <a class="nav-group-task-link" href="../Protocols/Presentable.html">Presentable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/Presentable.html">Presentable</a>
+                <a class="nav-group-task-link" href="../Protocols/SourceTypePresentable.html">SourceTypePresentable</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/Type.html">Type</a>
@@ -202,13 +211,13 @@
                 <a class="nav-group-task-link" href="../Structs/Stanwood/CodingBridge.html">– CodingBridge</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Stanwood/Elements.html">– Elements</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/Stanwood/FeedbackGenerator.html">– FeedbackGenerator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/Stanwood/Observer.html">– Observer</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/Stanwood/Objects.html">– Objects</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/Stanwood/Storage.html">– Storage</a>
@@ -289,10 +298,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The <code>AbstractCollectionDataSource</code> conforms to the <code>CollectionDataSource</code> protocol and implements <code><a href="../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC16numberOfSectionsSiSo16UICollectionViewC2in_tF">AbstractCollectionDataSource.numberOfSections(in:)</a></code> and <code><a href="../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSiSo012UICollectionH0C_Si22numberOfItemsInSectiontF">AbstractCollectionDataSource.collectionView(_:numberOfItemsInSection:)</a></code>. It midiates the application data model <code><a href="../Protocols/DataType.html">DataType</a></code> and <code><a href="../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uicollectionview"><code>UICollectionView</code></a>.</p>
+                        <p>The <code>AbstractCollectionDataSource</code> conforms to the <code>CollectionDataSource</code> protocol and implements <code>AbstractCollectionDataSource.numberOfSections(in:)</code> and <code>AbstractCollectionDataSource.collectionView(_:numberOfItemsInSection:)</code>. It midiates the application data model <code><a href="../Protocols/DataType.html">DataType</a></code> and <code><a href="../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uicollectionview"><code>UICollectionView</code></a>.</p>
 
 <blockquote>
-<p>It is requried to subclass <code>AbstractCollectionDataSource</code> and override <code><a href="../Structs/Stanwood/AbstractCollectionDataSource.html#/s:12StanwoodCore0A0V28AbstractCollectionDataSourceC14collectionViewSo012UICollectionH4CellCSo0iH0C_10Foundation9IndexPathV13cellForItemAttF">AbstractCollectionDataSource.collectionView(_:cellForItemAt:)</a></code></p>
+<p>It is requried to subclass <code>AbstractCollectionDataSource</code> and override <code>AbstractCollectionDataSource.collectionView(_:cellForItemAt:)</code></p>
 </blockquote>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
@@ -311,7 +320,7 @@
 
 <p><code><a href="../Structs/Stanwood/AbstractCollectionDelegate.html">AbstractCollectionDelegate</a></code></p>
 
-<p><code><a href="../Structs/Stanwood/Objects.html">Objects</a></code></p>
+<p><code>Objects</code></p>
 
 <p><code><a href="../Protocols/DataType.html">DataType</a></code></p>
 
@@ -323,7 +332,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -365,7 +374,7 @@
 
 <p><code><a href="../Structs/Stanwood/AbstractCollectionDataSource.html">AbstractCollectionDataSource</a></code></p>
 
-<p><code><a href="../Structs/Stanwood/Objects.html">Objects</a></code></p>
+<p><code>Objects</code></p>
 
 <p><code><a href="../Protocols/DataType.html">DataType</a></code></p>
 
@@ -377,7 +386,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span><span class="p">,</span> <span class="kt">CollectionDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span><span class="p">,</span> <span class="kt">CollectionDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -401,10 +410,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The <code>AbstractTableDataSource</code> conforms to the <code>TableDataSource</code> protocol and implements <code><a href="../Structs/Stanwood/AbstractTableDataSource.html#/s:12StanwoodCore0A0V23AbstractTableDataSourceC16numberOfSectionsSiSo11UITableViewC2in_tF">AbstractTableDataSource.numberOfSections(in:)</a></code> and <code><a href="../Structs/Stanwood/AbstractTableDataSource.html#/s:12StanwoodCore0A0V23AbstractTableDataSourceC9tableViewSiSo07UITableH0C_Si21numberOfRowsInSectiontF">AbstractTableDataSource.tableView(_:numberOfRowsInSection:)</a></code>. It midiates the application data model <code><a href="../Protocols/DataType.html">DataType</a></code> and <code><a href="../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uitableview"><code>UITableView</code></a>.</p>
+                        <p>The <code>AbstractTableDataSource</code> conforms to the <code>TableDataSource</code> protocol and implements <code>AbstractTableDataSource.numberOfSections(in:)</code> and <code>AbstractTableDataSource.tableView(_:numberOfRowsInSection:)</code>. It midiates the application data model <code><a href="../Protocols/DataType.html">DataType</a></code> and <code><a href="../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uitableview"><code>UITableView</code></a>.</p>
 
 <blockquote>
-<p>It is requried to subclass <code>AbstractTableDataSource</code> and override <code><a href="../Structs/Stanwood/AbstractTableDataSource.html#/s:12StanwoodCore0A0V23AbstractTableDataSourceC9tableViewSo07UITableH4CellCSo0iH0C_10Foundation9IndexPathV12cellForRowAttF">AbstractTableDataSource.tableView(_:cellForRowAt:)</a></code></p>
+<p>It is requried to subclass <code>AbstractTableDataSource</code> and override <code>AbstractTableDataSource.tableView(_:cellForRowAt:)</code></p>
 </blockquote>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
@@ -423,7 +432,7 @@
 
 <p><code><a href="../Structs/Stanwood/AbstractCollectionDelegate.html">AbstractCollectionDelegate</a></code></p>
 
-<p><code><a href="../Structs/Stanwood/Objects.html">Objects</a></code></p>
+<p><code>Objects</code></p>
 
 <p><code><a href="../Protocols/DataType.html">DataType</a></code></p>
 
@@ -435,7 +444,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -477,7 +486,7 @@
 
 <p><code><a href="../Structs/Stanwood/AbstractTableDataSource.html">AbstractTableDataSource</a></code></p>
 
-<p><code><a href="../Structs/Stanwood/Objects.html">Objects</a></code></p>
+<p><code>Objects</code></p>
 
 <p><code><a href="../Protocols/DataType.html">DataType</a></code></p>
 
@@ -489,7 +498,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">TableDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">TableDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -567,6 +576,62 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:12StanwoodCore0A0V8ElementsC"></a>
+                    <a name="//apple_ref/swift/Class/Elements" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V8ElementsC">Elements</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Elements holds a collection of element types.</p>
+
+<blockquote>
+<p>Important: only supports a single section dataType. For a more complex solution, please conform to the <code><a href="../Protocols/DataType.html">DataType</a></code> protocol.</p>
+</blockquote>
+<h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
+<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+
+<span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementsDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">elements</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementsDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">elements</span><span class="p">)</span>
+
+<span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span>
+<span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">delegate</span>
+</code></pre>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    
+</div>
+
+<p><code><a href="../Protocols/DataType.html">DataType</a></code></p>
+
+<p><code><a href="../Protocols/Type.html">Type</a></code></p>
+
+<p><code><a href="../Typealiases.html#/s:12StanwoodCore8Typeablea">Typeable</a></code></p>
+
+                        <a href="../Structs/Stanwood/Elements.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:12StanwoodCore8Typeablea">Typeable</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataType.html">DataType</a></span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:12StanwoodCore0A0V17FeedbackGeneratorC"></a>
                     <a name="//apple_ref/swift/Class/FeedbackGenerator" class="dashAnchor"></a>
                     <a class="token" href="#/s:12StanwoodCore0A0V17FeedbackGeneratorC">FeedbackGenerator</a>
@@ -623,62 +688,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Observer</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore0A0V7ObjectsC"></a>
-                    <a name="//apple_ref/swift/Class/Objects" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7ObjectsC">Objects</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Objects holds a collection of element types.</p>
-
-<blockquote>
-<p>Important: only supports a single section dataType. For a more complex solution, please conform to the <code><a href="../Protocols/DataType.html">DataType</a></code> protocol.</p>
-</blockquote>
-<h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
-<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Objects</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
-
-<span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
-<span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
-
-<span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span>
-<span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">delegate</span>
-</code></pre>
-<div class="aside aside-see-also">
-    <p class="aside-title">See also</p>
-    
-</div>
-
-<p><code><a href="../Protocols/DataType.html">DataType</a></code></p>
-
-<p><code><a href="../Protocols/Type.html">Type</a></code></p>
-
-<p><code><a href="../Typealiases.html#/s:12StanwoodCore8Typeablea">Typeable</a></code></p>
-
-                        <a href="../Structs/Stanwood/Objects.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">Objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:12StanwoodCore8Typeablea">Typeable</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataType.html">DataType</a></span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
 
                         </div>
                       </div>

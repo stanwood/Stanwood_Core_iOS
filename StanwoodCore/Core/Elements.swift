@@ -1,5 +1,5 @@
 //
-//  Objects.swift
+//  Elements.swift
 //  StanwoodCore
 //
 //  Created by Tal Zion on 03/01/2018.
@@ -12,18 +12,23 @@ public typealias Typeable = Type & Equatable & Codable
 
 extension Stanwood {
     
+    /// Unavalible
+    @available(*, unavailable, renamed: "Elements")
+    open class Objects<T: Typeable>: Codable {}
+    
     /**
-     Objects holds a collection of element types.
+     Elements holds a collection of element types.
      
      >Important: only supports a single section dataType. For a more complex solution, please conform to the `DataType` protocol.
      
      #####Example: DataSource and Delegate design#####
+     
      ````swift
      let items = [Element(id: "1"), Element(id: "2")]
-     self.objects = Stanwood.Objects<Element>(items: items)
+     self.objects = Stanwood.Elements<Element>(items: items)
      
-     self.dataSource = ElementDataSource(dataObject: objects)
-     self.delegate = ElementDelegate(dataObject: objects)
+     self.dataSource = ElementsDataSource(dataObject: elements)
+     self.delegate = ElementsDelegate(dataObject: elements)
      
      self.collectionView.dataSource = self.dataSource
      self.collectionView.delegate = self.delegate
@@ -37,15 +42,15 @@ extension Stanwood {
      
      `Typeable`
      */
-    open class Objects<T: Typeable>: DataType, Codable {
+    open class Elements<Element: Typeable>: DataType, Codable {
         
         // MARK: Properties
         
-        /// Items of elements<Type & Equatable>
-        public var items: [T]
+        /// Items of elements<Type & Equatable & Codable>
+        public var items: [Element]
         
         public static var identifier: String {
-            return String(describing: Objects<T>.self)
+            return String(describing: Elements<Element>.self)
         }
         
         // MARK Computet Properties
@@ -56,7 +61,7 @@ extension Stanwood {
         }
         
         /**
-         Objects only supports a single section.
+         Elements only supports a single section.
          
          - Returns: current section
          
@@ -69,12 +74,12 @@ extension Stanwood {
         // MARK: Initializers
         
         /**
-         Initializer of Objects
+         Initializer of Elements
          
          - Parameters:
-            - items: `[T]<Type & Equatable>`
+         - items: `[Element]<Type & Equatable & Codable>`
          */
-        public init(items: [T]) {
+        public init(items: [Element]) {
             self.items = items
         }
         
@@ -84,7 +89,7 @@ extension Stanwood {
          Subscript to get an item in row.
          
          - Parameters:
-            - indexPath: IndexPath location of an item at row
+         - indexPath: IndexPath location of an item at row
          
          - Returns: `Optional<Type>`
          
@@ -97,7 +102,7 @@ extension Stanwood {
         /**
          Subscript to get a section.
          
-         >Important: `Objects` only supports a single section dataType. For a more complex solution, please conform to the `DataType` protocol.
+         >Important: `Elements` only supports a single section dataType. For a more complex solution, please conform to the `DataType` protocol.
          
          - SeeAlso: `DataType`
          */
@@ -107,14 +112,19 @@ extension Stanwood {
         
         // MARK: Public Functions
         
+        /// Returns the cell type at indexPath
+        open func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
+            return nil
+        }
+        
         /**
          Append an item or insert at index
          
          - Parameters:
-            - item: <T>[Typeable]
-            - index: Index
+         - item: <Element>[Typeable]
+         - index: Index
          */
-        public func insert(item: T, at index: Int) {
+        public func insert(item: Element, at index: Int) {
             items.insert(item, at: index)
         }
         
@@ -122,9 +132,9 @@ extension Stanwood {
          Append an item or insert at index
          
          - Parameters:
-            - item: <T>[Typeable]
+         - item: <Element>[Typeable]
          */
-        public func append(_ item: T) {
+        public func append(_ item: Element) {
             items.append(item)
         }
         
@@ -132,12 +142,12 @@ extension Stanwood {
          Move an item to index.
          
          - Parameters:
-            - item: <T>[Type & Equatable]
-            - index: the index to move the item
+         - item: <Element>[Type & Equatable & Codable]
+         - index: the index to move the item
          
-         - Returns: `Objects`
+         - Returns: `Elements`
          */
-        public func move(_ item: T, to index: Int) {
+        public func move(_ item: Element, to index: Int) {
             items.forEach({ print($0.id!) })
             if let indexToRemove = self.index(of: item) {
                 items.remove(at: indexToRemove)
@@ -151,11 +161,11 @@ extension Stanwood {
          Delete an item
          
          - Parameters:
-            - item: the item to delete
+         - item: the item to delete
          
-         - Returns: `Objects`
+         - Returns: `Elements`
          */
-        public func delete(_ item: T) {
+        public func delete(_ item: Element) {
             if let index = index(of: item) {
                 items.remove(at: index)
             }
@@ -165,11 +175,11 @@ extension Stanwood {
          Get the index of an item.
          
          - Parameters:
-            - item: the item to search for in the collection
+         - item: the item to search for in the collection
          
          - Returns: the item index
          */
-        public func index(of item: T) -> Int? {
+        public func index(of item: Element) -> Int? {
             return items.index(of: item)
         }
         
@@ -177,11 +187,11 @@ extension Stanwood {
          Checking if objects contain an item.
          
          - Parameters:
-            - item: the item to check it it exists.
+         - item: the item to check it it exists.
          
          - Returns: if it exists
          */
-        public func contains(_ item: T) -> Bool {
+        public func contains(_ item: Element) -> Bool {
             return items.contains(item)
         }
         
@@ -191,20 +201,21 @@ extension Stanwood {
          Save objects to file
          
          - Parameters:
-            - fileName: The file name. If nil, default value String(describing: Objects<T>.self)`
+         - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
          */
         public func save(withFileName fileName: String? = nil) throws {
-            try Storage.store(self, to: .documents, as: .json, withName: fileName ?? Objects<T>.identifier)
+            try Storage.store(self, to: .documents, as: .json, withName: fileName ?? Elements<Element>.identifier)
         }
         
         /**
          Returns objects from file if exists
          
          - Parameters:
-            - fileName: The file name. If nil, default value String(describing: Objects<T>.self)`
+         - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
          */
-        public static func loadFromFile(withFileName fileName: String? = nil) -> Objects? {
-            return Stanwood.Storage.retrieve(fileName ?? Objects<T>.identifier, of: .json, from: .documents, as: Objects<T>.self)
+        public static func loadFromFile(withFileName fileName: String? = nil) -> Elements? {
+            return Stanwood.Storage.retrieve(fileName ?? Elements<Element>.identifier, of: .json, from: .documents, as: Elements<Element>.self)
         }
     }
 }
+

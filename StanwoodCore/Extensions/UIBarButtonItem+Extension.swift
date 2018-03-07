@@ -15,9 +15,15 @@ extension UIBarButtonItem {
             return title
         }
         set {
+            
             // accessibilityIdentifier is set for UITesting tool
             accessibilityIdentifier = newValue
             title = newValue?.localized
+            
+            #if DEBUG
+                guard newValue != nil else { return }
+                UITestingCore.record(key: newValue, text: newValue?.localized, atElement: String(describing: UIBarButtonItem.self))
+            #endif
         }
     }
     
@@ -41,6 +47,10 @@ extension UIBarButtonItem {
     convenience public init(localizedTitle: String, style: UIBarButtonItemStyle, target: Any?, action: Selector?) {
         self.init(title: localizedTitle.localized, style: style, target: target, action: action)
         accessibilityIdentifier = localizedTitle
+        
+        #if DEBUG
+            UITestingCore.record(key: localizedTitle, text: localizedTitle.localized, atElement: String(describing: UIBarButtonItem.self))
+        #endif
     }
     
     /**
@@ -55,5 +65,9 @@ extension UIBarButtonItem {
         let title = String(format: formatKey.localized, arguments: arguments)
         self.init(title: title, style: style, target: target, action: action)
         accessibilityIdentifier = formatKey
+        
+        #if DEBUG
+            UITestingCore.record(key: formatKey, text: title, atElement: String(describing: UIBarButtonItem.self))
+        #endif
     }
 }

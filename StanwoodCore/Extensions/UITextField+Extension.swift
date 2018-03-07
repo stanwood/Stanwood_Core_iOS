@@ -1,5 +1,5 @@
 //
-//  UISearchBar+Extension.swift
+//  UITextField+Extension.swift
 //  StanwoodCore
 //
 //  Created by Tal Zion on 29/01/2018.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension UISearchBar {
+extension UITextField {
     
     /// Localizing placeholder and sets the accessibilityIdentifier
     @objc open var localizedPlaceholder: String? {
@@ -18,6 +18,11 @@ extension UISearchBar {
             // accessibilityIdentifier is set for UITesting tool
             accessibilityIdentifier = newValue
             placeholder = newValue?.localized
+            
+            #if DEBUG
+                guard newValue != nil else { return }
+                UITestingCore.record(key: newValue, text: placeholder, atElement: String(describing: UITextField.self))
+            #endif
         }
     }
     
@@ -39,7 +44,11 @@ extension UISearchBar {
     open func localizePlaceholder(formatKey: String, _ arguments: CVarArg...) -> String? {
         accessibilityIdentifier = formatKey
         self.placeholder = String(format: formatKey.localized, arguments: arguments)
+        
+        #if DEBUG
+            UITestingCore.record(key: formatKey, text: placeholder, atElement: String(describing: UISearchBar.self))
+        #endif
+        
         return self.placeholder
     }
 }
-

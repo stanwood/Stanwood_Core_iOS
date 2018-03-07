@@ -19,17 +19,14 @@ public protocol Presentable {
     /// Viewable associatedtype
     associatedtype Viewable
     
-    /// Collection or Table view DataSource associatedtype
-    associatedtype DataSource: DataSourceType
+    /// Actionable property
+    var actionable: Actionable { get set }
     
-    /// Collection or Table view Delegate associatedtype
-    associatedtype Delegate: DelegateSourceType
+    /// Parameterable property
+    var paramaterable: Parameterable { get set }
     
-    /// Collection or Table view DataSource
-    var dataSource: DataSource { get set }
-    
-    /// Collection or Table view Delegate
-    var delegate: Delegate { get set }
+    /// Viewable property
+    var viewable: Viewable { get set }
     
     /**
      Presentable required initialisers
