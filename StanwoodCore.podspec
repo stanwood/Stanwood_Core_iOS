@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'StanwoodCore'
-    s.version          = '0.2.3'
+    s.version          = '0.3.0'
     s.summary          = 'Stanwood core libarary'
     
     s.description      = <<-DESC

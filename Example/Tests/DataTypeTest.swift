@@ -11,26 +11,26 @@ import StanwoodCore
 
 class DataTypeTest: XCTestCase {
     
-    var objects: Stanwood.Elements<Object>!
+    var objects: Stanwood.Elements<Deal>!
     
     override func setUp() {
         super.setUp()
         
-        let items: [Object] = [
-            Object(id: "1"),
-            Object(id: "2"),
-            Object(id: "3"),
-            Object(id: "4"),
-            Object(id: "5"),
-            Object(id: "6"),
-            Object(id: "7"),
-            Object(id: "8"),
-            Object(id: "9"),
-            Object(id: "10"),
-            Object(id: "11"),
-            Object(id: "12"),
-            Object(id: "13"),
-            Object(id: "14")
+        let items: [Deal] = [
+            Deal(id: "1"),
+            Deal(id: "2"),
+            Deal(id: "3"),
+            Deal(id: "4"),
+            Deal(id: "5"),
+            Deal(id: "6"),
+            Deal(id: "7"),
+            Deal(id: "8"),
+            Deal(id: "9"),
+            Deal(id: "10"),
+            Deal(id: "11"),
+            Deal(id: "12"),
+            Deal(id: "13"),
+            Deal(id: "14")
         ]
         
         objects = Stanwood.Elements(items: items)
@@ -47,7 +47,7 @@ class DataTypeTest: XCTestCase {
     }
     
     func testInsert() {
-        let object = Object(id: "15")
+        let object = Deal(id: "15")
         let objects = self.objects!
         objects.insert(item: object, at: 7)
         
@@ -55,8 +55,8 @@ class DataTypeTest: XCTestCase {
     }
     
     func testContains() {
-        let object = Object(id: "15")
-        let objects: Stanwood.Elements<Object> = self.objects
+        let object = Deal(id: "15")
+        let objects: Stanwood.Elements<Deal> = self.objects
         
         XCTAssertFalse(objects.contains(object))
         
@@ -66,36 +66,36 @@ class DataTypeTest: XCTestCase {
     }
     
     func testMoveLow() {
-        let objects: Stanwood.Elements<Object> = self.objects
+        let objects: Stanwood.Elements<Deal> = self.objects
         let indexPath = IndexPath(item: 2, section: 0)
-        let objectThree = objects[indexPath] as! Object
+        let objectThree = objects[indexPath] as! Deal
         let movedToIndexPath = IndexPath(item: 7, section: 0)
         
-        let from = objects[indexPath] as! Object
+        let from = objects[indexPath] as! Deal
         objects.move(objectThree, to: 7)
-        let to = objects[movedToIndexPath] as! Object
+        let to = objects[movedToIndexPath] as! Deal
         
         XCTAssertEqual(from, to)
     }
     
     func testMoveHigh() {
-        let objects: Stanwood.Elements<Object> = self.objects
+        let objects: Stanwood.Elements<Deal> = self.objects
         let indexPath = IndexPath(item: 12, section: 0)
-        let objectThree = objects[indexPath] as! Object
+        let objectThree = objects[indexPath] as! Deal
         let movedToIndexPath = IndexPath(item: 7, section: 0)
         
-        let from = objects[indexPath] as! Object
+        let from = objects[indexPath] as! Deal
         objects.move(objectThree, to: 7)
-        let to = objects[movedToIndexPath] as! Object
+        let to = objects[movedToIndexPath] as! Deal
         
         XCTAssertEqual(from, to)
     }
     
     func testDelete() {
         
-        let objects: Stanwood.Elements<Object> = self.objects
+        let objects: Stanwood.Elements<Deal> = self.objects
         let indexPath = IndexPath(item: 2, section: 0)
-        let objectThree = objects[indexPath] as! Object
+        let objectThree = objects[indexPath] as! Deal
         
         XCTAssert(objects.contains(objectThree))
         
@@ -106,7 +106,7 @@ class DataTypeTest: XCTestCase {
     
     func testIndex() {
         let indexPath = IndexPath(item: 2, section: 0)
-        let objectThree = objects[indexPath] as! Object
+        let objectThree = objects[indexPath] as! Deal
         
         let index = objects.index(of: objectThree)
         
@@ -117,24 +117,24 @@ class DataTypeTest: XCTestCase {
         do {
             try objects.save()
             
-            let loadedObjects = Stanwood.Elements<Object>.loadFromFile()
-            XCTAssertNotNil(loadedObjects)
+            let loadedDeals = Stanwood.Elements<Deal>.loadFromFile()
+            XCTAssertNotNil(loadedDeals)
             
-            if let loadedObjects = loadedObjects {
-                XCTAssertEqual(objects.numberOfItems, loadedObjects.numberOfItems)
+            if let loadedDeals = loadedDeals {
+                XCTAssertEqual(objects.numberOfItems, loadedDeals.numberOfItems)
                 
-                let object = Object(id: "55")
-                loadedObjects.append(object)
+                let object = Deal(id: "55")
+                loadedDeals.append(object)
                 
-                XCTAssertNotEqual(objects.numberOfItems, loadedObjects.numberOfItems)
+                XCTAssertNotEqual(objects.numberOfItems, loadedDeals.numberOfItems)
                 
-                try loadedObjects.save(withFileName: "objects_file")
+                try loadedDeals.save(withFileName: "objects_file")
                 
-                let objectsFile = Stanwood.Elements<Object>.loadFromFile(withFileName: "objects_file")
+                let objectsFile = Stanwood.Elements<Deal>.loadFromFile(withFileName: "objects_file")
                 XCTAssertNotNil(objectsFile)
                 
                 if let objectsFile = objectsFile {
-                    XCTAssertEqual(objectsFile.numberOfItems, loadedObjects.numberOfItems)
+                    XCTAssertEqual(objectsFile.numberOfItems, loadedDeals.numberOfItems)
                 }
             }
         } catch {

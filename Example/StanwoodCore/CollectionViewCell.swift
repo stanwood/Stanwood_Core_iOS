@@ -18,7 +18,7 @@ class CollectionViewCell: Stanwood.AutoSizeableCell, Fillable {
     }
     
     func fill(with type: Type?) {
-        guard let item = type as? Object else { return }
+        guard let item = type as? Deal else { return }
         label.localizedText = item.id
     }
 }

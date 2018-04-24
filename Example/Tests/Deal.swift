@@ -9,7 +9,7 @@
 import Foundation
 import StanwoodCore
 
-struct Object: Typeable {
+struct Deal: Typeable {
     
     var id: String?
     
@@ -17,7 +17,7 @@ struct Object: Typeable {
         self.id = id
     }
     
-    static func ==(lhs: Object, rhs: Object) -> Bool {
+    static func ==(lhs: Deal, rhs: Deal) -> Bool {
         return lhs.id == rhs.id
     }
 }

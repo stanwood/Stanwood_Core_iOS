@@ -139,7 +139,7 @@ extension Stanwood {
         open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             guard let cellType = dataObject?.cellType(forItemAt: indexPath) as? UICollectionViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
             guard let cell = collectionView.dequeue(cellType: cellType, for: indexPath) as? (UICollectionViewCell & Fillable) else { fatalError("UICollectionViewCell must conform to Fillable protocol") }
-            cell.fill(with: dataObject?[indexPath])
+            cell.fill(with: dataObject?[indexPath.section][indexPath])
             return cell
         }
     }

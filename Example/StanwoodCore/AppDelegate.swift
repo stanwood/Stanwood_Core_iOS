@@ -36,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func listen() {
         
         listener = UITestingCoreListener()
+        
+        // Auth anonymously
+        // Note: Make sure this option is enabled on Firebsae
         Auth.auth().signInAnonymously { (user, error) in
             
             DispatchQueue.global(qos: .background).async {
