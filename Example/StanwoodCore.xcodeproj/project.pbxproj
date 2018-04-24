@@ -13,7 +13,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		6C414B5020458DF900BC15B3 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB841FFCD3A1008BEE98 /* Object.swift */; };
+		6C414B5020458DF900BC15B3 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB841FFCD3A1008BEE98 /* Deal.swift */; };
 		6C414B532045925900BC15B3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C414B512045925900BC15B3 /* TableViewCell.swift */; };
 		6C414B542045925900BC15B3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C414B522045925900BC15B3 /* TableViewCell.xib */; };
 		6C414B5C2046BDF500BC15B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C414B5B2046BDF500BC15B3 /* GoogleService-Info.plist */; };
@@ -26,7 +26,7 @@
 		6C64BB7B1FFCC912008BEE98 /* LodableNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C64BB7A1FFCC912008BEE98 /* LodableNib.xib */; };
 		6C64BB7D1FFCC925008BEE98 /* LodableNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB7C1FFCC925008BEE98 /* LodableNib.swift */; };
 		6C64BB811FFCD04F008BEE98 /* DataTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB801FFCD04F008BEE98 /* DataTypeTest.swift */; };
-		6C64BB851FFCD3A1008BEE98 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB841FFCD3A1008BEE98 /* Object.swift */; };
+		6C64BB851FFCD3A1008BEE98 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB841FFCD3A1008BEE98 /* Deal.swift */; };
 		6CA768B01FF3949D00611DA8 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA768AF1FF3949D00611DA8 /* StringTests.swift */; };
 		6CA768B41FF3985B00611DA8 /* UILabelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA768B31FF3985B00611DA8 /* UILabelTest.swift */; };
 		6CA768B61FF3989200611DA8 /* UIButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA768B51FF3989200611DA8 /* UIButtonTest.swift */; };
@@ -80,7 +80,7 @@
 		6C64BB7A1FFCC912008BEE98 /* LodableNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LodableNib.xib; sourceTree = "<group>"; };
 		6C64BB7C1FFCC925008BEE98 /* LodableNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodableNib.swift; sourceTree = "<group>"; };
 		6C64BB801FFCD04F008BEE98 /* DataTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeTest.swift; sourceTree = "<group>"; wrapsLines = 1; };
-		6C64BB841FFCD3A1008BEE98 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		6C64BB841FFCD3A1008BEE98 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		6CA768AE1FF3949C00611DA8 /* StanwoodCore_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StanwoodCore_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		6CA768AF1FF3949D00611DA8 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		6CA768B31FF3985B00611DA8 /* UILabelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelTest.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 				6CA768AE1FF3949C00611DA8 /* StanwoodCore_Tests-Bridging-Header.h */,
 				6C64BB7A1FFCC912008BEE98 /* LodableNib.xib */,
 				6C64BB7C1FFCC925008BEE98 /* LodableNib.swift */,
-				6C64BB841FFCD3A1008BEE98 /* Object.swift */,
+				6C64BB841FFCD3A1008BEE98 /* Deal.swift */,
 				6CC3AFED20441B9000B6C492 /* LoadableOutlet.xib */,
 				6CC3AFEF20441B9800B6C492 /* LoadableOutlet.swift */,
 			);
@@ -485,7 +485,7 @@
 				6C414B632046DBCE00BC15B3 /* TableDelegate.swift in Sources */,
 				607FACD81AFB9204008FA782 /* CoreExampleViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				6C414B5020458DF900BC15B3 /* Object.swift in Sources */,
+				6C414B5020458DF900BC15B3 /* Deal.swift in Sources */,
 				6C54B7A72031B8E800D2CFBD /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +501,7 @@
 				6CC3AFF220441BD500B6C492 /* LoadableOutlet.swift in Sources */,
 				6CED89E62031879900729595 /* StringFormatTest.swift in Sources */,
 				6C64BB811FFCD04F008BEE98 /* DataTypeTest.swift in Sources */,
-				6C64BB851FFCD3A1008BEE98 /* Object.swift in Sources */,
+				6C64BB851FFCD3A1008BEE98 /* Deal.swift in Sources */,
 				6CED89E420317CAE00729595 /* UIBarButtonItemTest.swift in Sources */,
 				6C64BB7D1FFCC925008BEE98 /* LodableNib.swift in Sources */,
 				6CA768B41FF3985B00611DA8 /* UILabelTest.swift in Sources */,

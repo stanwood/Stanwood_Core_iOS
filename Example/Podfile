@@ -7,7 +7,7 @@ platform :ios, '10.0'
 target 'StanwoodCore_Example' do
     inherit! :search_paths
     pod 'StanwoodCore', :path => '../'
-    pod 'StanwoodUITestingCore', :configurations => ['Debug']
+    pod 'StanwoodUITestingCore', '0.1.1', :configurations => ['Debug']
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
 end

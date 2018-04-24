@@ -9,14 +9,14 @@
 import UIKit
 import StanwoodCore
 
-class Tables: Stanwood.Elements<Object> {
+class Tables: Stanwood.Elements<Deal> {
     
     override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
         return TableViewCell.self
     }
 }
 
-class Collections: Stanwood.Elements<Object> {
+class Collections: Stanwood.Elements<Deal> {
     
     override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
         return CollectionViewCell.self

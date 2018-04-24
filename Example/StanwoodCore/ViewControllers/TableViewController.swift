@@ -16,22 +16,22 @@ class TableViewController: UIViewController {
     
     var delegate: TableDelegate!
     var dataSource: Stanwood.AbstractTableDataSource!
-    var elements: Stanwood.Elements<Object>!
+    var elements: Stanwood.Elements<Deal>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let items: [Object] = [
-            Object(id: "TEST_TITLE1"),
-            Object(id: "TEST_TITLE2"),
-            Object(id: "TEST_TITLE3"),
-            Object(id: "TEST_TITLE4"),
+        let items: [Deal] = [
+            Deal(id: "TEST_TITLE1"),
+            Deal(id: "TEST_TITLE2"),
+            Deal(id: "TEST_TITLE3"),
+            Deal(id: "TEST_TITLE4"),
         ]
         
         configureTableView(items: items)
     }
     
-    func configureTableView(items: [Object]) {
+    func configureTableView(items: [Deal]) {
         
         elements = Tables(items: items)
         
