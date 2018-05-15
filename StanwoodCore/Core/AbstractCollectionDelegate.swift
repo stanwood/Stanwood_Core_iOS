@@ -26,7 +26,7 @@ extension Stanwood {
      #####Example: DataSource and Delegate design#####
      ````swift
      let items = [Element(id: "1"), Element(id: "2")]
-     self.objects = Stanwood.Objects<Element>(items: items)
+     self.objects = Stanwood.Elements<Element>(items: items)
      
      self.dataSource = ElementDataSource(dataObject: objects)
      self.delegate = ElementDelegate(dataObject: objects)
