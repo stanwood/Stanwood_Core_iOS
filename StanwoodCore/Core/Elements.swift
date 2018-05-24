@@ -17,7 +17,7 @@ extension Stanwood {
     open class Objects<T: Typeable>: Codable {}
     
     /**
-     Elements holds a collection of element types.
+     Elements holds an array of element types.
      
      >Important: only supports a single section dataType. For a more complex solution, please conform to the `DataType` protocol.
      
