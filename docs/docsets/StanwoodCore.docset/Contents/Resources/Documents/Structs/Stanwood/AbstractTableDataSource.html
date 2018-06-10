@@ -155,13 +155,7 @@
                 <a class="nav-group-task-link" href="../../Protocols/AutoSizeable.html">AutoSizeable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/DataType.html">DataType</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/Disposable.html">Disposable</a>
@@ -171,9 +165,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/Fillable.html">Fillable</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Protocols.html#/s:12StanwoodCore13ForceFillabelP">ForceFillabel</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/Loadable.html">Loadable</a>
@@ -244,7 +235,7 @@
             <h1>AbstractTableDataSource</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt"><a href="../../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
 
                 </div>
               </div>
@@ -255,7 +246,7 @@
 </blockquote>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
-<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Objects</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
 
 <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
 <span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
@@ -293,9 +284,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC10dataObjectAA0E4Type_pSgv"></a>
+                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC10dataObjectAA0E4Type_pSgvp"></a>
                     <a name="//apple_ref/swift/Property/dataObject" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC10dataObjectAA0E4Type_pSgv">dataObject</a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC10dataObjectAA0E4Type_pSgvp">dataObject</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -320,9 +311,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC8dataTypeAA0H0_pSgv"></a>
+                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC8dataTypeAA0H0_pSgvp"></a>
                     <a name="//apple_ref/swift/Property/dataType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC8dataTypeAA0H0_pSgv">dataType</a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC8dataTypeAA0H0_pSgvp">dataType</a>
                     </code>
                   </div>
                   <div class="height-container">
