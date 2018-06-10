@@ -1,11 +1,27 @@
 //
 //  Storage.swift
-//  StanwoodCore
 //
-//  Created by Tal Zion on 27/12/2017.
-//  Copyright © 2017 stanwood GmbH. All rights reserved.
+//  The MIT License (MIT)
 //
-
+//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 import Foundation
 
 extension Stanwood {
@@ -33,10 +49,10 @@ extension Stanwood {
          Directory to save data
          */
         public enum Directory {
-            /// Only documents and other data that is user-generated, or that cannot otherwise be recreated by your application, should be stored in the <Application_Home>/Documents directory and will be automatically backed up by iCloud.
+            /// Only documents and other data that is user-generated, should be stored in the Documents directory and will be automatically backed up by iCloud.
             case documents
             
-            /// Data that can be downloaded again or regenerated should be stored in the <Application_Home>/Library/Caches directory. Examples of files you should put in the Caches directory include database cache files and downloadable content, such as that used by magazine, newspaper, and map applications.
+            /// Data that can be downloaded again or regenerated should be stored in the Caches directory.
             case caches
         }
         
@@ -61,11 +77,11 @@ extension Stanwood {
         
         /**
          Store an encodable struct to the specified directory on disk
-        
+         
          - Parameters:
-           - object: the encodable struct to store
-           - directory: where to store the struct
-           - fileName: what to name the file where the struct data will be stored
+         - object: the encodable struct to store
+         - directory: where to store the struct
+         - fileName: what to name the file where the struct data will be stored
          */
         static open func store<T: Encodable>(_ object: T, to directory: Directory, as fileType: FileType, withName fileName: String) throws {
             let url = getURL(for: directory).appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
@@ -80,7 +96,7 @@ extension Stanwood {
             } catch {
                 
                 #if DEBUG
-                    print(error)
+                print(error)
                 #endif
             }
         }
@@ -92,37 +108,28 @@ extension Stanwood {
          ````swift
          let resorts = retrieve("resorts", of: .json, from: .documents, as: [Resort].self)
          ````
-        
+         
          - Parameters:
-           - fileName: name of the file where struct data is stored
-           - directory: directory where struct data is stored
-           - type: struct type (i.e. Message.self)
+         - fileName: name of the file where struct data is stored
+         - directory: directory where struct data is stored
+         - type: struct type (i.e. Message.self)
          - Returns: decoded struct model(s) of data
          */
-        static open func retrieve<T: Decodable>(_ fileName: String, of fileType: FileType, from directory: Directory, as type: T.Type) -> T? {
+        static open func retrieve<T: Decodable>(_ fileName: String, of fileType: FileType, from directory: Directory, as type: T.Type) throws -> T? {
             let url = getURL(for: directory).appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             
             if !FileManager.default.fileExists(atPath: url.path) {
                 return nil
             }
             
-            if let data = FileManager.default.contents(atPath: url.path) {
-                let decoder = JSONDecoder()
-                do {
-                    let model = try decoder.decode(type, from: data)
-                    return model
-                } catch {
-                    #if DEBUG
-                        print(error)
-                    #endif
-                }
-            } else {
-                #if DEBUG
-                    print("No data at \(url.path)!")
-                #endif
+            guard let data = FileManager.default.contents(atPath: url.path) else { return nil }
+            let decoder = JSONDecoder()
+            do {
+                let model = try decoder.decode(type, from: data)
+                return model
+            } catch {
+                throw(error)
             }
-            
-            return nil
         }
         
         /// Remove all files at specified directory
