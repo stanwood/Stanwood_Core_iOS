@@ -1,5 +1,6 @@
-source 'https://github.com/stanwood/Cocoa_Pods_Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
+source 'git@github.com:stanwood/Cocoa_Pods_Specs.git'
+
 
 use_frameworks!
 platform :ios, '10.0'

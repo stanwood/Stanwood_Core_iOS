@@ -155,13 +155,7 @@
                 <a class="nav-group-task-link" href="../Protocols/AutoSizeable.html">AutoSizeable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/DataType.html">DataType</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/Disposable.html">Disposable</a>
@@ -171,9 +165,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/Fillable.html">Fillable</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols.html#/s:12StanwoodCore13ForceFillabelP">ForceFillabel</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/Loadable.html">Loadable</a>
@@ -248,7 +239,7 @@
 
                 </div>
               </div>
-            <p>Stanwood global</p>
+            <p>Stanwood global instance</p>
 
           </div>
         </section>
@@ -260,9 +251,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V17isRunningSnapshotSbv"></a>
+                    <a name="/s:12StanwoodCore0A0V17isRunningSnapshotSbvp"></a>
                     <a name="//apple_ref/swift/Property/isRunningSnapshot" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V17isRunningSnapshotSbv">isRunningSnapshot</a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V17isRunningSnapshotSbvp">isRunningSnapshot</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -308,7 +299,7 @@
 </blockquote>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
-<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Objects</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
 
 <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
 <span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
@@ -335,7 +326,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
 
                         </div>
                       </div>
@@ -362,7 +353,7 @@
                         <p>The <code>AbstractCollectionDelegate</code> conforms to the <code>CollectionDelegate</code> protocol. It allows you to manage the selection and highlighting of items in a collection view and to perform actions on those items. <a href="https://developer.apple.com/documentation/uikit/uicollectionview"><code>UICollectionView</code></a>.</p>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
-<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Objects</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
 
 <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
 <span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
@@ -389,7 +380,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span><span class="p">,</span> <span class="kt">CollectionDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span><span class="p">,</span> <span class="kt">CollectionDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
 
                         </div>
                       </div>
@@ -420,7 +411,7 @@
 </blockquote>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
-<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Objects</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
 
 <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
 <span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
@@ -447,7 +438,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12StanwoodCore14DataSourceTypeP">DataSourceType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
 
                         </div>
                       </div>
@@ -474,7 +465,7 @@
                         <p>The <code>AbstractTableDelegate</code> conforms to the <code>TableDelegate</code> protocol. It allows you to manage the selection and highlighting of items in a collection view and to perform actions on those items. <a href="https://developer.apple.com/documentation/uikit/uitableview"><code>UITableView</code></a>.</p>
 <h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
-<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Objects</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
 
 <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
 <span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
@@ -501,7 +492,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">TableDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols.html#/s:12StanwoodCore18DelegateSourceTypeP">DelegateSourceType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDelegate</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">TableDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
 
                         </div>
                       </div>
@@ -589,7 +580,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Elements holds a collection of element types.</p>
+                        <p>Elements holds an array of element types.</p>
 
 <blockquote>
 <p>Important: only supports a single section dataType. For a more complex solution, please conform to the <code><a href="../Protocols/DataType.html">DataType</a></code> protocol.</p>
