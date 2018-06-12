@@ -11,14 +11,14 @@ PODS:
   - FirebaseAnalytics (4.0.9):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseAuth (4.4.3):
     - FirebaseAnalytics (~> 4.0)
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.15):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseDatabase (4.1.4):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
@@ -28,13 +28,13 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
-  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
     - GoogleToolboxForMac/Defines (= 2.1.3)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3)":
     - GoogleToolboxForMac/DebugUtils (= 2.1.3)
     - GoogleToolboxForMac/Defines (= 2.1.3)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.3)"
   - GTMSessionFetcher/Core (1.1.13)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -42,7 +42,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - StanwoodCore (0.2.3)
+  - StanwoodCore (1.0)
   - StanwoodUITestingCore (0.1.1)
 
 DEPENDENCIES:
@@ -52,9 +52,24 @@ DEPENDENCIES:
   - StanwoodUITestingCore
   - StanwoodUITestingCore (= 0.1.1)
 
+SPEC REPOS:
+  "git@github.com:stanwood/Cocoa_Pods_Specs.git":
+    - StanwoodUITestingCore
+  https://github.com/cocoapods/specs.git:
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseDatabase
+    - FirebaseInstanceID
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - leveldb-library
+    - nanopb
+
 EXTERNAL SOURCES:
   StanwoodCore:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
@@ -67,9 +82,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  StanwoodCore: 08becd18453dfad85f09b00bde1e17f6c7659b73
+  StanwoodCore: 81c3c7b99c0e887580adda331cb5b3490a6a00ae
   StanwoodUITestingCore: ebc8018dce8b4f442caff6c9d278ae46a3895e9e
 
-PODFILE CHECKSUM: e0ceff7bcd9cbd804d9e8d8e6667b84516d5e2db
+PODFILE CHECKSUM: cc800c3f57fd16cb92d9f332ae0ac8c44ada22fc
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

@@ -61,8 +61,8 @@ class StorageTest: XCTestCase {
     }
     
     func testMember() {
-        let storedMember = Stanwood.Storage.retrieve(memberFileName, of: .json, from: .documents, as: Member.self)
-        let cachedMember = Stanwood.Storage.retrieve(memberFileName, of: .json, from: .caches, as: Member.self)
+        let storedMember = try? Stanwood.Storage.retrieve(memberFileName, of: .json, from: .documents, as: Member.self)
+        let cachedMember = try? Stanwood.Storage.retrieve(memberFileName, of: .json, from: .caches, as: Member.self)
         
         let member = Member(name: "Bobby Storage", id: 123, hobby: .snowboarding)
         
@@ -71,7 +71,7 @@ class StorageTest: XCTestCase {
     }
     
     func testNotMember() {
-        let storedMember = Stanwood.Storage.retrieve(otherMemberFileName, of: .json, from: .documents, as: Member.self)
+        let storedMember = try? Stanwood.Storage.retrieve(otherMemberFileName, of: .json, from: .documents, as: Member.self)
         
         let member = Member(name: "Bob Storage", id: 123, hobby: .snowboarding)
         
