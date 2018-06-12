@@ -17,8 +17,8 @@ public protocol SourceTypePresentable {
     associatedtype Delegate: DelegateSourceType
     
     /// Collection or Table view DataSource
-    var dataSource: DataSource { get set }
+    var dataSource: DataSource! { get set }
     
     /// Collection or Table view Delegate
-    var delegate: Delegate { get set }
+    var delegate: Delegate! { get set }
 }
