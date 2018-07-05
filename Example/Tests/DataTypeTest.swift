@@ -12,11 +12,12 @@ import StanwoodCore
 class DataTypeTest: XCTestCase {
     
     var objects: Stanwood.Elements<Deal>!
+    var sections: Stanwood.Sections<Stanwood.Elements<Deal>>!
     
     override func setUp() {
         super.setUp()
         
-        let items: [Deal] = [
+        let sectionOneDeals: [Deal] = [
             Deal(id: "1"),
             Deal(id: "2"),
             Deal(id: "3"),
@@ -33,13 +34,91 @@ class DataTypeTest: XCTestCase {
             Deal(id: "14")
         ]
         
-        objects = Stanwood.Elements(items: items)
+        let sectionTwoDeals: [Deal] = [
+            Deal(id: "15"),
+            Deal(id: "16"),
+            Deal(id: "17"),
+            Deal(id: "18"),
+            Deal(id: "19"),
+            Deal(id: "20"),
+            Deal(id: "21")
+        ]
+        
+        let sectionOne = Stanwood.Elements(items: sectionOneDeals)
+        objects = sectionOne
+        
+        let sectionTwo = Stanwood.Elements(items: sectionTwoDeals)
+        sections =  Stanwood.Sections(items: [sectionOne, sectionTwo])
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
+    
+    // MARK: - Test Stanwood.Sections
+    
+    func testSectionCount() {
+        let count = 2
+        XCTAssertEqual(sections.numberOfSections, count)
+    }
+    
+    func testCountNumberOfItemsInSectionTwo() {
+        let count = 7
+        XCTAssertEqual(sections[1].numberOfItems, count)
+    }
+    
+    func testCountNumberOfItemsInSectionOne() {
+        let count = 14
+        XCTAssertEqual(sections[0].numberOfItems, count)
+    }
+    
+    func testLastSectionItemID() {
+        let id = "21"
+        
+        let indexPath = IndexPath(item: 6, section: 1)
+        let deal = sections[indexPath] as! Deal
+        XCTAssertEqual(deal.id, id)
+    }
+    
+    func testSectionOneItemID() {
+        let id = "11"
+        
+        let indexPath = IndexPath(item: 10, section: 0)
+        let deal = sections[indexPath] as! Deal
+        XCTAssertEqual(deal.id, id)
+    }
+    
+    func testSectionsDataPersistence() {
+        do {
+            try sections.save()
+            
+            let loadedSections = Stanwood.Sections<Stanwood.Elements<Deal>>.loadFromFile()
+            XCTAssertNotNil(loadedSections)
+            
+            if let loadedSections = loadedSections {
+                XCTAssertEqual(sections.numberOfSections, loadedSections.numberOfSections)
+                
+                let object = Deal(id: "55")
+                sections.sections[0].append(object)
+                
+                XCTAssertNotEqual(sections[0].numberOfItems, loadedSections[0].numberOfItems)
+                
+                try loadedSections.save(withFileName: "sections_file")
+                
+                let sectionsFile = Stanwood.Sections<Stanwood.Elements<Deal>>.loadFromFile(withFileName: "sections_file")
+                XCTAssertNotNil(sectionsFile)
+                
+                if let objectsFile = sectionsFile {
+                    XCTAssertEqual(objectsFile.numberOfItems, loadedSections.numberOfItems)
+                }
+            }
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    // MARK: - Test Stanwood.Elements
     
     func testCount() {
         let count = 14
