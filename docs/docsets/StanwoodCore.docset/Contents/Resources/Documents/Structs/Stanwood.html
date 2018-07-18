@@ -214,6 +214,9 @@
                 <a class="nav-group-task-link" href="../Structs/Stanwood/Observer.html">– Observer</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Stanwood/Sections.html">– Sections</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/Stanwood/Storage.html">– Storage</a>
               </li>
             </ul>
@@ -682,6 +685,63 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Observer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12StanwoodCore0A0V8SectionsC"></a>
+                    <a name="//apple_ref/swift/Class/Sections" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V8SectionsC">Sections</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sections holds an array of DataTypes.</p>
+<h5 id='example-datasource-and-delegate-design' class='heading'>Example: DataSource and Delegate design</h5>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">itemsOne</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Deal</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Deal</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
+<span class="k">let</span> <span class="nv">itemsTwo</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Deal</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"3"</span><span class="p">),</span> <span class="kt">Deal</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"4"</span><span class="p">)]</span>
+
+<span class="k">let</span> <span class="nv">sectionOnce</span> <span class="o">=</span> <span class="kt">Stanwoon</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Deal</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">itemsOne</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">sectionTwo</span> <span class="o">=</span> <span class="kt">Stanwoon</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Deal</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">itemsTwo</span><span class="p">)</span>
+
+<span class="k">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Sections</span><span class="o">&lt;</span><span class="kt">Stanwoon</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Deal</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="n">sectionOnce</span><span class="p">,</span> <span class="n">sectionTwo</span><span class="p">])</span>
+
+<span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">SectionsDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">sections</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">SectionsDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">sections</span><span class="p">)</span>
+
+<span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span>
+<span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">delegate</span>
+</code></pre>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    
+</div>
+
+<p><code><a href="../Protocols/DataType.html">DataType</a></code></p>
+
+<p><code><a href="../Protocols/Type.html">Type</a></code></p>
+
+<p><code><a href="../Typealiases.html#/s:12StanwoodCore8Typeablea">Typeable</a></code></p>
+
+                        <a href="../Structs/Stanwood/Sections.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">Sections</span><span class="o">&lt;</span><span class="kt">Section</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataType.html">DataType</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataType.html">DataType</a></span><span class="p">,</span> <span class="kt">Codable</span> <span class="k">where</span> <span class="kt">Section</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
 
                         </div>
                       </div>

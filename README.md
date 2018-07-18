@@ -24,6 +24,14 @@ pod 'StanwoodCore'
 
 ## Release Notes
 
+### 1.1
+
+- Adding `Stanwood.Sections`, support for sections in `UITableView` and `UICollectionView`
+
+### 1.0.1
+
+- Public release
+
 ### 0.2.3
 
 - `Stanwood.Objects` has been renamed to `Stanwood.Elements` to follow Swift naming conventions.
