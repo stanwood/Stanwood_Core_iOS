@@ -24,6 +24,10 @@ pod 'StanwoodCore'
 
 ## Release Notes
 
+### 1.1.1
+
+- Making numberOfItems and numberOfSections open
+
 ### 1.1
 
 - Adding `Stanwood.Sections`, support for sections in `UITableView` and `UICollectionView`
