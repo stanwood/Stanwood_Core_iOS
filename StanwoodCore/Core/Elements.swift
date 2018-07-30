@@ -74,7 +74,7 @@ extension Stanwood {
         // MARK Computet Properties
         
         /// Number of items
-        public var numberOfItems: Int {
+        open var numberOfItems: Int {
             return items.count
         }
         
@@ -85,7 +85,7 @@ extension Stanwood {
          
          - SeeAlso: `DataType` for multiple section option
          */
-        public var numberOfSections: Int {
+        open var numberOfSections: Int {
             return 1
         }
         
