@@ -113,7 +113,7 @@ extension Stanwood {
          
          - SeeAlso: `Type`
          */
-        public subscript(indexPath: IndexPath) -> Type? {
+        open subscript(indexPath: IndexPath) -> Type? {
             return items[indexPath.row]
         }
         
@@ -124,7 +124,7 @@ extension Stanwood {
          
          - SeeAlso: `DataType`
          */
-        public subscript(section: Int) -> DataType {
+        open subscript(section: Int) -> DataType {
             return self
         }
         
@@ -221,7 +221,7 @@ extension Stanwood {
          - Parameters:
          - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
          */
-        public func save(withFileName fileName: String? = nil) throws {
+        open func save(withFileName fileName: String? = nil) throws {
             try Storage.store(self, to: .documents, as: .json, withName: fileName ?? Elements<Element>.identifier)
         }
         
@@ -231,7 +231,7 @@ extension Stanwood {
          - Parameters:
          - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
          */
-        public static func loadFromFile(withFileName fileName: String? = nil) -> Elements? {
+        open static func loadFromFile(withFileName fileName: String? = nil) -> Elements? {
             do {
                 return try Stanwood.Storage.retrieve(fileName ?? Elements<Element>.identifier, of: .json, from: .documents, as: Elements<Element>.self)
             } catch {
