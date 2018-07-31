@@ -12,7 +12,7 @@ import StanwoodCore
 class DataTypeTest: XCTestCase {
     
     var objects: Stanwood.Elements<Deal>!
-    var sections: Stanwood.Sections<Stanwood.Elements<Deal>>!
+    var sections: Stanwood.Sections!
     
     override func setUp() {
         super.setUp()
@@ -87,35 +87,6 @@ class DataTypeTest: XCTestCase {
         let indexPath = IndexPath(item: 10, section: 0)
         let deal = sections[indexPath] as! Deal
         XCTAssertEqual(deal.id, id)
-    }
-    
-    func testSectionsDataPersistence() {
-        do {
-            try sections.save()
-            
-            let loadedSections = Stanwood.Sections<Stanwood.Elements<Deal>>.loadFromFile()
-            XCTAssertNotNil(loadedSections)
-            
-            if let loadedSections = loadedSections {
-                XCTAssertEqual(sections.numberOfSections, loadedSections.numberOfSections)
-                
-                let object = Deal(id: "55")
-                sections.sections[0].append(object)
-                
-                XCTAssertNotEqual(sections[0].numberOfItems, loadedSections[0].numberOfItems)
-                
-                try loadedSections.save(withFileName: "sections_file")
-                
-                let sectionsFile = Stanwood.Sections<Stanwood.Elements<Deal>>.loadFromFile(withFileName: "sections_file")
-                XCTAssertNotNil(sectionsFile)
-                
-                if let objectsFile = sectionsFile {
-                    XCTAssertEqual(objectsFile.numberOfItems, loadedSections.numberOfItems)
-                }
-            }
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
     }
     
     // MARK: - Test Stanwood.Elements

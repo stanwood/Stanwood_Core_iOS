@@ -24,9 +24,14 @@ pod 'StanwoodCore'
 
 ## Release Notes
 
+### 1.1.3
+
+- Fixing `Stanwood.Sections` to support different types of `DataType`
+
 ### 1.1.2
 
 - Making Stanwood.Elements subscipt and save/load `open`
+
 ### 1.1.1
 
 - Making numberOfItems and numberOfSections open
