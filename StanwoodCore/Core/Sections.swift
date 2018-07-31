@@ -56,21 +56,18 @@ extension Stanwood {
      
      `Typeable`
      */
-    open class Sections<Section: DataType>: DataType, Codable where Section: Codable {
+    open class Sections: DataType {
         
         // MARK: Properties
         
         /// Items of DataType
+        public typealias Section = DataType & Codable
         public var sections: [Section]
-        
-        public static var identifier: String {
-            return String(describing: Sections<Section>.self)
-        }
         
         // MARK Computet Properties
         
         /// Number of items
-        public var numberOfItems: Int {
+        open var numberOfItems: Int {
             return sections[0].numberOfItems
         }
         
@@ -81,7 +78,7 @@ extension Stanwood {
          
          - SeeAlso: `DataType` for multiple section option
          */
-        public var numberOfSections: Int {
+        open var numberOfSections: Int {
             return sections.count
         }
         
@@ -109,7 +106,7 @@ extension Stanwood {
          
          - SeeAlso: `Type`
          */
-        public subscript(indexPath: IndexPath) -> Type? {
+        open subscript(indexPath: IndexPath) -> Type? {
             return self[indexPath.section][indexPath]
         }
         
@@ -120,7 +117,7 @@ extension Stanwood {
          
          - SeeAlso: `DataType`
          */
-        public subscript(section: Int) -> DataType {
+        open subscript(section: Int) -> DataType {
             return sections[section]
         }
         
@@ -128,33 +125,7 @@ extension Stanwood {
         
         /// Returns the cell type at indexPath
         open func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
-            return nil
-        }
-        
-        // MARK: Persist Data
-        
-        /**
-         Save objects to file
-         
-         - Parameters:
-         - fileName: The file name. If nil, default value String(describing: Sections<Section>.self)`
-         */
-        public func save(withFileName fileName: String? = nil) throws {
-            try Storage.store(self, to: .documents, as: .json, withName: fileName ?? Sections<Section>.identifier)
-        }
-        
-        /**
-         Returns objects from file if exists
-         
-         - Parameters:
-         - fileName: The file name. If nil, default value String(describing: Sections<T>.self)`
-         */
-        public static func loadFromFile(withFileName fileName: String? = nil) -> Sections? {
-            do {
-                return try Stanwood.Storage.retrieve(fileName ?? Sections<Section>.identifier, of: .json, from: .documents, as: Sections<Section>.self)
-            } catch {
-                return nil
-            }
+            return sections[indexPath.section].cellType(forItemAt: indexPath)
         }
     }
 }
