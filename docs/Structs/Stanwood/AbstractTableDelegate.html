@@ -158,6 +158,9 @@
                 <a class="nav-group-task-link" href="../../Protocols/DataType.html">DataType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Protocols/Delegateble.html">Delegateble</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Protocols/Disposable.html">Disposable</a>
               </li>
               <li class="nav-group-task">
@@ -247,8 +250,8 @@
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"1"</span><span class="p">),</span> <span class="kt">Element</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)]</span>
 <span class="k">self</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="kt">Stanwood</span><span class="o">.</span><span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
 
-<span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementDataSource</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
-<span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementDelegate</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">ElementDataSource</span><span class="p">(</span><span class="nv">dataType</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">ElementDelegate</span><span class="p">(</span><span class="nv">dataType</span><span class="p">:</span> <span class="n">objects</span><span class="p">)</span>
 
 <span class="k">self</span><span class="o">.</span><span class="n">tableView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span>
 <span class="k">self</span><span class="o">.</span><span class="n">tableView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">delegate</span>
@@ -283,9 +286,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V21AbstractTableDelegateC10dataObjectAA8DataType_pSgvp"></a>
-                    <a name="//apple_ref/swift/Property/dataObject" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V21AbstractTableDelegateC10dataObjectAA8DataType_pSgvp">dataObject</a>
+                    <a name="/s:12StanwoodCore0A0V21AbstractTableDelegateC8dataTypeAA04DataG0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/dataType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V21AbstractTableDelegateC8dataTypeAA04DataG0_pSgvp">dataType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -293,14 +296,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>dataObject, a collection of types</p>
+                        <p>dataType, a collection of types</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">dataObject</span><span class="p">:</span><span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">dataType</span><span class="p">:</span><span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -310,9 +313,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V21AbstractTableDelegateC8dataTypeAA0G0_pSgvp"></a>
-                    <a name="//apple_ref/swift/Property/dataType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V21AbstractTableDelegateC8dataTypeAA0G0_pSgvp">dataType</a>
+                    <a name="/s:12StanwoodCore0A0V21AbstractTableDelegateC4typeAA4Type_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V21AbstractTableDelegateC4typeAA4Type_pSgvp">type</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -320,14 +323,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A single type object t present</p>
+                        <p>A single type object to present</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">dataType</span><span class="p">:</span> <span class="k">Type</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="k">Type</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -348,9 +351,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V21AbstractTableDelegateCAeA8DataType_pSg10dataObject_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(dataObject:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V21AbstractTableDelegateCAeA8DataType_pSg10dataObject_tcfc">init(dataObject:)</a>
+                    <a name="/s:12StanwoodCore0A0V21AbstractTableDelegateCAeA8DataType_pSg04dataG0_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(dataType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V21AbstractTableDelegateCAeA8DataType_pSg04dataG0_tcfc">init(dataType:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -370,7 +373,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataObject</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataType</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -381,12 +384,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>dataObject</em>
+                                <em>dataType</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>dataObject</p>
+                                  <p>dataType</p>
                                 </div>
                               </td>
                             </tr>
@@ -399,9 +402,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V21AbstractTableDelegateCAeA4Type_p04dataF0_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(dataType:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V21AbstractTableDelegateCAeA4Type_p04dataF0_tcfc">init(dataType:)</a>
+                    <a name="/s:12StanwoodCore0A0V21AbstractTableDelegateCAeA4Type_p4type_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(type:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V21AbstractTableDelegateCAeA4Type_p4type_tcfc">init(type:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -421,7 +424,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataType</span><span class="p">:</span> <span class="k">Type</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="k">Type</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -471,7 +474,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>update current dataSource with dataObject.</p>
+                        <p>update current dataSource with dataType.</p>
 
 <blockquote>
 <p>Note: If data type is a <code>class</code>, it is not reqruied to update the dataType.</p>
@@ -487,7 +490,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">with</span> <span class="nv">dataObject</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">with</span> <span class="nv">dataType</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -498,7 +501,7 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>dataObject</em>
+                                <em>dataType</em>
                                 </code>
                               </td>
                               <td>
@@ -542,7 +545,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">with</span> <span class="nv">dataType</span><span class="p">:</span> <span class="k">Type</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="n">with</span> <span class="nv">type</span><span class="p">:</span> <span class="k">Type</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
