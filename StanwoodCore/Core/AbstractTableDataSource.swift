@@ -27,10 +27,10 @@ import UIKit
 
 protocol TableDataSource {
     
-    var dataObject:DataType? {get set}
-    var dataType: Type? { get set }
+    var dataType:DataType? {get set}
+    var type: Type? { get set }
     
-    func update(with dataObject: DataType?)
+    func update(with dataType: DataType?)
     func update(with dataType: Type?)
     
     func numberOfSections(in tableView: UITableView) -> Int
@@ -50,8 +50,8 @@ extension Stanwood {
      let items = [Element(id: "1"), Element(id: "2")]
      self.objects = Stanwood.Elements<Element>(items: items)
      
-     self.dataSource = ElementDataSource(dataObject: objects)
-     self.delegate = ElementDelegate(dataObject: objects)
+     self.dataSource = ElementDataSource(dataType: objects)
+     self.delegate = ElementDelegate(dataType: objects)
      
      self.tableView.dataSource = self.dataSource
      self.tableView.delegate = self.delegate
@@ -71,11 +71,18 @@ extension Stanwood {
         
         // MARK: Properties
         
-        /// dataObject, a collection of types
-        public internal(set) var dataObject:DataType?
+        /// dataType, a collection of types
+        public internal(set) var dataType: DataType?
         
-        /// A single type object t present
-        public internal(set) var dataType: Type?
+        /// A single type object to present
+        public internal(set) var type: Type?
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "dataType")
+        public internal(set) var dataObject: DataType?
+        
+        /// A delegate
+        public weak var delegate: AnyObject?
         
         // MARK: Initializers
         
@@ -83,13 +90,19 @@ extension Stanwood {
          Initialise with a collection of types
          
          - Parameters:
-            - dataObject: dataObject
+            - dataType: dataType
+            - delegate: Optional AnyObject delegate
          
          - SeeAlso: `DataType`
          */
-        public init(dataObject: DataType?) {
-            self.dataObject = dataObject
+        public init(dataType: DataType?, delegate: AnyObject? = nil) {
+            self.dataType = dataType
+            self.delegate = delegate
         }
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "init(dataType:)")
+        public init(dataObject: DataType?) {}
         
         /**
          Initialise with a a single type object.
@@ -99,23 +112,27 @@ extension Stanwood {
          
          - SeeAlso: `Type`
          */
-        public init(dataType: Type) {
-            self.dataType = dataType
+        public init(type: Type) {
+            self.type = type
         }
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "init(type:)")
+        public init(dataType: Type) {}
         
         // MARK: Public functions
         
         /**
-         update current dataSource with dataObject.
+         update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
          
          - Parameters:
-            - dataObject: DataType
+            - dataType: DataType
          
          - SeeAlso: `Type`
          */
-        open func update(with dataObject: DataType?) {
-            self.dataObject = dataObject
+        open func update(with dataType: DataType?) {
+            self.dataType = dataType
         }
         
         /**
@@ -127,21 +144,21 @@ extension Stanwood {
          
          - SeeAlso: `DataType`
          */
-        open func update(with dataType: Type?) {
-            self.dataType = dataType
+        open func update(with type: Type?) {
+            self.type = type
         }
 
         // MARK: UITableViewDataSource functions
         
         /// :nodoc:
         open func numberOfSections(in tableView: UITableView) -> Int {
-            switch (dataObject, dataType) {
+            switch (dataType, dataType) {
             case (.some, .none):
-                return dataObject?.numberOfSections ?? 0
+                return dataType?.numberOfSections ?? 0
             case (.none, .some):
                 return 1
             case (.some, .some):
-                fatalError("\(String(describing: type(of: self))) should not have dataType and dataObject at the same time.")
+                fatalError("\(String(describing: Swift.type(of: self))) should not have dataType and dataType at the same time.")
             default:
                 return 0
             }
@@ -149,14 +166,17 @@ extension Stanwood {
         
         /// :nodoc:
         open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return dataObject?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
+            return dataType?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
         }
         
         /// :nodoc:
         open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            guard let cellType = dataObject?.cellType(forItemAt: indexPath) as? UITableViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
+            guard let cellType = dataType?.cellType(forItemAt: indexPath) as? UITableViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
             guard let cell = tableView.dequeue(cellType: cellType, for: indexPath) as? (UITableViewCell & Fillable) else { fatalError("UITableViewCell must conform to Fillable protocol") }
-            cell.fill(with: dataObject?[indexPath])
+            cell.fill(with: dataType?[indexPath])
+            if let delegateableCell = cell as? Delegateble, let delegate = delegate {
+                delegateableCell.set(delegate: delegate)
+            }
             return cell
         }
     }

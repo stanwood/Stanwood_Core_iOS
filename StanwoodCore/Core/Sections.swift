@@ -34,12 +34,12 @@ extension Stanwood {
      
      ````swift
      let itemsOne = [Deal(id: "1"), Deal(id: "2")]
-     let itemsTwo = [Deal(id: "3"), Deal(id: "4")]
+     let itemsTwo = [Meal(id: "pizza"), Meal(id: "ham")]
      
      let sectionOnce = Stanwoon.Elements<Deal>(items: itemsOne)
-     let sectionTwo = Stanwoon.Elements<Deal>(items: itemsTwo)
+     let sectionTwo = Stanwoon.Elements<Meal>(items: itemsTwo)
      
-     self.sections = Stanwood.Sections<Stanwoon.Elements<Deal>>(items: [sectionOnce, sectionTwo])
+     self.sections = Stanwood.Sections(items: [sectionOnce, sectionTwo])
      
      self.dataSource = SectionsDataSource(dataObject: self.sections)
      self.delegate = SectionsDelegate(dataObject: self.sections)

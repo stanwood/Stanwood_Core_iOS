@@ -40,8 +40,8 @@ class TableViewController: UIViewController {
         
         tableView.register(cellType: TableViewCell.self)
         
-        delegate = TableDelegate(dataObject: elements)
-        dataSource = Stanwood.AbstractTableDataSource(dataObject: elements)
+        delegate = TableDelegate(dataType: elements)
+        dataSource = Stanwood.AbstractTableDataSource(dataType: elements)
         
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         

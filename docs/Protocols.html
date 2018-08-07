@@ -157,6 +157,9 @@
                 <a class="nav-group-task-link" href="Protocols/DataType.html">DataType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/Delegateble.html">Delegateble</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/Disposable.html">Disposable</a>
               </li>
               <li class="nav-group-task">
@@ -340,6 +343,65 @@ Note&gt; Only supports portraite atm. Landscape is still in R&amp;D</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">DataType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12StanwoodCore11DelegatebleP"></a>
+                    <a name="//apple_ref/swift/Protocol/Delegateble" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore11DelegatebleP">Delegateble</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegateble protocol of type <code>UICollectionViewCell</code> || <code>UITableViewCell</code> used to set a delegate of type AnyObject</p>
+<h5 id='example-delegetable-example' class='heading'>Example: Delegetable example</h5>
+<pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">ModuleCellOneDelegate</span><span class="p">:</span> <span class="kd">class</span> <span class="p">{</span>
+   <span class="kd">func</span> <span class="nf">didTapEvent</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">protocol</span> <span class="kt">ModuleCellTwoDelegate</span><span class="p">:</span> <span class="kd">class</span> <span class="p">{</span>
+   <span class="kd">func</span> <span class="nf">didTapEvent</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">protocol</span> <span class="kt">ModuleCellsDelegate</span><span class="p">:</span> <span class="kt">ModuleCellOneDelegate</span><span class="p">,</span> <span class="kt">ModuleCellTwoDelegate</span> <span class="p">{}</span>
+
+<span class="kd">class</span> <span class="kt">ModuleViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">ModuleCellsDelegate</span> <span class="p">{}</span>
+
+<span class="kd">class</span> <span class="kt">Cell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span><span class="p">:</span> <span class="kt">Delegetable</span> <span class="p">{</span>
+
+   <span class="o">.....</span>
+
+   <span class="n">cell</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    
+</div>
+
+<p><code><a href="Protocols/Type.html">Type</a></code>
+   <code><a href="Protocols/DataType.html">DataType</a></code></p>
+
+                        <a href="Protocols/Delegateble.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Delegateble</span> <span class="k">where</span> <span class="k">Self</span><span class="p">:</span> <span class="kt">ForceDelegateble</span></code></pre>
 
                         </div>
                       </div>

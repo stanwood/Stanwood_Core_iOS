@@ -27,11 +27,11 @@ import UIKit
 
 protocol CollectionDataSource: class {
     
-    var dataObject:DataType? { get set }
-    var dataType: Type? { get set }
+    var dataType:DataType? { get set }
+    var type: Type? { get set }
     
-    func update(with dataObject: DataType?)
-    func update(with dataType: Type?)
+    func update(with dataType: DataType?)
+    func update(with type: Type?)
     
     func numberOfSections(in collectionView: UICollectionView) -> Int
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -56,7 +56,7 @@ extension Stanwood {
      self.collectionView.dataSource = self.dataSource
      self.collectionView.delegate = self.delegate
      ````
-
+     
      - SeeAlso:
      
      `AbstractCollectionDelegate`
@@ -68,14 +68,21 @@ extension Stanwood {
      `Type`
      */
     open class AbstractCollectionDataSource: NSObject, UICollectionViewDataSource, CollectionDataSource, DataSourceType {
-
+        
         // MARK: Properties
         
         /// dataObject, a collection of types
-        public internal(set) var dataObject:DataType?
+        public internal(set) var dataType:DataType?
         
-        /// A single type object t present
-        public internal(set) var dataType: Type?
+        /// A single type object to present
+        public internal(set) var type: Type?
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "dataType")
+        public internal(set) var dataObject: DataType?
+        
+        /// A delegate
+        public weak var delegate: AnyObject?
         
         // MARK: Initializers
         
@@ -84,64 +91,70 @@ extension Stanwood {
          
          - Parameters:
             - dataObject: dataObject
+            - delegate: optional AnyObject delegate
          
          - SeeAlso: `DataType`
          */
-        public init(dataObject: DataType?) {
-            self.dataObject = dataObject
+        public init(dataType: DataType?, delegate: AnyObject? = nil) {
+            self.delegate = delegate
+            self.dataType = dataType
         }
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "init(dataType:)")
+        public init(dataObject: DataType?) {}
         
         /**
          Initialise with a a single type object.
          
          - Parameters:
-            - dataType: DataType
+         - dataType: DataType
          
          - SeeAlso: `Type`
          */
-        public init(dataType: Type) {
-            self.dataType = dataType
+        public init(type: Type, delegate: AnyObject? = nil) {
+            self.type = type
         }
         
         // MARK: Public functions
         
         /**
          update current dataSource with dataObject.
-         >Note: If data type is a `class`, it is not reqruied to update the dataType.
+         >Note: If data type is a `class`, it is not reqruied to update the type.
          
          - Parameters:
-            - dataObject: DataType
+            - dataObject: type
          
          - SeeAlso: `Type`
          */
-        open func update(with dataObject: DataType?) {
-            self.dataObject = dataObject
+        open func update(with dataType: DataType?) {
+            self.dataType = dataType
         }
         
         /**
-         update current dataSource with dataType.
-         >Note: If data type is a `class`, it is not reqruied to update the dataType.
+         update current dataSource with type.
+         >Note: If data type is a `class`, it is not reqruied to update the type.
          
          - Parameters:
-            - dataType: Type
+            - type: Type
          
          - SeeAlso: `DataType`
          */
-        open func update(with dataType: Type?) {
-            self.dataType = dataType
+        open func update(with type: Type?) {
+            self.type = type
         }
         
         // MARK: UICollectionViewDataSource functions
         
         /// :nodoc:
         open func numberOfSections(in collectionView: UICollectionView) -> Int {
-            switch (dataObject, dataType) {
+            switch (dataType, type) {
             case (.some, .none):
-                return dataObject?.numberOfSections ?? 0
+                return dataType?.numberOfSections ?? 0
             case (.none, .some):
                 return 1
             case (.some, .some):
-                fatalError("\(String(describing: type(of: self))) should not have dataType and dataObject at the same time.")
+                fatalError("\(String(describing: Swift.type(of: self))) should not have dataType and dataObject at the same time.")
             default:
                 return 0
             }
@@ -149,15 +162,27 @@ extension Stanwood {
         
         /// :nodoc:
         open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return dataObject?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
+            return dataType?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
         }
         
         /// :nodoc:
         open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            guard let cellType = dataObject?.cellType(forItemAt: indexPath) as? UICollectionViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
+            guard let cellType = dataType?.cellType(forItemAt: indexPath) as? UICollectionViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
             guard let cell = collectionView.dequeue(cellType: cellType, for: indexPath) as? (UICollectionViewCell & Fillable) else { fatalError("UICollectionViewCell must conform to Fillable protocol") }
-            cell.fill(with: dataObject?[indexPath.section][indexPath])
+            cell.fill(with: dataType?[indexPath.section][indexPath])
+            if let delegateableCell = cell as? Delegateble, let delegate = delegate {
+                delegateableCell.set(delegate: delegate)
+            }
             return cell
+        }
+        
+        /// :nodoc:
+        open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            if let headerable = dataType?[indexPath.section] as? Headerable,
+                let view = headerable.reusableView {
+                return view
+            }
+            return UICollectionReusableView(frame: CGRect.zero)
         }
     }
 }
