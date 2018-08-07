@@ -27,11 +27,11 @@ import UIKit
 
 protocol TableDelegate {
     
-    var dataObject:DataType? { get set }
-    var dataType:Type?{ get set }
+    var dataType: DataType? { get set }
+    var type: Type?{ get set }
     
-    func update(with dataObject: DataType?)
-    func update(with dataType: Type?)
+    func update(with dataType: DataType?)
+    func update(with type: Type?)
 }
 
 extension Stanwood {
@@ -44,8 +44,8 @@ extension Stanwood {
      let items = [Element(id: "1"), Element(id: "2")]
      self.objects = Stanwood.Elements<Element>(items: items)
      
-     self.dataSource = ElementDataSource(dataObject: objects)
-     self.delegate = ElementDelegate(dataObject: objects)
+     self.dataSource = ElementDataSource(dataType: objects)
+     self.delegate = ElementDelegate(dataType: objects)
      
      self.tableView.dataSource = self.dataSource
      self.tableView.delegate = self.delegate
@@ -65,11 +65,15 @@ extension Stanwood {
         
         // MARK: Properties
         
-        /// dataObject, a collection of types
-        public internal(set) var dataObject:DataType?
+        /// dataType, a collection of types
+        public internal(set) var dataType:DataType?
         
-        /// A single type object t present
-        public internal(set) var dataType: Type?
+        /// A single type object to present
+        public internal(set) var type: Type?
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "dataType")
+        public internal(set) var dataObject: DataType?
         
         // MARK: Initializers
         
@@ -77,13 +81,17 @@ extension Stanwood {
          Initialise with a collection of types
          
          - Parameters:
-            - dataObject: dataObject
+            - dataType: dataType
          
          - SeeAlso: `DataType`
          */
-        public init(dataObject: DataType?) {
-            self.dataObject = dataObject
+        public init(dataType: DataType?) {
+            self.dataType = dataType
         }
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "init(dataType:)")
+        public init(dataObject: DataType?) {}
         
         /**
          Initialise with a a single type object.
@@ -93,23 +101,27 @@ extension Stanwood {
          
          - SeeAlso: `Type`
          */
-        public init(dataType: Type) {
-            self.dataType = dataType
+        public init(type: Type) {
+            self.type = type
         }
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "init(type:)")
+        public init(dataType: Type) {}
         
         // MARK: Public functions
         
         /**
-         update current dataSource with dataObject.
+         update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
          
          - Parameters:
-            - dataObject: DataType
+            - dataType: DataType
          
          - SeeAlso: `Type`
          */
-        open func update(with dataObject: DataType?) {
-            self.dataObject = dataObject
+        open func update(with dataType: DataType?) {
+            self.dataType = dataType
         }
         
         /**
@@ -121,8 +133,25 @@ extension Stanwood {
          
          - SeeAlso: `DataType`
          */
-        open func update(with dataType: Type?) {
-            self.dataType = dataType
+        open func update(with type: Type?) {
+            self.type = type
+        }
+        
+        /// :nodoc:
+        open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            if let headerable = dataType?[section] as? Headerable,
+                let view = headerable.headerView {
+                return view.bounds.size.height
+            }
+            return 0.0
+        }
+        
+        /// :nodoc:
+        open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            if let headerable = dataType?[section] as? Headerable {
+                return headerable.headerView
+            }
+            return nil
         }
     }
 }

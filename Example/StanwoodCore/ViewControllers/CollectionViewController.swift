@@ -41,8 +41,8 @@ class CollectionViewController: UIViewController {
         collectionView.register(cellType: CollectionViewCell.self)
         collectionView.setAutomaticSize()
         collectionView.set(spacing: 5)
-        delegate = Stanwood.AbstractCollectionDelegate(dataObject: elements)
-        dataSource = Stanwood.AbstractCollectionDataSource(dataObject: elements)
+        delegate = Stanwood.AbstractCollectionDelegate(dataType: elements)
+        dataSource = Stanwood.AbstractCollectionDataSource(dataType: elements)
         
         collectionView.dataSource = dataSource
         collectionView.delegate = delegate

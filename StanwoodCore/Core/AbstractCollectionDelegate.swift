@@ -28,11 +28,11 @@ import UIKit
 
 protocol CollectionDelegate {
     
-    var dataObject: DataType? { get set }
-    var dataType: Type? { get set }
+    var dataType: DataType? { get set }
+    var type: Type? { get set }
     
-    func update(with dataObject: DataType?)
-    func update(with dataType: Type?)
+    func update(with dataType: DataType?)
+    func update(with type: Type?)
 }
 
 extension Stanwood {
@@ -67,10 +67,14 @@ extension Stanwood {
         // MARK: Properties
         
         /// dataObject, a collection of types
-        public internal(set) var dataObject:DataType?
+        public internal(set) var dataType:DataType?
         
-        /// A single type object t present
-        public internal(set) var dataType: Type?
+        /// A single type object to present
+        public internal(set) var type: Type?
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "dataType")
+        public internal(set) var dataObject: DataType?
         
         // MARK: Initializers
         
@@ -82,9 +86,13 @@ extension Stanwood {
          
          - SeeAlso: `DataType`
          */
-        public init(dataObject: DataType?) {
-            self.dataObject = dataObject
+        public init(dataType: DataType?) {
+            self.dataType = dataType
         }
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "init(dataType:)")
+        public init(dataObject: DataType?) {}
         
         /**
          Initialise with a a single type object.
@@ -94,9 +102,13 @@ extension Stanwood {
          
          - SeeAlso: `Type`
          */
-        public init(dataType: Type) {
-            self.dataType = dataType
+        public init(type: Type) {
+            self.type = type
         }
+        
+        /// Unavalible
+        @available(*, unavailable, renamed: "init(type:)")
+        public init(dataType: Type) {}
         
         // MARK: Public functions
         
@@ -109,8 +121,8 @@ extension Stanwood {
          
          - SeeAlso: `Type`
          */
-        open func update(with dataObject: DataType?) {
-            self.dataObject = dataObject
+        open func update(with dataType: DataType?) {
+            self.dataType = dataType
         }
         
         /**
@@ -122,8 +134,17 @@ extension Stanwood {
          
          - SeeAlso: `DataType`
          */
-        open func update(with dataType: Type?) {
-            self.dataType = dataType
+        open func update(with type: Type?) {
+            self.type = type
+        }
+        
+        /// :nodoc:
+        public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+            if let headerable = dataType?[section] as? Headerable,
+                let view = headerable.headerView {
+                return view.bounds.size
+            }
+            return CGSize.zero
         }
     }
 }
