@@ -24,6 +24,13 @@ pod 'StanwoodCore'
 
 ## Release Notes
 
+### 1.2
+
+- stanwood Architecture 1.3 improvements
+- Adding `Headerable` protocol to support headers for `UICollectionView` and `UITableView`
+- Adding `Delegateble` protocol to support multiple delegates when using `SourceType`
+- General improvements
+
 ### 1.1.3
 
 - Fixing `Stanwood.Sections` to support different types of `DataType`
