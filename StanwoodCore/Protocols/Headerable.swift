@@ -26,7 +26,7 @@
 import Foundation
 
 /// Headerable protocol to add header support for `UICollectionView` and `UITableView`
-@objc protocol Headerable {
+@objc public protocol Headerable {
     
     /// `UITableView` section header view
     @objc optional var headerView: UIView { get }
