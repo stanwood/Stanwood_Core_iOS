@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Presentable Protocol Reference</title>
+    <title>Headerable Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Protocol/Presentable" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/Headerable" class="dashAnchor"></a>
 
-    <a title="Presentable Protocol Reference"></a>
+    <a title="Headerable Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">StanwoodCore Reference</a>
       <img class="carat" src="../img/carat.png" />
-      Presentable Protocol Reference
+      Headerable Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -241,14 +241,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Presentable</h1>
+            <h1>Headerable</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Presentable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Headerable</span></code></pre>
 
                 </div>
               </div>
-            <p>Presentable protocol represents a Presentable class in the stanwood architecture</p>
+            <p>Headerable protocol to add header support for <code>UICollectionView</code> and <code>UITableView</code></p>
 
           </div>
         </section>
@@ -260,9 +260,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore11PresentableP10Actionable"></a>
-                    <a name="//apple_ref/swift/Alias/Actionable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore11PresentableP10Actionable">Actionable</a>
+                    <a name="/c:@M@StanwoodCore@objc(pl)Headerable(py)headerView"></a>
+                    <a name="//apple_ref/swift/Property/headerView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@StanwoodCore@objc(pl)Headerable(py)headerView">headerView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -270,14 +270,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Actionable associatedtype</p>
+                        <p><code>UITableView</code> section header view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Actionable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="k">var</span> <span class="nv">headerView</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
 
                         </div>
                       </div>
@@ -287,9 +287,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore11PresentableP13Parameterable"></a>
-                    <a name="//apple_ref/swift/Alias/Parameterable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore11PresentableP13Parameterable">Parameterable</a>
+                    <a name="/c:@M@StanwoodCore@objc(pl)Headerable(py)reusableView"></a>
+                    <a name="//apple_ref/swift/Property/reusableView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@StanwoodCore@objc(pl)Headerable(py)reusableView">reusableView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -297,194 +297,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Paramaterable associatedtype</p>
+                        <p><code>UICollectionView</code> header reuseable header view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Parameterable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="k">var</span> <span class="nv">reusableView</span><span class="p">:</span> <span class="kt">UICollectionReusableView</span></code></pre>
 
                         </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore11PresentableP8Viewable"></a>
-                    <a name="//apple_ref/swift/Alias/Viewable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore11PresentableP8Viewable">Viewable</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Viewable associatedtype</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Viewable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore11PresentableP10actionable10ActionableQzvp"></a>
-                    <a name="//apple_ref/swift/Property/actionable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore11PresentableP10actionable10ActionableQzvp">actionable</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Actionable property</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">actionable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Presentable.html#/s:12StanwoodCore11PresentableP10Actionable">Actionable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore11PresentableP13parameterable13ParameterableQzvp"></a>
-                    <a name="//apple_ref/swift/Property/parameterable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore11PresentableP13parameterable13ParameterableQzvp">parameterable</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Parameterable property</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parameterable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Presentable.html#/s:12StanwoodCore11PresentableP13Parameterable">Parameterable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore11PresentableP8viewable8ViewableQzSgvp"></a>
-                    <a name="//apple_ref/swift/Property/viewable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore11PresentableP8viewable8ViewableQzSgvp">viewable</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Viewable property</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">viewable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Presentable.html#/s:12StanwoodCore11PresentableP8Viewable">Viewable</a></span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12StanwoodCore11PresentablePx10ActionableQz10actionable_13ParameterableQz13parameterable8ViewableQz8viewabletcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(actionable:parameterable:viewable:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore11PresentablePx10ActionableQz10actionable_13ParameterableQz13parameterable8ViewableQz8viewabletcfc">init(actionable:parameterable:viewable:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Presentable required initialisers</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">actionable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Presentable.html#/s:12StanwoodCore11PresentableP10Actionable">Actionable</a></span><span class="p">,</span> <span class="nv">parameterable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Presentable.html#/s:12StanwoodCore11PresentableP13Parameterable">Parameterable</a></span><span class="p">,</span> <span class="nv">viewable</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Presentable.html#/s:12StanwoodCore11PresentableP8Viewable">Viewable</a></span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>actionable</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Actionable type</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>parameterable</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Parameterable type</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>viewable</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Viewable type</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>

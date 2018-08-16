@@ -4,6 +4,7 @@ source 'git@github.com:stanwood/Cocoa_Pods_Specs.git'
 
 use_frameworks!
 platform :ios, '10.0'
+inhibit_all_warnings!
 
 target 'StanwoodCore_Example' do
     inherit! :search_paths
