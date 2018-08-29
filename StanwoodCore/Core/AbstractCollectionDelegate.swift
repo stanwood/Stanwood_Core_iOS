@@ -139,7 +139,7 @@ extension Stanwood {
         }
         
         /// :nodoc:
-        public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
             if let headerable = dataType?[section] as? Headerable,
                 let view = headerable.headerView {
                 return view.bounds.size
