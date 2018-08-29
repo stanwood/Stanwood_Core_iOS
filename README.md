@@ -24,6 +24,10 @@ pod 'StanwoodCore'
 
 ## Release Notes
 
+### 1.2.2
+
+- Bug fixing
+
 ### 1.2
 
 - stanwood Architecture 1.3 improvements
