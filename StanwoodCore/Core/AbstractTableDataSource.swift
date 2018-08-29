@@ -152,7 +152,7 @@ extension Stanwood {
         
         /// :nodoc:
         open func numberOfSections(in tableView: UITableView) -> Int {
-            switch (dataType, dataType) {
+            switch (dataType, type) {
             case (.some, .none):
                 return dataType?.numberOfSections ?? 0
             case (.none, .some):
