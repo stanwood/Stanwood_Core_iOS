@@ -81,8 +81,8 @@ extension Stanwood {
         @available(*, unavailable, renamed: "dataType")
         public internal(set) var dataObject: DataType?
         
-        /// A delegate
-        public weak var delegate: AnyObject?
+        /// :nodoc:
+        private weak var delegate: AnyObject?
         
         // MARK: Initializers
         
