@@ -15,7 +15,7 @@ class TableViewController: UIViewController {
     var tableView: UITableView!
     
     var delegate: TableDelegate!
-    var dataSource: Stanwood.AbstractTableDataSource!
+    var dataSource: TableDataSource!
     var elements: Stanwood.Elements<Deal>!
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class TableViewController: UIViewController {
         tableView.register(cellType: TableViewCell.self)
         
         delegate = TableDelegate(dataType: elements)
-        dataSource = Stanwood.AbstractTableDataSource(dataType: elements)
+        dataSource = TableDataSource(dataType: elements)
         
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         
