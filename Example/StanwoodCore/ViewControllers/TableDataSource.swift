@@ -10,6 +10,6 @@ import Foundation
 import StanwoodCore
 
 class TableDataSource: Stanwood.AbstractTableDataSource {
-    
+
     weak var delegate: TableDelegate?
 }

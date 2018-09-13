@@ -10,7 +10,7 @@ import UIKit
 import StanwoodCore
 
 class TableViewCell: UITableViewCell, Fillable {
-    
+
     @IBOutlet weak var label: UILabel!
 
     func fill(with type: Type?) {
@@ -18,4 +18,3 @@ class TableViewCell: UITableViewCell, Fillable {
         label.localizedText = item.id
     }
 }
-

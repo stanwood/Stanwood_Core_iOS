@@ -26,128 +26,128 @@
 import UIKit
 
 protocol TableDelegate {
-    
+
     var dataType: DataType? { get set }
-    var type: Type?{ get set }
-    
+    var type: Type? { get set }
+
     func update(with dataType: DataType?)
     func update(with type: Type?)
 }
 
 extension Stanwood {
-    
+
     /**
      The `AbstractTableDelegate` conforms to the `TableDelegate` protocol. It allows you to manage the selection and highlighting of items in a collection view and to perform actions on those items. [`UITableView`](https://developer.apple.com/documentation/uikit/uitableview).
-     
+
      #####Example: DataSource and Delegate design#####
      ````swift
      let items = [Element(id: "1"), Element(id: "2")]
      self.objects = Stanwood.Elements<Element>(items: items)
-     
+
      self.dataSource = ElementDataSource(dataType: objects)
      self.delegate = ElementDelegate(dataType: objects)
-     
+
      self.tableView.dataSource = self.dataSource
      self.tableView.delegate = self.delegate
      ````
-     
+
      - SeeAlso:
-     
+
      `AbstractTableDataSource`
-     
+
      `Objects`
-     
+
      `DataType`
-     
+
      `Type`
      */
     open class AbstractTableDelegate: NSObject, UITableViewDelegate, TableDelegate, DelegateSourceType {
-        
+
         // MARK: Properties
-        
+
         /// dataType, a collection of types
-        public internal(set) var dataType:DataType?
-        
+        internal(set) public var dataType: DataType?
+
         /// A single type object to present
-        public internal(set) var type: Type?
-        
+        internal(set) public var type: Type?
+
         /// Unavalible
         @available(*, unavailable, renamed: "dataType")
-        public internal(set) var dataObject: DataType?
-        
+        internal(set) public var dataObject: DataType?
+
         // MARK: Initializers
-        
+
         /**
          Initialise with a collection of types
-         
+
          - Parameters:
-            - dataType: dataType
-         
+         - dataType: dataType
+
          - SeeAlso: `DataType`
          */
         public init(dataType: DataType?) {
             self.dataType = dataType
         }
-        
+
         /// Unavalible
         @available(*, unavailable, renamed: "init(dataType:)")
-        public init(dataObject: DataType?) {}
-        
+        public init(dataObject _: DataType?) {}
+
         /**
          Initialise with a a single type object.
-         
+
          - Parameters:
-            - dataType: DataType
-         
+         - dataType: DataType
+
          - SeeAlso: `Type`
          */
         public init(type: Type) {
             self.type = type
         }
-        
+
         /// Unavalible
         @available(*, unavailable, renamed: "init(type:)")
-        public init(dataType: Type) {}
-        
+        public init(dataType _: Type) {}
+
         // MARK: Public functions
-        
+
         /**
          update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
-         
+
          - Parameters:
-            - dataType: DataType
-         
+         - dataType: DataType
+
          - SeeAlso: `Type`
          */
         open func update(with dataType: DataType?) {
             self.dataType = dataType
         }
-        
+
         /**
          update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
-         
+
          - Parameters:
-            - dataType: Type
-         
+         - dataType: Type
+
          - SeeAlso: `DataType`
          */
         open func update(with type: Type?) {
             self.type = type
         }
-        
+
         /// :nodoc:
-        open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        open func tableView(_: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             if let headerable = dataType?[section] as? Headerable,
                 let view = headerable.headerView {
                 return view.bounds.size.height
             }
             return 0.0
         }
-        
+
         /// :nodoc:
-        open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        open func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             if let headerable = dataType?[section] as? Headerable {
                 return headerable.headerView
             }

@@ -12,11 +12,11 @@ import StanwoodCore
 class CollectionViewCell: Stanwood.AutoSizeableCell, Fillable {
 
     @IBOutlet weak var label: UILabel!
-    
+
     override func prepare() {
         label.text = nil
     }
-    
+
     func fill(with type: Type?) {
         guard let item = type as? Deal else { return }
         label.localizedText = item.id

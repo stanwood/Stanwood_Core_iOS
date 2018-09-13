@@ -26,128 +26,128 @@
 import UIKit
 
 protocol CollectionDataSource: class {
-    
-    var dataType:DataType? { get set }
+
+    var dataType: DataType? { get set }
     var type: Type? { get set }
-    
+
     func update(with dataType: DataType?)
     func update(with type: Type?)
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
 }
 
 extension Stanwood {
-    
+
     /**
      The `AbstractCollectionDataSource` conforms to the `CollectionDataSource` protocol and implements `AbstractCollectionDataSource.numberOfSections(in:)` and `AbstractCollectionDataSource.collectionView(_:numberOfItemsInSection:)`. It midiates the application data model `DataType` and `Type` for the [`UICollectionView`](https://developer.apple.com/documentation/uikit/uicollectionview).
-     
+
      >It is requried to subclass `AbstractCollectionDataSource` and override `AbstractCollectionDataSource.collectionView(_:cellForItemAt:)`
-     
+
      #####Example: DataSource and Delegate design#####
      ````swift
      let items = [Element(id: "1"), Element(id: "2")]
      self.objects = Stanwood.Elements<Element>(items: items)
-     
+
      self.dataSource = ElementDataSource(dataObject: objects)
      self.delegate = ElementDelegate(dataObject: objects)
-     
+
      self.collectionView.dataSource = self.dataSource
      self.collectionView.delegate = self.delegate
      ````
-     
+
      - SeeAlso:
-     
+
      `AbstractCollectionDelegate`
-     
+
      `Objects`
-     
+
      `DataType`
-     
+
      `Type`
      */
     open class AbstractCollectionDataSource: NSObject, UICollectionViewDataSource, CollectionDataSource, DataSourceType {
-        
+
         // MARK: Properties
-        
+
         /// dataObject, a collection of types
-        public internal(set) var dataType:DataType?
-        
+        internal(set) public var dataType: DataType?
+
         /// A single type object to present
-        public internal(set) var type: Type?
-        
+        internal(set) public var type: Type?
+
         /// Unavalible
         @available(*, unavailable, renamed: "dataType")
-        public internal(set) var dataObject: DataType?
-        
+        internal(set) public var dataObject: DataType?
+
         /// :nodoc:
         private weak var delegate: AnyObject?
-        
+
         // MARK: Initializers
-        
+
         /**
          Initialise with a collection of types
-         
+
          - Parameters:
-            - dataObject: dataObject
-            - delegate: optional AnyObject delegate
-         
+         - dataObject: dataObject
+         - delegate: optional AnyObject delegate
+
          - SeeAlso: `DataType`
          */
         public init(dataType: DataType?, delegate: AnyObject? = nil) {
             self.delegate = delegate
             self.dataType = dataType
         }
-        
+
         /// Unavalible
         @available(*, unavailable, renamed: "init(dataType:)")
-        public init(dataObject: DataType?) {}
-        
+        public init(dataObject _: DataType?) {}
+
         /**
          Initialise with a a single type object.
-         
+
          - Parameters:
          - dataType: DataType
-         
+
          - SeeAlso: `Type`
          */
-        public init(type: Type, delegate: AnyObject? = nil) {
+        public init(type: Type, delegate _: AnyObject? = nil) {
             self.type = type
         }
-        
+
         // MARK: Public functions
-        
+
         /**
          update current dataSource with dataObject.
          >Note: If data type is a `class`, it is not reqruied to update the type.
-         
+
          - Parameters:
-            - dataObject: type
-         
+         - dataObject: type
+
          - SeeAlso: `Type`
          */
         open func update(with dataType: DataType?) {
             self.dataType = dataType
         }
-        
+
         /**
          update current dataSource with type.
          >Note: If data type is a `class`, it is not reqruied to update the type.
-         
+
          - Parameters:
-            - type: Type
-         
+         - type: Type
+
          - SeeAlso: `DataType`
          */
         open func update(with type: Type?) {
             self.type = type
         }
-        
+
         // MARK: UICollectionViewDataSource functions
-        
+
         /// :nodoc:
-        open func numberOfSections(in collectionView: UICollectionView) -> Int {
+        open func numberOfSections(in _: UICollectionView) -> Int {
             switch (dataType, type) {
             case (.some, .none):
                 return dataType?.numberOfSections ?? 0
@@ -159,12 +159,12 @@ extension Stanwood {
                 return 0
             }
         }
-        
+
         /// :nodoc:
-        open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        open func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return dataType?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
         }
-        
+
         /// :nodoc:
         open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             guard let cellType = dataType?.cellType(forItemAt: indexPath) as? UICollectionViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
@@ -175,9 +175,9 @@ extension Stanwood {
             }
             return cell
         }
-        
+
         /// :nodoc:
-        open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        open func collectionView(_: UICollectionView, viewForSupplementaryElementOfKind _: String, at indexPath: IndexPath) -> UICollectionReusableView {
             if let headerable = dataType?[indexPath.section] as? Headerable,
                 let view = headerable.reusableView {
                 return view

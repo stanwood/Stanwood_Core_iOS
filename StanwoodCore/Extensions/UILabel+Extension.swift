@@ -26,67 +26,67 @@
 import Foundation
 
 extension UILabel {
-    
+
     /// Localizing label and sets the accessibilityIdentifier
     @objc open var localizedText: String? {
         get {
             return text
         }
         set {
-            
+
             // accessibilityIdentifier is set for UITesting tool
             accessibilityIdentifier = newValue
             text = newValue?.localized
-            
+
             #if DEBUG
                 guard newValue != nil else { return }
                 UITestingCore.record(key: newValue, text: text, atElement: String(describing: UILabel.self))
             #endif
         }
     }
-    
+
     open override func awakeFromNib() {
         super.awakeFromNib()
         localizedText = text
     }
-    
+
     /**
      Sets the localized title from a table.string file.
-     
+
      - Parameters:
-        - text: The text to localize
-        - tableName: the .string table name if any
+     - text: The text to localize
+     - tableName: the .string table name if any
      - Returns: the localized title `String?`
      */
     @discardableResult
     @objc open func localizeText(_ text: String, fromTableName tableName: String?) -> String? {
         self.text = text.localize(fromTableName: tableName)
-        
+
         #if DEBUG
             UITestingCore.record(key: text, text: text.localize(fromTableName: tableName), atElement: String(describing: UILabel.self))
         #endif
-        
+
         return self.text
     }
-    
+
     /**
      Sets the localized text with format.
-     
+
      - Parameters:
-        - text: The text to localize
-        - arguments: The arguments to replace
+     - text: The text to localize
+     - arguments: The arguments to replace
      - Returns: the localized text `String?` with format
      */
     @discardableResult
     open func localizeText(formatKey: String, _ arguments: CVarArg...) -> String? {
         accessibilityIdentifier = formatKey
         let title = String(format: formatKey.localized, arguments: arguments)
-        self.text = title
-        
+        text = title
+
         #if DEBUG
             UITestingCore.record(key: formatKey, text: title, atElement: String(describing: UILabel.self))
         #endif
-        
-        return self.text
+
+        return text
     }
 }

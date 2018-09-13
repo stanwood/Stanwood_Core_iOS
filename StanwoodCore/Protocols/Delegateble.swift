@@ -33,41 +33,41 @@ extension UITableViewCell: ForceDelegateble {}
 
 /**
  Delegateble protocol of type `UICollectionViewCell` || `UITableViewCell` used to set a delegate of type AnyObject
- 
+
  #####Example: Delegetable example#####
  ````swift
  protocol ModuleCellOneDelegate: class {
-    func didTapEvent()
+ func didTapEvent()
  }
- 
+
  protocol ModuleCellTwoDelegate: class {
-    func didTapEvent()
+ func didTapEvent()
  }
- 
+
  protocol ModuleCellsDelegate: ModuleCellOneDelegate, ModuleCellTwoDelegate {}
 
  class ModuleViewController: UIViewController, ModuleCellsDelegate {}
- 
+
  class Cell: UICollectionViewCell: Delegetable {
- 
-    .....
- 
-    cell.set(delegate: self) {}
+
+ .....
+
+ cell.set(delegate: self) {}
  }
  ````
- 
+
  - SeeAlso:
- 
-    `Type`
-    `DataType`
+
+ `Type`
+ `DataType`
  */
 public protocol Delegateble where Self: ForceDelegateble {
-    
+
     /**
      Set current cell with a delegate
-     
+
      - Parameters:
-        - delegate: the delegate class
+     - delegate: the delegate class
      */
     func set(delegate: AnyObject)
 }

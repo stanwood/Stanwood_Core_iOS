@@ -26,122 +26,122 @@
 import UIKit
 
 protocol TableDataSource {
-    
-    var dataType:DataType? {get set}
+
+    var dataType: DataType? { get set }
     var type: Type? { get set }
-    
+
     func update(with dataType: DataType?)
     func update(with dataType: Type?)
-    
+
     func numberOfSections(in tableView: UITableView) -> Int
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 }
 
 extension Stanwood {
-    
+
     /**
      The `AbstractTableDataSource` conforms to the `TableDataSource` protocol and implements `AbstractTableDataSource.numberOfSections(in:)` and `AbstractTableDataSource.tableView(_:numberOfRowsInSection:)`. It midiates the application data model `DataType` and `Type` for the [`UITableView`](https://developer.apple.com/documentation/uikit/uitableview).
-     
+
      >It is requried to subclass `AbstractTableDataSource` and override `AbstractTableDataSource.tableView(_:cellForRowAt:)`
-     
+
      #####Example: DataSource and Delegate design#####
      ````swift
      let items = [Element(id: "1"), Element(id: "2")]
      self.objects = Stanwood.Elements<Element>(items: items)
-     
+
      self.dataSource = ElementDataSource(dataType: objects)
      self.delegate = ElementDelegate(dataType: objects)
-     
+
      self.tableView.dataSource = self.dataSource
      self.tableView.delegate = self.delegate
      ````
-     
+
      - SeeAlso:
-     
+
      `AbstractCollectionDelegate`
-     
+
      `Objects`
-     
+
      `DataType`
-     
+
      `Type`
      */
     open class AbstractTableDataSource: NSObject, UITableViewDataSource, TableDataSource, DataSourceType {
-        
+
         // MARK: Properties
-        
+
         /// dataType, a collection of types
-        public internal(set) var dataType: DataType?
-        
+        internal(set) public var dataType: DataType?
+
         /// A single type object to present
-        public internal(set) var type: Type?
-        
+        internal(set) public var type: Type?
+
         /// Unavalible
         @available(*, unavailable, renamed: "dataType")
-        public internal(set) var dataObject: DataType?
-        
+        internal(set) public var dataObject: DataType?
+
         /// :nodoc:
         private weak var delegate: AnyObject?
-        
+
         // MARK: Initializers
-        
+
         /**
          Initialise with a collection of types
-         
+
          - Parameters:
-            - dataType: dataType
-            - delegate: Optional AnyObject delegate
-         
+         - dataType: dataType
+         - delegate: Optional AnyObject delegate
+
          - SeeAlso: `DataType`
          */
         public init(dataType: DataType?, delegate: AnyObject? = nil) {
             self.dataType = dataType
             self.delegate = delegate
         }
-        
+
         /// Unavalible
         @available(*, unavailable, renamed: "init(dataType:)")
-        public init(dataObject: DataType?) {}
-        
+        public init(dataObject _: DataType?) {}
+
         /**
          Initialise with a a single type object.
-         
+
          - Parameters:
-            - dataType: DataType
-         
+         - dataType: DataType
+
          - SeeAlso: `Type`
          */
         public init(type: Type) {
             self.type = type
         }
-        
+
         /// Unavalible
         @available(*, unavailable, renamed: "init(type:)")
-        public init(dataType: Type) {}
-        
+        public init(dataType _: Type) {}
+
         // MARK: Public functions
-        
+
         /**
          update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
-         
+
          - Parameters:
-            - dataType: DataType
-         
+         - dataType: DataType
+
          - SeeAlso: `Type`
          */
         open func update(with dataType: DataType?) {
             self.dataType = dataType
         }
-        
+
         /**
          update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
-         
+
          - Parameters:
-            - dataType: Type
-         
+         - dataType: Type
+
          - SeeAlso: `DataType`
          */
         open func update(with type: Type?) {
@@ -149,9 +149,9 @@ extension Stanwood {
         }
 
         // MARK: UITableViewDataSource functions
-        
+
         /// :nodoc:
-        open func numberOfSections(in tableView: UITableView) -> Int {
+        open func numberOfSections(in _: UITableView) -> Int {
             switch (dataType, type) {
             case (.some, .none):
                 return dataType?.numberOfSections ?? 0
@@ -163,12 +163,12 @@ extension Stanwood {
                 return 0
             }
         }
-        
+
         /// :nodoc:
-        open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        open func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
             return dataType?[section].numberOfItems ?? (dataType == nil ? 0 : 1)
         }
-        
+
         /// :nodoc:
         open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             guard let cellType = dataType?.cellType(forItemAt: indexPath) as? UITableViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }

@@ -27,18 +27,18 @@ import Foundation
 
 /**
  Convinience main block
- 
+
  **Example:** *A simple `main` block*
  ````swift
  main {
-    // UI updates
+ // UI updates
  }
  ````
- 
-- parameter deadline: `DispatchTimeInterval` default = nil
+
+ - parameter deadline: `DispatchTimeInterval` default = nil
  */
 public func main(deadline: DispatchTimeInterval? = nil, block: @escaping () -> Void) {
-    
+
     if let deadline = deadline {
         DispatchQueue.main.asyncAfter(deadline: .now() + deadline) {
             block()
@@ -51,40 +51,39 @@ public func main(deadline: DispatchTimeInterval? = nil, block: @escaping () -> V
 }
 
 extension DispatchQueue {
-    
+
     private static var _onceTracker = [String]()
-    
+
     /**
      Executes a block of code, associated with a unique token, only once.  The code is thread safe and will
      only execute the code once even in the presence of multithreaded calls.
-     
+
      - Parameters:
-        - block: Block to execute once
-     
+     - block: Block to execute once
+
      - SeeAlso: `once(token:block:)`
      */
-    open class func once(file: String = #file, function: String = #function, line: Int = #line, block:()->Void) {
+    open class func once(file: String = #file, function: String = #function, line: Int = #line, block: () -> Void) {
         let token = file + ":" + function + ":" + String(line)
         once(token: token, block: block)
     }
-    
+
     /**
      Executes a block of code, associated with a unique token, only once.  The code is thread safe and will
      only execute the code once even in the presence of multithreaded calls.
-     
+
      - Parameters:
-        - token: A unique reverse DNS style name such as io.stanwood.<name> or a GUID
-        - block: Block to execute once
+     - token: A unique reverse DNS style name such as io.stanwood.<name> or a GUID
+     - block: Block to execute once
      */
-    open class func once(token: String, block:()->Void) {
+    open class func once(token: String, block: () -> Void) {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
-        
-        
+
         if _onceTracker.contains(token) {
             return
         }
-        
+
         _onceTracker.append(token)
         block()
     }

@@ -47,51 +47,51 @@ public protocol AutoSizeable {
 
 @available(iOS 10.0, *)
 extension AutoSizeable where Self: UICollectionViewCell {
-    
+
     /// Call when device rotates
     @discardableResult
     public func autoSize() -> NSLayoutConstraint? {
-        
+
         guard self.widthConstraint == nil else {
             self.widthConstraint?.constant = UIScreen.main.bounds.width
             updateConstraintsIfNeeded()
             return self.widthConstraint
         }
-        
+
         let widthContainerView = UIView()
         widthContainerView.backgroundColor = .clear
         widthContainerView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         contentView.addSubview(widthContainerView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let widthConstraint = widthContainerView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
         NSLayoutConstraint.activate([
             widthContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             widthContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             widthContainerView.topAnchor.constraint(equalTo: contentView.topAnchor),
             widthContainerView.heightAnchor.constraint(equalToConstant: 1),
-            widthConstraint
-            ])
-        
+            widthConstraint,
+        ])
+
         return widthConstraint
     }
 }
 
 extension Stanwood {
-    
+
     /// Inherit AutoSizeableCell to conform to Autosizable protocol
     @available(iOS 10.0, *)
     open class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
-        
+
         // MARK: Properties
-        
+
         /// Support for device rotation
         public var widthConstraint: NSLayoutConstraint?
-        
-        override open func awakeFromNib() {
+
+        open override func awakeFromNib() {
             super.awakeFromNib()
-            
+
             widthConstraint = autoSize()
         }
     }
