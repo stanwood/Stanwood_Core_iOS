@@ -11,42 +11,41 @@ import UIKit
 import StanwoodCore
 
 class TableViewController: UIViewController {
-    
+
     var tableView: UITableView!
-    
+
     var delegate: TableDelegate!
     var dataSource: TableDataSource!
     var elements: Stanwood.Elements<Deal>!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let items: [Deal] = [
             Deal(id: "TEST_TITLE1"),
             Deal(id: "TEST_TITLE2"),
             Deal(id: "TEST_TITLE3"),
             Deal(id: "TEST_TITLE4"),
         ]
-        
+
         configureTableView(items: items)
     }
-    
+
     func configureTableView(items: [Deal]) {
-        
+
         elements = Tables(items: items)
-        
+
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
-        
+
         tableView.register(cellType: TableViewCell.self)
-        
+
         delegate = TableDelegate(dataType: elements)
         dataSource = TableDataSource(dataType: elements)
-        
+
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
-        
+
         tableView.delegate = delegate
         tableView.dataSource = dataSource
-        
     }
 }

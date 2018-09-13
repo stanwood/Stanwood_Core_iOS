@@ -26,22 +26,22 @@
 import Foundation
 
 extension UICollectionViewCell {
-    
+
     open override func awakeFromNib() {
         super.awakeFromNib()
         prepare()
     }
-    
-    override open func prepareForReuse() {
+
+    open override func prepareForReuse() {
         super.prepareForReuse()
         prepare()
     }
-    
+
     /**
      Override prepare to reuse the cell.
      Called in `awakeFromNib()` and `prepareForReuse()`
-     
-        >Note: Override is required
+
+     >Note: Override is required
      */
     @objc open func prepare() {
         // Override to prepare cell for reuse

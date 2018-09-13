@@ -29,7 +29,7 @@ import Foundation
  Stanwood global instance
  */
 public struct Stanwood {
-    
+
     /// Checking if Snapshot is running.
     public let isRunningSnapshot: Bool = ProcessInfo.processInfo.arguments.contains("-FASTLANE_SNAPSHOT")
 }

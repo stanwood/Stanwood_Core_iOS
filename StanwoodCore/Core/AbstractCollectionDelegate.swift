@@ -27,119 +27,119 @@ import Foundation
 import UIKit
 
 protocol CollectionDelegate {
-    
+
     var dataType: DataType? { get set }
     var type: Type? { get set }
-    
+
     func update(with dataType: DataType?)
     func update(with type: Type?)
 }
 
 extension Stanwood {
-    
+
     /**
      The `AbstractCollectionDelegate` conforms to the `CollectionDelegate` protocol. It allows you to manage the selection and highlighting of items in a collection view and to perform actions on those items. [`UICollectionView`](https://developer.apple.com/documentation/uikit/uicollectionview).
-     
+
      #####Example: DataSource and Delegate design#####
      ````swift
      let items = [Element(id: "1"), Element(id: "2")]
      self.objects = Stanwood.Elements<Element>(items: items)
-     
+
      self.dataSource = ElementDataSource(dataObject: objects)
      self.delegate = ElementDelegate(dataObject: objects)
-     
+
      self.collectionView.dataSource = self.dataSource
      self.collectionView.delegate = self.delegate
      ````
-     
+
      - SeeAlso:
-     
+
      `AbstractCollectionDataSource`
-     
+
      `Objects`
-     
+
      `DataType`
-     
+
      `Type`
      */
     open class AbstractCollectionDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, CollectionDelegate, DelegateSourceType {
-        
+
         // MARK: Properties
-        
+
         /// dataObject, a collection of types
-        public internal(set) var dataType:DataType?
-        
+        internal(set) public var dataType: DataType?
+
         /// A single type object to present
-        public internal(set) var type: Type?
-        
+        internal(set) public var type: Type?
+
         /// Unavalible
         @available(*, unavailable, renamed: "dataType")
-        public internal(set) var dataObject: DataType?
-        
+        internal(set) public var dataObject: DataType?
+
         // MARK: Initializers
-        
+
         /**
          Initialise with a collection of types
-         
+
          - Parameters:
-            - dataObject: dataObject
-         
+         - dataObject: dataObject
+
          - SeeAlso: `DataType`
          */
         public init(dataType: DataType?) {
             self.dataType = dataType
         }
-        
+
         /// Unavalible
         @available(*, unavailable, renamed: "init(dataType:)")
-        public init(dataObject: DataType?) {}
-        
+        public init(dataObject _: DataType?) {}
+
         /**
          Initialise with a a single type object.
-         
+
          - Parameters:
-            - dataType: DataType
-         
+         - dataType: DataType
+
          - SeeAlso: `Type`
          */
         public init(type: Type) {
             self.type = type
         }
-        
+
         /// Unavalible
         @available(*, unavailable, renamed: "init(type:)")
-        public init(dataType: Type) {}
-        
+        public init(dataType _: Type) {}
+
         // MARK: Public functions
-        
+
         /**
          update current dataSource with dataObject.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
-         
+
          - Parameters:
-            - dataObject: DataType
-         
+         - dataObject: DataType
+
          - SeeAlso: `Type`
          */
         open func update(with dataType: DataType?) {
             self.dataType = dataType
         }
-        
+
         /**
          update current dataSource with dataType.
          >Note: If data type is a `class`, it is not reqruied to update the dataType.
-         
+
          - Parameters:
-            - dataType: Type
-         
+         - dataType: Type
+
          - SeeAlso: `DataType`
          */
         open func update(with type: Type?) {
             self.type = type
         }
-        
+
         /// :nodoc:
-        open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        open func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
             if let headerable = dataType?[section] as? Headerable,
                 let view = headerable.headerView {
                 return view.bounds.size

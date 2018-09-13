@@ -26,7 +26,7 @@
 import Foundation
 
 extension UISearchBar {
-    
+
     /// Localizing placeholder and sets the accessibilityIdentifier
     @objc open var localizedPlaceholder: String? {
         get {
@@ -36,26 +36,26 @@ extension UISearchBar {
             // accessibilityIdentifier is set for UITesting tool
             accessibilityIdentifier = newValue
             placeholder = newValue?.localized
-            
+
             #if DEBUG
                 guard newValue != nil else { return }
                 UITestingCore.record(key: newValue, text: placeholder, atElement: String(describing: UISearchBar.self))
             #endif
         }
     }
-    
+
     open override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         localizedPlaceholder = placeholder
     }
-    
+
     /**
      Sets the localized placeholder with format.
-     
+
      - Parameters:
-        - text: The text to localize
-        - arguments: The arguments to replace
+     - text: The text to localize
+     - arguments: The arguments to replace
      - Returns: the localized placeholder `String?` with format
      */
     @discardableResult
@@ -63,12 +63,11 @@ extension UISearchBar {
         accessibilityIdentifier = formatKey
         let placeholder = String(format: formatKey.localized, arguments: arguments)
         self.placeholder = placeholder
-        
+
         #if DEBUG
             UITestingCore.record(key: formatKey, text: placeholder, atElement: String(describing: UISearchBar.self))
         #endif
-        
+
         return self.placeholder
     }
 }
-

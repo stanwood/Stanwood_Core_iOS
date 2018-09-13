@@ -27,10 +27,10 @@ import Foundation
 
 /// Headerable protocol to add header support for `UICollectionView` and `UITableView`
 @objc public protocol Headerable {
-    
+
     /// `UITableView` section header view
     @objc optional var headerView: UIView { get }
-    
+
     /// `UICollectionView` header reuseable header view
     @objc optional var reusableView: UICollectionReusableView { get }
 }

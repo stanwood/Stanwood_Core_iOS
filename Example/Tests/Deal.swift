@@ -10,13 +10,13 @@ import Foundation
 import StanwoodCore
 
 struct Deal: Typeable {
-    
+
     var id: String?
-    
+
     init(id: String?) {
         self.id = id
     }
-    
+
     static func ==(lhs: Deal, rhs: Deal) -> Bool {
         return lhs.id == rhs.id
     }

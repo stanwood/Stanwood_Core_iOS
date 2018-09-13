@@ -26,27 +26,27 @@
 import Foundation
 
 public extension String {
-    
+
     /// Localizing current string
     public var localized: String {
         return NSLocalizedString(self, comment: self)
     }
-    
+
     /// Localizing current string from a table name file
     public func localize(fromTableName tableName: String?) -> String {
-       return NSLocalizedString(self, tableName: tableName, comment: self)
+        return NSLocalizedString(self, tableName: tableName, comment: self)
     }
 
     /// Return the first charachter
     public var first: String {
         return String(prefix(1))
     }
-    
+
     /// Returns the last charachter
     public var last: String {
         return String(suffix(1))
     }
-    
+
     /// get http:// to url
     public var httpURLString: String {
         if contains("http") {
@@ -57,7 +57,7 @@ public extension String {
             return "http://" + self
         }
     }
-    
+
     /// Get phone format string: tel://+123456789
     var phoneFormat: String {
         return "tel://\(self)"

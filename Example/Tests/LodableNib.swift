@@ -10,5 +10,4 @@ import UIKit
 import StanwoodCore
 
 class LodableNib: UIView {
-
 }
