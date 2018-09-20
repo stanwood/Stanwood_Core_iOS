@@ -65,7 +65,7 @@ extension Stanwood {
             
             var data: Data
             if let image = coding as? UIImage {
-                data = UIImagePNGRepresentation(image) ??
+                data = image.pngData() ??
                     NSKeyedArchiver.archivedData(withRootObject: coding)
             } else {
                 data = NSKeyedArchiver.archivedData(withRootObject: coding)

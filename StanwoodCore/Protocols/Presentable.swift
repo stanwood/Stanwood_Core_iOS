@@ -35,7 +35,7 @@ public protocol Presentable {
     associatedtype Parameterable
     
     /// Viewable associatedtype
-    associatedtype Viewable
+    associatedtype Viewable //where Viewable: AnyObject
     
     /// Actionable property
     var actionable: Actionable { get set }
@@ -44,7 +44,7 @@ public protocol Presentable {
     var parameterable: Parameterable { get set }
     
     /// Viewable property
-    var viewable: Viewable? { get set }
+    var viewable: Viewable { get set }
     
     /**
      Presentable required initialisers

@@ -36,12 +36,12 @@ extension UICollectionView {
      Set a `UIRefreshControl`
      
      - Parameters:
-        - target: Any?
-        - action: The selector action with swipe
-        - tintColor: the activity indicator tintColor. default = .white
+     - target: Any?
+     - action: The selector action with swipe
+     - tintColor: the activity indicator tintColor. default = .white
      
      - Returns:
-        `@discardableResult` `UIRefreshControl` which was assigne to `UICollectionView`
+     `@discardableResult` `UIRefreshControl` which was assigne to `UICollectionView`
      */
     @available(iOS 10.0, *)
     @discardableResult
@@ -57,7 +57,7 @@ extension UICollectionView {
      Register `UICollectionReusableView.Type`'s
      
      - Parameters:
-        - headerTypes: `UICollectionViewCell.Type`'s
+     - headerTypes: `UICollectionViewCell.Type`'s
      
      - SeeAlso: `register(headerType:)`
      */
@@ -69,20 +69,20 @@ extension UICollectionView {
      Register `UICollectionReusableView.Type`
      
      - Parameters:
-        - headerType: UICollectionReusableView.Type
+     - headerType: UICollectionReusableView.Type
      
      - SeeAlso: `register(headerTypes:)`
      */
     public func register(headerType: UICollectionReusableView.Type) {
         let nib = UINib(nibName: headerType.identifier, bundle: nil)
-        register(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerType.identifier)
+        register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerType.identifier)
     }
     
     /**
      Register `UICollectionViewCell.Type`'s
      
      - Parameters:
-        - cellTypes: `UICollectionViewCell.Type`'s
+     - cellTypes: `UICollectionViewCell.Type`'s
      
      - SeeAlso: `register(cellType:)`
      */
@@ -94,9 +94,9 @@ extension UICollectionView {
      Register `UICollectionViewCell.Type`
      
      - Parameters:
-        - cellType: UICollectionViewCell.Type
+     - cellType: UICollectionViewCell.Type
      
-    - SeeAlso: `register(cellTypes:)`
+     - SeeAlso: `register(cellTypes:)`
      */
     public func register(cellType: UICollectionViewCell.Type) {
         let nib = UINib(nibName: cellType.identifier, bundle: nil)
@@ -107,8 +107,8 @@ extension UICollectionView {
      Dequeue generic type `element` of `UICollectionViewCell` for `indexPath`
      
      - Parameters:
-        - cellType: Element.Type
-        - indexPath: cell for `IndexPath`
+     - cellType: Element.Type
+     - indexPath: cell for `IndexPath`
      */
     public func dequeue<Element: UICollectionViewCell>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
         let cell = dequeueReusableCell(withReuseIdentifier: cellType.identifier, for: indexPath)
@@ -124,11 +124,11 @@ extension UICollectionView {
      Dequeue header generic type `element` of `UICollectionReusableView` for `indexPath`
      
      - Parameters:
-        - cellType: Element.Type
-        - indexPath: header for `IndexPath`
+     - cellType: Element.Type
+     - indexPath: header for `IndexPath`
      */
     public func dequeueHeader<Element: UICollectionReusableView>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
-        let cell = dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: cellType.identifier, for: indexPath)
+        let cell = dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: cellType.identifier, for: indexPath)
         
         guard let element = cell as? Element else {
             fatalError("Cell \(cell) cannot be casted as \(cellType.identifier)")
@@ -143,17 +143,30 @@ extension UICollectionView {
      - Since: First available in iOS 10.0
      */
     @available(iOS 10.0, *)
-    public func setAutomaticSize() {
-        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+    public func setAutomaticSize(withHeaders: Bool = false) {
+        if #available(iOS 12.0, *) {
+            if withHeaders {
+                if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+                    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+                }
+            } else {
+                if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+                    flowLayout.estimatedItemSize = CGSize(width: frame.width, height: 500)
+                }
+            }
+        } else {
+            if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+                flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            }
         }
     }
+    
     
     /**
      Set minimum line and interitem spacing
      
      - Parameters:
-        - spacing: The minimum spacing
+     - spacing: The minimum spacing
      */
     public func set(spacing: CGFloat) {
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
@@ -196,8 +209,8 @@ extension UITableView {
      Dequeue generic type `element` of `UITableViewCell` for `indexPath`
      
      - Parameters:
-        - cellType: Element.Type
-        - indexPath: header for `IndexPath`
+     - cellType: Element.Type
+     - indexPath: header for `IndexPath`
      */
     public func dequeue<Element: UITableViewCell>(cellType: Element.Type, for indexPath: IndexPath) -> Element {
         let cell = dequeueReusableCell(withIdentifier: cellType.identifier, for: indexPath)

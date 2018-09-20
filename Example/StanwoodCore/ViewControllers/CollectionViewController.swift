@@ -10,7 +10,28 @@ import Foundation
 import UIKit
 import StanwoodCore
 
-class CollectionViewController: UIViewController {
+class CollecctionPresenter: Presentable {
+    
+
+    var actionable: String
+    var parameterable: String
+    unowned var viewable: CollectionViewable
+
+    required init(actionable: String, parameterable: String, viewable: CollectionViewable) {
+        self.actionable = actionable
+        self.parameterable = parameterable
+        self.viewable = viewable
+    }
+
+    typealias Actionable = String
+    typealias Parameterable = String
+    typealias Viewable = CollectionViewable
+
+}
+
+protocol CollectionViewable: class {}
+
+class CollectionViewController: UIViewController, CollectionViewable {
     
     var collectionView: UICollectionView!
     

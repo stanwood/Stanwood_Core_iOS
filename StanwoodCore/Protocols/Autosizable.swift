@@ -93,6 +93,17 @@ extension Stanwood {
             super.awakeFromNib()
             
             widthConstraint = autoSize()
+            
+            if #available(iOS 12.0, *) {
+                supportIOS12SelfSizing()
+            }
+        }
+        
+        @available(iOS 10.0, *)
+        private func supportIOS12SelfSizing(){
+            let containerTop = contentView.topAnchor.constraint(equalTo: topAnchor)
+            let containerBottom = contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            NSLayoutConstraint.activate([containerTop, containerBottom])
         }
     }
 }

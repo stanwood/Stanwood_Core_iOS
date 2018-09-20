@@ -57,14 +57,14 @@ open class PreferencesExplorer {
     open static func open(_ preferenceType: PreferenceType) throws {
         var preferencePath: String
         if #available(iOS 11.0, *), [.video, .locationServices, .photos].contains(preferenceType) {
-            preferencePath = UIApplicationOpenSettingsURLString
+            preferencePath = UIApplication.openSettingsURLString
         } else {
             preferencePath = "\(PreferencesExplorer.preferencePath)=\(preferenceType.rawValue)"
         }
         
         if let url = URL(string: preferencePath) {
             if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(url)
             }
@@ -207,4 +207,9 @@ public enum PreferenceType: String {
     
     /// Opens settings Do Not Disturb view
     case doNotDisturb = "DO_NOT_DISTURB"
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

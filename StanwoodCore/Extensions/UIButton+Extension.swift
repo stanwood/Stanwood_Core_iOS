@@ -61,7 +61,7 @@ extension UIButton {
      - Returns: the localised title for state
      */
     @discardableResult
-    @objc open func setLocalizedTitle(_ title: String?, for state: UIControlState = .normal, fromTableName tableName: String? = nil) -> String? {
+    @objc open func setLocalizedTitle(_ title: String?, for state: UIControl.State = .normal, fromTableName tableName: String? = nil) -> String? {
         accessibilityIdentifier = title
         setTitle(title?.localize(fromTableName: tableName), for: state)
         
@@ -81,7 +81,7 @@ extension UIButton {
         - identifier: The accessibilityIdentifier used for UITesting
         - state: The state that uses the specified title. The values are described in UIControlState.
      */
-    @objc open func setImage(_ image: UIImage?, withIdentifier identifier: String, for state: UIControlState = .normal) {
+    @objc open func setImage(_ image: UIImage?, withIdentifier identifier: String, for state: UIControl.State = .normal) {
         accessibilityIdentifier = identifier
         setImage(image, for: state)
         
@@ -99,7 +99,7 @@ extension UIButton {
      - Returns: the localized placeholder `String?` with format
      */
     @discardableResult
-    open func localizeTitle(formatKey: String, for state: UIControlState = .normal, _ arguments: CVarArg...) -> String? {
+    open func localizeTitle(formatKey: String, for state: UIControl.State = .normal, _ arguments: CVarArg...) -> String? {
         accessibilityIdentifier = formatKey
         let title = String(format: formatKey.localized, arguments: arguments)
         setTitle(title, for: state)

@@ -62,7 +62,7 @@ extension UIBarButtonItem {
      
      - Returns: Newly initialized item with the specified properties.
      */
-    convenience public init(localizedTitle: String, style: UIBarButtonItemStyle, target: Any?, action: Selector?) {
+    convenience public init(localizedTitle: String, style: UIBarButtonItem.Style, target: Any?, action: Selector?) {
         self.init(title: localizedTitle.localized, style: style, target: target, action: action)
         accessibilityIdentifier = localizedTitle
         
@@ -79,7 +79,7 @@ extension UIBarButtonItem {
         - arguments: The arguments to replace
      */
     @discardableResult
-    convenience public init(formatKey: String, style: UIBarButtonItemStyle, target: Any?, action: Selector?, _ arguments: CVarArg...) {
+    convenience public init(formatKey: String, style: UIBarButtonItem.Style, target: Any?, action: Selector?, _ arguments: CVarArg...) {
         let title = String(format: formatKey.localized, arguments: arguments)
         self.init(title: title, style: style, target: target, action: action)
         accessibilityIdentifier = formatKey
