@@ -137,7 +137,7 @@ class DataTypeTest: XCTestCase {
         let movedToIndexPath = IndexPath(item: 7, section: 0)
         
         let from = elements[indexPath] as! Deal
-        elements.move(objectThree, to: 4)
+        elements.move(objectThree, to: 7)
         let to = elements[movedToIndexPath] as! Deal
         
         XCTAssertEqual(from, to)
