@@ -55,6 +55,8 @@ class CollectionViewController: UIViewController, CollectionViewable {
         
         elements = Collections(items: items)
         
+        elements.move(elements.items[2], to: 0)
+        
         let layoyt = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layoyt)
         

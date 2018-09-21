@@ -16,8 +16,4 @@ struct Deal: Typeable, Codable {
     init(id: String?) {
         self.id = id
     }
-    
-    static func ==(lhs: Deal, rhs: Deal) -> Bool {
-        return lhs.id == rhs.id
-    }
 }
