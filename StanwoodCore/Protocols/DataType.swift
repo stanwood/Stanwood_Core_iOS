@@ -34,7 +34,7 @@ import Foundation
 public protocol Type {
     
     /// Returns the object id
-    var id: String? { get }
+//    var id: String? { get }
 }
 
 /**

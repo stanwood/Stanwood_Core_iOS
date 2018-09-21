@@ -9,7 +9,7 @@
 import Foundation
 import StanwoodCore
 
-struct Deal: Typeable {
+struct Deal: Typeable, Codable {
     
     var id: String?
     

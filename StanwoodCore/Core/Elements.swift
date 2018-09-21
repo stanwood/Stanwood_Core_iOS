@@ -26,7 +26,7 @@
 import Foundation
 
 /// Type, Equatable & Codeable
-public typealias Typeable = Type & Equatable & Codable
+public typealias Typeable = Type & Equatable
 
 extension Stanwood {
     
@@ -60,7 +60,11 @@ extension Stanwood {
      
      `Typeable`
      */
-    open class Elements<Element: Typeable>: DataType, Codable {
+    open class Elements<Element: Typeable>: DataType, Codable where Element: Codable {
+        
+        enum Errors: Error {
+            case typeableDoNotConformToCodable
+        }
         
         // MARK: Properties
         
@@ -166,13 +170,10 @@ extension Stanwood {
          - Returns: `Elements`
          */
         public func move(_ item: Element, to index: Int) {
-            items.forEach({ print($0.id!) })
             if let indexToRemove = self.index(of: item) {
                 items.remove(at: indexToRemove)
-                items.forEach({ print($0.id!) })
                 items.insert(item, at: index)
             }
-            items.forEach({ print($0.id!) })
         }
         
         /**
@@ -222,6 +223,7 @@ extension Stanwood {
          - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
          */
         open func save(withFileName fileName: String? = nil) throws {
+            
             try Storage.store(self, to: .documents, as: .json, withName: fileName ?? Elements<Element>.identifier)
         }
         
