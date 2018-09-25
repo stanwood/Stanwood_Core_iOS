@@ -67,7 +67,7 @@ extension AutoSizeable where Self: UICollectionViewCell {
 
 /// Inherit AutoSizeableCell to conform to Autosizable protocol
 @available(iOS 10.0, *)
-class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
+open class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
     
     // MARK: Properties
     
