@@ -143,16 +143,10 @@ extension UICollectionView {
      - Since: First available in iOS 10.0
      */
     @available(iOS 10.0, *)
-    public func setAutomaticSize(withHeaders: Bool = false) {
+    public func setAutomaticSize(_ height: CGFloat = 250) {
         if #available(iOS 12.0, *) {
-            if withHeaders {
-                if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-                    flowLayout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 250)
-                }
-            } else {
-                if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-                    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-                }
+            if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+                flowLayout.estimatedItemSize = CGSize(width: frame.width, height: height)
             }
         } else {
             if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
