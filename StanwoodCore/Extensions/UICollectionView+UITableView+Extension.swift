@@ -145,13 +145,13 @@ extension UICollectionView {
     @available(iOS 10.0, *)
     public func setAutomaticSize(withHeaders: Bool = false) {
         if #available(iOS 12.0, *) {
-            if !withHeaders {
+            if withHeaders {
                 if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-                    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+                    flowLayout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 250)
                 }
             } else {
                 if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-                    flowLayout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 250)
+                    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
                 }
             }
         } else {
