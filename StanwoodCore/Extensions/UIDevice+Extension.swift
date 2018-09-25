@@ -85,6 +85,18 @@ public enum Model : String {
     /// iPad Air 2
     case iPadAir2         = "iPad Air 2"
     
+    ///  iPad mini 4 (WiFi)
+    case iPadmini4WiFi = "iPad mini 4 (WiFi)"
+    
+    /// 4th Gen iPad mini (WiFi+Cellular)
+    case iPadmini4thGenWiFiCellular = "4th Gen iPad mini (WiFi+Cellular)"
+    
+    /// iPad Air 2 (WiFi)
+    case iPadAir2WiFi =  "iPad Air 2 (WiFi)"
+    
+    /// iPad Air 2 (Cellular)
+    case iPadAir2Cellular = "iPad Air 2 (Cellular)"
+    
     /// iPad Pro 9.7
     case iPadPro9_7       = "iPad Pro 9.7\""
     
@@ -132,6 +144,21 @@ public enum Model : String {
     
     /// iPhone X
     case iPhoneX          = "iPhone X"
+    
+    /// iPhone X GSM
+    case iPhoneXGSM = "iPhone X GSM"
+    
+    /// iPhone XS
+    case iPhoneXS = "iPhone XS"
+    
+    /// iPhone XS Max
+    case iPhoneXSMax = "iPhone XS Max"
+    
+    /// iPhone XS Max China
+    case iPhoneXSMaxChina = "iPhone XS Max China"
+    
+    /// iPhone XR
+    case iPhoneXR = "iPhone XR"
     
     /// unrecognized
     case unrecognized     = "?unrecognized?"
@@ -188,6 +215,10 @@ public extension UIDevice {
             "iPad4,7"    : .iPadMini3,
             "iPad4,8"    : .iPadMini3,
             "iPad4,9"    : .iPadMini3,
+            "iPad5,1"    : .iPadmini4WiFi,
+            "iPad5,2"    : .iPadmini4thGenWiFiCellular,
+            "iPad5,3"    : .iPadAir2WiFi,
+            "iPad5,4"    : .iPadAir2Cellular,
             "iPad6,3"    : .iPadPro9_7,
             "iPad6,11"   : .iPadPro9_7,
             "iPad6,4"    : .iPadPro9_7_cell,
@@ -207,7 +238,12 @@ public extension UIDevice {
             "iPhone9,4"  : .iPhone7plus,
             "iPhone10,1" : .iPhone8,
             "iPhone10,2" : .iPhone8plus,
-            "iPhone10,3" : .iPhoneX
+            "iPhone10,3" : .iPhoneX,
+            "iPhone10,6" : .iPhoneXGSM,
+            "iPhone11,2" : .iPhoneXS,
+            "iPhone11,4" : .iPhoneXSMax,
+            "iPhone11,6" : .iPhoneXSMaxChina,
+            "iPhone11,8" : .iPhoneXR
         ]
         
         if let model = modelMap[String.init(validatingUTF8: modelCode!)!] {

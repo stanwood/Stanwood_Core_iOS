@@ -99,7 +99,7 @@ extension Stanwood {
             }
         }
         
-        @available(iOS 10.0, *)
+        @available(iOS 12.0, *)
         private func supportIOS12SelfSizing(){
             let containerTop = contentView.topAnchor.constraint(equalTo: topAnchor)
             let containerBottom = contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
