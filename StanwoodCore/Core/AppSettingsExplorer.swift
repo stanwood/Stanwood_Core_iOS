@@ -64,7 +64,7 @@ open class AppSettingsExplorer {
      Opens a preference settings view
      
      - Parameters:
-     - preferenceType: The preference type `PreferenceType`
+        - preferenceType: The preference type `PreferenceType`
      */
     open static func open(_ preferenceType: Type) throws {
         var preferencePath: String

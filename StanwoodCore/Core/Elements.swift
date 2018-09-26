@@ -99,7 +99,7 @@ extension Stanwood {
          Initializer of Elements
          
          - Parameters:
-         - items: `[Element]<Type & Equatable & Codable>`
+            - items: `[Element]<Type & Equatable & Codable>`
          */
         public init(items: [Element]) {
             self.items = items
@@ -111,7 +111,7 @@ extension Stanwood {
          Subscript to get an item in row.
          
          - Parameters:
-         - indexPath: IndexPath location of an item at row
+            - indexPath: IndexPath location of an item at row
          
          - Returns: `Optional<Type>`
          
@@ -143,8 +143,8 @@ extension Stanwood {
          Append an item or insert at index
          
          - Parameters:
-         - item: <Element>[Typeable]
-         - index: Index
+            - item: <Element>[Typeable]
+            - index: Index
          */
         public func insert(item: Element, at index: Int) {
             items.insert(item, at: index)
@@ -154,7 +154,7 @@ extension Stanwood {
          Append an item or insert at index
          
          - Parameters:
-         - item: <Element>[Typeable]
+            - item: <Element>[Typeable]
          */
         public func append(_ item: Element) {
             items.append(item)
@@ -164,8 +164,8 @@ extension Stanwood {
          Move an item to index.
          
          - Parameters:
-         - item: <Element>[Type & Equatable & Codable]
-         - index: the index to move the item
+            - item: <Element>[Type & Equatable & Codable]
+            - index: the index to move the item
          
          - Returns: `Elements`
          */
@@ -180,7 +180,7 @@ extension Stanwood {
          Delete an item
          
          - Parameters:
-         - item: the item to delete
+            - item: the item to delete
          
          - Returns: `Elements`
          */
@@ -194,7 +194,7 @@ extension Stanwood {
          Get the index of an item.
          
          - Parameters:
-         - item: the item to search for in the collection
+            - item: the item to search for in the collection
          
          - Returns: the item index
          */
@@ -206,7 +206,7 @@ extension Stanwood {
          Checking if objects contain an item.
          
          - Parameters:
-         - item: the item to check it it exists.
+            - item: the item to check it it exists.
          
          - Returns: if it exists
          */
@@ -220,7 +220,7 @@ extension Stanwood {
          Save objects to file
          
          - Parameters:
-         - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
+            - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
          */
         open func save(withFileName fileName: String? = nil) throws {
             
@@ -231,7 +231,7 @@ extension Stanwood {
          Returns objects from file if exists
          
          - Parameters:
-         - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
+            - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
          */
         open static func loadFromFile(withFileName fileName: String? = nil) -> Elements? {
             do {

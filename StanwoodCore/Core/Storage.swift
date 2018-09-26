@@ -107,9 +107,9 @@ extension Stanwood {
          ````
          
          - Parameters:
-         - fileName: name of the file where struct data is stored
-         - directory: directory where struct data is stored
-         - type: struct type (i.e. Message.self)
+             - fileName: name of the file where struct data is stored
+             - directory: directory where struct data is stored
+             - type: struct type (i.e. Message.self)
          - Returns: decoded struct model(s) of data
          */
         static open func retrieve<T: Decodable>(_ fileName: String, of fileType: FileType, from directory: Directory, as type: T.Type) throws -> T? {

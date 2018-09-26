@@ -88,7 +88,7 @@ extension Stanwood {
          Initializer of Sections
          
          - Parameters:
-         - items: `[Section]<Type & Equatable & Codable>`
+            - items: `[Section]<Type & Equatable & Codable>`
          */
         public init(items: [Section]) {
             self.sections = items
@@ -100,7 +100,7 @@ extension Stanwood {
          Subscript to get an item in row.
          
          - Parameters:
-         - indexPath: IndexPath location of an item at row
+            - indexPath: IndexPath location of an item at row
          
          - Returns: `Optional<Type>`
          
