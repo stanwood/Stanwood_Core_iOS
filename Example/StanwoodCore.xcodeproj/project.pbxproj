@@ -68,6 +68,7 @@
 		607FACE51AFB9204008FA782 /* StanwoodCore_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StanwoodCore_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B1EC9F4749349F8BD1E643D /* Pods_StanwoodCore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodCore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C282551215B81920017543B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		6C414B512045925900BC15B3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		6C414B522045925900BC15B3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		6C414B5B2046BDF500BC15B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 				E215B4393DCD0F19816CA3D7 /* StanwoodCore.podspec */,
 				73F6820841AFE0ED170C6D0D /* README.md */,
 				396D5F655D1D82D0E2FEB8FD /* LICENSE */,
+				6C282551215B81920017543B /* CHANGELOG.md */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
