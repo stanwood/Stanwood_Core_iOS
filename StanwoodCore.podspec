@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'StanwoodCore'
-    s.version          = '1.2.3'
+    s.version          = '1.3'
     s.summary          = 'Stanwood core libarary'
     
     s.description      = <<-DESC
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/stanwood/Stanwood_Core.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '10.0'
-    s.swift_version = '4.1'
+    s.swift_version = '4.2'
     
     s.source_files = [
     'StanwoodCore/Core/**/*',

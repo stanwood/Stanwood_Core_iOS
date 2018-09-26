@@ -31,11 +31,7 @@ import Foundation
  - SeeAlso:
     `DataType`
  */
-public protocol Type {
-    
-    /// Returns the object id
-    var id: String? { get }
-}
+public protocol Type {}
 
 /**
  DataType is an object that stores a collection of types.

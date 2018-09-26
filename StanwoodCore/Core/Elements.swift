@@ -26,7 +26,7 @@
 import Foundation
 
 /// Type, Equatable & Codeable
-public typealias Typeable = Type & Equatable & Codable
+public typealias Typeable = Type & Equatable
 
 extension Stanwood {
     
@@ -60,7 +60,11 @@ extension Stanwood {
      
      `Typeable`
      */
-    open class Elements<Element: Typeable>: DataType, Codable {
+    open class Elements<Element: Typeable>: DataType, Codable where Element: Codable {
+        
+        enum Errors: Error {
+            case typeableDoNotConformToCodable
+        }
         
         // MARK: Properties
         
@@ -95,7 +99,7 @@ extension Stanwood {
          Initializer of Elements
          
          - Parameters:
-         - items: `[Element]<Type & Equatable & Codable>`
+            - items: `[Element]<Type & Equatable & Codable>`
          */
         public init(items: [Element]) {
             self.items = items
@@ -107,7 +111,7 @@ extension Stanwood {
          Subscript to get an item in row.
          
          - Parameters:
-         - indexPath: IndexPath location of an item at row
+            - indexPath: IndexPath location of an item at row
          
          - Returns: `Optional<Type>`
          
@@ -139,8 +143,8 @@ extension Stanwood {
          Append an item or insert at index
          
          - Parameters:
-         - item: <Element>[Typeable]
-         - index: Index
+            - item: <Element>[Typeable]
+            - index: Index
          */
         public func insert(item: Element, at index: Int) {
             items.insert(item, at: index)
@@ -150,7 +154,7 @@ extension Stanwood {
          Append an item or insert at index
          
          - Parameters:
-         - item: <Element>[Typeable]
+            - item: <Element>[Typeable]
          */
         public func append(_ item: Element) {
             items.append(item)
@@ -160,26 +164,23 @@ extension Stanwood {
          Move an item to index.
          
          - Parameters:
-         - item: <Element>[Type & Equatable & Codable]
-         - index: the index to move the item
+            - item: <Element>[Type & Equatable & Codable]
+            - index: the index to move the item
          
          - Returns: `Elements`
          */
         public func move(_ item: Element, to index: Int) {
-            items.forEach({ print($0.id!) })
             if let indexToRemove = self.index(of: item) {
                 items.remove(at: indexToRemove)
-                items.forEach({ print($0.id!) })
                 items.insert(item, at: index)
             }
-            items.forEach({ print($0.id!) })
         }
         
         /**
          Delete an item
          
          - Parameters:
-         - item: the item to delete
+            - item: the item to delete
          
          - Returns: `Elements`
          */
@@ -193,7 +194,7 @@ extension Stanwood {
          Get the index of an item.
          
          - Parameters:
-         - item: the item to search for in the collection
+            - item: the item to search for in the collection
          
          - Returns: the item index
          */
@@ -205,7 +206,7 @@ extension Stanwood {
          Checking if objects contain an item.
          
          - Parameters:
-         - item: the item to check it it exists.
+            - item: the item to check it it exists.
          
          - Returns: if it exists
          */
@@ -219,9 +220,10 @@ extension Stanwood {
          Save objects to file
          
          - Parameters:
-         - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
+            - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
          */
         open func save(withFileName fileName: String? = nil) throws {
+            
             try Storage.store(self, to: .documents, as: .json, withName: fileName ?? Elements<Element>.identifier)
         }
         
@@ -229,7 +231,7 @@ extension Stanwood {
          Returns objects from file if exists
          
          - Parameters:
-         - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
+            - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
          */
         open static func loadFromFile(withFileName fileName: String? = nil) -> Elements? {
             do {

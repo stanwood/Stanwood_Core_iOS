@@ -49,7 +49,7 @@ extension Stanwood {
          
          [`UIImpactFeedbackGenerator`](https://developer.apple.com/documentation/uikit/UIImpactFeedbackGenerator)
          */
-        public static func generate(style: UIImpactFeedbackStyle) {
+        public static func generate(style: UIImpactFeedbackGenerator.FeedbackStyle) {
             let generator = UIImpactFeedbackGenerator(style: style)
             generator.prepare()
             generator.impactOccurred()
@@ -67,7 +67,7 @@ extension Stanwood {
          
          [`UINotificationFeedbackGenerator`](https://developer.apple.com/documentation/uikit/UINotificationFeedbackGenerator)
          */
-        public static func generate(feedback: UINotificationFeedbackType) {
+        public static func generate(feedback: UINotificationFeedbackGenerator.FeedbackType) {
             let generator = UINotificationFeedbackGenerator()
             generator.prepare()
             generator.notificationOccurred(feedback)

@@ -44,7 +44,7 @@ public protocol Presentable {
     var parameterable: Parameterable { get set }
     
     /// Viewable property
-    var viewable: Viewable? { get set }
+    var viewable: Viewable { get set }
     
     /**
      Presentable required initialisers

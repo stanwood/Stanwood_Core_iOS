@@ -108,7 +108,7 @@ extension Stanwood {
          Initialise with a a single type object.
          
          - Parameters:
-         - dataType: DataType
+            - dataType: DataType
          
          - SeeAlso: `Type`
          */

@@ -49,6 +49,8 @@ class DataTypeTest: XCTestCase {
         
         let sectionTwo = Stanwood.Elements(items: sectionTwoDeals)
         sections =  Stanwood.Sections(items: [sectionOne, sectionTwo])
+        
+        continueAfterFailure = true
     }
     
     override func tearDown() {
@@ -129,14 +131,14 @@ class DataTypeTest: XCTestCase {
     }
     
     func testMoveHigh() {
-        let objects: Stanwood.Elements<Deal> = self.objects
+        let elements: Stanwood.Elements<Deal> = Stanwood.Elements<Deal>(items:  self.objects.items)
         let indexPath = IndexPath(item: 12, section: 0)
         let objectThree = objects[indexPath] as! Deal
         let movedToIndexPath = IndexPath(item: 7, section: 0)
         
-        let from = objects[indexPath] as! Deal
-        objects.move(objectThree, to: 7)
-        let to = objects[movedToIndexPath] as! Deal
+        let from = elements[indexPath] as! Deal
+        elements.move(objectThree, to: 7)
+        let to = elements[movedToIndexPath] as! Deal
         
         XCTAssertEqual(from, to)
     }

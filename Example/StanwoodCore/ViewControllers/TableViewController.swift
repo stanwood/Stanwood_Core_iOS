@@ -43,7 +43,7 @@ class TableViewController: UIViewController {
         delegate = TableDelegate(dataType: elements)
         dataSource = TableDataSource(dataType: elements)
         
-        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         
         tableView.delegate = delegate
         tableView.dataSource = dataSource
