@@ -65,18 +65,20 @@ extension AutoSizeable where Self: UICollectionViewCell {
     }
 }
 
-/// Inherit AutoSizeableCell to conform to Autosizable protocol
-@available(iOS 10.0, *)
-open class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
+extension Stanwood {
     
-    // MARK: Properties
-    
-    /// Support for device rotation
-    public var widthConstraint: NSLayoutConstraint?
-    
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        widthConstraint = autoSize()
+    /// Inherit AutoSizeableCell to conform to Autosizable protocol
+    @available(iOS 10.0, *)
+    open class AutoSizeableCell: UICollectionViewCell, AutoSizeable {
+        
+        // MARK: Properties
+        
+        /// Support for device rotation
+        public var widthConstraint: NSLayoutConstraint?
+        
+        override open func awakeFromNib() {
+            super.awakeFromNib()
+            widthConstraint = autoSize()
+        }
     }
 }
-
