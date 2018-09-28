@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Display Controller View Controller-->
+        <scene sceneID="Sf8-0k-iHG">
+            <objects>
+                <viewController storyboardIdentifier="DisplayControllerViewController" id="6JY-wC-gpp" customClass="DisplayControllerViewController" customModule="Stanwood_Arch_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ywu-gT-m6t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1ec-bP-X4o">
+                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0bv-QH-fhC">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zHE-v3-Xfj">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9H-39-uLd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stanwood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="573-CC-Bhb">
+                                        <rect key="frame" x="145.5" y="24.5" width="84.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyP-w7-CKV">
+                                        <rect key="frame" x="8" y="10" width="57" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="57" id="BYl-Y7-R4w"/>
+                                            <constraint firstAttribute="height" constant="50" id="rrT-35-WQR"/>
+                                        </constraints>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="dismiss:" destination="6JY-wC-gpp" eventType="touchUpInside" id="1zf-FP-ULG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.24182617064412337" blue="0.18465163392496997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="hyP-w7-CKV" firstAttribute="leading" secondItem="g9H-39-uLd" secondAttribute="leading" constant="8" id="EyN-1M-bTM"/>
+                                    <constraint firstItem="573-CC-Bhb" firstAttribute="centerY" secondItem="g9H-39-uLd" secondAttribute="centerY" id="JeY-Kf-78B"/>
+                                    <constraint firstItem="hyP-w7-CKV" firstAttribute="centerY" secondItem="573-CC-Bhb" secondAttribute="centerY" id="rfp-TR-sHe"/>
+                                    <constraint firstItem="573-CC-Bhb" firstAttribute="centerX" secondItem="g9H-39-uLd" secondAttribute="centerX" id="wrI-1c-BFT"/>
+                                    <constraint firstAttribute="height" constant="70" id="zcd-av-oKV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1ec-bP-X4o" firstAttribute="leading" secondItem="ODG-Sk-nvn" secondAttribute="leading" id="59e-6p-GRA"/>
+                            <constraint firstItem="ODG-Sk-nvn" firstAttribute="bottom" secondItem="1ec-bP-X4o" secondAttribute="bottom" id="FJZ-SZ-ICw"/>
+                            <constraint firstItem="g9H-39-uLd" firstAttribute="leading" secondItem="ODG-Sk-nvn" secondAttribute="leading" id="GA1-CB-K4I"/>
+                            <constraint firstItem="ODG-Sk-nvn" firstAttribute="trailing" secondItem="g9H-39-uLd" secondAttribute="trailing" id="Ve2-pD-fZP"/>
+                            <constraint firstItem="ODG-Sk-nvn" firstAttribute="trailing" secondItem="1ec-bP-X4o" secondAttribute="trailing" id="xJz-SI-XY3"/>
+                            <constraint firstItem="1ec-bP-X4o" firstAttribute="top" secondItem="g9H-39-uLd" secondAttribute="bottom" id="ybL-Xt-AsS"/>
+                            <constraint firstItem="g9H-39-uLd" firstAttribute="top" secondItem="ODG-Sk-nvn" secondAttribute="top" id="zSu-Ob-uv1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ODG-Sk-nvn"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="1ec-bP-X4o" id="ZWT-yv-XB0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3d-JN-ISV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293.60000000000002" y="-4.0479760119940034"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="30" height="30"/>
+    </resources>
+</document>
