@@ -46,6 +46,7 @@
 		6240E29D215E31B8000DB040 /* DetailCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6240E295215E31B8000DB040 /* DetailCollectionViewDelegate.swift */; };
 		6240E29E215E31B8000DB040 /* DetailCollectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6240E296215E31B8000DB040 /* DetailCollectionWireframe.swift */; };
 		6240E2A3215E4D1B000DB040 /* Temp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6240E2A2215E4D1B000DB040 /* Temp.xib */; };
+		6240E2A5215E541E000DB040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6240E2A4215E541E000DB040 /* AppDelegate.swift */; };
 		6272B79D215CB5C00010ABDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6272B79C215CB5C00010ABDD /* Assets.xcassets */; };
 		6272B7A0215CB5C00010ABDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6272B79E215CB5C00010ABDD /* LaunchScreen.storyboard */; };
 		6272B7C6215CB7CE0010ABDD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7C5215CB7CE0010ABDD /* UIViewController+Extension.swift */; };
@@ -54,7 +55,6 @@
 		6272B7D9215CBC360010ABDD /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7D0215CBC360010ABDD /* Configurations.swift */; };
 		6272B7DA215CBC360010ABDD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7D1215CBC360010ABDD /* Coordinator.swift */; };
 		6272B7DB215CBC360010ABDD /* Coordinator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7D2215CBC360010ABDD /* Coordinator+Extension.swift */; };
-		6272B7DC215CBC360010ABDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7D3215CBC360010ABDD /* AppDelegate.swift */; };
 		6272B7DD215CBC360010ABDD /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7D4215CBC360010ABDD /* AppController.swift */; };
 		6272B7DE215CBC360010ABDD /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7D5215CBC360010ABDD /* AppData.swift */; };
 		6272B7DF215CBC360010ABDD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7D6215CBC360010ABDD /* Constants.swift */; };
@@ -127,6 +127,7 @@
 		6240E295215E31B8000DB040 /* DetailCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		6240E296215E31B8000DB040 /* DetailCollectionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionWireframe.swift; sourceTree = "<group>"; };
 		6240E2A2215E4D1B000DB040 /* Temp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Temp.xib; sourceTree = "<group>"; };
+		6240E2A4215E541E000DB040 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6272B792215CB5BE0010ABDD /* Stanwood Arch Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stanwood Arch Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6272B79C215CB5C00010ABDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6272B79F215CB5C00010ABDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 		6272B7D0215CBC360010ABDD /* Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		6272B7D1215CBC360010ABDD /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6272B7D2215CBC360010ABDD /* Coordinator+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinator+Extension.swift"; sourceTree = "<group>"; };
-		6272B7D3215CBC360010ABDD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../../../GLANew/GLAMOUR/Stanwood/AppDelegate.swift; sourceTree = "<group>"; };
 		6272B7D4215CBC360010ABDD /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		6272B7D5215CBC360010ABDD /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		6272B7D6215CBC360010ABDD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -391,7 +391,7 @@
 				6272B7D8215CBC360010ABDD /* Actions.swift */,
 				6272B7D4215CBC360010ABDD /* AppController.swift */,
 				6272B7D5215CBC360010ABDD /* AppData.swift */,
-				6272B7D3215CBC360010ABDD /* AppDelegate.swift */,
+				6240E2A4215E541E000DB040 /* AppDelegate.swift */,
 				6272B7D0215CBC360010ABDD /* Configurations.swift */,
 				6272B7D6215CBC360010ABDD /* Constants.swift */,
 				6272B7D1215CBC360010ABDD /* Coordinator.swift */,
@@ -671,7 +671,6 @@
 				6240E220215DFD8F000DB040 /* Dictionary+Extension.swift in Sources */,
 				6240E29E215E31B8000DB040 /* DetailCollectionWireframe.swift in Sources */,
 				6240E253215E0C04000DB040 /* MainControllerViewController.swift in Sources */,
-				6272B7DC215CBC360010ABDD /* AppDelegate.swift in Sources */,
 				6240E254215E0C04000DB040 /* MainControllerWireframe.swift in Sources */,
 				6272B7E1215CBC360010ABDD /* Actions.swift in Sources */,
 				6240E21A215DFA1F000DB040 /* DataProvider.swift in Sources */,
@@ -691,6 +690,7 @@
 				6272B7D9215CBC360010ABDD /* Configurations.swift in Sources */,
 				6240E270215E1CBB000DB040 /* DisplayContentCell.swift in Sources */,
 				6240E299215E31B8000DB040 /* DetailCollectionParameterable.swift in Sources */,
+				6240E2A5215E541E000DB040 /* AppDelegate.swift in Sources */,
 				6272B7DA215CBC360010ABDD /* Coordinator.swift in Sources */,
 				6240E269215E0ECF000DB040 /* FunkyObjects.swift in Sources */,
 				6272B7DD215CBC360010ABDD /* AppController.swift in Sources */,

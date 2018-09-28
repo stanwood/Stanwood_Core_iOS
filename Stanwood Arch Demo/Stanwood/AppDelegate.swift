@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  GLAMOUR
+//  Stanwood Arch Demo
 //
-//  Created by Aaron Tredrea on 25/05/2018.
+//  Created by AT on 9/27/18.
 //  Copyright © 2018 Stanwood. All rights reserved.
 //
 
@@ -18,13 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appController: AppController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-
-            window = UIWindow(frame: UIScreen.main.bounds)
-            appController = AppController(with: window!)
-    
-            window?.makeKeyAndVisible()
-    
-            return true
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        appController = AppController(with: window!)
+        
+        window?.makeKeyAndVisible()
+        
+        return true
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appController?.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     }
     
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+    private func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
        return appController?.application(application, continue: userActivity, restorationHandler: restorationHandler) ?? true
     }
     

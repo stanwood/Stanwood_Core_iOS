@@ -15,8 +15,8 @@ class DetailCollectionDataSource: Stanwood.AbstractCollectionDataSource {
     // Let this crash to show how we fix it, /// Remove and add with snippets
 
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        fatalError("Not implemented")
-    }
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        fatalError("Not implemented")
+//    }
     
 }
