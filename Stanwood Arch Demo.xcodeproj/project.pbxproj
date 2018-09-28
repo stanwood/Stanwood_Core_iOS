@@ -48,8 +48,6 @@
 		6240E2A3215E4D1B000DB040 /* Temp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6240E2A2215E4D1B000DB040 /* Temp.xib */; };
 		6272B79D215CB5C00010ABDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6272B79C215CB5C00010ABDD /* Assets.xcassets */; };
 		6272B7A0215CB5C00010ABDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6272B79E215CB5C00010ABDD /* LaunchScreen.storyboard */; };
-		6272B7AB215CB5C00010ABDD /* Stanwood_Arch_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7AA215CB5C00010ABDD /* Stanwood_Arch_DemoTests.swift */; };
-		6272B7B6215CB5C00010ABDD /* Stanwood_Arch_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7B5215CB5C00010ABDD /* Stanwood_Arch_DemoUITests.swift */; };
 		6272B7C6215CB7CE0010ABDD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7C5215CB7CE0010ABDD /* UIViewController+Extension.swift */; };
 		6272B7C9215CB8190010ABDD /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7C8215CB8190010ABDD /* AlertManager.swift */; };
 		6272B7CF215CB8DD0010ABDD /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6272B7CE215CB8DD0010ABDD /* Analytics.swift */; };
@@ -134,11 +132,7 @@
 		6272B79F215CB5C00010ABDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6272B7A1215CB5C00010ABDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6272B7A6215CB5C00010ABDD /* Stanwood Arch DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stanwood Arch DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6272B7AA215CB5C00010ABDD /* Stanwood_Arch_DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stanwood_Arch_DemoTests.swift; sourceTree = "<group>"; };
-		6272B7AC215CB5C00010ABDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6272B7B1215CB5C00010ABDD /* Stanwood Arch DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stanwood Arch DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6272B7B5215CB5C00010ABDD /* Stanwood_Arch_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stanwood_Arch_DemoUITests.swift; sourceTree = "<group>"; };
-		6272B7B7215CB5C00010ABDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6272B7C5215CB7CE0010ABDD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		6272B7C8215CB8190010ABDD /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		6272B7CE215CB8DD0010ABDD /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
@@ -301,8 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				6272B794215CB5BE0010ABDD /* Stanwood Arch Demo */,
-				6272B7A9215CB5C00010ABDD /* Stanwood Arch DemoTests */,
-				6272B7B4215CB5C00010ABDD /* Stanwood Arch DemoUITests */,
 				6272B793215CB5BE0010ABDD /* Products */,
 				63103EA31202C72EF55BF2E2 /* Pods */,
 				B21EA192ADEB02A92ABC9960 /* Frameworks */,
@@ -331,24 +323,6 @@
 				6272B7C3215CB7620010ABDD /* Supporting Files */,
 			);
 			path = "Stanwood Arch Demo";
-			sourceTree = "<group>";
-		};
-		6272B7A9215CB5C00010ABDD /* Stanwood Arch DemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				6272B7AA215CB5C00010ABDD /* Stanwood_Arch_DemoTests.swift */,
-				6272B7AC215CB5C00010ABDD /* Info.plist */,
-			);
-			path = "Stanwood Arch DemoTests";
-			sourceTree = "<group>";
-		};
-		6272B7B4215CB5C00010ABDD /* Stanwood Arch DemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6272B7B5215CB5C00010ABDD /* Stanwood_Arch_DemoUITests.swift */,
-				6272B7B7215CB5C00010ABDD /* Info.plist */,
-			);
-			path = "Stanwood Arch DemoUITests";
 			sourceTree = "<group>";
 		};
 		6272B7C3215CB7620010ABDD /* Supporting Files */ = {
@@ -747,7 +721,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6272B7AB215CB5C00010ABDD /* Stanwood_Arch_DemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,7 +728,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6272B7B6215CB5C00010ABDD /* Stanwood_Arch_DemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
