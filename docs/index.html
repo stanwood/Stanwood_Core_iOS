@@ -53,7 +53,10 @@
             <a class="nav-group-name-link" href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/PreferencesExplorer.html">PreferencesExplorer</a>
+                <a class="nav-group-task-link" href="Classes/AppSettingsExplorer.html">AppSettingsExplorer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/AppSettingsExplorer/Type.html">– Type</a>
               </li>
             </ul>
           </li>
@@ -61,13 +64,10 @@
             <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/AppSettingsExplorerError.html">AppSettingsExplorerError</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/Model.html">Model</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/PreferenceExplorerError.html">PreferenceExplorerError</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/PreferenceType.html">PreferenceType</a>
               </li>
             </ul>
           </li>
@@ -76,6 +76,15 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/CGFloat/Damping.html">– Damping</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/CGFloat/Spring.html">– Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/CGFloat/Radius.html">– Radius</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/DispatchQueue.html">DispatchQueue</a>
@@ -143,7 +152,7 @@
             <a class="nav-group-name-link" href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/s:12StanwoodCore4mainy8Dispatch0D12TimeIntervalOSg8deadline_yyc5blocktF">main(deadline:block:)</a>
+                <a class="nav-group-task-link" href="Functions.html#/s:12StanwoodCore4main8deadline5blocky8Dispatch0F12TimeIntervalOSg_yyctF">main(deadline:block:)</a>
               </li>
             </ul>
           </li>
@@ -181,7 +190,7 @@
                 <a class="nav-group-task-link" href="Protocols/SourceTypePresentable.html">SourceTypePresentable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/Type.html">Type</a>
+                <a class="nav-group-task-link" href="Protocols.html#/s:12StanwoodCore4TypeP">Type</a>
               </li>
             </ul>
           </li>
@@ -204,9 +213,6 @@
                 <a class="nav-group-task-link" href="Structs/Stanwood/AbstractTableDelegate.html">– AbstractTableDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/Stanwood/AutoSizeableCell.html">– AutoSizeableCell</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Stanwood/CodingBridge.html">– CodingBridge</a>
               </li>
               <li class="nav-group-task">
@@ -223,6 +229,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Stanwood/Storage.html">– Storage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Stanwood/AutoSizeableCell.html">– AutoSizeableCell</a>
               </li>
             </ul>
           </li>
@@ -259,74 +268,6 @@
 <h2 id='installation' class='heading'>Installation</h2>
 <pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'StanwoodCore'</span>
 </code></pre>
-<h2 id='release-notes' class='heading'>Release Notes</h2>
-<h3 id='1-2-2' class='heading'>1.2.2</h3>
-<div class="aside aside-bug">
-    <p class="aside-title">Bug</p>
-    Bug fixing
-
-</div>
-<h3 id='1-2' class='heading'>1.2</h3>
-
-<ul>
-<li>stanwood Architecture 1.3 improvements</li>
-<li>Adding <code><a href="Protocols/Headerable.html">Headerable</a></code> protocol to support headers for <code>UICollectionView</code> and <code>UITableView</code></li>
-<li>Adding <code><a href="Protocols/Delegateble.html">Delegateble</a></code> protocol to support multiple delegates when using <code>SourceType</code></li>
-<li>General improvements</li>
-</ul>
-<h3 id='1-1-3' class='heading'>1.1.3</h3>
-
-<ul>
-<li>Fixing <code><a href="Structs/Stanwood/Sections.html">Stanwood.Sections</a></code> to support different types of <code><a href="Protocols/DataType.html">DataType</a></code></li>
-</ul>
-<h3 id='1-1-2' class='heading'>1.1.2</h3>
-
-<ul>
-<li>Making Stanwood.Elements subscipt and save/load <code>open</code></li>
-</ul>
-<h3 id='1-1-1' class='heading'>1.1.1</h3>
-
-<ul>
-<li>Making numberOfItems and numberOfSections open</li>
-</ul>
-<h3 id='1-1' class='heading'>1.1</h3>
-
-<ul>
-<li>Adding <code><a href="Structs/Stanwood/Sections.html">Stanwood.Sections</a></code>, support for sections in <code>UITableView</code> and <code>UICollectionView</code></li>
-</ul>
-<h3 id='1-0-1' class='heading'>1.0.1</h3>
-
-<ul>
-<li>Public release</li>
-</ul>
-<h3 id='0-2-3' class='heading'>0.2.3</h3>
-
-<ul>
-<li><code>Stanwood.Objects</code> has been renamed to <code><a href="Structs/Stanwood/Elements.html">Stanwood.Elements</a></code> to follow Swift naming conventions.</li>
-<li>Adding <code>cellType(forItemAt:)</code> to <code><a href="Protocols/DataType.html">DataType</a></code> protocol to hanndle <code>cellForItem</code> in the abstract level.</li>
-<li>Adding <code><a href="Protocols/SourceTypePresentable.html">SourceTypePresentable</a></code> to support Stanwood Architecture 1.0</li>
-<li>Adding <code>UITestingCore</code> bridge for <code>StanwoodUITestingCore</code> framework</li>
-</ul>
-<h3 id='0-2-2' class='heading'>0.2.2</h3>
-
-<ul>
-<li>Fixing <code><a href="Protocols/Loadable.html">Loadable</a></code> non-static function</li>
-</ul>
-<h3 id='0-1-8' class='heading'>0.1.8</h3>
-
-<ul>
-<li>Fixing number of rows in section, in <code><a href="Structs/Stanwood/AbstractTableDataSource.html">Stanwood.AbstractTableDataSource</a></code></li>
-</ul>
-<h3 id='0-1-7' class='heading'>0.1.7</h3>
-
-<ul>
-<li>Fixing <code><a href="Protocols/Loadable.html">Loadable</a></code></li>
-<li>Fixing UIView extention <code>addShadow</code> default values</li>
-<li>Removed duplciate extensions</li>
-<li>Adding <code>DataSourceType</code> &amp; <code>DelegateSourceType</code> protocol to support DataSource and Delegate</li>
-<li>Adding <code><a href="Protocols/Presentable.html">Presentable</a></code> protocol</li>
-<li>Chaning naming in <code>Stanwood.Objects</code></li>
-</ul>
 <h2 id='usage' class='heading'>Usage</h2>
 
 <p>Check out the <a href="https://stanwood.github.io/Stanwood_Core">full documentations</a>.</p>
@@ -342,7 +283,7 @@
     </div>
     <section class="footer">
       <p>2018 Stanwood GmbH</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
