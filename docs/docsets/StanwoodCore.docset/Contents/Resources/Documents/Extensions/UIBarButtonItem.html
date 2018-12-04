@@ -54,7 +54,10 @@
             <a class="nav-group-name-link" href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/PreferencesExplorer.html">PreferencesExplorer</a>
+                <a class="nav-group-task-link" href="../Classes/AppSettingsExplorer.html">AppSettingsExplorer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AppSettingsExplorer/Type.html">– Type</a>
               </li>
             </ul>
           </li>
@@ -62,13 +65,10 @@
             <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/AppSettingsExplorerError.html">AppSettingsExplorerError</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/Model.html">Model</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/PreferenceExplorerError.html">PreferenceExplorerError</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/PreferenceType.html">PreferenceType</a>
               </li>
             </ul>
           </li>
@@ -77,6 +77,15 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CGFloat/Damping.html">– Damping</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CGFloat/Spring.html">– Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CGFloat/Radius.html">– Radius</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/DispatchQueue.html">DispatchQueue</a>
@@ -144,7 +153,7 @@
             <a class="nav-group-name-link" href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Functions.html#/s:12StanwoodCore4mainy8Dispatch0D12TimeIntervalOSg8deadline_yyc5blocktF">main(deadline:block:)</a>
+                <a class="nav-group-task-link" href="../Functions.html#/s:12StanwoodCore4main8deadline5blocky8Dispatch0F12TimeIntervalOSg_yyctF">main(deadline:block:)</a>
               </li>
             </ul>
           </li>
@@ -182,7 +191,7 @@
                 <a class="nav-group-task-link" href="../Protocols/SourceTypePresentable.html">SourceTypePresentable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/Type.html">Type</a>
+                <a class="nav-group-task-link" href="../Protocols.html#/s:12StanwoodCore4TypeP">Type</a>
               </li>
             </ul>
           </li>
@@ -205,9 +214,6 @@
                 <a class="nav-group-task-link" href="../Structs/Stanwood/AbstractTableDelegate.html">– AbstractTableDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs/Stanwood/AutoSizeableCell.html">– AutoSizeableCell</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/Stanwood/CodingBridge.html">– CodingBridge</a>
               </li>
               <li class="nav-group-task">
@@ -224,6 +230,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/Stanwood/Storage.html">– Storage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Stanwood/AutoSizeableCell.html">– AutoSizeableCell</a>
               </li>
             </ul>
           </li>
@@ -242,6 +251,12 @@
         <section class="section">
           <div class="section-content">
             <h1>UIBarButtonItem</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UIBarButtonItem</span> <span class="p">:</span> <span class="kt">UIBarItem</span><span class="p">,</span> <span class="kt">NSCoding</span></code></pre>
+
+                </div>
+              </div>
             
           </div>
         </section>
@@ -270,7 +285,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span> <span class="kd">open</span> <span class="k">var</span> <span class="nv">localizedTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">localizedTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -306,9 +322,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15UIBarButtonItemC12StanwoodCoreEABSS14localizedTitle_SC0abC5StyleO5styleypSg6target10ObjectiveC8SelectorVSg6actiontcfc"></a>
+                    <a name="/s:So15UIBarButtonItemC12StanwoodCoreE14localizedTitle5style6target6actionABSS_So0abC5StyleVypSg10ObjectiveC8SelectorVSgtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(localizedTitle:style:target:action:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15UIBarButtonItemC12StanwoodCoreEABSS14localizedTitle_SC0abC5StyleO5styleypSg6target10ObjectiveC8SelectorVSg6actiontcfc">init(localizedTitle:style:target:action:)</a>
+                    <a class="token" href="#/s:So15UIBarButtonItemC12StanwoodCoreE14localizedTitle5style6target6actionABSS_So0abC5StyleVypSg10ObjectiveC8SelectorVSgtcfc">init(localizedTitle:style:target:action:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -323,7 +339,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="n">convenience</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">localizedTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIBarButtonItemStyle</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Selector</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="n">convenience</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">localizedTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">.</span><span class="kt">Style</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Selector</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -392,9 +408,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15UIBarButtonItemC12StanwoodCoreEABSS9formatKey_SC0abC5StyleO5styleypSg6target10ObjectiveC8SelectorVSg6actions7CVarArg_pdtcfc"></a>
+                    <a name="/s:So15UIBarButtonItemC12StanwoodCoreE9formatKey5style6target6action_ABSS_So0abC5StyleVypSg10ObjectiveC8SelectorVSgs7CVarArg_pdtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(formatKey:style:target:action:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15UIBarButtonItemC12StanwoodCoreEABSS9formatKey_SC0abC5StyleO5styleypSg6target10ObjectiveC8SelectorVSg6actions7CVarArg_pdtcfc">init(formatKey:style:target:action:_:)</a>
+                    <a class="token" href="#/s:So15UIBarButtonItemC12StanwoodCoreE9formatKey5style6target6action_ABSS_So0abC5StyleVypSg10ObjectiveC8SelectorVSgs7CVarArg_pdtcfc">init(formatKey:style:target:action:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -409,7 +425,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="n">convenience</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">formatKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIBarButtonItemStyle</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Selector</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">arguments</span><span class="p">:</span> <span class="kt">CVarArg</span><span class="o">...</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="n">convenience</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">formatKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">.</span><span class="kt">Style</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Selector</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">arguments</span><span class="p">:</span> <span class="kt">CVarArg</span><span class="o">...</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -456,7 +473,7 @@
     </div>
     <section class="footer">
       <p>2018 Stanwood GmbH</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

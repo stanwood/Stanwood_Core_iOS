@@ -173,10 +173,17 @@ extension Stanwood {
         open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             guard let cellType = dataType?.cellType(forItemAt: indexPath) as? UITableViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
             guard let cell = tableView.dequeue(cellType: cellType, for: indexPath) as? (UITableViewCell & Fillable) else { fatalError("UITableViewCell must conform to Fillable protocol") }
-            cell.fill(with: dataType?[indexPath])
-            if let delegateableCell = cell as? Delegateble, let delegate = delegate {
-                delegateableCell.set(delegate: delegate)
+            
+            if let delegateableCell = cell as? Delegateble {
+                
+                if let delegate = delegate {
+                    delegateableCell.set(delegate: delegate)
+                } else {
+                    assert(false, "The cell requires a delegate, you must inject a delegate to proceed. See: init(dataType:delegate:)")
+                }
             }
+            
+            cell.fill(with: dataType?[indexPath])
             return cell
         }
     }

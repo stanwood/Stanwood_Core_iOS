@@ -169,10 +169,15 @@ extension Stanwood {
         open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             guard let cellType = dataType?.cellType(forItemAt: indexPath) as? UICollectionViewCell.Type else { fatalError("You need to subclass Stanwood.Elements and override cellType(forItemAt:)") }
             guard let cell = collectionView.dequeue(cellType: cellType, for: indexPath) as? (UICollectionViewCell & Fillable) else { fatalError("UICollectionViewCell must conform to Fillable protocol") }
-            cell.fill(with: dataType?[indexPath.section][indexPath])
-            if let delegateableCell = cell as? Delegateble, let delegate = delegate {
-                delegateableCell.set(delegate: delegate)
+            if let delegateableCell = cell as? Delegateble {
+                
+                if let delegate = delegate {
+                    delegateableCell.set(delegate: delegate)
+                } else {
+                    assert(false, "The cell requires a delegate, you must inject a delegate to proceed. See: init(dataType:delegate:)")
+                }
             }
+            cell.fill(with: dataType?[indexPath.section][indexPath])
             return cell
         }
         

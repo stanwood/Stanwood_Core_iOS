@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'StanwoodCore'
-    s.version          = '1.3.1'
+    s.version          = '1.4'
     s.summary          = 'Stanwood core libarary'
     
     s.description      = <<-DESC
@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'stanwood' => 'ios.frameworks@stanwood.io' }
     s.source           = { :git => 'https://github.com/stanwood/Stanwood_Core.git', :tag => s.version.to_s }
+    s.documentation_url = 'https://stanwood.github.io/Stanwood_Core'
     
     s.ios.deployment_target = '10.0'
     s.swift_version = '4.2'

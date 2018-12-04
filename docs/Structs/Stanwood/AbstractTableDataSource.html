@@ -54,7 +54,10 @@
             <a class="nav-group-name-link" href="../../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Classes/PreferencesExplorer.html">PreferencesExplorer</a>
+                <a class="nav-group-task-link" href="../../Classes/AppSettingsExplorer.html">AppSettingsExplorer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Classes/AppSettingsExplorer/Type.html">– Type</a>
               </li>
             </ul>
           </li>
@@ -62,13 +65,10 @@
             <a class="nav-group-name-link" href="../../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Enums/AppSettingsExplorerError.html">AppSettingsExplorerError</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Enums/Model.html">Model</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Enums/PreferenceExplorerError.html">PreferenceExplorerError</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Enums/PreferenceType.html">PreferenceType</a>
               </li>
             </ul>
           </li>
@@ -77,6 +77,15 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Extensions/CGFloat/Damping.html">– Damping</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Extensions/CGFloat/Spring.html">– Spring</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Extensions/CGFloat/Radius.html">– Radius</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Extensions/DispatchQueue.html">DispatchQueue</a>
@@ -144,7 +153,7 @@
             <a class="nav-group-name-link" href="../../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Functions.html#/s:12StanwoodCore4mainy8Dispatch0D12TimeIntervalOSg8deadline_yyc5blocktF">main(deadline:block:)</a>
+                <a class="nav-group-task-link" href="../../Functions.html#/s:12StanwoodCore4main8deadline5blocky8Dispatch0F12TimeIntervalOSg_yyctF">main(deadline:block:)</a>
               </li>
             </ul>
           </li>
@@ -182,7 +191,7 @@
                 <a class="nav-group-task-link" href="../../Protocols/SourceTypePresentable.html">SourceTypePresentable</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Protocols/Type.html">Type</a>
+                <a class="nav-group-task-link" href="../../Protocols.html#/s:12StanwoodCore4TypeP">Type</a>
               </li>
             </ul>
           </li>
@@ -205,9 +214,6 @@
                 <a class="nav-group-task-link" href="../../Structs/Stanwood/AbstractTableDelegate.html">– AbstractTableDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../../Structs/Stanwood/AutoSizeableCell.html">– AutoSizeableCell</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Structs/Stanwood/CodingBridge.html">– CodingBridge</a>
               </li>
               <li class="nav-group-task">
@@ -224,6 +230,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Structs/Stanwood/Storage.html">– Storage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Structs/Stanwood/AutoSizeableCell.html">– AutoSizeableCell</a>
               </li>
             </ul>
           </li>
@@ -244,11 +253,11 @@
             <h1>AbstractTableDataSource</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
 
                 </div>
               </div>
-            <p>The <code>AbstractTableDataSource</code> conforms to the <code>TableDataSource</code> protocol and implements <code>AbstractTableDataSource.numberOfSections(in:)</code> and <code>AbstractTableDataSource.tableView(_:numberOfRowsInSection:)</code>. It midiates the application data model <code><a href="../../Protocols/DataType.html">DataType</a></code> and <code><a href="../../Protocols/Type.html">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uitableview"><code>UITableView</code></a>.</p>
+            <p>The <code>AbstractTableDataSource</code> conforms to the <code>TableDataSource</code> protocol and implements <code>AbstractTableDataSource.numberOfSections(in:)</code> and <code>AbstractTableDataSource.tableView(_:numberOfRowsInSection:)</code>. It midiates the application data model <code><a href="../../Protocols/DataType.html">DataType</a></code> and <code><a href="../../Protocols.html#/s:12StanwoodCore4TypeP">Type</a></code> for the <a href="https://developer.apple.com/documentation/uikit/uitableview"><code>UITableView</code></a>.</p>
 
 <blockquote>
 <p>It is requried to subclass <code>AbstractTableDataSource</code> and override <code>AbstractTableDataSource.tableView(_:cellForRowAt:)</code></p>
@@ -274,7 +283,7 @@
 
 <p><code><a href="../../Protocols/DataType.html">DataType</a></code></p>
 
-<p><code><a href="../../Protocols/Type.html">Type</a></code></p>
+<p><code><a href="../../Protocols.html#/s:12StanwoodCore4TypeP">Type</a></code></p>
 
           </div>
         </section>
@@ -358,9 +367,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceCAeA0E4Type_pSg04dataG0_yXlSg8delegatetcfc"></a>
+                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC8dataType8delegateAeA0eH0_pSg_yXlSgtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(dataType:delegate:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceCAeA0E4Type_pSg04dataG0_yXlSg8delegatetcfc">init(dataType:delegate:)</a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC8dataType8delegateAeA0eH0_pSg_yXlSgtcfc">init(dataType:delegate:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -421,9 +430,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceCAeA4Type_p4type_tcfc"></a>
+                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC4typeAeA4Type_p_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(type:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceCAeA4Type_p4type_tcfc">init(type:)</a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC4typeAeA4Type_p_tcfc">init(type:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -434,7 +443,7 @@
                         <p>Initialise with a a single type object.</p>
 <div class="aside aside-see-also">
     <p class="aside-title">See also</p>
-    <p><code><a href="../../Protocols/Type.html">Type</a></code></p>
+    <p><code><a href="../../Protocols.html#/s:12StanwoodCore4TypeP">Type</a></code></p>
 
 </div>
 
@@ -483,9 +492,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC6updateyAA0E4Type_pSg4with_tF"></a>
+                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC6update4withyAA0E4Type_pSg_tF"></a>
                     <a name="//apple_ref/swift/Method/update(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC6updateyAA0E4Type_pSg4with_tF">update(with:)</a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC6update4withyAA0E4Type_pSg_tF">update(with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -500,7 +509,7 @@
 </blockquote>
 <div class="aside aside-see-also">
     <p class="aside-title">See also</p>
-    <p><code><a href="../../Protocols/Type.html">Type</a></code></p>
+    <p><code><a href="../../Protocols.html#/s:12StanwoodCore4TypeP">Type</a></code></p>
 
 </div>
 
@@ -538,9 +547,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC6updateyAA4Type_pSg4with_tF"></a>
+                    <a name="/s:12StanwoodCore0A0V23AbstractTableDataSourceC6update4withyAA4Type_pSg_tF"></a>
                     <a name="//apple_ref/swift/Method/update(with:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC6updateyAA4Type_pSg4with_tF">update(with:)</a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V23AbstractTableDataSourceC6update4withyAA4Type_pSg_tF">update(with:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -599,7 +608,7 @@
     </div>
     <section class="footer">
       <p>2018 Stanwood GmbH</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

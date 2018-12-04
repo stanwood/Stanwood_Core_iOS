@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.4 
+
+- Namespacing
+- Fixing a bug with `Elements`
+- Improving `Delegateable` protocol implementation
+
 ## 1.3 
 
 - Swift 4.2

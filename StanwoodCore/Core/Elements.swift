@@ -118,6 +118,7 @@ extension Stanwood {
          - SeeAlso: `Type`
          */
         open subscript(indexPath: IndexPath) -> Type? {
+            guard indexPath.row < items.count else { return nil }
             return items[indexPath.row]
         }
         
