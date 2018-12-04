@@ -143,6 +143,19 @@ class DataTypeTest: XCTestCase {
         XCTAssertEqual(from, to)
     }
     
+    func testMoveEnd() {
+        let elements: Stanwood.Elements<Deal> = Stanwood.Elements<Deal>(items:  self.objects.items)
+        let indexPath = IndexPath(item: 7, section: 0)
+        let objectThree = objects[indexPath] as! Deal
+        let movedToIndexPath = IndexPath(item: 13, section: 0)
+        
+        let from = elements[indexPath] as! Deal
+        elements.move(objectThree, to: 13)
+        let to = elements[movedToIndexPath] as! Deal
+        
+        XCTAssertEqual(from, to)
+    }
+    
     func testDelete() {
         
         let objects: Stanwood.Elements<Deal> = self.objects
