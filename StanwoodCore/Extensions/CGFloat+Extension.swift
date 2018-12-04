@@ -27,9 +27,6 @@ import Foundation
 
 extension CGFloat {
     
-    /// Unavalible
-    @available(*, unavailable, renamed: "init(dataType:)")
-    
     // MARK: Alpha
     
     public enum Alpha {

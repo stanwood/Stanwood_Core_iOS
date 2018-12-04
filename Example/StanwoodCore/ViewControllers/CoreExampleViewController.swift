@@ -27,7 +27,6 @@ class CoreExampleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         let button = UIBarButtonItem()
         button.localizedTitle = "TEST_TITLE"
