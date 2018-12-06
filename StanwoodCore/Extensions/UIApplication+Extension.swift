@@ -48,4 +48,9 @@ extension UIApplication {
             return base
         }
     }
+    
+    static func open(url: String?){
+        guard let url = URL(string: url ?? "") else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }
