@@ -222,6 +222,7 @@ extension Stanwood {
          
          - Parameters:
             - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
+            - directory: The directory to save the file.
          */
         open func save(withFileName fileName: String? = nil, directory: Storage.Directory = .documents(customDirectory: nil)) throws {
             
@@ -233,6 +234,7 @@ extension Stanwood {
          
          - Parameters:
             - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
+            - directory: The directory to save the file. 
          */
         open static func loadFromFile(withFileName fileName: String? = nil, directory: Storage.Directory = .documents(customDirectory: nil)) -> Elements? {
             do {
