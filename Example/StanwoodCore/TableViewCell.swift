@@ -9,13 +9,17 @@
 import UIKit
 import StanwoodCore
 
-class TableViewCell: UITableViewCell, Fillable {
+class TableViewCell: UITableViewCell, Fillable, Delegateble {
     
     @IBOutlet weak var label: UILabel!
 
     func fill(with type: Type?) {
         guard let item = type as? Deal else { return }
         label.localizedText = item.id
+    }
+    
+    func set(delegate: AnyObject) {
+        
     }
 }
 

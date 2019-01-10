@@ -183,7 +183,7 @@ extension Stanwood {
                 }
             }
             
-            cell.fill(with: dataType?[indexPath])
+            cell.fill(with: dataType?[indexPath.section][indexPath])
             return cell
         }
     }

@@ -27,8 +27,30 @@ import Foundation
 extension UIApplication {
     
     /// Applictaion short veriosn i'e. 2.3.2
-    static var shortVersion: String {
+    public static var shortVersion: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+    }
+    
+    /// Applictaion build number i'e. 173
+    public static var buildVersion: String {
+        return Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+    }
+    
+    /// Stanwood environments
+    public enum Env: String {
+        case debug, stage, release
+    }
+    
+    /**
+     Set the user agent
+     
+     - Parameters:
+        - prefix: Project prefix, i'e gla
+        - env: workspace environment
+     */
+    public func setUserAgent(forProjectPrefix prefix: String, env: Env) {
+        let userAgent = "io-stanwood-\(prefix).\(env.rawValue)-\(UIApplication.shortVersion):\(UIApplication.buildVersion)"
+        UserDefaults.standard.register(defaults: ["UserAgent": userAgent])
     }
     
     /// Current presented viewController

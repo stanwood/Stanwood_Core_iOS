@@ -120,10 +120,12 @@ extension Stanwood {
         
         /**
          update current dataSource with dataObject.
-         >Note: If data type is a `class`, it is not reqruied to update the type.
-         
+         sdasdfasdf
+         >Note: If data type is a `class`, it is not reqruied to update the type. svasdf
+         asdasd
+         >Hi:
          - Parameters:
-            - dataObject: type
+            - dataType: type
          
          - SeeAlso: `Type`
          */
