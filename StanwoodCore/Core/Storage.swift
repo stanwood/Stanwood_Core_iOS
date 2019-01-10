@@ -37,7 +37,7 @@ extension Stanwood {
         private init() { }
         
         /**
-         Storage erros
+         Storage errors
          */
         public enum StorageError: Error {
             case couldNotCreatePathURL
