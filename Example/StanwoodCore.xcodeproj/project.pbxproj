@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		6C21276621E7633900A6B2F6 /* StorageDirectoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21276521E7633900A6B2F6 /* StorageDirectoryTest.swift */; };
+		6C21276821E8858B00A6B2F6 /* UIApplicationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21276721E8858B00A6B2F6 /* UIApplicationTest.swift */; };
 		6C414B5020458DF900BC15B3 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB841FFCD3A1008BEE98 /* Deal.swift */; };
 		6C414B532045925900BC15B3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C414B512045925900BC15B3 /* TableViewCell.swift */; };
 		6C414B542045925900BC15B3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C414B522045925900BC15B3 /* TableViewCell.xib */; };
@@ -70,6 +71,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B1EC9F4749349F8BD1E643D /* Pods_StanwoodCore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodCore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C21276521E7633900A6B2F6 /* StorageDirectoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageDirectoryTest.swift; sourceTree = "<group>"; };
+		6C21276721E8858B00A6B2F6 /* UIApplicationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationTest.swift; sourceTree = "<group>"; };
 		6C282551215B81920017543B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		6C414B512045925900BC15B3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		6C414B522045925900BC15B3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				6CB66A3A201F4B0700C56C90 /* UITextFieldTest.swift */,
 				6CED89E320317CAE00729595 /* UIBarButtonItemTest.swift */,
 				6CED89E52031879900729595 /* StringFormatTest.swift */,
+				6C21276721E8858B00A6B2F6 /* UIApplicationTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -475,6 +478,7 @@
 				6C64BB791FFCC8DF008BEE98 /* LodableTest.swift in Sources */,
 				6CA768BC1FF39FA700611DA8 /* UIColorTest.swift in Sources */,
 				6CB66A3B201F4B0700C56C90 /* UITextFieldTest.swift in Sources */,
+				6C21276821E8858B00A6B2F6 /* UIApplicationTest.swift in Sources */,
 				6C21276621E7633900A6B2F6 /* StorageDirectoryTest.swift in Sources */,
 				6CC3AFF220441BD500B6C492 /* LoadableOutlet.swift in Sources */,
 				6CED89E62031879900729595 /* StringFormatTest.swift in Sources */,

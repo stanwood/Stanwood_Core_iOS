@@ -22,6 +22,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+
 import Foundation
 
 extension UIApplication {
@@ -36,20 +37,24 @@ extension UIApplication {
         return Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
     }
     
+    /// Applictaion app name
+    public static var appName: String {
+        return Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
+    }
+    
     /// Stanwood environments
     public enum Env: String {
         case debug, stage, release
     }
     
     /**
-     Set the user agent
+     Set the user agent, i'e ios-your_app_name-1.1:345-release
      
      - Parameters:
-        - prefix: Project prefix, i'e gla
         - env: workspace environment
      */
-    public func setUserAgent(forProjectPrefix prefix: String, env: Env) {
-        let userAgent = "io-stanwood-\(prefix).\(env.rawValue)-\(UIApplication.shortVersion):\(UIApplication.buildVersion)"
+    public func setUserAgent(env: Env) {
+        let userAgent = "ios-\(UIApplication.appName.snakeCased() ?? UIApplication.appName)-\(UIApplication.shortVersion):\(UIApplication.buildVersion)-\(env.rawValue)"
         UserDefaults.standard.register(defaults: ["UserAgent": userAgent])
     }
     

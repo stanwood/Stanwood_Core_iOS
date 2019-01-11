@@ -42,15 +42,13 @@ class TableViewController: UIViewController {
             Deal(id: "SECTION_3_TEST_TITLE_4"),
             ]
         
-        
         let sectionOne = Tables(items: items)
         let sectionTwo = Tables(items: itemsTwo)
         let sectionThree = Tables(items: itemsThree)
         
         configureTableView(sections: [sectionOne, sectionTwo, sectionThree])
         
-        
-        UIApplication.shared.setUserAgent(forProjectPrefix: "snh", env: UIApplication.Env.debug)
+        UIApplication.shared.setUserAgent(env: UIApplication.Env.debug)
         
     }
     

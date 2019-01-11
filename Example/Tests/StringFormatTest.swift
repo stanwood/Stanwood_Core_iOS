@@ -14,8 +14,9 @@ class StringFormatTest: XCTestCase {
     
     let localisedKey: String = "TEST_FORMAT_TITLE"
     var localisedTitle: String!
-    
     let argString: String = "localized"
+    let snakeCaseString: String = "this_is_my_snake_case_string"
+    let camelCaseString: String = "This Is My Snake Case String"
     
     override func setUp() {
         super.setUp()
@@ -43,4 +44,7 @@ class StringFormatTest: XCTestCase {
         XCTAssertNotNil(testLabel.accessibilityIdentifier)
     }
     
+    func testSnakeCaseString() {
+        XCTAssertEqual(snakeCaseString, camelCaseString.snakeCased()!)
+    }
 }

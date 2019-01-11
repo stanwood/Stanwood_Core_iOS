@@ -81,7 +81,7 @@ extension Stanwood {
                 searchPathDirectory = .cachesDirectory
             case .library(customDirectory: let directory):
                 customDirectory = directory
-                searchPathDirectory = .libraryDirectory
+                searchPathDirectory = .applicationSupportDirectory
             }
             
             guard let url = FileManager.default.urls(for: searchPathDirectory, in: .userDomainMask).first else {
@@ -95,9 +95,9 @@ extension Stanwood {
          Store an encodable struct to the specified directory on disk
          
          - Parameters:
-         - object: the encodable struct to store
-         - directory: where to store the struct
-         - fileName: what to name the file where the struct data will be stored
+            - object: the encodable struct to store
+            - directory: where to store the struct. It is recommended by Apple to use the Library directory, which will save the app data files into the _Library/Application Support_ Directory. The contents of this directory are backed up by iTunes and iCloud.
+            - fileName: what to name the file where the struct data will be stored
          */
         static open func store<T: Encodable>(_ object: T, to directory: Directory, as fileType: FileType, withName fileName: String) throws {
             let urlComponents = try getURLComponents(for: directory)
