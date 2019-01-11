@@ -376,12 +376,6 @@
                       <div class="abstract">
                         <p>Store an encodable struct to the specified directory on disk</p>
 
-<ul>
-<li>object: the encodable struct to store</li>
-<li>directory: where to store the struct</li>
-<li>fileName: what to name the file where the struct data will be stored</li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -390,6 +384,49 @@
                           <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">store</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">to</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">,</span> <span class="k">as</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">withName</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the encodable struct to store</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>where to store the struct. It is recommended by Apple to use the Library directory, which will save the app data files into the <em>Library/Application Support</em> Directory. The contents of this directory are backed up by iTunes and iCloud.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>what to name the file where the struct data will be stored</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
