@@ -106,6 +106,9 @@
                 <a class="nav-group-task-link" href="../../Extensions/UIApplication.html">UIApplication</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../../Extensions/UIApplication/Env.html">– Env</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../../Extensions/UIBarButtonItem.html">UIBarButtonItem</a>
               </li>
               <li class="nav-group-task">
@@ -277,6 +280,34 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:12StanwoodCore0A0V7StorageC0C5ErrorO"></a>
+                    <a name="//apple_ref/swift/Enum/StorageError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC0C5ErrorO">StorageError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Storage errors</p>
+
+                        <a href="../../Structs/Stanwood/Storage/StorageError.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">StorageError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:12StanwoodCore0A0V7StorageC8FileTypeO"></a>
                     <a name="//apple_ref/swift/Enum/FileType" class="dashAnchor"></a>
                     <a class="token" href="#/s:12StanwoodCore0A0V7StorageC8FileTypeO">FileType</a>
@@ -345,12 +376,6 @@
                       <div class="abstract">
                         <p>Store an encodable struct to the specified directory on disk</p>
 
-<ul>
-<li>object: the encodable struct to store</li>
-<li>directory: where to store the struct</li>
-<li>fileName: what to name the file where the struct data will be stored</li>
-</ul>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -359,6 +384,49 @@
                           <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">store</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">to</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">,</span> <span class="k">as</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">withName</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the encodable struct to store</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>where to store the struct. It is recommended by Apple to use the Library directory, which will save the app data files into the <em>Library/Application Support</em> Directory. The contents of this directory are backed up by iTunes and iCloud.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>what to name the file where the struct data will be stored</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -497,9 +565,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12StanwoodCore0A0V7StorageC10fileExists_2of2inSbSS_AE8FileTypeOAE9DirectoryOtFZ"></a>
+                    <a name="/s:12StanwoodCore0A0V7StorageC10fileExists_2of2inSbSS_AE8FileTypeOAE9DirectoryOtKFZ"></a>
                     <a name="//apple_ref/swift/Method/fileExists(_:of:in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC10fileExists_2of2inSbSS_AE8FileTypeOAE9DirectoryOtFZ">fileExists(_:of:in:)</a>
+                    <a class="token" href="#/s:12StanwoodCore0A0V7StorageC10fileExists_2of2inSbSS_AE8FileTypeOAE9DirectoryOtKFZ">fileExists(_:of:in:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -514,7 +582,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fileExists</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="k">in</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fileExists</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="k">in</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>

@@ -59,7 +59,16 @@ public extension String {
     }
     
     /// Get phone format string: tel://+123456789
-    var phoneFormat: String {
+    public var phoneFormat: String {
         return "tel://\(self)"
+    }
+    
+    /// Convert CamelCase to snake_case
+    public func snakeCased() -> String? {
+        let pattern = "([a-z0-9])([A-Z])"
+        let regex = try? NSRegularExpression(pattern: pattern, options: [])
+        let camelCaseString = components(separatedBy: .whitespaces).joined()
+        let range = NSRange(location: 0, length: camelCaseString.count)
+        return regex?.stringByReplacingMatches(in: camelCaseString, options: [], range: range, withTemplate: "$1_$2").lowercased()
     }
 }

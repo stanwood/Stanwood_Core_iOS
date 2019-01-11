@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.4.2
+- Adding UserAgent support
+- Adding `applicationSupportDirectory` to `Storage.swift`
+- Minor bug fix
+
 ## 1.4 
 
 - Namespacing

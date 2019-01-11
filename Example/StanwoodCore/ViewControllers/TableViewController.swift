@@ -16,32 +16,54 @@ class TableViewController: UIViewController {
     
     var delegate: TableDelegate!
     var dataSource: TableDataSource!
-    var elements: Stanwood.Elements<Deal>!
+    var sections: Stanwood.Sections!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let items: [Deal] = [
-            Deal(id: "TEST_TITLE1"),
-            Deal(id: "TEST_TITLE2"),
-            Deal(id: "TEST_TITLE3"),
-            Deal(id: "TEST_TITLE4"),
+            Deal(id: "SECTION_1_TEST_TITLE_1"),
+            Deal(id: "SECTION_1_TEST_TITLE_2"),
+            Deal(id: "SECTION_1_TEST_TITLE_3"),
+            Deal(id: "SECTION_1_TEST_TITLE_4"),
         ]
         
-        configureTableView(items: items)
+        let itemsTwo: [Deal] = [
+            Deal(id: "SECTION_2_TEST_TITLE_1"),
+            Deal(id: "SECTION_2_TEST_TITLE_2"),
+            Deal(id: "SECTION_2_TEST_TITLE_3"),
+            Deal(id: "SECTION_2_TEST_TITLE_4"),
+            ]
+        
+        let itemsThree: [Deal] = [
+            Deal(id: "SECTION_3_TEST_TITLE_1"),
+            Deal(id: "SECTION_3_TEST_TITLE_2"),
+            Deal(id: "SECTION_3_TEST_TITLE_3"),
+            Deal(id: "SECTION_3_TEST_TITLE_4"),
+            ]
+        
+        let sectionOne = Tables(items: items)
+        let sectionTwo = Tables(items: itemsTwo)
+        let sectionThree = Tables(items: itemsThree)
+        
+        configureTableView(sections: [sectionOne, sectionTwo, sectionThree])
+        
+        UIApplication.shared.setUserAgent(env: UIApplication.Env.debug)
+        
     }
     
-    func configureTableView(items: [Deal]) {
+    
+    func configureTableView(sections: [Stanwood.Sections.Section]) {
         
-        elements = Tables(items: items)
+        self.sections = Stanwood.Sections(items: sections)
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
         
         tableView.register(cellType: TableViewCell.self)
         
-        delegate = TableDelegate(dataType: elements)
-        dataSource = TableDataSource(dataType: elements)
+        delegate = TableDelegate(dataType: self.sections)
+        dataSource = TableDataSource(dataType: self.sections, delegate: self)
         
         tableView.estimatedRowHeight = UITableView.automaticDimension
         

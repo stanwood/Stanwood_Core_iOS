@@ -37,6 +37,13 @@ extension Stanwood {
         private init() { }
         
         /**
+         Storage errors
+         */
+        public enum StorageError: Error {
+            case couldNotCreatePathURL
+        }
+        
+        /**
          File type, currently supporting .json
          */
         public enum FileType: String {
@@ -49,48 +56,63 @@ extension Stanwood {
          Directory to save data
          */
         public enum Directory {
+            
             /// Only documents and other data that is user-generated, should be stored in the Documents directory and will be automatically backed up by iCloud.
-            case documents
+            case documents(customDirectory: String?)
             
             /// Data that can be downloaded again or regenerated should be stored in the Caches directory.
-            case caches
+            case caches(customDirectory: String?)
+            
+            /// Data that is user-generated should be stored in the Library directory.
+            case library(customDirectory: String?)
         }
         
         /// Returns URL constructed from specified directory
-        static fileprivate func getURL(for directory: Directory) -> URL {
+        static fileprivate func getURLComponents(for directory: Directory) throws -> (url: URL, isCustomDirectory: Bool) {
             var searchPathDirectory: FileManager.SearchPathDirectory
+            var customDirectory: String?
             
             switch directory {
-            case .documents:
+            case .documents(customDirectory: let directory):
+                customDirectory = directory
                 searchPathDirectory = .documentDirectory
-            case .caches:
+            case .caches(customDirectory: let directory):
+                customDirectory = directory
                 searchPathDirectory = .cachesDirectory
+            case .library(customDirectory: let directory):
+                customDirectory = directory
+                searchPathDirectory = .applicationSupportDirectory
             }
             
-            if let url = FileManager.default.urls(for: searchPathDirectory, in: .userDomainMask).first {
-                return url
-            } else {
-                fatalError("Could not create URL for specified directory!")
+            guard let url = FileManager.default.urls(for: searchPathDirectory, in: .userDomainMask).first else {
+                throw StorageError.couldNotCreatePathURL
             }
+            
+            return (url.appendingPathComponent(customDirectory ?? String()), customDirectory == nil ? false : true)
         }
-        
         
         /**
          Store an encodable struct to the specified directory on disk
          
          - Parameters:
-         - object: the encodable struct to store
-         - directory: where to store the struct
-         - fileName: what to name the file where the struct data will be stored
+            - object: the encodable struct to store
+            - directory: where to store the struct. It is recommended by Apple to use the Library directory, which will save the app data files into the _Library/Application Support_ Directory. The contents of this directory are backed up by iTunes and iCloud.
+            - fileName: what to name the file where the struct data will be stored
          */
         static open func store<T: Encodable>(_ object: T, to directory: Directory, as fileType: FileType, withName fileName: String) throws {
-            let url = getURL(for: directory).appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
+            let urlComponents = try getURLComponents(for: directory)
+            
+            
+            var url = urlComponents.url.appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             
             let encoder = JSONEncoder()
             do {
                 let data = try encoder.encode(object)
+                
                 if FileManager.default.fileExists(atPath: url.path) {
                     try FileManager.default.removeItem(at: url)
+                } else {
+                    try FileManager.default.createDirectory(at: urlComponents.url, withIntermediateDirectories: true, attributes: nil)
                 }
                 FileManager.default.createFile(atPath: url.path, contents: data, attributes: nil)
             } catch {
@@ -113,7 +135,8 @@ extension Stanwood {
          - Returns: decoded struct model(s) of data
          */
         static open func retrieve<T: Decodable>(_ fileName: String, of fileType: FileType, from directory: Directory, as type: T.Type) throws -> T? {
-            let url = getURL(for: directory).appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
+            let urlComponents = try getURLComponents(for: directory)
+            var url = urlComponents.url.appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             
             if !FileManager.default.fileExists(atPath: url.path) {
                 return nil
@@ -131,9 +154,9 @@ extension Stanwood {
         
         /// Remove all files at specified directory
         static open func clear(_ directory: Directory) throws {
-            let url = getURL(for: directory)
+            let urlComponents = try getURLComponents(for: directory)
             do {
-                let contents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
+                let contents = try FileManager.default.contentsOfDirectory(at: urlComponents.url, includingPropertiesForKeys: nil, options: [])
                 for fileUrl in contents {
                     try FileManager.default.removeItem(at: fileUrl)
                 }
@@ -144,7 +167,9 @@ extension Stanwood {
         
         /// Remove specified file from specified directory
         static open func remove(_ fileName: String, of fileType: FileType, from directory: Directory) throws {
-            let url = getURL(for: directory).appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
+            let urlComponents = try getURLComponents(for: directory)
+            let url = urlComponents.url.appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
+            
             if FileManager.default.fileExists(atPath: url.path) {
                 do {
                     try FileManager.default.removeItem(at: url)
@@ -155,8 +180,9 @@ extension Stanwood {
         }
         
         /// Returns BOOL indicating whether file exists at specified directory with specified file name
-        static open func fileExists(_ fileName: String, of fileType: FileType, in directory: Directory) -> Bool {
-            let url = getURL(for: directory).appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
+        static open func fileExists(_ fileName: String, of fileType: FileType, in directory: Directory) throws -> Bool {
+            let urlComponents = try getURLComponents(for: directory)
+            let url = urlComponents.url.appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             return FileManager.default.fileExists(atPath: url.path)
         }
     }

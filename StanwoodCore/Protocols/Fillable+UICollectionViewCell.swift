@@ -34,7 +34,7 @@ extension UITableViewCell: ForceFillable {}
 /**
  Fillable protocol of type `UICollectionViewCell` used to fill cells with type object
  
- #####Example: Fillable example#####
+ ##### Example: Fillable example #####
  ````swift
  cell.fill(with: type)
  ````
