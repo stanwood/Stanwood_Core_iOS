@@ -12,7 +12,13 @@ import StanwoodCore
 class TableDelegate: Stanwood.AbstractTableDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiate(viewController: CollectionViewController.self)
+     
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiate(viewController: DetailTableViewController.self)
+                
+        guard let item = dataType?[indexPath] as? MainItem else { return }
+        
+        viewController.deals = item.items ?? [Item]()
+        
         UIApplication.presentedViewController?.navigationController?.pushViewController(viewController, animated: true)
     }
 }

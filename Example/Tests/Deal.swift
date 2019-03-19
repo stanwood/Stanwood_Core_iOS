@@ -9,11 +9,10 @@
 import Foundation
 import StanwoodCore
 
-struct Deal: Typeable, Codable {
+struct Item: Typeable, Codable {
     
-    var id: String?
-    
-    init(id: String?) {
-        self.id = id
-    }
+    var title: String?
+    var subTitle: String?
+    var signature: String?
+    var value: String?
 }

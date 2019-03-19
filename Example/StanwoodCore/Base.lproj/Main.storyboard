@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hDc-QV-C0u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hDc-QV-C0u">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsA-JX-XWe">
-                                <rect key="frame" x="155.5" y="106" width="64" height="147"/>
+                                <rect key="frame" x="136.5" y="106" width="102" height="147"/>
                                 <state key="normal" image="open"/>
                                 <connections>
                                     <segue destination="n3a-qo-NWv" kind="show" id="na1-UX-gy2"/>
@@ -59,30 +59,40 @@
                     <view key="view" contentMode="scaleToFill" id="ce4-lM-ljn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.69019607843137254" green="0.87450980392156863" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z8o-VG-vgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1268" y="21.139430284857571"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="XG1-zx-Srn">
+        <!--Detail Table View Controller-->
+        <scene sceneID="cKu-pz-AUD">
             <objects>
-                <viewController storyboardIdentifier="CollectionViewController" id="0Sq-en-A5o" customClass="CollectionViewController" customModule="StanwoodCore_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RMq-Co-Q4E"/>
-                        <viewControllerLayoutGuide type="bottom" id="OLu-Qa-EjN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uOv-Ff-DsX">
+                <tableViewController storyboardIdentifier="DetailTableViewController" id="eXt-a1-8XK" customClass="DetailTableViewController" customModule="StanwoodCore_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IpG-kE-m0H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JQC-ol-2FJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.69019607843137254" green="0.87450980392156863" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LDi-xO-LFX">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LDi-xO-LFX" id="CE6-gs-Zf7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eXt-a1-8XK" id="gfP-tf-Ase"/>
+                            <outlet property="delegate" destination="eXt-a1-8XK" id="DPx-Rg-oSu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U50-fV-tct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072.8000000000002" y="19.340329835082461"/>
+            <point key="canvasLocation" x="2049" y="21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tWV-AU-PTV">
@@ -105,6 +115,6 @@
     </scenes>
     <resources>
         <image name="bg" width="736" height="414"/>
-        <image name="open" width="64" height="64"/>
+        <image name="open" width="102.40000152587891" height="102.40000152587891"/>
     </resources>
 </document>
