@@ -16,3 +16,19 @@ struct Item: Typeable, Codable {
     var signature: String?
     var value: String?
 }
+
+//struct MainItem: Typeable, Codable {
+//    
+//    var title: String?
+//    var items: [Item]?
+//}
+
+
+class MainItem: Stanwood.Elements<Item> {
+    
+    override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
+        return DetailTableViewCell.self
+        
+    }
+}
+

@@ -16,10 +16,7 @@
 		6C21276621E7633900A6B2F6 /* StorageDirectoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21276521E7633900A6B2F6 /* StorageDirectoryTest.swift */; };
 		6C21276821E8858B00A6B2F6 /* UIApplicationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21276721E8858B00A6B2F6 /* UIApplicationTest.swift */; };
 		6C414B5020458DF900BC15B3 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB841FFCD3A1008BEE98 /* Deal.swift */; };
-		6C414B532045925900BC15B3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C414B512045925900BC15B3 /* TableViewCell.swift */; };
-		6C414B542045925900BC15B3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C414B522045925900BC15B3 /* TableViewCell.xib */; };
 		6C414B5C2046BDF500BC15B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C414B5B2046BDF500BC15B3 /* GoogleService-Info.plist */; };
-		6C414B602046DB0E00BC15B3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C414B5F2046DB0E00BC15B3 /* TableViewController.swift */; };
 		6C414B632046DBCE00BC15B3 /* TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C414B622046DBCE00BC15B3 /* TableDelegate.swift */; };
 		6C64BB791FFCC8DF008BEE98 /* LodableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C64BB781FFCC8DF008BEE98 /* LodableTest.swift */; };
 		6C64BB7B1FFCC912008BEE98 /* LodableNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C64BB7A1FFCC912008BEE98 /* LodableNib.xib */; };
@@ -41,10 +38,11 @@
 		6CED89E420317CAE00729595 /* UIBarButtonItemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CED89E320317CAE00729595 /* UIBarButtonItemTest.swift */; };
 		6CED89E62031879900729595 /* StringFormatTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CED89E52031879900729595 /* StringFormatTest.swift */; };
 		CA69A2132ABC40B430BA68BF /* Pods_StanwoodCore_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1EC9F4749349F8BD1E643D /* Pods_StanwoodCore_Example.framework */; };
+		E02251B62241F621002AF88A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C414B5F2046DB0E00BC15B3 /* TableViewController.swift */; };
+		E02251B82241F683002AF88A /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF36BD223B5C6100654C22 /* DetailTableViewCell.swift */; };
 		E06455FE223B6C9D002F9C0F /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06455FD223B6C9D002F9C0F /* Header.xib */; };
 		E0FF36BF223B5C6100654C22 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF36BD223B5C6100654C22 /* DetailTableViewCell.swift */; };
 		E0FF36C0223B5C6100654C22 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0FF36BE223B5C6100654C22 /* DetailTableViewCell.xib */; };
-		E0FF36C2223B5D7300654C22 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF36C1223B5D7300654C22 /* DetailTableViewController.swift */; };
 		E0FF36C4223B6B4B00654C22 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF36C3223B6B4A00654C22 /* Header.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +73,6 @@
 		6C21276521E7633900A6B2F6 /* StorageDirectoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageDirectoryTest.swift; sourceTree = "<group>"; };
 		6C21276721E8858B00A6B2F6 /* UIApplicationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationTest.swift; sourceTree = "<group>"; };
 		6C282551215B81920017543B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		6C414B512045925900BC15B3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		6C414B522045925900BC15B3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		6C414B5B2046BDF500BC15B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C414B5F2046DB0E00BC15B3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6C414B622046DBCE00BC15B3 /* TableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +103,6 @@
 		E06455FD223B6C9D002F9C0F /* Header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
 		E0FF36BD223B5C6100654C22 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		E0FF36BE223B5C6100654C22 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
-		E0FF36C1223B5D7300654C22 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		E0FF36C3223B6B4A00654C22 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		E215B4393DCD0F19816CA3D7 /* StanwoodCore.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = StanwoodCore.podspec; path = ../StanwoodCore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -161,13 +156,6 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				6C414B512045925900BC15B3 /* TableViewCell.swift */,
-				E0FF36BD223B5C6100654C22 /* DetailTableViewCell.swift */,
-				E0FF36C3223B6B4A00654C22 /* Header.swift */,
-				E06455FD223B6C9D002F9C0F /* Header.xib */,
-				E0FF36C1223B5D7300654C22 /* DetailTableViewController.swift */,
-				E0FF36BE223B5C6100654C22 /* DetailTableViewCell.xib */,
-				6C414B522045925900BC15B3 /* TableViewCell.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for StanwoodCore";
@@ -243,6 +231,7 @@
 		6C414B612046DBAC00BC15B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E02251B92241FA5B002AF88A /* Cell */,
 				607FACD71AFB9204008FA782 /* CoreExampleViewController.swift */,
 				6C414B5F2046DB0E00BC15B3 /* TableViewController.swift */,
 				6C414B622046DBCE00BC15B3 /* TableDelegate.swift */,
@@ -260,6 +249,17 @@
 				C8CCA3216D91EC9C07D5C8CC /* Pods-StanwoodCore_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E02251B92241FA5B002AF88A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF36BD223B5C6100654C22 /* DetailTableViewCell.swift */,
+				E0FF36C3223B6B4A00654C22 /* Header.swift */,
+				E06455FD223B6C9D002F9C0F /* Header.xib */,
+				E0FF36BE223B5C6100654C22 /* DetailTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,7 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				6C414B542045925900BC15B3 /* TableViewCell.xib in Resources */,
 				6CA768BA1FF39C6500611DA8 /* Localizable.strings in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				E06455FE223B6C9D002F9C0F /* Header.xib in Resources */,
@@ -469,9 +468,7 @@
 			files = (
 				E0FF36C4223B6B4B00654C22 /* Header.swift in Sources */,
 				E0FF36BF223B5C6100654C22 /* DetailTableViewCell.swift in Sources */,
-				6C414B602046DB0E00BC15B3 /* TableViewController.swift in Sources */,
-				6C414B532045925900BC15B3 /* TableViewCell.swift in Sources */,
-				E0FF36C2223B5D7300654C22 /* DetailTableViewController.swift in Sources */,
+				E02251B62241F621002AF88A /* TableViewController.swift in Sources */,
 				6C414B632046DBCE00BC15B3 /* TableDelegate.swift in Sources */,
 				607FACD81AFB9204008FA782 /* CoreExampleViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
@@ -485,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CA768B61FF3989200611DA8 /* UIButtonTest.swift in Sources */,
+				E02251B82241F683002AF88A /* DetailTableViewCell.swift in Sources */,
 				6C64BB791FFCC8DF008BEE98 /* LodableTest.swift in Sources */,
 				6CA768BC1FF39FA700611DA8 /* UIColorTest.swift in Sources */,
 				6CB66A3B201F4B0700C56C90 /* UITextFieldTest.swift in Sources */,

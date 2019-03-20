@@ -14,7 +14,7 @@ class DetailTableViewCell: UITableViewCell, Fillable  {
     @IBOutlet weak var sigLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var backView: UIView!
-    
+    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var backLeadingConstraint: NSLayoutConstraint!
     
     var item: Item?
@@ -27,6 +27,7 @@ class DetailTableViewCell: UITableViewCell, Fillable  {
         
         sigLabel.text = item.signature
         valueLabel.text = item.value
+        typeLabel.text = item.subTitle
     }
     
     @IBAction func didSelectCell(_ sender: Any) {

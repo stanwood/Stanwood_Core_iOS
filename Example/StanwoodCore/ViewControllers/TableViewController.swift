@@ -33,9 +33,9 @@ class TableViewController: UIViewController {
             Item(title: "CGFloat", subTitle: "Damping", signature: "CGFloat.Damping.medium", value: "0.7"),
             Item(title: "CGFloat", subTitle: "Damping", signature: "CGFloat.Damping.high", value: "1.0"),
             
-            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.clear", value: "0.3"),
-            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.veryLight", value: "0.7"),
-            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.light", value: "1.0"),
+            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.low", value: "0.3"),
+            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.medium", value: "0.7"),
+            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.high", value: "1.0"),
             
             Item(title: "CGFloat", subTitle: "Radius", signature: "CGFloat.Radius.tiny", value: "5"),
             Item(title: "CGFloat", subTitle: "Radius", signature: "CGFloat.Radius.small", value: "8"),
@@ -68,30 +68,26 @@ class TableViewController: UIViewController {
             Item(title: "TimeInterval", subTitle: "TimeInterval", signature: "TimeInterval.wait", value: "3.0")
         ]
         
-        let allFloats = MainItem(title: "CGFloat", items: floats)
-        let allStrings = MainItem(title: "String", items: strings)
-        let allIntervals = MainItem(title: "TimeInterval", items: intervals)
-
-
-//        let item2 = MainItem(title: "Three", items: itemsTwo)
-//        let item3 = MainItem(title: "Three", items: itemsThree)
+        let allFloats = MainItem(items: floats)
+        let allStrings = MainItem(items: strings)
+        let allIntervals = MainItem(items: intervals)
         
-        let allItems = MainItems(items: [allFloats, allStrings, allIntervals])
+        sections = Stanwood.Sections(items: [allFloats, allStrings, allIntervals])
         
-        
-        configureTableView(sections: allItems)
+        configureTableView(sections: sections)
         
         UIApplication.shared.setUserAgent(env: UIApplication.Env.debug)
         
     }
     
     
-    func configureTableView(sections: MainItems) {
+    func configureTableView(sections: Stanwood.Sections) {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
+        tableView.separatorStyle = .none
         
-        tableView.register(cellType: TableViewCell.self)
+        tableView.register(cellType: DetailTableViewCell.self)
         
         delegate = TableDelegate(dataType: sections)
         dataSource = TableDataSource(dataType: sections, delegate: self)
@@ -101,21 +97,6 @@ class TableViewController: UIViewController {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
         
-    }
-}
-
-
-struct MainItem: Typeable, Codable {
-    
-    var title: String?
-    var items: [Item]?
-}
-
-class MainItems: Stanwood.Elements<MainItem> {
-    
-    override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
-        return TableViewCell.self
-            
     }
 }
 

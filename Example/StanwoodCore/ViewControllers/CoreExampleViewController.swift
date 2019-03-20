@@ -9,20 +9,6 @@
 import UIKit
 import StanwoodCore
 
-class Tables: Stanwood.Elements<Item> {
-    
-    override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
-        return TableViewCell.self
-    }
-}
-
-class Collections: Stanwood.Elements<Item> {
-    
-    override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
-        return DetailTableViewCell.self
-    }
-}
-
 class CoreExampleViewController: UIViewController {
     
     override func viewDidLoad() {

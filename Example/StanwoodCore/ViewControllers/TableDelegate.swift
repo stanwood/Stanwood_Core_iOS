@@ -11,14 +11,16 @@ import StanwoodCore
 
 class TableDelegate: Stanwood.AbstractTableDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiate(viewController: DetailTableViewController.self)
-                
-        guard let item = dataType?[indexPath] as? MainItem else { return }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        viewController.deals = item.items ?? [Item]()
-        
-        UIApplication.presentedViewController?.navigationController?.pushViewController(viewController, animated: true)
+        let header = Header.loadFromNib()
+        let path = IndexPath(item: 0, section: section)
+
+        header?.titleLabel.text = (dataType?[path] as? Item)?.title
+        return header
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
 }
