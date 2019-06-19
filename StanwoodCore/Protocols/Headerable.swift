@@ -26,6 +26,7 @@
 import Foundation
 
 /// Headerable protocol to add header support for `UICollectionView` and `UITableView`
+@available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
 @objc public protocol Headerable {
     
     /// `UITableView` section header view

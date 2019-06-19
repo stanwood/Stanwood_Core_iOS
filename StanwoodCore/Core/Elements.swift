@@ -26,6 +26,7 @@
 import Foundation
 
 /// Type, Equatable & Codeable
+@available(*, deprecated, message: "Migrate to https://github.com/stanwood/SourceModel_iOS")
 public typealias Typeable = Type & Equatable
 
 extension Stanwood {
@@ -60,6 +61,7 @@ extension Stanwood {
      
      `Typeable`
      */
+    @available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
     open class Elements<Element: Typeable>: DataType, Codable where Element: Codable {
         
         enum Errors: Error {

@@ -26,6 +26,7 @@
 import Foundation
 
 /// SourceTypePresentable protocol represents a Presentable class in the stanwood architecture
+@available(*, deprecated, message:"Moved to https://github.com/stanwood/SourceModel_iOS")
 public protocol SourceTypePresentable {
     
     /// Collection or Table view DataSource associatedtype

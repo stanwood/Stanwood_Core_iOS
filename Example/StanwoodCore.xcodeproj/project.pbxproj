@@ -391,7 +391,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StanwoodCore_Example/Pods-StanwoodCore_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-StanwoodCore_Example/Pods-StanwoodCore_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/StanwoodCore/StanwoodCore.framework",
@@ -410,7 +410,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StanwoodCore_Example/Pods-StanwoodCore_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StanwoodCore_Example/Pods-StanwoodCore_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A7182EA1AAE12BF0E602311E /* [CP] Check Pods Manifest.lock */ = {
@@ -437,7 +437,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StanwoodCore_Tests/Pods-StanwoodCore_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-StanwoodCore_Tests/Pods-StanwoodCore_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/StanwoodCore/StanwoodCore.framework",
 				"${BUILT_PRODUCTS_DIR}/StanwoodUITestingCore/StanwoodUITestingCore.framework",
 			);
@@ -448,7 +448,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StanwoodCore_Tests/Pods-StanwoodCore_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StanwoodCore_Tests/Pods-StanwoodCore_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

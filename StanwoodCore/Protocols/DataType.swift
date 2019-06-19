@@ -31,6 +31,7 @@ import Foundation
  - SeeAlso:
     `DataType`
  */
+@available(*, deprecated, message:"Renamed to `Model`.Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol Type {}
 
 /**
@@ -39,6 +40,7 @@ public protocol Type {}
  - SeeAlso:
     `Type`
  */
+@available(*, deprecated, message: "Renamed to `ModelCollection`. Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol DataType {
     
     /// Returns the number of items

@@ -67,6 +67,7 @@ extension Stanwood {
      
      `Type`
      */
+    @available(*, deprecated, message:"Migrate to `CollectionDataSource` https://github.com/stanwood/SourceModel_iOS")
     open class AbstractCollectionDataSource: NSObject, UICollectionViewDataSource, CollectionDataSource, DataSourceType {
         
         // MARK: Properties
