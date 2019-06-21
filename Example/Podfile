@@ -12,6 +12,7 @@ target 'StanwoodCore_Example' do
     pod 'StanwoodUITestingCore', '0.1.1', :configurations => ['Debug']
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
+    pod 'Down'
 end
 
 target 'StanwoodCore_Tests' do

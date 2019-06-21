@@ -11,45 +11,55 @@ import StanwoodCore
 
 class DataTypeTest: XCTestCase {
     
-    var objects: Stanwood.Elements<Deal>!
+    var objects: Stanwood.Elements<Item>!
     var sections: Stanwood.Sections!
     
     override func setUp() {
         super.setUp()
-        
-        let sectionOneDeals: [Deal] = [
-            Deal(id: "1"),
-            Deal(id: "2"),
-            Deal(id: "3"),
-            Deal(id: "4"),
-            Deal(id: "5"),
-            Deal(id: "6"),
-            Deal(id: "7"),
-            Deal(id: "8"),
-            Deal(id: "9"),
-            Deal(id: "10"),
-            Deal(id: "11"),
-            Deal(id: "12"),
-            Deal(id: "13"),
-            Deal(id: "14")
+
+        let floats: [Item] = [
+            Item(title: "CGFloat", subTitle: "Alpha", signature: "CGFloat.Alpha.clear", value: "0.0"),
+            Item(title: "CGFloat", subTitle: "Alpha", signature: "CGFloat.Alpha.veryLight", value: "0.3"),
+            Item(title: "CGFloat", subTitle: "Alpha", signature: "CGFloat.Alpha.light", value: "0.4"),
+            Item(title: "CGFloat", subTitle: "Alpha", signature: "CGFloat.Alpha.half", value: "0.5"),
+            Item(title: "CGFloat", subTitle: "Alpha", signature: "CGFloat.Alpha.faded", value: "0.7"),
+            Item(title: "CGFloat", subTitle: "Alpha", signature: "CGFloat.Alpha.full", value: "1.0"),
+            
+            Item(title: "CGFloat", subTitle: "Damping", signature: "CGFloat.Damping.low", value: "0.3"),
+            Item(title: "CGFloat", subTitle: "Damping", signature: "CGFloat.Damping.medium", value: "0.7"),
+            Item(title: "CGFloat", subTitle: "Damping", signature: "CGFloat.Damping.high", value: "1.0"),
+            
+            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.low", value: "0.3"),
+            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.medium", value: "0.7"),
+            Item(title: "CGFloat", subTitle: "Spring", signature: "CGFloat.Spring.high", value: "1.0"),
+            
+            Item(title: "CGFloat", subTitle: "Radius", signature: "CGFloat.Radius.tiny", value: "5"),
+            Item(title: "CGFloat", subTitle: "Radius", signature: "CGFloat.Radius.small", value: "8"),
+            Item(title: "CGFloat", subTitle: "Radius", signature: "`CGFloat.Radius.medium`", value: "15"),
+            Item(title: "CGFloat", subTitle: "Radius", signature: "`CGFloat.Radius.large`", value: "20")
         ]
         
-        let sectionTwoDeals: [Deal] = [
-            Deal(id: "15"),
-            Deal(id: "16"),
-            Deal(id: "17"),
-            Deal(id: "18"),
-            Deal(id: "19"),
-            Deal(id: "20"),
-            Deal(id: "21")
-        ]
+        let strings: [Item] = [
+            Item(title: "String", subTitle: "String", signature: "\"MY_LOCAL_STRING\".localized", value: "Some Pretty string"),
+            Item(title: "String", subTitle: "String", signature: "\"Some Pretty string\".first", value: "Some Pretty string".first),
+            Item(title: "String", subTitle: "String", signature: "\"Some Pretty string\".last", value: "Some Pretty string".last),
+            Item(title: "String", subTitle: "String", signature: "\"www.here.com\".httpURLString", value: "www.here.com".httpURLString),
+            Item(title: "String", subTitle: "String", signature: "\"07976876560\".phoneFormat", value: "07976876560".phoneFormat),
+            Item(title: "String", subTitle: "String", signature: "\"myNiceNameHere\".snakeCased()", value: "myNiceNameHere".snakeCased()),
+            ]
+    
         
-        let sectionOne = Stanwood.Elements(items: sectionOneDeals)
+        let allFloats = MainItem(items: floats)
+        let allStrings = MainItem(items: strings)
+        
+        sections = Stanwood.Sections(items: [allFloats, allStrings])
+
+        let sectionOne = Stanwood.Elements(items: floats)
         objects = sectionOne
-        
-        let sectionTwo = Stanwood.Elements(items: sectionTwoDeals)
+
+        let sectionTwo = Stanwood.Elements(items: strings)
         sections =  Stanwood.Sections(items: [sectionOne, sectionTwo])
-        
+
         continueAfterFailure = true
     }
     
@@ -66,40 +76,40 @@ class DataTypeTest: XCTestCase {
     }
     
     func testCountNumberOfItemsInSectionTwo() {
-        let count = 7
+        let count = 6
         XCTAssertEqual(sections[1].numberOfItems, count)
     }
     
     func testCountNumberOfItemsInSectionOne() {
-        let count = 14
+        let count = 16
         XCTAssertEqual(sections[0].numberOfItems, count)
     }
     
     func testLastSectionItemID() {
-        let id = "21"
+        let title = "String"
         
-        let indexPath = IndexPath(item: 6, section: 1)
-        let deal = sections[indexPath] as! Deal
-        XCTAssertEqual(deal.id, id)
+        let indexPath = IndexPath(item: 5, section: 1)
+        let item = sections[indexPath] as! Item
+        XCTAssertEqual(item.title, title)
     }
     
     func testSectionOneItemID() {
-        let id = "11"
+        let subTitle = "Spring"
         
         let indexPath = IndexPath(item: 10, section: 0)
-        let deal = sections[indexPath] as! Deal
-        XCTAssertEqual(deal.id, id)
+        let item = sections[indexPath] as! Item
+        XCTAssertEqual(item.subTitle, subTitle)
     }
     
     // MARK: - Test Stanwood.Elements
     
     func testCount() {
-        let count = 14
+        let count = 16
         XCTAssertEqual(objects.numberOfItems, count)
     }
     
     func testInsert() {
-        let object = Deal(id: "15")
+        let object = Item(title: "Test", subTitle: "Item", signature: "Aaron", value: "Is Great")
         let objects = self.objects!
         objects.insert(item: object, at: 7)
         
@@ -107,8 +117,8 @@ class DataTypeTest: XCTestCase {
     }
     
     func testContains() {
-        let object = Deal(id: "15")
-        let objects: Stanwood.Elements<Deal> = self.objects
+        let object = Item(title: "Test", subTitle: "Item", signature: "Aaron", value: "Is Likely Better Than Great")
+        let objects: Stanwood.Elements<Item> = self.objects
         
         XCTAssertFalse(objects.contains(object))
         
@@ -118,49 +128,49 @@ class DataTypeTest: XCTestCase {
     }
     
     func testMoveLow() {
-        let objects: Stanwood.Elements<Deal> = self.objects
+        let objects: Stanwood.Elements<Item> = self.objects
         let indexPath = IndexPath(item: 2, section: 0)
-        let objectThree = objects[indexPath] as! Deal
+        let objectThree = objects[indexPath] as! Item
         let movedToIndexPath = IndexPath(item: 7, section: 0)
         
-        let from = objects[indexPath] as! Deal
+        let from = objects[indexPath] as! Item
         objects.move(objectThree, to: 7)
-        let to = objects[movedToIndexPath] as! Deal
+        let to = objects[movedToIndexPath] as! Item
         
         XCTAssertEqual(from, to)
     }
     
     func testMoveHigh() {
-        let elements: Stanwood.Elements<Deal> = Stanwood.Elements<Deal>(items:  self.objects.items)
+        let elements: Stanwood.Elements<Item> = Stanwood.Elements<Item>(items:  self.objects.items)
         let indexPath = IndexPath(item: 12, section: 0)
-        let objectThree = objects[indexPath] as! Deal
+        let objectThree = objects[indexPath] as! Item
         let movedToIndexPath = IndexPath(item: 7, section: 0)
         
-        let from = elements[indexPath] as! Deal
+        let from = elements[indexPath] as! Item
         elements.move(objectThree, to: 7)
-        let to = elements[movedToIndexPath] as! Deal
+        let to = elements[movedToIndexPath] as! Item
         
         XCTAssertEqual(from, to)
     }
     
     func testMoveEnd() {
-        let elements: Stanwood.Elements<Deal> = Stanwood.Elements<Deal>(items:  self.objects.items)
+        let elements: Stanwood.Elements<Item> = Stanwood.Elements<Item>(items:  self.objects.items)
         let indexPath = IndexPath(item: 7, section: 0)
-        let objectThree = objects[indexPath] as! Deal
+        let objectThree = objects[indexPath] as! Item
         let movedToIndexPath = IndexPath(item: 13, section: 0)
         
-        let from = elements[indexPath] as! Deal
+        let from = elements[indexPath] as! Item
         elements.move(objectThree, to: 13)
-        let to = elements[movedToIndexPath] as! Deal
+        let to = elements[movedToIndexPath] as! Item
         
         XCTAssertEqual(from, to)
     }
     
     func testDelete() {
         
-        let objects: Stanwood.Elements<Deal> = self.objects
+        let objects: Stanwood.Elements<Item> = self.objects
         let indexPath = IndexPath(item: 2, section: 0)
-        let objectThree = objects[indexPath] as! Deal
+        let objectThree = objects[indexPath] as! Item
         
         XCTAssert(objects.contains(objectThree))
         
@@ -171,7 +181,7 @@ class DataTypeTest: XCTestCase {
     
     func testIndex() {
         let indexPath = IndexPath(item: 2, section: 0)
-        let objectThree = objects[indexPath] as! Deal
+        let objectThree = objects[indexPath] as! Item
         
         let index = objects.index(of: objectThree)
         
@@ -182,20 +192,20 @@ class DataTypeTest: XCTestCase {
         do {
             try objects.save()
             
-            let loadedDeals = Stanwood.Elements<Deal>.loadFromFile()
+            let loadedDeals = Stanwood.Elements<Item>.loadFromFile()
             XCTAssertNotNil(loadedDeals)
             
             if let loadedDeals = loadedDeals {
                 XCTAssertEqual(objects.numberOfItems, loadedDeals.numberOfItems)
                 
-                let object = Deal(id: "55")
+                let object = Item(title: "Test", subTitle: "Item", signature: "Aaron", value: "Most Handsome Man?")
                 loadedDeals.append(object)
                 
                 XCTAssertNotEqual(objects.numberOfItems, loadedDeals.numberOfItems)
                 
                 try loadedDeals.save(withFileName: "objects_file")
                 
-                let objectsFile = Stanwood.Elements<Deal>.loadFromFile(withFileName: "objects_file")
+                let objectsFile = Stanwood.Elements<Item>.loadFromFile(withFileName: "objects_file")
                 XCTAssertNotNil(objectsFile)
                 
                 if let objectsFile = objectsFile {
