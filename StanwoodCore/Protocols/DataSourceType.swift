@@ -26,4 +26,5 @@
 import Foundation
 
 /// :nodoc:
+@available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol DataSourceType {}
