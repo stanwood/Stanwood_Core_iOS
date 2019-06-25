@@ -33,10 +33,10 @@ extension Stanwood {
      #####Example: DataSource and Delegate design#####
      
      ````swift
-     let itemsOne = [Deal(id: "1"), Deal(id: "2")]
+     let itemsOne = [Item(id: "1"), Item(id: "2")]
      let itemsTwo = [Meal(id: "pizza"), Meal(id: "ham")]
      
-     let sectionOnce = Stanwoon.Elements<Deal>(items: itemsOne)
+     let sectionOnce = Stanwoon.Elements<Item>(items: itemsOne)
      let sectionTwo = Stanwoon.Elements<Meal>(items: itemsTwo)
      
      self.sections = Stanwood.Sections(items: [sectionOnce, sectionTwo])
