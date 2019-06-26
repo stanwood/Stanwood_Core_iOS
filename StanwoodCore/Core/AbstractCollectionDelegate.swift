@@ -62,6 +62,7 @@ extension Stanwood {
      
      `Type`
      */
+    @available(*, deprecated, message:"Migrate to `CollectionDelegate` https://github.com/stanwood/SourceModel_iOS")
     open class AbstractCollectionDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, CollectionDelegate, DelegateSourceType {
         
         // MARK: Properties

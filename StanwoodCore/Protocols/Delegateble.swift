@@ -26,6 +26,7 @@
 import Foundation
 
 /// :nodoc:
+@available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol ForceDelegateble {}
 
 extension UICollectionViewCell: ForceDelegateble {}
@@ -61,6 +62,7 @@ extension UITableViewCell: ForceDelegateble {}
     `Type`
     `DataType`
  */
+@available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol Delegateble where Self: ForceDelegateble {
     
     /**

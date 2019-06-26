@@ -38,21 +38,21 @@ public protocol Presentable {
     associatedtype Viewable
     
     /// Actionable property
-    var actionable: Actionable { get set }
+    var actions: Actionable { get set }
     
     /// Parameterable property
-    var parameterable: Parameterable { get set }
+    var paramets: Parameterable { get set }
     
     /// Viewable property
-    var viewable: Viewable { get set }
+    var view: Viewable? { get set }
     
     /**
      Presentable required initialisers
      
      - Parameters:
-        - actionable: Actionable type
-        - parameterable: Parameterable type
-        - viewable: Viewable type
+        - actions: Actionable type
+        - parameters: Parameterable type
+        - view: Viewable type
      */
-    init(actionable: Actionable, parameterable: Parameterable, viewable: Viewable)
+    init(actions: Actionable, parameters: Parameterable, view: Viewable)
 }

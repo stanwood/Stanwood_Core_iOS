@@ -61,6 +61,7 @@ extension Stanwood {
      
      `Type`
      */
+    @available(*, deprecated, message:"Migrate to `TableDelegate` https://github.com/stanwood/SourceModel_iOS")
     open class AbstractTableDelegate: NSObject, UITableViewDelegate, TableDelegate, DelegateSourceType {
         
         // MARK: Properties

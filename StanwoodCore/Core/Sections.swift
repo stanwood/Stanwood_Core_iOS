@@ -56,6 +56,7 @@ extension Stanwood {
      
      `Typeable`
      */
+    @available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
     open class Sections: DataType {
         
         // MARK: Properties

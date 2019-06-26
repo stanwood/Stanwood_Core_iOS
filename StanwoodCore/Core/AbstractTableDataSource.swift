@@ -67,6 +67,7 @@ extension Stanwood {
      
      `Type`
      */
+    @available(*, deprecated, message:"Migrate to `TableDataSource` https://github.com/stanwood/SourceModel_iOS")
     open class AbstractTableDataSource: NSObject, UITableViewDataSource, TableDataSource, DataSourceType {
         
         // MARK: Properties
