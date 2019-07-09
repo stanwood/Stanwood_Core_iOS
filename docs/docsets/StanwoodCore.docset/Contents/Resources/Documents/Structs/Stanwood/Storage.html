@@ -381,7 +381,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">store</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">to</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">,</span> <span class="k">as</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">withName</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">store</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="n">to</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">,</span> <span class="k">as</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">withName</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
 
                         </div>
                       </div>
@@ -454,7 +454,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">retrieve</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">from</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">,</span> <span class="k">as</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">retrieve</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">from</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">,</span> <span class="k">as</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Decodable</span></code></pre>
 
                         </div>
                       </div>
@@ -528,9 +528,28 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">(</span><span class="n">_</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">(</span><span class="n">_</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The directory to clean</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -555,9 +574,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">from</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="n">from</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The file name</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The file type</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The directory to remove the file</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -582,9 +644,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fileExists</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="k">in</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fileExists</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">of</span> <span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/FileType.html">FileType</a></span><span class="p">,</span> <span class="k">in</span> <span class="nv">directory</span><span class="p">:</span> <span class="kt"><a href="../../Structs/Stanwood/Storage/Directory.html">Directory</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The file name</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The file type</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The directory to check if the file exists</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
