@@ -350,7 +350,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated, message: "Migrate to `CollectionDataSource` https://github.com/stanwood/SourceModel_iOS")</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDataSource</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">CollectionDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
 
                         </div>
                       </div>
@@ -404,7 +405,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDelegate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span><span class="p">,</span> <span class="kt">CollectionDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated, message: "Migrate to `CollectionDelegate` https://github.com/stanwood/SourceModel_iOS")</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDelegate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span><span class="p">,</span> <span class="kt">CollectionDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
 
                         </div>
                       </div>
@@ -462,7 +464,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated, message: "Migrate to `TableDataSource` https://github.com/stanwood/SourceModel_iOS")</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDataSource</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">TableDataSource</span><span class="p">,</span> <span class="kt">DataSourceType</span></code></pre>
 
                         </div>
                       </div>
@@ -516,7 +519,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDelegate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">TableDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated, message: "Migrate to `TableDelegate` https://github.com/stanwood/SourceModel_iOS")</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractTableDelegate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span><span class="p">,</span> <span class="kt">TableDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
 
                         </div>
                       </div>
@@ -604,7 +608,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataType.html">DataType</a></span><span class="p">,</span> <span class="kt">Codable</span> <span class="k">where</span> <span class="kt">Element</span> <span class="p">:</span> <span class="k">Type</span><span class="p">,</span> <span class="kt">Element</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">Element</span> <span class="p">:</span> <span class="kt">Encodable</span><span class="p">,</span> <span class="kt">Element</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated, message: "Migrate to https://github.com/stanwood/SourceModel_iOS")</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">Elements</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataType.html">DataType</a></span><span class="p">,</span> <span class="kt">Codable</span> <span class="k">where</span> <span class="kt">Element</span> <span class="p">:</span> <span class="k">Type</span><span class="p">,</span> <span class="kt">Element</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">Element</span> <span class="p">:</span> <span class="kt">Encodable</span><span class="p">,</span> <span class="kt">Element</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                         </div>
                       </div>
@@ -731,7 +736,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">Sections</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataType.html">DataType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated, message: "Migrate to https://github.com/stanwood/SourceModel_iOS")</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">Sections</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataType.html">DataType</a></span></code></pre>
 
                         </div>
                       </div>

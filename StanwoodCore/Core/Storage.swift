@@ -99,9 +99,8 @@ extension Stanwood {
             - directory: where to store the struct. It is recommended by Apple to use the Library directory, which will save the app data files into the _Library/Application Support_ Directory. The contents of this directory are backed up by iTunes and iCloud.
             - fileName: what to name the file where the struct data will be stored
          */
-        static open func store<T: Encodable>(_ object: T, to directory: Directory, as fileType: FileType, withName fileName: String) throws {
+        public static func store<T: Encodable>(_ object: T, to directory: Directory, as fileType: FileType, withName fileName: String) throws {
             let urlComponents = try getURLComponents(for: directory)
-            
             
             var url = urlComponents.url.appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             
@@ -134,7 +133,7 @@ extension Stanwood {
              - type: struct type (i.e. Message.self)
          - Returns: decoded struct model(s) of data
          */
-        static open func retrieve<T: Decodable>(_ fileName: String, of fileType: FileType, from directory: Directory, as type: T.Type) throws -> T? {
+        public static func retrieve<T: Decodable>(_ fileName: String, of fileType: FileType, from directory: Directory, as type: T.Type) throws -> T? {
             let urlComponents = try getURLComponents(for: directory)
             var url = urlComponents.url.appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             
@@ -152,8 +151,13 @@ extension Stanwood {
             }
         }
         
-        /// Remove all files at specified directory
-        static open func clear(_ directory: Directory) throws {
+        /**
+         Remove all files at specified directory
+         
+         - Parameters:
+             - directory: The directory to clean
+         */
+        public static func clear(_ directory: Directory) throws {
             let urlComponents = try getURLComponents(for: directory)
             do {
                 let contents = try FileManager.default.contentsOfDirectory(at: urlComponents.url, includingPropertiesForKeys: nil, options: [])
@@ -165,8 +169,15 @@ extension Stanwood {
             }
         }
         
-        /// Remove specified file from specified directory
-        static open func remove(_ fileName: String, of fileType: FileType, from directory: Directory) throws {
+        /**
+         Remove specified file from specified directory
+         
+         - Parameters:
+            - fileName: The file name
+            - fileType: The file type
+            - directory: The directory to remove the file
+         */
+        public static func remove(_ fileName: String, of fileType: FileType, from directory: Directory) throws {
             let urlComponents = try getURLComponents(for: directory)
             let url = urlComponents.url.appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             
@@ -179,8 +190,15 @@ extension Stanwood {
             }
         }
         
-        /// Returns BOOL indicating whether file exists at specified directory with specified file name
-        static open func fileExists(_ fileName: String, of fileType: FileType, in directory: Directory) throws -> Bool {
+        /**
+         Returns BOOL indicating whether file exists at specified directory with specified file name
+         
+         - Parameters:
+             - fileName: The file name
+             - fileType: The file type
+             - directory: The directory to check if the file exists
+         */
+        public static func fileExists(_ fileName: String, of fileType: FileType, in directory: Directory) throws -> Bool {
             let urlComponents = try getURLComponents(for: directory)
             let url = urlComponents.url.appendingPathComponent(fileName + ".\(fileType.rawValue)", isDirectory: false)
             return FileManager.default.fileExists(atPath: url.path)

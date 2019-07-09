@@ -238,7 +238,7 @@ extension Stanwood {
             - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
             - directory: The directory to save the file. 
          */
-        open static func loadFromFile(withFileName fileName: String? = nil, directory: Storage.Directory = .documents(customDirectory: nil)) -> Elements? {
+        public static func loadFromFile(withFileName fileName: String? = nil, directory: Storage.Directory = .documents(customDirectory: nil)) -> Elements? {
             do {
                 return try Stanwood.Storage.retrieve(fileName ?? Elements<Element>.identifier, of: .json, from: directory, as: Elements<Element>.self)
             } catch {

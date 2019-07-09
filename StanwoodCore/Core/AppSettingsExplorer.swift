@@ -66,7 +66,7 @@ open class AppSettingsExplorer {
      - Parameters:
         - preferenceType: The preference type `PreferenceType`
      */
-    open static func open(_ preferenceType: Type) throws {
+    public static func open(_ preferenceType: Type) throws {
         var preferencePath: String
         if #available(iOS 11.0, *), [.video, .locationServices, .photos, .notificationsId, .microphone].contains(preferenceType) {
             preferencePath = UIApplication.openSettingsURLString

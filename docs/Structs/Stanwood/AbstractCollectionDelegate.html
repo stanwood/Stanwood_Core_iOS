@@ -259,7 +259,8 @@
             <h1>AbstractCollectionDelegate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDelegate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span><span class="p">,</span> <span class="kt">CollectionDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@available(*, deprecated, message: "Migrate to `CollectionDelegate` https://github.com/stanwood/SourceModel_iOS")</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">AbstractCollectionDelegate</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span><span class="p">,</span> <span class="kt">UICollectionViewDelegateFlowLayout</span><span class="p">,</span> <span class="kt">CollectionDelegate</span><span class="p">,</span> <span class="kt">DelegateSourceType</span></code></pre>
 
                 </div>
               </div>
@@ -321,7 +322,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">dataType</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">dataType</span><span class="p">:</span> <span class="kt"><a href="../../Protocols/DataType.html">DataType</a></span><span class="p">?</span> <span class="p">{</span>
+  <span class="k">get</span>
+  <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -348,7 +351,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="k">Type</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">internal(set)</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="k">Type</span><span class="p">?</span> <span class="p">{</span>
+  <span class="k">get</span>
+  <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
