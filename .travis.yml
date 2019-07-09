@@ -4,6 +4,9 @@
 
 os: osx
 osx_image: xcode10.2
+branches:
+  only:
+    - testRun
 before_install:
   - gem install cocoapods # Since Travis is not always on latest version
   - pod install --project-directory=Example
