@@ -10,7 +10,7 @@ branches:
 addons:
   ssh_known_hosts: 192.30.253.112
 before_install:
-  - gem install cocoapods # Since Travis is not always on latest version
+  - gem install cocoapods
   - pod install --project-directory=Example
 script:
   - set -o pipefail
