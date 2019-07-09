@@ -7,6 +7,8 @@ osx_image: xcode10.2
 branches:
   only:
     - testRun
+addons:
+  ssh_known_hosts: 192.30.253.112
 before_install:
   - gem install cocoapods # Since Travis is not always on latest version
   - pod install
@@ -15,5 +17,6 @@ script:
   - xcodebuild -version
   - xcodebuild -showsdks
   - pod lib lint
-after_success:
-  - 'echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.s
+
+ 
+
