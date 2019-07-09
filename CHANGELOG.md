@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.5.0
+- Upgrading to `Swift 5.0`
+- Seperating SourceType and Core into another framework `pod 'SourceModel'`
+
 ## 1.4.2
 - Adding UserAgent support
 - Adding `applicationSupportDirectory` to `Storage.swift`

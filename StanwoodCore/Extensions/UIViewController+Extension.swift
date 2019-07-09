@@ -28,7 +28,7 @@ import Foundation
 extension UIViewController {
     
     /// ViewController identifier
-    open static var identifier: String {
+    public static var identifier: String {
         return String(describing: self)
     }
     
