@@ -7,13 +7,11 @@ osx_image: xcode10.2
 branches:
   only:
     - testRun
-addons:
-  ssh_known_hosts: 
-    - 192.30.253.112
-    - 140.82.113.4
 before_install:
   - gem install cocoapods
   - pod install --project-directory=Example
+  before_script:
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
   - set -o pipefail
   - xcodebuild -version
