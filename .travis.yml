@@ -11,11 +11,10 @@ branches:
 before_install:
   - gem install cocoapods
   - pod install --project-directory=Example
-before_script: 
+before_script:
   - 'echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config'
 script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - pod lib lint
-
+  - pod lib lint --allow-warnings
