@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     Stanwood Core library is a standard libarary used across all Stanwood iOS projects. It included the Stanwood architecture base, helper classes, and extensions
     DESC
     
-    s.homepage         = 'https://github.com/stanwood/Stanwood_Core'
+    s.homepage         = 'https://github.com/Stanwood_Core'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'stanwood' => 'ios.frameworks@stanwood.io' }
     s.source           = { :git => 'https://github.com/Stanwood_Core.git', :tag => s.version.to_s }
