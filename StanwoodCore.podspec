@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.homepage         = 'https://github.com/stanwood/Stanwood_Core'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'stanwood' => 'ios.frameworks@stanwood.io' }
-    s.source           = { :git => 'https://github.com/stanwood/Stanwood_Core.git', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/Stanwood_Core.git', :tag => s.version.to_s }
     s.documentation_url = 'https://stanwood.github.io/Stanwood_Core'
     
     s.ios.deployment_target = '10.0'
