@@ -24,23 +24,20 @@
 //  THE SOFTWARE.
 import Foundation
 
-// @luca
-
-class BasePresenter<A, P, V>: Presentable {
+/// :nodoc:
+/*public*/ class BasePresenter<A, P, V>: Presentable {
     
-    /// @luca
-    public internal(set) var actions: A
+    /// :nodoc:
+    /*public*/ var actions: A
     
-    /// @luca
-    public internal(set) var parameters: P
+    /// :nodoc:
+    /*public*/ var parameters: P
     
-    /// @luca
-    public internal(set) var view: V?
+    /// :nodoc:
+    /*public*/ var view: V?
     
-    /**
-     @luca
-     */
-    public required init(actions: A, parameters: P, view: V) {
+    /// :nodoc:
+    /*public*/ required init(actions: A, parameters: P, view: V) {
         self.actions = actions
         self.parameters = parameters
         self.view = view

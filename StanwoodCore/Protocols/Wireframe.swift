@@ -25,22 +25,16 @@
 
 import UIKit
 
-/**
- @luca
- */
-public class Wireframe<M: MetaModule> {
+/// :nodoc:
+/*public*/ class Wireframe<M: MetaModule> {
 
-    /**
-     @luca
-     */
-    public static func makeViewController() -> M.ViewController {
+    /// :nodoc:
+    /*public*/ static func makeViewController() -> M.ViewController {
         return UIStoryboard(name: M.ViewController.self.identifier, bundle: nil).instantiate(viewController: M.ViewController.self)
     }
 
-    /**
-     @luca
-     */
-    public static func prepare(viewController: M.ViewController,
+    /// :nodoc:
+    /*public*/ static func prepare(viewController: M.ViewController,
                         view: M.View,
                         actions: M.Action,
                         parameters: M.Parameter) {

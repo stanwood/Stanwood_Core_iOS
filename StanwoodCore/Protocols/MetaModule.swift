@@ -25,8 +25,8 @@
 
 import Foundation
 
-// @luca
-public protocol MetaModule {
+/// :nodoc:
+/*public*/ protocol MetaModule {
     
     associatedtype View where View == Presenter.Viewable
     associatedtype Action where Action == Presenter.Actionable

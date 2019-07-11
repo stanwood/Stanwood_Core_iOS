@@ -25,8 +25,8 @@
 
 import Foundation
 
-// @luca
-public protocol HasPresenter: AnyObject {
+/// :nodoc:
+/*public*/ protocol HasPresenter: AnyObject {
     associatedtype Presenter
     var presenter: Presenter! { get set }
 }
