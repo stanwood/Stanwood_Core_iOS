@@ -1,5 +1,5 @@
 //
-//  UIStoryboard+Extension.swift
+//  BasePresenter.swift
 //
 //  The MIT License (MIT)
 //
@@ -22,23 +22,27 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
-
 import Foundation
 
-extension UIStoryboard {
+// @luca
+
+class BasePresenter<A, P, V>: Presentable {
+    
+    /// @luca
+    public internal(set) var actions: A
+    
+    /// @luca
+    public internal(set) var parameters: P
+    
+    /// @luca
+    public internal(set) var view: V?
     
     /**
-     Instantiate `UIViewController` and returns the `Element`
-     
-     - Parameters:
-        - viewController: Generic type `UIViewController`
-        - storyboard: optional storyboard. Default `element.storyboard`
-        - animated: `default = true`
+     @luca
      */
-    open func instantiate<Element: UIViewController>(viewController type: Element.Type) -> Element {
-        guard let viewController = instantiateViewController(withIdentifier: type.identifier) as? Element else {
-            fatalError("Cannot instantiate viewController of type: \(type.identifier)")
-        }
-        return viewController
+    public required init(actions: A, parameters: P, view: V) {
+        self.actions = actions
+        self.parameters = parameters
+        self.view = view
     }
 }

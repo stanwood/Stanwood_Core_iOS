@@ -1,5 +1,5 @@
 //
-//  UIStoryboard+Extension.swift
+//  Wireframe.swift
 //
 //  The MIT License (MIT)
 //
@@ -23,22 +23,31 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import Foundation
+import UIKit
 
-extension UIStoryboard {
-    
+/**
+ @luca
+ */
+public class Wireframe<M: MetaModule> {
+
     /**
-     Instantiate `UIViewController` and returns the `Element`
-     
-     - Parameters:
-        - viewController: Generic type `UIViewController`
-        - storyboard: optional storyboard. Default `element.storyboard`
-        - animated: `default = true`
+     @luca
      */
-    open func instantiate<Element: UIViewController>(viewController type: Element.Type) -> Element {
-        guard let viewController = instantiateViewController(withIdentifier: type.identifier) as? Element else {
-            fatalError("Cannot instantiate viewController of type: \(type.identifier)")
-        }
-        return viewController
+    public static func makeViewController() -> M.ViewController {
+        return UIStoryboard(name: M.ViewController.self.identifier, bundle: nil).instantiate(viewController: M.ViewController.self)
+    }
+
+    /**
+     @luca
+     */
+    public static func prepare(viewController: M.ViewController,
+                        view: M.View,
+                        actions: M.Action,
+                        parameters: M.Parameter) {
+        let presenter = M.Presenter.make(actions: actions, parameters: parameters, view: view)
+        viewController.presenter = presenter
     }
 }
+
+
+
