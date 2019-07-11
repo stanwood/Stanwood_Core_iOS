@@ -1,5 +1,5 @@
 //
-//  HasPresenter.swift
+//  BasePresenter.swift
 //
 //  The MIT License (MIT)
 //
@@ -22,15 +22,24 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
-
 import Foundation
 
-/// A protocol having a *presenter* property of type Presenter.
-/// Specifically this protocol is used to define at compile time an **has** relationship between a UIViewController and a Presenter
-public protocol HasPresenter: AnyObject {
-  
-    associatedtype Presenter
-  
-    /// A read/write property of type Presenter
-    var presenter: Presenter! { get set }
+/// :nodoc:
+/*public*/ class BasePresenter<A, P, V>: Presentable {
+    
+    /// :nodoc:
+    /*public*/ var actions: A
+    
+    /// :nodoc:
+    /*public*/ var parameters: P
+    
+    /// :nodoc:
+    /*public*/ var view: V?
+    
+    /// :nodoc:
+    /*public*/ required init(actions: A, parameters: P, view: V) {
+        self.actions = actions
+        self.parameters = parameters
+        self.view = view
+    }
 }

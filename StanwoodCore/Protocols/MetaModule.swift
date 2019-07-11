@@ -25,7 +25,6 @@
 
 import Foundation
 
-
 /// This protocol represents the connection between the main types of a Module. It brings at compile time a series of consistency checks like the following:
 /// - the Action of a module must be the same type of *Presenter.Actionable* of the same module
 /// - the ViewController of a module must conform to *HasPresenter*
@@ -39,7 +38,6 @@ import Foundation
 /// - ViewController: represents the *UIViewController* of the current module which also must conform to *HasPresenter*
 /// - Presenter: represents the *Presenter* type of the current module which is constrained to be the same of *ViewController.Presenter*
 public protocol MetaModule {
-    
     associatedtype View where View == Presenter.Viewable
     associatedtype Action where Action == Presenter.Actionable
     associatedtype Parameter where Parameter == Presenter.Parameterable

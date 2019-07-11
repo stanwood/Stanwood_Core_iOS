@@ -59,6 +59,7 @@ public protocol Presentable {
 
 extension Presentable {
     
+
     /// Creates a value having the same type of the current value.
     ///
     /// - Parameters:
@@ -66,6 +67,7 @@ extension Presentable {
     ///   - parameters: the parameters value required by the Presentable protocol
     ///   - view: the view object required by the Presentable protocol
     /// - Returns: A value having the same type of the current value
+
     static func make(actions: Actionable,
                      parameters: Parameterable,
                      view: Viewable) -> Self {

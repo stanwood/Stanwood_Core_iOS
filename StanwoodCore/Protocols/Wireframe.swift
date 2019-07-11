@@ -25,6 +25,7 @@
 
 import UIKit
 
+
 /// This generic class provide a way of instantiating all the objects needed for a given module.
 ///
 /// ```
