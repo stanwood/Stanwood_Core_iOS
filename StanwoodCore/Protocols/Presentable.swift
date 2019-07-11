@@ -59,7 +59,7 @@ public protocol Presentable {
 
 extension Presentable {
     
-    /// Creates a value having the same type of the type which conform to the Presentable protocol.
+    /// Creates a value having the same type of the current value.
     ///
     /// - Parameters:
     ///   - actions: the actions value required by the Presentable protocol

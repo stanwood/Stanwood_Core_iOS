@@ -27,9 +27,9 @@ import Foundation
 
 
 /// This protocol represents the connection between the main types of a Module. It brings at compile time a series of consistency checks like the following:
-/// - the Action of module A must be the same type of *Presenter.Actionable*
-/// - the ViewController of a moudle must conform to *HasPresenter*
-/// - the Presenter of module A cannot be connected to the view controller of moudle B
+/// - the Action of a module must be the same type of *Presenter.Actionable* of the same module
+/// - the ViewController of a module must conform to *HasPresenter*
+/// - the Presenter of a module cannot be connected to the view controller of another module
 ///
 /// In other words this protocol is the *glue* which connects all the main types of a Module.
 /// More details
