@@ -25,8 +25,8 @@
 import Foundation
 
 
-/// `BasePresenter` offers the minimum properties (actions, parameters, view) required for a type conforming to Presentable.
-/// The developer should create its own ModulePresenter type simply sublassing BasePresenter. This will avoid lots of boilerplate code and leave ModulePresenter free to contains only the code relevant to the curret module.
+/// BasePresenter offers the minimum properties (actions, parameters, view) required for a type conforming to Presentable.
+/// The developer should create its own ModulePresenter type simply sublassing BasePresenter. This will avoid lots of boilerplate code and leave ModulePresenter free to contains only the code relevant to the current module.
 class BasePresenter<A, P, V: AnyObject>: Presentable {
     
     /// A value of type Actionable containing all the actions accessible by the current presenter
@@ -35,7 +35,7 @@ class BasePresenter<A, P, V: AnyObject>: Presentable {
     /// A value of type Parameterable containing all the data received in input by the current presenter
     public internal(set) var parameters: P
     
-    /// A object of type Viewable representing the UI interactions accessible by the current presenter
+    /// An object of type Viewable representing the UI interactions accessible by the current presenter
     public weak internal(set) var view: V?
     
 
