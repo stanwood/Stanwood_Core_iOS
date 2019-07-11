@@ -30,3 +30,4 @@ Check out the [full documentations](https://stanwood.github.io/Stanwood_Core).
 ## Licence
 
 StanwoodCore is under MIT licence. See the [LICENSE](https://github.com/stanwood/Stanwood_Core/blob/master/LICENSE) file for more info.
+
