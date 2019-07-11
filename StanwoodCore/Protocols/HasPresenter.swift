@@ -26,8 +26,8 @@
 import Foundation
 
 
-/// A type that can has a presenter property of type `Presenter`.
-/// Specifically this protocol is used to define at compile time an `has` relationship between a `UIViewController` and a `Presenter`
+/// A type that can has a presenter property of type Presenter.
+/// Specifically this protocol is used to define at compile time an **has** relationship between a UIViewController and a Presenter
 public protocol HasPresenter: AnyObject {
     associatedtype Presenter
     var presenter: Presenter! { get set }

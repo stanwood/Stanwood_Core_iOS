@@ -26,8 +26,11 @@
 import UIKit
 
 /// This generic class provide a way of instantiating all the objects needed for a given module.
-/// Example:
+///
+/// ```
+/// // Example:
 /// let homeViewController = Wireframe<HomeMetaModule>.makeViewController()
+/// ```
 public class Wireframe<M: MetaModule> {
 
     /// - Returns: a view controller having the correct type for the current module
