@@ -7,7 +7,7 @@ osx_image: xcode10.2
 language: objective-c
 branches:
   only:
-    - testRun
+    - master
 before_install:
   - gem install cocoapods
   - pod install --project-directory=Example
