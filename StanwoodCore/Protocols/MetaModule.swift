@@ -25,7 +25,19 @@
 
 import Foundation
 
-// @luca
+
+/// This protocol represents the connection between the main types of a Module. It brings at compile time a series of consistency checks like the following:
+/// - the **Action** of module A must be the same type of *Presenter.Actionable*
+/// - the **ViewController** of a moudle must conform to *HasPresenter*
+/// - the **Presenter** of module A cannot be connected to the view controller of moudle B
+///
+/// In other words this protocol is the *glue* which connects all the main types of a Module.
+/// More details
+/// - **View**: represents the View protocol of a module and is constrained to be the same of *Presenter.Viewable*
+/// - **Action**: represents the Action type of a module and is constrained to be the same of *Presenter.Actionable*
+/// - **Parameter**: represents the Parameter type of a module and is constrained to be the same of *Presenter.Parameter*
+/// - **ViewController**: represents the *UIViewController* of the current module which also must conform to *HasPresenter*
+/// - **Presenter**: represents the *Presenter* type of the current module which is constrained to be the same of *ViewController.Presenter*
 public protocol MetaModule {
     
     associatedtype View where View == Presenter.Viewable
