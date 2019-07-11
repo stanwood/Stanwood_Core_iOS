@@ -25,21 +25,23 @@
 
 import UIKit
 
-/**
- @luca
- */
+/// This generic class provide a way of instantiating all the objects needed for a given module.
+/// Example:
+/// let homeViewController = Wireframe<HomeMetaModule>.makeViewController()
 public class Wireframe<M: MetaModule> {
 
-    /**
-     @luca
-     */
+    /// - Returns: a view controller having the correct type for the current module
     public static func makeViewController() -> M.ViewController {
         return UIStoryboard(name: M.ViewController.self.identifier, bundle: nil).instantiate(viewController: M.ViewController.self)
     }
 
-    /**
-     @luca
-     */
+    /// Creates a Presenter having the correct type for the current module and connects it to the view controller
+    ///
+    /// - Parameters:
+    ///   - viewController: the view controller for the current module
+    ///   - view: the view (usually the view controller) for the current module
+    ///   - actions: the actions for the current module
+    ///   - parameters: the parameters for the current module
     public static func prepare(viewController: M.ViewController,
                         view: M.View,
                         actions: M.Action,
