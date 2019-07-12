@@ -51,7 +51,6 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - StanwoodCore (from `../`)
-  - StanwoodUITestingCore
   - StanwoodUITestingCore (= 1.0.1)
 
 SPEC REPOS:
@@ -88,6 +87,6 @@ SPEC CHECKSUMS:
   StanwoodCore: d7f9828ed2fde655249d489c47591eae3e4a1464
   StanwoodUITestingCore: 3083fa9f88f11394d47d6675079e385f094b273e
 
-PODFILE CHECKSUM: c1e92fd9c3b95d104cf993dac91e701eb3a0ca41
+PODFILE CHECKSUM: 298ac0ee617dde0283094574f1d25075b9e9d581
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.7.4
