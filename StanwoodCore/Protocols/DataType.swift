@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -31,6 +31,7 @@ import Foundation
  - SeeAlso:
     `DataType`
  */
+@available(*, deprecated, message:"Renamed to `Model`.Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol Type {}
 
 /**
@@ -39,6 +40,7 @@ public protocol Type {}
  - SeeAlso:
     `Type`
  */
+@available(*, deprecated, message: "Renamed to `ModelCollection`. Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol DataType {
     
     /// Returns the number of items

@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -251,7 +251,30 @@ public extension UIDevice {
         }
         return Model.unrecognized
     }
-    
+
+    /**
+     *
+     * Checks if current device is jailbroken
+     * Returns true if device is jailbroken
+     * Returns false for simulators
+     */
+    public var isJailBroken: Bool {
+        guard self.type != .simulator else {
+            return false
+        }
+
+        if FileManager.default.fileExists(atPath: "/Applications/Cydia.app") || FileManager.default.fileExists(atPath: "/Library/MobileSubstrate/MobileSubstrate.dylib") || FileManager.default.fileExists(atPath: "/bin/bash") || FileManager.default.fileExists(atPath: "/usr/sbin/sshd") || FileManager.default.fileExists(atPath: "/etc/apt") || FileManager.default.fileExists(atPath: "/private/var/lib/apt/") || UIApplication.shared.canOpenURL(URL(string:"cydia://package/com.example.package")!) {
+            return true
+        }
+
+        do {
+            try "Stanwood Core Jailbreak Test".write(toFile:"/private/StanwoodCoreJailbreakTest.txt", atomically:true, encoding:String.Encoding.utf8)
+            return true
+        } catch {
+            return false
+        }
+    }
+
     /// Compare major system version i'e, iOS 10 == iOS 10
     public func systemVersionEquals(to version: String) -> Bool {
         let currentMajorOS = UIDevice.current.systemVersion.split(separator: ".").first ?? ""

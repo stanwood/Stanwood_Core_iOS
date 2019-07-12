@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -67,6 +67,7 @@ extension Stanwood {
      
      `Type`
      */
+    @available(*, deprecated, message:"Migrate to `CollectionDataSource` https://github.com/stanwood/SourceModel_iOS")
     open class AbstractCollectionDataSource: NSObject, UICollectionViewDataSource, CollectionDataSource, DataSourceType {
         
         // MARK: Properties
@@ -120,10 +121,12 @@ extension Stanwood {
         
         /**
          update current dataSource with dataObject.
-         >Note: If data type is a `class`, it is not reqruied to update the type.
-         
+         sdasdfasdf
+         >Note: If data type is a `class`, it is not reqruied to update the type. svasdf
+         asdasd
+         >Hi:
          - Parameters:
-            - dataObject: type
+            - dataType: type
          
          - SeeAlso: `Type`
          */

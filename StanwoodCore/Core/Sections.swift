@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -33,10 +33,10 @@ extension Stanwood {
      #####Example: DataSource and Delegate design#####
      
      ````swift
-     let itemsOne = [Deal(id: "1"), Deal(id: "2")]
+     let itemsOne = [Item(id: "1"), Item(id: "2")]
      let itemsTwo = [Meal(id: "pizza"), Meal(id: "ham")]
      
-     let sectionOnce = Stanwoon.Elements<Deal>(items: itemsOne)
+     let sectionOnce = Stanwoon.Elements<Item>(items: itemsOne)
      let sectionTwo = Stanwoon.Elements<Meal>(items: itemsTwo)
      
      self.sections = Stanwood.Sections(items: [sectionOnce, sectionTwo])
@@ -56,6 +56,7 @@ extension Stanwood {
      
      `Typeable`
      */
+    @available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
     open class Sections: DataType {
         
         // MARK: Properties

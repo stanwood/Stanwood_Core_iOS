@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -59,7 +59,7 @@ public extension String {
     }
     
     /// Get phone format string: tel://+123456789
-    var phoneFormat: String {
+    public var phoneFormat: String {
         return "tel://\(self)"
     }
     
@@ -102,6 +102,14 @@ public extension String {
             print("invalid regex: \(error.localizedDescription)")
             return []
         }
+    }
+      /// Convert CamelCase to snake_case
+    public func snakeCased() -> String? {
+        let pattern = "([a-z0-9])([A-Z])"
+        let regex = try? NSRegularExpression(pattern: pattern, options: [])
+        let camelCaseString = components(separatedBy: .whitespaces).joined()
+        let range = NSRange(location: 0, length: camelCaseString.count)
+        return regex?.stringByReplacingMatches(in: camelCaseString, options: [], range: range, withTemplate: "$1_$2").lowercased()
     }
 }
 

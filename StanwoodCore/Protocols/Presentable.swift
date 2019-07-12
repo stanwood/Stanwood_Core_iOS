@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -38,21 +38,31 @@ public protocol Presentable {
     associatedtype Viewable
     
     /// Actionable property
-    var actionable: Actionable { get set }
+    var actions: Actionable { get set }
     
     /// Parameterable property
-    var parameterable: Parameterable { get set }
+    var parameters: Parameterable { get set }
     
     /// Viewable property
-    var viewable: Viewable { get set }
+    var view: Viewable? { get set }
     
     /**
      Presentable required initialisers
      
      - Parameters:
-        - actionable: Actionable type
-        - parameterable: Parameterable type
-        - viewable: Viewable type
+        - actions: Actionable type
+        - parameters: Parameterable type
+        - view: Viewable type
      */
-    init(actionable: Actionable, parameterable: Parameterable, viewable: Viewable)
+    init(actions: Actionable, parameters: Parameterable, view: Viewable)
+}
+
+extension Presentable {
+    
+    static func make(actions: Actionable,
+                     parameters: Parameterable,
+                     view: Viewable) -> Self {
+        let presenter = self.init(actions: actions, parameters: parameters, view: view)
+        return presenter
+    }
 }

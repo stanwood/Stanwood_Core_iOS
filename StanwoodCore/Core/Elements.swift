@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,6 +26,7 @@
 import Foundation
 
 /// Type, Equatable & Codeable
+@available(*, deprecated, message: "Migrate to https://github.com/stanwood/SourceModel_iOS")
 public typealias Typeable = Type & Equatable
 
 extension Stanwood {
@@ -60,6 +61,7 @@ extension Stanwood {
      
      `Typeable`
      */
+    @available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
     open class Elements<Element: Typeable>: DataType, Codable where Element: Codable {
         
         enum Errors: Error {
@@ -190,7 +192,7 @@ extension Stanwood {
                 items.remove(at: index)
             }
         }
-        
+
         /**
          Get the index of an item.
          
@@ -222,10 +224,11 @@ extension Stanwood {
          
          - Parameters:
             - fileName: The file name. If nil, default value String(describing: Elements<Element>.self)`
+            - directory: The directory to save the file.
          */
-        open func save(withFileName fileName: String? = nil) throws {
+        open func save(withFileName fileName: String? = nil, directory: Storage.Directory = .documents(customDirectory: nil)) throws {
             
-            try Storage.store(self, to: .documents, as: .json, withName: fileName ?? Elements<Element>.identifier)
+            try Storage.store(self, to: directory, as: .json, withName: fileName ?? Elements<Element>.identifier)
         }
         
         /**
@@ -233,10 +236,11 @@ extension Stanwood {
          
          - Parameters:
             - fileName: The file name. If nil, default value String(describing: Elements<T>.self)`
+            - directory: The directory to save the file. 
          */
-        open static func loadFromFile(withFileName fileName: String? = nil) -> Elements? {
+        public static func loadFromFile(withFileName fileName: String? = nil, directory: Storage.Directory = .documents(customDirectory: nil)) -> Elements? {
             do {
-                return try Stanwood.Storage.retrieve(fileName ?? Elements<Element>.identifier, of: .json, from: .documents, as: Elements<Element>.self)
+                return try Stanwood.Storage.retrieve(fileName ?? Elements<Element>.identifier, of: .json, from: directory, as: Elements<Element>.self)
             } catch {
                 return nil
             }

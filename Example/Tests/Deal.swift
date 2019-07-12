@@ -9,11 +9,26 @@
 import Foundation
 import StanwoodCore
 
-struct Deal: Typeable, Codable {
+struct Item: Typeable, Codable {
     
-    var id: String?
+    var title: String?
+    var subTitle: String?
+    var signature: String?
+    var value: String?
+}
+
+//struct MainItem: Typeable, Codable {
+//    
+//    var title: String?
+//    var items: [Item]?
+//}
+
+
+class MainItem: Stanwood.Elements<Item> {
     
-    init(id: String?) {
-        self.id = id
+    override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
+        return DetailTableViewCell.self
+        
     }
 }
+

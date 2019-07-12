@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -61,6 +61,7 @@ extension Stanwood {
      
      `Type`
      */
+    @available(*, deprecated, message:"Migrate to `TableDelegate` https://github.com/stanwood/SourceModel_iOS")
     open class AbstractTableDelegate: NSObject, UITableViewDelegate, TableDelegate, DelegateSourceType {
         
         // MARK: Properties

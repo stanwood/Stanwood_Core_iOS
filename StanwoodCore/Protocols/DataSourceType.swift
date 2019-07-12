@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,4 +26,5 @@
 import Foundation
 
 /// :nodoc:
+@available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol DataSourceType {}

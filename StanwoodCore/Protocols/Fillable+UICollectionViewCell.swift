@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -34,23 +34,24 @@ extension UITableViewCell: ForceFillable {}
 /**
  Fillable protocol of type `UICollectionViewCell` used to fill cells with type object
  
- #####Example: Fillable example#####
+ ##### Example: Fillable example #####
  ````swift
- cell.fill(with: type)
+ cell.fill(with: model)
  ````
  
  - SeeAlso:
  
- `Type`
- `DataType`
+ `Model`
+ `ModelCollection`
  */
+@available(*, deprecated, message:"Migrate to https://github.com/stanwood/SourceModel_iOS")
 public protocol Fillable where Self: ForceFillable {
     
     /**
      Fill current cell with element
      
      - Parameters:
-        - type: the element type
+        - model: the element model
      */
     func fill(with type: Type?)
 }

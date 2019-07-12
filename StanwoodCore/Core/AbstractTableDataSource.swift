@@ -3,7 +3,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//  Copyright (c) 2019 Stanwood GmbH (www.stanwood.io)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -67,6 +67,7 @@ extension Stanwood {
      
      `Type`
      */
+    @available(*, deprecated, message:"Migrate to `TableDataSource` https://github.com/stanwood/SourceModel_iOS")
     open class AbstractTableDataSource: NSObject, UITableViewDataSource, TableDataSource, DataSourceType {
         
         // MARK: Properties
@@ -183,7 +184,7 @@ extension Stanwood {
                 }
             }
             
-            cell.fill(with: dataType?[indexPath])
+            cell.fill(with: dataType?[indexPath.section][indexPath])
             return cell
         }
     }
