@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.5.2
+- Adding the `MetaModule` protocol to define at compile time all the main types of a module
+- Adding the generic `Wireframe` and `BasePresenter` classes to automatically provide some functionalities like `module` and `Presenter` initialization 
+- Adding `HasPresenter` module to define the  `has` relationship between a `UIViewController` and a `Presenter`
+- Adding documentation
+
 ## 1.5.0
 - Upgrading to `Swift 5.0`
 - Seperating SourceType and Core into another framework `pod 'SourceModel'`

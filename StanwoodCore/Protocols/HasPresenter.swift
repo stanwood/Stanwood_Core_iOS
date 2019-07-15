@@ -25,8 +25,12 @@
 
 import Foundation
 
-/// :nodoc:
-/*public*/ protocol HasPresenter: AnyObject {
+/// A protocol having a *presenter* property of type Presenter.
+/// Specifically this protocol is used to define at compile time an **has** relationship between a UIViewController and a Presenter
+public protocol HasPresenter: AnyObject {
+  
     associatedtype Presenter
+  
+    /// A read/write property of type Presenter
     var presenter: Presenter! { get set }
 }
