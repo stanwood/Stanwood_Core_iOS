@@ -43,14 +43,12 @@ open class Wireframe<M: MetaModule> {
     ///
     /// - Parameters:
     ///   - viewController: the view controller for the current module
-    ///   - view: the view (usually the view controller) for the current module
     ///   - actions: the actions for the current module
     ///   - parameters: the parameters for the current module
     public class func prepare(viewController: M.ViewController,
-                        view: M.View,
                         actions: M.Action,
                         parameters: M.Parameter) {
-        let presenter = M.Presenter.make(actions: actions, parameters: parameters, view: view)
+        let presenter = M.Presenter.make(actions: actions, parameters: parameters, view: viewController)
         viewController.presenter = presenter
     }
 }
