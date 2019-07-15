@@ -13,8 +13,6 @@ end
 
 target 'StanwoodCore_Tests' do
     inherit! :search_paths
-    
-    pod 'StanwoodUITestingCore', :configurations => ['Debug']
     pod 'StanwoodCore', :path => '../'
     
 end
