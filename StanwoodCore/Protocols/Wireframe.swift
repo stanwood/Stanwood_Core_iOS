@@ -32,7 +32,7 @@ import UIKit
 /// // Example:
 /// let homeViewController = Wireframe<HomeMetaModule>.makeViewController()
 /// ```
-public class Wireframe<M: MetaModule> {
+open class Wireframe<M: MetaModule> {
 
     /// - Returns: a view controller having the correct type for the current module
     public class func makeViewController() -> M.ViewController {
