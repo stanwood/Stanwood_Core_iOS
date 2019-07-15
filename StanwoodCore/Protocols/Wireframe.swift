@@ -35,7 +35,7 @@ import UIKit
 public class Wireframe<M: MetaModule> {
 
     /// - Returns: a view controller having the correct type for the current module
-    public static func makeViewController() -> M.ViewController {
+    public class func makeViewController() -> M.ViewController {
         return UIStoryboard(name: M.ViewController.self.identifier, bundle: nil).instantiate(viewController: M.ViewController.self)
     }
 
@@ -46,7 +46,7 @@ public class Wireframe<M: MetaModule> {
     ///   - view: the view (usually the view controller) for the current module
     ///   - actions: the actions for the current module
     ///   - parameters: the parameters for the current module
-    public static func prepare(viewController: M.ViewController,
+    public class func prepare(viewController: M.ViewController,
                         view: M.View,
                         actions: M.Action,
                         parameters: M.Parameter) {
