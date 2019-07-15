@@ -24,22 +24,31 @@
 //  THE SOFTWARE.
 import Foundation
 
-/// :nodoc:
-/*public*/ class BasePresenter<A, P, V>: Presentable {
+/// BasePresenter offers the minimum properties (actions, parameters, view) required for a type conforming to Presentable.
+/// The developer should create its own ModulePresenter type simply sublassing BasePresenter. This will avoid lots of boilerplate code and leave ModulePresenter free to contains only the code relevant to the current module.
+open class BasePresenter<A, P, V: AnyObject>: Presentable {
     
-    /// :nodoc:
-    /*public*/ var actions: A
+    /// A value of type Actionable containing all the actions accessible by the current presenter
+    public var actions: A
     
-    /// :nodoc:
-    /*public*/ var parameters: P
+    /// A value of type Parameterable containing all the data received in input by the current presenter
+    public var parameters: P
     
-    /// :nodoc:
-    /*public*/ var view: V?
+    /// An object of type Viewable representing the UI interactions accessible by the current presenter
+    public weak var view: V?
     
-    /// :nodoc:
-    /*public*/ required init(actions: A, parameters: P, view: V) {
+    
+    /// Creates an instance of BasePresenter
+    ///
+    /// - Parameters:
+    ///   - actions: a value containing all the needed actions
+    ///   - parameters: a value containing all the needed input data
+    ///   - view: an object providing all the needed UI interactions
+    public required init(actions: A, parameters: P, view: V) {
         self.actions = actions
         self.parameters = parameters
         self.view = view
     }
-}
+    
+} 
+ 
