@@ -25,7 +25,7 @@ pod 'StanwoodCore'
 
 ## Usage
 
-Check out the [full documentations](https://stanwood.github.io/Stanwood_Core).
+Check out the [full documentations](https://stanwood.github.io/Stanwood_Core_iOS/).
 
 ## Licence
 
