@@ -8,8 +8,8 @@
 
 import Foundation
 import StanwoodCore
+import SourceModel
 
-class TableDataSource: Stanwood.AbstractTableDataSource {
-    
-    weak var delegate: TableDelegate?
+class TableDataSource: SourceModel.TableDataSource {
+
 }
