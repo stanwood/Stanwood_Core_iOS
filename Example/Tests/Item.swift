@@ -8,6 +8,7 @@
 
 import Foundation
 import StanwoodCore
+import SourceModel
 
 struct Item: Typeable, Codable {
     
@@ -17,18 +18,10 @@ struct Item: Typeable, Codable {
     var value: String?
 }
 
-//struct MainItem: Typeable, Codable {
-//    
-//    var title: String?
-//    var items: [Item]?
-//}
-
-
-class MainItem: Stanwood.Elements<Item> {
+class MainItem: Elements<Item> {
     
     override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
         return DetailTableViewCell.self
         
     }
 }
-

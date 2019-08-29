@@ -9,6 +9,7 @@ target 'StanwoodCore_Example' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'Down'
+    pod 'SourceModel'
 end
 
 target 'StanwoodCore_Tests' do
@@ -16,5 +17,5 @@ target 'StanwoodCore_Tests' do
     
     pod 'StanwoodUITestingCore', :configurations => ['Debug']
     pod 'StanwoodCore', :path => '../'
-    
+    pod 'SourceModel'
 end

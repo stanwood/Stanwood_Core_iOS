@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import StanwoodCore
+import SourceModel
 
 class TableViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class TableViewController: UIViewController {
     
     var delegate: TableDelegate!
     var dataSource: TableDataSource!
-    var sections: Stanwood.Sections!
+    var sections: Sections!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +73,7 @@ class TableViewController: UIViewController {
         let allStrings = MainItem(items: strings)
         let allIntervals = MainItem(items: intervals)
         
-        sections = Stanwood.Sections(items: [allFloats, allStrings, allIntervals])
+        sections = Sections(items: [allFloats, allStrings, allIntervals])
         
         configureTableView(sections: sections)
         
@@ -81,7 +82,7 @@ class TableViewController: UIViewController {
     }
     
     
-    func configureTableView(sections: Stanwood.Sections) {
+    func configureTableView(sections: Sections) {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
@@ -89,8 +90,8 @@ class TableViewController: UIViewController {
         
         tableView.register(cellType: DetailTableViewCell.self)
         
-        delegate = TableDelegate(dataType: sections)
-        dataSource = TableDataSource(dataType: sections, delegate: self)
+        delegate = TableDelegate(modelCollection: sections)
+        dataSource = TableDataSource(modelCollection: sections, delegate: self)
         
         tableView.estimatedRowHeight = UITableView.automaticDimension
         

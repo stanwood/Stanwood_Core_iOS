@@ -26,7 +26,7 @@
 import Foundation
 
 /// Apple device model names
-public enum Model : String {
+public enum Device : String {
     
     /// simulator/sandbox
     case simulator   = "simulator/sandbox"
@@ -167,7 +167,7 @@ public enum Model : String {
 public extension UIDevice {
     
     /// Current model name
-    public var type: Model {
+    public var type: Device {
         var systemInfo = utsname()
         uname(&systemInfo)
         let modelCode = withUnsafePointer(to: &systemInfo.machine) {
@@ -176,7 +176,7 @@ public extension UIDevice {
                 
             }
         }
-        var modelMap : [ String : Model ] = [
+        var modelMap : [ String : Device ] = [
             "i386"       : .simulator,
             "x86_64"     : .simulator,
             "iPod1,1"    : .iPod1,
@@ -249,7 +249,7 @@ public extension UIDevice {
         if let model = modelMap[String.init(validatingUTF8: modelCode!)!] {
             return model
         }
-        return Model.unrecognized
+        return Device.unrecognized
     }
     
     /// Compare major system version i'e, iOS 10 == iOS 10
