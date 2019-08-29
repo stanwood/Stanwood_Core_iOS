@@ -8,15 +8,16 @@
 
 import Foundation
 import StanwoodCore
+import SourceModel
 
-class TableDelegate: Stanwood.AbstractTableDelegate {
+class TableDelegate: SourceModel.TableDelegate {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let header = Header.loadFromNib()
         let path = IndexPath(item: 0, section: section)
 
-        header?.titleLabel.text = (dataType?[path] as? Item)?.title
+        header?.titleLabel.text = (modelCollection?[path] as? Item)?.title
         return header
     }
     
