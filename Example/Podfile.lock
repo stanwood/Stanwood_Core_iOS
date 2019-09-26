@@ -45,7 +45,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - SourceModel (0.1.0):
     - StanwoodCore (~> 1.5)
-  - StanwoodCore (1.6)
+  - StanwoodCore (1.6.1)
   - StanwoodUITestingCore (1.0.1)
 
 DEPENDENCIES:
@@ -89,7 +89,7 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SourceModel: c33d8cf5ee1998a6f512648878a9957395ea45a0
-  StanwoodCore: ce5d19884a5756ee4c10983580a6ffc060b7d6df
+  StanwoodCore: 1d668df0687cb6944b26fb88c331ddf5d5c3c3a9
   StanwoodUITestingCore: 3083fa9f88f11394d47d6675079e385f094b273e
 
 PODFILE CHECKSUM: 1e0e3cbf7e75e5a2981b51ea9727552af84716f3
