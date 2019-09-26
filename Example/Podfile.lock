@@ -43,9 +43,8 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - SourceModel (0.1.0):
-    - StanwoodCore (~> 1.5)
-  - StanwoodCore (1.6.1)
+  - SourceModel (1.2)
+  - StanwoodCore (1.7)
   - StanwoodUITestingCore (1.0.1)
 
 DEPENDENCIES:
@@ -88,10 +87,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  SourceModel: c33d8cf5ee1998a6f512648878a9957395ea45a0
-  StanwoodCore: 1d668df0687cb6944b26fb88c331ddf5d5c3c3a9
+  SourceModel: 08957a4ee4eb94a2c10bac753af8833efa4143e7
+  StanwoodCore: b00bb3703d843d583fd884b603f0b88a77bc84b4
   StanwoodUITestingCore: 3083fa9f88f11394d47d6675079e385f094b273e
 
-PODFILE CHECKSUM: 388aa4ad161716c14f25655c540c70ee69b7c707
+PODFILE CHECKSUM: 1e0e3cbf7e75e5a2981b51ea9727552af84716f3
 
 COCOAPODS: 1.7.4
