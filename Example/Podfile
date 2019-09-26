@@ -5,10 +5,10 @@ inhibit_all_warnings!
 target 'StanwoodCore_Example' do
     inherit! :search_paths
     pod 'StanwoodCore', :path => '../'
-    pod 'StanwoodUITestingCore', '1.0.1', :configurations => ['Debug']
-    pod 'Firebase/Auth'
-    pod 'Firebase/Database'
-    pod 'Down'
+#    pod 'StanwoodUITestingCore', '1.0.1', :configurations => ['Debug']
+#    pod 'Firebase/Auth'
+#    pod 'Firebase/Database'
+#    pod 'Down'
     pod 'SourceModel'
 end
 

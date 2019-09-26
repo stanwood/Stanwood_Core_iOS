@@ -8,30 +8,32 @@
 
 import UIKit
 import StanwoodCore
-import Firebase
-
-#if DEBUG
-    import StanwoodUITestingCore
-#endif
+//import Firebase
+//
+//#if DEBUG
+//    import StanwoodUITestingCore
+//#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    #if DEBUG
-    var listener: UITestingCoreListener!
-    #endif
+//    #if DEBUG
+//    var listener: UITestingCoreListener!
+//    #endif
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        /*
         FirebaseApp.configure()
         
         #if DEBUG
             listen()
         #endif
+         */
         return true
     }
     
+    /*
     #if DEBUG
     private func listen() {
         
@@ -79,4 +81,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     #endif
+    */
 }
