@@ -63,12 +63,59 @@ public extension String {
         return "tel://\(self)"
     }
     
-    /// Convert CamelCase to snake_case
+    var range: NSRange {
+        return NSRange(location: 0, length: count)
+    }
+    
+    var noWhiteSpace: String {
+        return trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    var trimmedLowerCase: String {
+        return noWhiteSpace.lowercased()
+    }
+    
+    func replace(_ oldText: String, with newText: String) -> String {
+        return replacingOccurrences(of: oldText, with: newText)
+    }
+    
+    func remove(_ char: String) -> String{
+        return replacingOccurrences(of: char, with: "")
+    }
+    
+    func swapAllText(between firstString: String, and secondString: String, with newText: String) -> String{
+        
+        let regex = "(?s)(?<=\(firstString)).*(?=\(secondString))"
+        let matched = matches(for: regex, in: self)
+        return replace(matched.first ?? "", with: newText)
+    }
+    
+    func matches(for regex: String, in text: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let results = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+            return results.map {
+                String(text[Range($0.range, in: text)!])
+            }
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
+      /// Convert CamelCase to snake_case
     public func snakeCased() -> String? {
         let pattern = "([a-z0-9])([A-Z])"
         let regex = try? NSRegularExpression(pattern: pattern, options: [])
         let camelCaseString = components(separatedBy: .whitespaces).joined()
         let range = NSRange(location: 0, length: camelCaseString.count)
         return regex?.stringByReplacingMatches(in: camelCaseString, options: [], range: range, withTemplate: "$1_$2").lowercased()
+    }
+}
+
+
+extension StringProtocol where Index == String.Index {
+    func nsRange(from range: Range<Index>) -> NSRange {
+        return NSRange(range, in: self)
     }
 }
