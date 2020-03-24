@@ -31,3 +31,4 @@ Check out the [full documentations](https://stanwood.github.io/Stanwood_Core_iOS
 
 StanwoodCore is under MIT licence. See the [LICENSE](https://github.com/stanwood/Stanwood_Core/blob/master/LICENSE) file for more info.
 
+
