@@ -33,25 +33,24 @@ import UIKit
 /// let homeViewController = Wireframe<HomeMetaModule>.makeViewController()
 /// ```
 open class Wireframe<M: MetaModule> {
-
+    
     /// - Returns: a view controller having the correct type for the current module
     public class func makeViewController() -> M.ViewController {
         return UIStoryboard(name: M.ViewController.self.identifier, bundle: nil).instantiate(viewController: M.ViewController.self)
     }
-
+    
     /// Creates a Presenter having the correct type for the current module and connects it to the view controller
     ///
     /// - Parameters:
     ///   - viewController: the view controller for the current module
+    ///   - view: the view (usually the view controller) for the current module
     ///   - actions: the actions for the current module
     ///   - parameters: the parameters for the current module
     public class func prepare(viewController: M.ViewController,
-                        actions: M.Action,
-                        parameters: M.Parameter) {
-        let presenter = M.Presenter.make(actions: actions, parameters: parameters, view: viewController)
+                              view: M.View,
+                              actions: M.Action,
+                              parameters: M.Parameter) {
+        let presenter = M.Presenter.make(actions: actions, parameters: parameters, view: view)
         viewController.presenter = presenter
     }
 }
-
-
-

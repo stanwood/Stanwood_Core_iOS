@@ -32,14 +32,15 @@ import Foundation
 ///
 /// In other words this protocol is the *glue* which connects all the main types of a Module.
 /// More details
+/// - View: represents the View protocol of a module and is constrained to be the same of *Presenter.Viewable*
 /// - Action: represents the Action type of a module and is constrained to be the same of *Presenter.Actionable*
 /// - Parameter: represents the Parameter type of a module and is constrained to be the same of *Presenter.Parameter*
 /// - ViewController: represents the *UIViewController* of the current module which also must conform to *HasPresenter*
 /// - Presenter: represents the *Presenter* type of the current module which is constrained to be the same of *ViewController.Presenter*
 public protocol MetaModule {
+    associatedtype View where View == Presenter.Viewable
     associatedtype Action where Action == Presenter.Actionable
     associatedtype Parameter where Parameter == Presenter.Parameterable
-    associatedtype ViewController: HasPresenter & UIViewController where ViewController == Presenter.Viewable
+    associatedtype ViewController: HasPresenter & UIViewController
     associatedtype Presenter: Presentable where Presenter == ViewController.Presenter
-    
 }
