@@ -8,11 +8,12 @@
 
 import XCTest
 import StanwoodCore
+import SourceModel
 
 class DataTypeTest: XCTestCase {
     
-    var objects: Stanwood.Elements<Item>!
-    var sections: Stanwood.Sections!
+    var objects: Elements<Item>!
+    var sections: Sections!
     
     override func setUp() {
         super.setUp()
@@ -52,13 +53,13 @@ class DataTypeTest: XCTestCase {
         let allFloats = MainItem(items: floats)
         let allStrings = MainItem(items: strings)
         
-        sections = Stanwood.Sections(items: [allFloats, allStrings])
+        sections = Sections(items: [allFloats, allStrings])
 
-        let sectionOne = Stanwood.Elements(items: floats)
+        let sectionOne = Elements(items: floats)
         objects = sectionOne
 
-        let sectionTwo = Stanwood.Elements(items: strings)
-        sections =  Stanwood.Sections(items: [sectionOne, sectionTwo])
+        let sectionTwo = Elements(items: strings)
+        sections =  Sections(items: [sectionOne, sectionTwo])
 
         continueAfterFailure = true
     }
@@ -68,7 +69,7 @@ class DataTypeTest: XCTestCase {
         super.tearDown()
     }
     
-    // MARK: - Test Stanwood.Sections
+    // MARK: - Test Sections
     
     func testSectionCount() {
         let count = 2
@@ -101,7 +102,7 @@ class DataTypeTest: XCTestCase {
         XCTAssertEqual(item.subTitle, subTitle)
     }
     
-    // MARK: - Test Stanwood.Elements
+    // MARK: - Test Elements
     
     func testCount() {
         let count = 16
@@ -118,7 +119,7 @@ class DataTypeTest: XCTestCase {
     
     func testContains() {
         let object = Item(title: "Test", subTitle: "Item", signature: "Aaron", value: "Is Likely Better Than Great")
-        let objects: Stanwood.Elements<Item> = self.objects
+        let objects: Elements<Item> = self.objects
         
         XCTAssertFalse(objects.contains(object))
         
@@ -128,7 +129,7 @@ class DataTypeTest: XCTestCase {
     }
     
     func testMoveLow() {
-        let objects: Stanwood.Elements<Item> = self.objects
+        let objects: Elements<Item> = self.objects
         let indexPath = IndexPath(item: 2, section: 0)
         let objectThree = objects[indexPath] as! Item
         let movedToIndexPath = IndexPath(item: 7, section: 0)
@@ -141,7 +142,7 @@ class DataTypeTest: XCTestCase {
     }
     
     func testMoveHigh() {
-        let elements: Stanwood.Elements<Item> = Stanwood.Elements<Item>(items:  self.objects.items)
+        let elements: Elements<Item> = Elements<Item>(items:  self.objects.items)
         let indexPath = IndexPath(item: 12, section: 0)
         let objectThree = objects[indexPath] as! Item
         let movedToIndexPath = IndexPath(item: 7, section: 0)
@@ -154,7 +155,7 @@ class DataTypeTest: XCTestCase {
     }
     
     func testMoveEnd() {
-        let elements: Stanwood.Elements<Item> = Stanwood.Elements<Item>(items:  self.objects.items)
+        let elements: Elements<Item> = Elements<Item>(items:  self.objects.items)
         let indexPath = IndexPath(item: 7, section: 0)
         let objectThree = objects[indexPath] as! Item
         let movedToIndexPath = IndexPath(item: 13, section: 0)
@@ -168,7 +169,7 @@ class DataTypeTest: XCTestCase {
     
     func testDelete() {
         
-        let objects: Stanwood.Elements<Item> = self.objects
+        let objects: Elements<Item> = self.objects
         let indexPath = IndexPath(item: 2, section: 0)
         let objectThree = objects[indexPath] as! Item
         
@@ -192,7 +193,7 @@ class DataTypeTest: XCTestCase {
         do {
             try objects.save()
             
-            let loadedDeals = Stanwood.Elements<Item>.loadFromFile()
+            let loadedDeals = Elements<Item>.loadFromFile()
             XCTAssertNotNil(loadedDeals)
             
             if let loadedDeals = loadedDeals {
@@ -205,7 +206,7 @@ class DataTypeTest: XCTestCase {
                 
                 try loadedDeals.save(withFileName: "objects_file")
                 
-                let objectsFile = Stanwood.Elements<Item>.loadFromFile(withFileName: "objects_file")
+                let objectsFile = Elements<Item>.loadFromFile(withFileName: "objects_file")
                 XCTAssertNotNil(objectsFile)
                 
                 if let objectsFile = objectsFile {

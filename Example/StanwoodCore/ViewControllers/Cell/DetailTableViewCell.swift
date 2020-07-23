@@ -8,6 +8,7 @@
 
 import UIKit
 import StanwoodCore
+import SourceModel
 
 class DetailTableViewCell: UITableViewCell, Fillable  {
     
@@ -19,9 +20,9 @@ class DetailTableViewCell: UITableViewCell, Fillable  {
     
     var item: Item?
     
-    func fill(with type: Type?) {
+    func fill(with model: Model?) {
         
-        guard let item = type as? Item else { return }
+        guard let item = model as? Item else { return }
         
         self.item = item
         
