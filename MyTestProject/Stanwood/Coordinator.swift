@@ -48,9 +48,10 @@ class Coordinator: Coordinating {
     
     func loadDisplayController(){
         
-        let detailController = DisplayControllerWireframe.makeViewController()
-        let navigationController = UINavigationController(rootViewController: detailController)
-        DisplayControllerWireframe.prepare(detailController, with: actions, and: parameters)
+        let controller = Wireframe<DisplayControllerMetaModule>.makeViewController()
+        Wireframe<DisplayControllerMetaModule>.prepare(viewController: controller, view: controller, actions: actions, parameters: parameters)
+        
+        let navigationController = UINavigationController(rootViewController: controller)
         currentController.present(navigationController, animated: true, completion: nil)
     }
 }

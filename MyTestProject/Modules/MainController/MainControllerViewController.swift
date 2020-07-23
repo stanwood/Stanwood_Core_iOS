@@ -17,7 +17,7 @@ class MainControllerViewController: UIViewController {
     }
     
     @IBAction func doStuff(_ sender: Any) {
-        presenter.actionable.loadDisplayController()
+        presenter.actions.loadDisplayController()
     }
     
 }

@@ -13,7 +13,7 @@ class MainControllerWireframe {
     }
 
     static func prepare(_ viewController: MainControllerViewController, with  actions: MainControllerActionable, and parameters: MainControllerParameterable) {
-    	let presenter =  MainControllerPresenter(actionable: actions, parameterable: parameters, viewable: viewController)
+        let presenter =  MainControllerPresenter(actions: actions, parameters: parameters, view: viewController)
         viewController.presenter = presenter
     }
 

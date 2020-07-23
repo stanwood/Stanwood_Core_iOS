@@ -11,9 +11,9 @@ import Foundation
 
 extension UICollectionViewCell {
     
-    func supportIOS12SelfSizing(){
-        let containerTop = contentView.topAnchor.constraint(equalTo: topAnchor)
-        let containerBottom = contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        NSLayoutConstraint.activate([containerTop, containerBottom])
-    }
+//    func supportIOS12SelfSizing(){
+//        let containerTop = contentView.topAnchor.constraint(equalTo: topAnchor)
+//        let containerBottom = contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+//        NSLayoutConstraint.activate([containerTop, containerBottom])
+//    }
 }

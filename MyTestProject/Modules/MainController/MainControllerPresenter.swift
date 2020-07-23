@@ -14,9 +14,9 @@ class MainControllerPresenter: Presentable {
     
     // MARK:- Properties
     
-    unowned var viewable: MainControllerViewable
-    var actionable: MainControllerActionable
-    var parameterable: MainControllerParameterable
+    weak var view: MainControllerViewable?
+    var actions: MainControllerActionable
+    var parameters: MainControllerParameterable
     
     // MARK:- Typealias
     
@@ -24,15 +24,14 @@ class MainControllerPresenter: Presentable {
     typealias Parameterable = MainControllerParameterable
     typealias Viewable = MainControllerViewable
     
-    
-    required init(actionable: MainControllerActionable, parameterable: MainControllerParameterable, viewable: MainControllerViewable) {
-        self.viewable = viewable
-        self.actionable = actionable
-        self.parameterable = parameterable
+    required init(actions: MainControllerActionable, parameters: MainControllerParameterable, view: MainControllerViewable) {
+        self.actions = actions
+        self.view = view
+        self.parameters = parameters
     }
     
     func viewDidLoad() {
-    
+        
     }
     
 }

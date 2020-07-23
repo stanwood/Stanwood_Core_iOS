@@ -7,7 +7,8 @@
 //
 
 import StanwoodCore
+import SourceModel
 
-class DisplayControllerDataSource: Stanwood.AbstractCollectionDataSource {
+class DisplayControllerDataSource: CollectionDataSource {
     
 }

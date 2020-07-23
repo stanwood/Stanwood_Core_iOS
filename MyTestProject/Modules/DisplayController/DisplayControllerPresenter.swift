@@ -6,28 +6,48 @@
 //  Copyright © 2018 stanwood GmbH. All rights reserved.
 //
 
+
+//public protocol MetaModule {
+//    associatedtype View where View == Presenter.Viewable
+//    associatedtype Action where Action == Presenter.Actionable
+//    associatedtype Parameter where Parameter == Presenter.Parameterable
+//    associatedtype ViewController: HasPresenter & UIViewController
+//    associatedtype Presenter: Presentable where Presenter == ViewController.Presenter
+//}
+//
+
+
+enum DisplayControllerMetaModule: MetaModule {
+    
+    typealias View = DisplayControllerViewable
+    
+    typealias Action = DisplayControllerActionable
+    
+    typealias Parameter = DisplayControllerParameterable
+    
+    typealias ViewController = DisplayControllerViewController
+    
+    typealias Presenter = DisplayControllerPresenter
+}
+
+
+
 protocol DisplayControllerViewable: class {
-    func setupCollectionView(dataType: DataType?)
+    func setupCollectionView(dataType: ModelCollection?)
 }
 
 class DisplayControllerPresenter: Presentable {
-    
+
     // MARK:- Properties
     
-    unowned var viewable: DisplayControllerViewable
+    weak var view: DisplayControllerViewable?
     var actionable: DisplayControllerActionable
     var parameterable: DisplayControllerParameterable
-
-    // MARK:- Typealias
-    
-    typealias Actionable = DisplayControllerActionable
-    typealias Parameterable = DisplayControllerParameterable
-    typealias Viewable = DisplayControllerViewable
     
     // MARK:- Initialiser
     
     required init(actionable: DisplayControllerActionable, parameterable: DisplayControllerParameterable, viewable: DisplayControllerViewable) {
-        self.viewable = viewable
+        self.view = viewable
         self.actionable = actionable
         self.parameterable = parameterable
     }
@@ -35,6 +55,6 @@ class DisplayControllerPresenter: Presentable {
     // MARK:- Functions
 
     func viewDidLoad() {
-        viewable.setupCollectionView(dataType: parameterable.funkyObjects)
+        view?.setupCollectionView(dataType: parameterable.funkyObjects)
     }
 }

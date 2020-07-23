@@ -38,7 +38,6 @@
 		62A9C6D22176E44200C1BE81 /* DisplayControllerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62A9C6CA2176E44200C1BE81 /* DisplayControllerViewController.storyboard */; };
 		62A9C6D32176E44200C1BE81 /* DisplayControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9C6CB2176E44200C1BE81 /* DisplayControllerViewController.swift */; };
 		62A9C6D42176E44200C1BE81 /* DisplayControllerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9C6CC2176E44200C1BE81 /* DisplayControllerViewDelegate.swift */; };
-		62A9C6D52176E44200C1BE81 /* DisplayControllerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9C6CD2176E44200C1BE81 /* DisplayControllerWireframe.swift */; };
 		62A9C70A2176E8FF00C1BE81 /* DisplayContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9C7082176E8FF00C1BE81 /* DisplayContentCell.swift */; };
 		62A9C70B2176E8FF00C1BE81 /* DisplayContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62A9C7092176E8FF00C1BE81 /* DisplayContentCell.xib */; };
 		62A9C7102176E93200C1BE81 /* FunkyObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9C70D2176E93100C1BE81 /* FunkyObjects.swift */; };
@@ -96,7 +95,6 @@
 		62A9C6CA2176E44200C1BE81 /* DisplayControllerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisplayControllerViewController.storyboard; sourceTree = "<group>"; };
 		62A9C6CB2176E44200C1BE81 /* DisplayControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayControllerViewController.swift; sourceTree = "<group>"; };
 		62A9C6CC2176E44200C1BE81 /* DisplayControllerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayControllerViewDelegate.swift; sourceTree = "<group>"; };
-		62A9C6CD2176E44200C1BE81 /* DisplayControllerWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayControllerWireframe.swift; sourceTree = "<group>"; };
 		62A9C7082176E8FF00C1BE81 /* DisplayContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayContentCell.swift; sourceTree = "<group>"; };
 		62A9C7092176E8FF00C1BE81 /* DisplayContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayContentCell.xib; sourceTree = "<group>"; };
 		62A9C70D2176E93100C1BE81 /* FunkyObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunkyObjects.swift; sourceTree = "<group>"; };
@@ -282,7 +280,6 @@
 				62A9C6C92176E44200C1BE81 /* DisplayControllerPresenter.swift */,
 				62A9C6CA2176E44200C1BE81 /* DisplayControllerViewController.storyboard */,
 				62A9C6CB2176E44200C1BE81 /* DisplayControllerViewController.swift */,
-				62A9C6CD2176E44200C1BE81 /* DisplayControllerWireframe.swift */,
 			);
 			path = DisplayController;
 			sourceTree = "<group>";
@@ -364,8 +361,8 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				7F008C698E33A4F3C9AF6FBD /* [CP] Embed Pods Frameworks */,
-				09A0A40A4333CC1026B3BA29 /* [CP] Copy Pods Resources */,
+				ADE7AD79709C3F0572769937 /* [CP] Embed Pods Frameworks */,
+				5898B227EABE48CBE525755D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -422,6 +419,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -460,26 +458,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09A0A40A4333CC1026B3BA29 /* [CP] Copy Pods Resources */ = {
+		5898B227EABE48CBE525755D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MyTestProject/Pods-MyTestProject-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MyTestProject/Pods-MyTestProject-resources.sh",
 				"${PODS_ROOT}/StanwoodAnalytics/StanwoodAnalytics/Assets/StanwoodAnalytics.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StanwoodAnalytics.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTestProject/Pods-MyTestProject-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTestProject/Pods-MyTestProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6FBDD6B4B445FC47AE36EFA5 /* [CP] Check Pods Manifest.lock */ = {
@@ -504,48 +498,44 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F008C698E33A4F3C9AF6FBD /* [CP] Embed Pods Frameworks */ = {
+		ADE7AD79709C3F0572769937 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MyTestProject/Pods-MyTestProject-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MyTestProject/Pods-MyTestProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/RMStore/RMStore.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SourceModel/SourceModel.framework",
 				"${BUILT_PRODUCTS_DIR}/StanwoodCore/StanwoodCore.framework",
-				"${BUILT_PRODUCTS_DIR}/StanwoodDebugger/StanwoodDebugger.framework",
 				"${BUILT_PRODUCTS_DIR}/StanwoodDialog/StanwoodDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMStore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SourceModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StanwoodCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StanwoodDebugger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StanwoodDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyTestProject/Pods-MyTestProject-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTestProject/Pods-MyTestProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -573,7 +563,6 @@
 				1321BAB3215C0F1A00726E6B /* Networking.swift in Sources */,
 				62A9C68F21762A7600C1BE81 /* MainControllerWireframe.swift in Sources */,
 				1321BAB9215C11B500726E6B /* ReplaceMe_Services.swift in Sources */,
-				62A9C6D52176E44200C1BE81 /* DisplayControllerWireframe.swift in Sources */,
 				62A9C68B21762A7600C1BE81 /* MainControllerParameterable.swift in Sources */,
 				62A9C6CE2176E44200C1BE81 /* DisplayControllerActionable.swift in Sources */,
 				1321BAB5215C0F7B00726E6B /* NetworkManager.swift in Sources */,

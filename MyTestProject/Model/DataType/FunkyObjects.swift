@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FunkyObjects: Stanwood.Elements<FunkyObject> {
+class FunkyObjects: Elements<FunkyObject> {
     
     override func cellType(forItemAt indexPath: IndexPath) -> Fillable.Type? {
         return DisplayContentCell.self

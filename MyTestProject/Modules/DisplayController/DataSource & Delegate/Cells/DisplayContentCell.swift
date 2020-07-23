@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SourceModel
+import StanwoodCore
 
 protocol DisplayContentCellDelegatge: class {
-    func didSelectButton()
+    func didSelectButtonOrAnyOtherFancyCallBackToSomethingLovelyButMakeSureTheFunctionNameIsShortAndConciseSoItIsEasyToRead()
 }
 
 class DisplayContentCell: Stanwood.AutoSizeableCell, Fillable, Delegateble {
-    
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -23,17 +24,15 @@ class DisplayContentCell: Stanwood.AutoSizeableCell, Fillable, Delegateble {
         self.delegate = delegate as? DisplayContentCellDelegatge
     }
 
-    func fill(with type: Type?) {
+    func fill(with type: Model?) {
         
         guard let item = type as? FunkyObject else { return }
     
         titleLabel.text = item.title
-        
-        supportIOS12SelfSizing()
     }
     
     @IBAction func testAction(_ sender: UIButton) {
-        delegate?.didSelectButton()
+        delegate?.didSelectButtonOrAnyOtherFancyCallBackToSomethingLovelyButMakeSureTheFunctionNameIsShortAndConciseSoItIsEasyToRead()
     }
 
 }

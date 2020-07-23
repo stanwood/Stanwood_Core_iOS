@@ -8,12 +8,12 @@
 
 import StanwoodCore
 
-class DisplayControllerDelegate: Stanwood.AbstractCollectionDelegate {
+class DisplayControllerDelegate: CollectionDelegate {
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let item = dataType?[indexPath] as? FunkyObject else { return }
+        guard let item = modelCollection?[indexPath] as? FunkyObject else { return }
         
         print("If this worked then your item is - ", item)
     }

@@ -8,20 +8,11 @@
 
 import UIKit
 
-class DisplayControllerViewController: UIViewController, SourceTypePresentable {
-   
-    // ---------------- WARNING ---------------- WARNING ---------------- WARNING
-    
-    // WE NEED TO NOT HAVE THIS BUT THE TUTORIAL LOOKED SUPER SHITTY WITHOUT IT
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
-    // ---------------- WARNING ---------------- WARNING ---------------- WARNING
 
+
+class DisplayControllerViewController: UIViewController, HasPresenter, SourceTypePresentable {
     
+   
     
     // MARK:- Properties
     
@@ -53,10 +44,10 @@ class DisplayControllerViewController: UIViewController, SourceTypePresentable {
 
 extension DisplayControllerViewController: DisplayControllerViewable {
     
-    func setupCollectionView(dataType: DataType?) {
+    func setupCollectionView(dataType: ModelCollection?) {
         
-        delegate = DisplayControllerDelegate(dataType: dataType)
-        dataSource = DisplayControllerDataSource(dataType: dataType, delegate: self)
+        delegate = DisplayControllerDelegate(modelCollection: dataType)
+        dataSource = DisplayControllerDataSource(modelCollection: dataType, delegate: self)
         
         collectionView.setAutomaticSize()
         collectionView.register(cellType: DisplayContentCell.self)
@@ -69,7 +60,7 @@ extension DisplayControllerViewController: DisplayControllerViewable {
 
 extension DisplayControllerViewController: DisplayContentCellDelegatge {
     
-    func didSelectButton(){
+    func didSelectButtonOrAnyOtherFancyCallBackToSomethingLovelyButMakeSureTheFunctionNameIsShortAndConciseSoItIsEasyToRead(){
         
         let alert = UIAlertController(title: "It worked! You are great", message: "Maybe even the best", preferredStyle: .alert)
         
