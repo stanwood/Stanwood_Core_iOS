@@ -9,7 +9,7 @@ Always check that StanwoodCore does not provide this for free. Extensions, Helpe
 Tracking, DFP, Networking(dataProvider), etc', 
 ### Model
 Should contain `ModelCollection`, and `Model` types
-###Views
+### Views
 Should contain any global custom views used
 ###Modules
 Each module should be set as a sub-group and contains ModuleViewController, ModuleWireframe, ModulePresenter, ModuleActionable ,ModuleParamaterable, ModuleViewable, Module.storyboard, ModuleDataSource ,ModuleDelegate, ModuleCells 
