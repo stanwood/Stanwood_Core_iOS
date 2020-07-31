@@ -16,7 +16,7 @@ Each module should be set as a sub-group and contains ModuleViewController, Modu
 ###Stanwood
 Should contain AppDelegate ,AppController, AppCoordinator, Paramaters, Actions, AppData 
 Supporting Files
-###Supporting Files
+### Supporting Files
 Plists, other assets etc.
 
 ##AppDelegate
