@@ -23,7 +23,7 @@ Plists, other assets etc.
 Avoid adding any code to this class - it should only ever implement the functionality required by the Apple framework, instantiating and holding an AppController reference and nothing more. [AppDelegate](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=9%3A29&scaling=min-zoom)
 
 ##AppController
-TheAppControllerhas a reference to the root window. Use appController to implements any functionality on a global state, auth(), fetchConfigurations(), reachability()as an example. It implements eachactionable, presentable, and viewable protocol that is injected into each of the presenters. [AppController](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=9%3A43&scaling=min-zoom)
+The `AppController` has a reference to the root window. Use `appController` to implements any functionality on a global state, `auth()`, `fetchConfigurations()`, `reachability()` as an example. It implements each `actionable`, `presentable`, and `viewable` protocol that is injected into each of the presenters. [AppController](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=9%3A43&scaling=min-zoom)
 
 ## AppData
 Use this class for all global data model. It should only hold data model. [AppData](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A50&scaling=min-zoom)
