@@ -80,7 +80,7 @@ extension Actions: CarsActionable {
     }
 }
 ```
-##Viewable protocol
+## Viewable protocol
 This defines a protocol for each UIViewController and communicates with the presenter to display information on the screen.  [Viewable](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=9%3A1&scaling=min-zoom)
 ```
 protocol CarsViewable {
