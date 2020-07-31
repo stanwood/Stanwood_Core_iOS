@@ -96,7 +96,7 @@ class CarsViewController: CarsViewable {
   }
 }
 ```
-##Parameterable protocol
+## Parameterable protocol
 This defines a protocol for each module that contains all the view parameters. [Parameterable](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=9%3A25&scaling=min-zoom)
 
 ```
