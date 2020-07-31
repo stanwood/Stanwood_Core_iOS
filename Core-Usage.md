@@ -56,7 +56,7 @@ Since a `UITableView` or `UICollectionView` only keeps weak references to a data
 
 When creating a new presenter call, it must conform to the Presentable protocol and defineactionable, viewable, and paramaterable. If the presenter is a sourceType based presenter, then it must also conform toSourceTypePresentable, which will define the dataSource and delegate. [Presenter](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=2%3A10&scaling=min-zoom)
 
-##Actionable protocol 
+## Actionable protocol 
 This defines a protocol for each module that contains the call back functions for each action on the screen. It may also initiate a request that in turn invokes for networking calls and background processes and passes the responses back to the presenter, and manages the feedback to the user.  [Actionable](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=9%3A23&scaling=min-zoom)
 For example: 
 
