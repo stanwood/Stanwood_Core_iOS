@@ -141,7 +141,7 @@ struct Constants {
 ## Services
 Services should have a reference in Actions and report back topresenter.  [Services](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A107&scaling=min-zoom)
 
-##Networking
+## Networking
 This layer is super basic and relies heavily on Moya. Its best to view the example project for a more in depth insight into how moya works.  In short, the network layer has one exposed function that returns an initialised result. We use Generics to infer the type and either turn the object or an error.
 
 as a general rule, the only class to access this will be the `DataProvider`  [Networking](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A34&scaling=min-zoom)
