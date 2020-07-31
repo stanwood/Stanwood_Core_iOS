@@ -28,7 +28,7 @@ The `AppController` has a reference to the root window. Use `appController` to i
 ## AppData
 Use this class for all global data model. It should only hold data model. [AppData](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A50&scaling=min-zoom)
 
-##Coordinator
+## Coordinator
 The Coordinator controls what is displayed at all times. It creates wireframes, prepares and presents. [Coordinator](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A58&scaling=min-zoom)
 
 ## Wireframe
