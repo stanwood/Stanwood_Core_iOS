@@ -25,7 +25,7 @@ Avoid adding any code to this class - it should only ever implement the function
 ##AppController
 TheAppControllerhas a reference to the root window. Use appController to implements any functionality on a global state, auth(), fetchConfigurations(), reachability()as an example. It implements eachactionable, presentable, and viewable protocol that is injected into each of the presenters. [AppController](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=9%3A43&scaling=min-zoom)
 
-##AppData
+## AppData
 Use this class for all global data model. It should only hold data model. [AppData](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A50&scaling=min-zoom)
 
 ##Coordinator
