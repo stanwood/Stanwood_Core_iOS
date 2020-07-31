@@ -3,7 +3,7 @@
 ## Project Organisations
 Each Xcode project should be set with the following group structure in that order. This is so all our projects are consistent. [Project Organisation](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A107&scaling=min-zoom)
 
-###Utilities
+### Utilities
 Always check that StanwoodCore does not provide this for free. Extensions, Helpers
 ###Services
 Tracking, DFP, Networking(dataProvider), etc', 
