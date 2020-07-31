@@ -1,6 +1,6 @@
 # Stanwood Core
 
-##Project Organisations
+## Project Organisations
 Each Xcode project should be set with the following group structure in that order. This is so all our projects are consistent. [Project Organisation](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A107&scaling=min-zoom)
 
 ###Utilities
