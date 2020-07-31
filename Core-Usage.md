@@ -110,7 +110,7 @@ extension Paramaters: CarsParamaterable {
   }
 }
 ```
-##ViewController
+## ViewController
 It must keep a strong reference to the presenter. All events (including button actions) make call backs to the presenter.  This class should contain the bare minimum of code that is needed for initialisation and styling.  [ViewController](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=2%3A3&scaling=min-zoom)
 
 ##DataSource, Delegate, ModelCollection, and Model
