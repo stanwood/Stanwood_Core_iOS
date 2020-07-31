@@ -47,7 +47,7 @@ struct CarsWireframe {
   }
 }
 ```
-##Presenter
+## Presenter
 The presenter implements all the logic and processing needed to display information on the screen, leaving the viewController with the task of the purely UI-specific elements. 
 
 The presenter communicates back to Actions via an action object that implements the actionable protocol. The presenter communicates with the viewable object to display information on the screen. The presenter calls paramaterable via a parameter object to get all the view specific parameters. Each UI element that triggers a background process, must communicate via the presenter to invoke the call. It must keep a weak reference to the viewable object.
