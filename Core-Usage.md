@@ -31,7 +31,7 @@ Use this class for all global data model. It should only hold data model. [AppDa
 ##Coordinator
 The Coordinator controls what is displayed at all times. It creates wireframes, prepares and presents. [Coordinator](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A58&scaling=min-zoom)
 
-##Wireframe
+## Wireframe
 The wireframe is a struct in which all of the functions are static.  It always consists of a makeViewController function which will return a subclass of UIViewControlleror aUINavigationController, and a prepare function, which will connect the view controller to all the other classes in the module.
 
 The make function encapsulates the loading of a storyboard and then the viewController in question.  The prepare function should pass in any data to build the module and inject them into the classes and structs.  The prepare function should inject an object that implements the appropriate...actionable,...paramaterable, and...viewableprotocol into the presenter.  [Wireframe](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=88%3A0&scaling=min-zoom)
