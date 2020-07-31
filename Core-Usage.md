@@ -13,7 +13,7 @@ Should contain `ModelCollection`, and `Model` types
 Should contain any global custom views used
 ###Modules
 Each module should be set as a sub-group and contains ModuleViewController, ModuleWireframe, ModulePresenter, ModuleActionable ,ModuleParamaterable, ModuleViewable, Module.storyboard, ModuleDataSource ,ModuleDelegate, ModuleCells 
-###Stanwood
+### Core
 Should contain AppDelegate ,AppController, AppCoordinator, Paramaters, Actions, AppData 
 Supporting Files
 ###Supporting Files
