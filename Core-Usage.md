@@ -11,7 +11,7 @@ Tracking, DFP, Networking(dataProvider), etc',
 Should contain `ModelCollection`, and `Model` types
 ### Views
 Should contain any global custom views used
-###Modules
+### Modules
 Each module should be set as a sub-group and contains ModuleViewController, ModuleWireframe, ModulePresenter, ModuleActionable ,ModuleParamaterable, ModuleViewable, Module.storyboard, ModuleDataSource ,ModuleDelegate, ModuleCells 
 ###Stanwood
 Should contain AppDelegate ,AppController, AppCoordinator, Paramaters, Actions, AppData 
