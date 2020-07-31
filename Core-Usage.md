@@ -19,7 +19,7 @@ Supporting Files
 ### Supporting Files
 Plists, other assets etc.
 
-##AppDelegate
+## AppDelegate
 Avoid adding any code to this class - it should only ever implement the functionality required by the Apple framework, instantiating and holding an AppController reference and nothing more. [AppDelegate](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=9%3A29&scaling=min-zoom)
 
 ##AppController
