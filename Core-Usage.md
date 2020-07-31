@@ -113,7 +113,7 @@ extension Paramaters: CarsParamaterable {
 ## ViewController
 It must keep a strong reference to the presenter. All events (including button actions) make call backs to the presenter.  This class should contain the bare minimum of code that is needed for initialisation and styling.  [ViewController](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=2%3A3&scaling=min-zoom)
 
-##DataSource, Delegate, ModelCollection, and Model
+## DataSource, Delegate, ModelCollection, and Model
 Always separate out the data source and delegate from the view controller and presenter.  The data source and delegate should be the only class that knows about the cells in the table or collection view. Utilise Stanwood.Elements to instantiate a collection of elements, and inject them to the data source, and delegate. Always subclass AbstractDataSource and AbstractDelegate and make sure each cell conforms to the Fillable protocol.  
 [DataSource](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=51%3A28&scaling=min-zoom)
 
