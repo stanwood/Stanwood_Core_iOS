@@ -5,7 +5,7 @@ Each Xcode project should be set with the following group structure in that orde
 
 ### Utilities
 Always check that StanwoodCore does not provide this for free. Extensions, Helpers
-###Services
+### Services
 Tracking, DFP, Networking(dataProvider), etc', 
 ### Model
 Should contain `ModelCollection`, and `Model` types
