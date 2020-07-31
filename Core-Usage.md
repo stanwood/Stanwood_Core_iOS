@@ -124,7 +124,7 @@ Always separate out the data source and delegate from the view controller and pr
    [Model](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=55%3A18&scaling=min-zoom)
 
 BLAH BLAH WAIT FOR REVIEW
-##Configurations & Constants
+## Configurations & Constants
 [Configurations & Constants](https://www.figma.com/proto/AO3XMoeps1Yjj7aia5HpmA/Untitled?node-id=31%3A107&scaling=min-zoom)
 
 ```
